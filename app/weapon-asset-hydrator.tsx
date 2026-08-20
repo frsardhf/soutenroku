@@ -16,7 +16,7 @@ export default function WeaponAssetHydrator() {
         const image = canonical ? weapons[canonical]?.path : undefined;
         if (!art) return;
         if (image) {
-          art.style.backgroundImage = `linear-gradient(0deg, rgba(4,18,28,.74), transparent 62%), url("${image}")`;
+          art.style.backgroundImage = `url("${image}")`;
           art.dataset.asset = "weapon";
         } else {
           art.style.removeProperty("background-image");

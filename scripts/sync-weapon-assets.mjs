@@ -27,7 +27,11 @@ const entries = requested.length
 await mkdir(outputDir, { recursive: true });
 let oldManifest = { weapons: {}, aliases: {} };
 if (existsSync(manifestPath)) {
-  try { oldManifest = JSON.parse(await readFile(manifestPath, "utf8")); } catch {}
+  try {
+    oldManifest = JSON.parse(await readFile(manifestPath, "utf8"));
+  } catch (error) {
+    console.warn(`Ignoring unreadable weapon manifest: ${error.message}`);
+  }
 }
 
 const manifest = oldManifest;

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T04:40:20.228Z",
+  "generatedAt": "2026-08-20T13:36:18.884Z",
   "weapons": {
     "Staff of Renunciation": {
       "name": "Staff of Renunciation",
@@ -121,6 +121,198 @@
       "path": "/weapon-assets/doombringer-edge.png",
       "source": "https://gbf.wiki/Special:Redirect/file/Doombringer%20Edge.png",
       "resolvedUrl": "https://gbf.wiki/images/2/2a/Weapon_b_1040122300.png"
+    },
+    "Ancient Ecke Sachs": {
+      "name": "Ancient Ecke Sachs",
+      "path": "/weapon-assets/ancient-ecke-sachs.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ancient%20Ecke%20Sachs.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/d8/Weapon_b_1040007000.png"
+    },
+    "Nilakantha": {
+      "name": "Nilakantha",
+      "path": "/weapon-assets/nilakantha.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Nilakantha.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/5e/Weapon_b_1040417900.png"
+    },
+    "True Infernal Flamescythe": {
+      "name": "True Infernal Flamescythe",
+      "path": "/weapon-assets/true-infernal-flamescythe.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/True%20Infernal%20Flamescythe.png",
+      "resolvedUrl": "https://gbf.wiki/images/e/ef/Weapon_b_1040306300.png"
+    },
+    "Scythe of Renunciation": {
+      "name": "Scythe of Renunciation",
+      "path": "/weapon-assets/scythe-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Scythe%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/25/Weapon_b_1040310700.png"
+    },
+    "Last Sahrivar": {
+      "name": "Last Sahrivar",
+      "path": "/weapon-assets/last-sahrivar.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Last%20Sahrivar.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/da/Weapon_b_1040015800.png"
+    },
+    "Nibelung Horn": {
+      "name": "Nibelung Horn",
+      "path": "/weapon-assets/nibelung-horn.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Nibelung%20Horn.png",
+      "resolvedUrl": "https://gbf.wiki/images/8/8f/Weapon_b_1040309300.png"
+    },
+    "Yggdrasil Crystal Blade Omega": {
+      "name": "Yggdrasil Crystal Blade Omega",
+      "path": "/weapon-assets/yggdrasil-crystal-blade-omega.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Yggdrasil%20Crystal%20Blade%20Omega.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/5d/Weapon_b_1040002200.png"
+    },
+    "Nibelung Klinge": {
+      "name": "Nibelung Klinge",
+      "path": "/weapon-assets/nibelung-klinge.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Nibelung%20Klinge.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/38/Weapon_b_1040908900.png"
+    },
+    "Ancient Perseus": {
+      "name": "Ancient Perseus",
+      "path": "/weapon-assets/ancient-perseus.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ancient%20Perseus.png",
+      "resolvedUrl": "https://gbf.wiki/images/e/e0/Weapon_b_1040803500.png"
+    },
+    "Harp of Renunciation": {
+      "name": "Harp of Renunciation",
+      "path": "/weapon-assets/harp-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Harp%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/1/1f/Weapon_b_1040809500.png"
+    },
+    "Tiamat Bolt Omega": {
+      "name": "Tiamat Bolt Omega",
+      "path": "/weapon-assets/tiamat-bolt-omega.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Tiamat%20Bolt%20Omega.png",
+      "resolvedUrl": "https://gbf.wiki/images/f/f3/Weapon_b_1040502600.png"
+    },
+    "Last Storm Harp": {
+      "name": "Last Storm Harp",
+      "path": "/weapon-assets/last-storm-harp.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Last%20Storm%20Harp.png",
+      "resolvedUrl": "https://gbf.wiki/images/6/65/Weapon_b_1040808300.png"
+    },
+    "True Conviction Flashspear": {
+      "name": "True Conviction Flashspear",
+      "path": "/weapon-assets/true-conviction-flashspear.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/True%20Conviction%20Flashspear.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/2a/Weapon_b_1040209500.png"
+    },
+    "Spear of Renunciation": {
+      "name": "Spear of Renunciation",
+      "path": "/weapon-assets/spear-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Spear%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b5/Weapon_b_1040212600.png"
+    },
+    "True Purity Sunblade": {
+      "name": "True Purity Sunblade",
+      "path": "/weapon-assets/true-purity-sunblade.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/True%20Purity%20Sunblade.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/23/Weapon_b_1040015400.png"
+    },
+    "Luminiera Sword Omega": {
+      "name": "Luminiera Sword Omega",
+      "path": "/weapon-assets/luminiera-sword-omega.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Luminiera%20Sword%20Omega.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/33/Weapon_b_1040007200.png"
+    },
+    "Sword of Renunciation": {
+      "name": "Sword of Renunciation",
+      "path": "/weapon-assets/sword-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Sword%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/7/7a/Weapon_b_1040017100.png"
+    },
+    "Harp of Everlore": {
+      "name": "Harp of Everlore",
+      "path": "/weapon-assets/harp-of-everlore.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Harp%20of%20Everlore.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/56/Weapon_b_1040809600.png"
+    },
+    "Cerberus Order": {
+      "name": "Cerberus Order",
+      "path": "/weapon-assets/cerberus-order.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Cerberus%20Order.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/bc/Weapon_b_1040506000.png"
+    },
+    "Abyss Spine": {
+      "name": "Abyss Spine",
+      "path": "/weapon-assets/abyss-spine.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Abyss%20Spine.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b6/Weapon_b_1040414200.png"
+    },
+    "Celeste Zaghnal Omega": {
+      "name": "Celeste Zaghnal Omega",
+      "path": "/weapon-assets/celeste-zaghnal-omega.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Celeste%20Zaghnal%20Omega.png",
+      "resolvedUrl": "https://gbf.wiki/images/8/82/Weapon_b_1040301400.png"
+    },
+    "True Phantom Demon Blade": {
+      "name": "True Phantom Demon Blade",
+      "path": "/weapon-assets/true-phantom-demon-blade.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/True%20Phantom%20Demon%20Blade.png",
+      "resolvedUrl": "https://gbf.wiki/images/7/79/Weapon_b_1040908700.png"
+    },
+    "Katana of Renunciation": {
+      "name": "Katana of Renunciation",
+      "path": "/weapon-assets/katana-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Katana%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/44/Weapon_b_1040911100.png"
+    },
+    "Sword of Michael (SSR)": {
+      "name": "Sword of Michael (SSR)",
+      "path": "/weapon-assets/sword-of-michael-ssr.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Sword%20of%20Michael%20(SSR).png",
+      "resolvedUrl": "https://gbf.wiki/images/4/4e/Sword_of_Michael_%28SSR%29.png"
+    },
+    "Gauntlet of Uriel (SSR)": {
+      "name": "Gauntlet of Uriel (SSR)",
+      "path": "/weapon-assets/gauntlet-of-uriel-ssr.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Gauntlet%20of%20Uriel%20(SSR).png",
+      "resolvedUrl": "https://gbf.wiki/images/c/ce/Gauntlet_of_Uriel_%28SSR%29.png"
+    },
+    "Coruscant Crozier": {
+      "name": "Coruscant Crozier",
+      "path": "/weapon-assets/coruscant-crozier.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Coruscant%20Crozier.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/01/Weapon_b_1040418000.png"
+    },
+    "Arkab Prior": {
+      "name": "Arkab Prior",
+      "path": "/weapon-assets/arkab-prior.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Arkab%20Prior.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/cb/Weapon_b_1040611100.png"
+    },
+    "Ring of Raphael (SSR)": {
+      "name": "Ring of Raphael (SSR)",
+      "path": "/weapon-assets/ring-of-raphael-ssr.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ring%20of%20Raphael%20(SSR).png",
+      "resolvedUrl": "https://gbf.wiki/images/f/f6/Ring_of_Raphael_%28SSR%29.png"
+    },
+    "Zechariah": {
+      "name": "Zechariah",
+      "path": "/weapon-assets/zechariah.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Zechariah.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/55/Weapon_b_1040813100.png"
+    },
+    "Scythe of Belial (SSR)": {
+      "name": "Scythe of Belial (SSR)",
+      "path": "/weapon-assets/scythe-of-belial-ssr.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Scythe%20of%20Belial%20(SSR).png",
+      "resolvedUrl": "https://gbf.wiki/images/f/f6/Weapon_b_1030304500.png"
+    },
+    "Cosmic Sword": {
+      "name": "Cosmic Sword",
+      "path": "/weapon-assets/cosmic-sword.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Cosmic%20Sword.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/54/Weapon_b_1040008000.png"
+    },
+    "Advocatus Diaboli": {
+      "name": "Advocatus Diaboli",
+      "path": "/weapon-assets/advocatus-diaboli.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Advocatus%20Diaboli.png",
+      "resolvedUrl": "https://gbf.wiki/images/e/e2/Weapon_b_1040213300.png"
     }
   },
   "aliases": {
@@ -157,6 +349,38 @@
     "Clockwork Blade: Kumogakure": "Clockwork Blade: Kumogakure",
     "Octavia Blade": "Clockwork Blade: Kumogakure",
     "Doombringer Edge": "Doombringer Edge",
-    "Destroyer": "Doombringer Edge"
+    "Destroyer": "Doombringer Edge",
+    "Sword of Michael (SSR)": "Sword of Michael (SSR)",
+    "Ancient Ecke Sachs": "Ancient Ecke Sachs",
+    "Nilakantha": "Nilakantha",
+    "True Infernal Flamescythe": "True Infernal Flamescythe",
+    "Scythe of Renunciation": "Scythe of Renunciation",
+    "Last Sahrivar": "Last Sahrivar",
+    "Nibelung Horn": "Nibelung Horn",
+    "Yggdrasil Crystal Blade Omega": "Yggdrasil Crystal Blade Omega",
+    "Nibelung Klinge": "Nibelung Klinge",
+    "Ancient Perseus": "Ancient Perseus",
+    "Harp of Renunciation": "Harp of Renunciation",
+    "Gauntlet of Uriel (SSR)": "Gauntlet of Uriel (SSR)",
+    "Tiamat Bolt Omega": "Tiamat Bolt Omega",
+    "Last Storm Harp": "Last Storm Harp",
+    "Coruscant Crozier": "Coruscant Crozier",
+    "Arkab Prior": "Arkab Prior",
+    "True Conviction Flashspear": "True Conviction Flashspear",
+    "Spear of Renunciation": "Spear of Renunciation",
+    "Ring of Raphael (SSR)": "Ring of Raphael (SSR)",
+    "True Purity Sunblade": "True Purity Sunblade",
+    "Luminiera Sword Omega": "Luminiera Sword Omega",
+    "Cosmic Sword": "Cosmic Sword",
+    "Sword of Renunciation": "Sword of Renunciation",
+    "Harp of Everlore": "Harp of Everlore",
+    "Cerberus Order": "Cerberus Order",
+    "Zechariah": "Zechariah",
+    "Abyss Spine": "Abyss Spine",
+    "Celeste Zaghnal Omega": "Celeste Zaghnal Omega",
+    "Advocatus Diaboli": "Advocatus Diaboli",
+    "True Phantom Demon Blade": "True Phantom Demon Blade",
+    "Katana of Renunciation": "Katana of Renunciation",
+    "Scythe of Belial (SSR)": "Scythe of Belial (SSR)"
   }
 }

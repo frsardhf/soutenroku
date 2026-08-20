@@ -7,8 +7,9 @@
 }
 
 .weapon-art[data-asset="weapon"] {
-  height: auto !important;
-  aspect-ratio: 640 / 554;
+  height: 100% !important;
+  aspect-ratio: auto;
   background-position: center !important;
-  background-size: cover !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
 }

@@ -1,0 +1,162 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-20T04:40:20.228Z",
+  "weapons": {
+    "Staff of Renunciation": {
+      "name": "Staff of Renunciation",
+      "path": "/weapon-assets/staff-of-renunciation.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Staff%20of%20Renunciation.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/5e/Weapon_b_1040415100.png"
+    },
+    "Wamdus's Cnidocyte": {
+      "name": "Wamdus's Cnidocyte",
+      "path": "/weapon-assets/wamdus-s-cnidocyte.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Wamdus's%20Cnidocyte.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/5e/Weapon_b_1040215100.png"
+    },
+    "Ancient Auberon": {
+      "name": "Ancient Auberon",
+      "path": "/weapon-assets/ancient-auberon.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ancient%20Auberon.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/23/Weapon_b_1040604000.png"
+    },
+    "Bahamut Dagger Coda": {
+      "name": "Bahamut Dagger Coda",
+      "path": "/weapon-assets/bahamut-dagger-coda.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Bahamut%20Dagger%20Coda.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/05/Weapon_b_1040106700.png"
+    },
+    "Fateless": {
+      "name": "Fateless",
+      "path": "/weapon-assets/fateless.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Fateless.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b7/Weapon_b_1040019700.png"
+    },
+    "Wand of Charmtide": {
+      "name": "Wand of Charmtide",
+      "path": "/weapon-assets/wand-of-charmtide.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Wand%20of%20Charmtide.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/24/Weapon_b_1040415300.png"
+    },
+    "Leviathan Gaze Mare": {
+      "name": "Leviathan Gaze Mare",
+      "path": "/weapon-assets/leviathan-gaze-mare.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Leviathan%20Gaze%20Mare.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/4e/Weapon_b_1040119700.png"
+    },
+    "Leviathan Cranium Mare": {
+      "name": "Leviathan Cranium Mare",
+      "path": "/weapon-assets/leviathan-cranium-mare.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Leviathan%20Cranium%20Mare.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/08/Weapon_b_1040318100.png"
+    },
+    "Leviathan Spear Omega": {
+      "name": "Leviathan Spear Omega",
+      "path": "/weapon-assets/leviathan-spear-omega.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Leviathan%20Spear%20Omega.png",
+      "resolvedUrl": "https://gbf.wiki/images/8/86/Weapon_b_1040205100.png"
+    },
+    "Altruism-Soul Staff": {
+      "name": "Altruism-Soul Staff",
+      "path": "/weapon-assets/altruism-soul-staff.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Altruism-Soul%20Staff.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/dc/Weapon_b_1040423300.png"
+    },
+    "Rubea Stiria": {
+      "name": "Rubea Stiria",
+      "path": "/weapon-assets/rubea-stiria.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Rubea%20Stiria.png",
+      "resolvedUrl": "https://gbf.wiki/images/f/fc/Weapon_b_1040713800.png"
+    },
+    "Taisai Spirit Bow": {
+      "name": "Taisai Spirit Bow",
+      "path": "/weapon-assets/taisai-spirit-bow.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Taisai%20Spirit%20Bow.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/ad/Weapon_b_1040708700.png"
+    },
+    "Galilei's Insight": {
+      "name": "Galilei's Insight",
+      "path": "/weapon-assets/galilei-s-insight.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Galilei's%20Insight.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/46/Weapon_b_1040211600.png"
+    },
+    "Gospel of Water and Sky": {
+      "name": "Gospel of Water and Sky",
+      "path": "/weapon-assets/gospel-of-water-and-sky.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Gospel%20of%20Water%20and%20Sky.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/28/Weapon_b_1040117800.png"
+    },
+    "Knight of Ice": {
+      "name": "Knight of Ice",
+      "path": "/weapon-assets/knight-of-ice.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Knight%20of%20Ice.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b9/Weapon_b_1040115600.png"
+    },
+    "Ultima Staff": {
+      "name": "Ultima Staff",
+      "path": "/weapon-assets/ultima-staff.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ultima%20Staff.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/43/Weapon_b_1040410800.png"
+    },
+    "Hraesvelgr": {
+      "name": "Hraesvelgr",
+      "path": "/weapon-assets/hraesvelgr.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Hraesvelgr.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/2c/Weapon_b_1040515200.png"
+    },
+    "Bridekeeper": {
+      "name": "Bridekeeper",
+      "path": "/weapon-assets/bridekeeper.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Bridekeeper.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/05/Weapon_b_1040518100.png"
+    },
+    "Clockwork Blade: Kumogakure": {
+      "name": "Clockwork Blade: Kumogakure",
+      "path": "/weapon-assets/clockwork-blade-kumogakure.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Clockwork%20Blade%3A%20Kumogakure.png",
+      "resolvedUrl": "https://gbf.wiki/images/6/6b/Weapon_b_1040918400.png"
+    },
+    "Doombringer Edge": {
+      "name": "Doombringer Edge",
+      "path": "/weapon-assets/doombringer-edge.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Doombringer%20Edge.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/2a/Weapon_b_1040122300.png"
+    }
+  },
+  "aliases": {
+    "Staff of Renunciation": "Staff of Renunciation",
+    "Dark Opus": "Staff of Renunciation",
+    "Wamdus's Cnidocyte": "Wamdus's Cnidocyte",
+    "Wamdus Spear": "Wamdus's Cnidocyte",
+    "Ancient Auberon": "Ancient Auberon",
+    "Bahamut Dagger Coda": "Bahamut Dagger Coda",
+    "Bahamut Dagger": "Bahamut Dagger Coda",
+    "Fateless": "Fateless",
+    "Fateful End": "Fateless",
+    "Wand of Charmtide": "Wand of Charmtide",
+    "Gabriel Wand": "Wand of Charmtide",
+    "Leviathan Gaze Mare": "Leviathan Gaze Mare",
+    "Levi Gaze Mare": "Leviathan Gaze Mare",
+    "Leviathan Cranium Mare": "Leviathan Cranium Mare",
+    "Levi Cranium Mare": "Leviathan Cranium Mare",
+    "Leviathan Spear Omega": "Leviathan Spear Omega",
+    "Levi Spear": "Leviathan Spear Omega",
+    "Altruism-Soul Staff": "Altruism-Soul Staff",
+    "Celestial Staff": "Altruism-Soul Staff",
+    "Rubea Stiria": "Rubea Stiria",
+    "Taisai Spirit Bow": "Taisai Spirit Bow",
+    "Taisai Bow": "Taisai Spirit Bow",
+    "Galilei's Insight": "Galilei's Insight",
+    "Galilei": "Galilei's Insight",
+    "Gospel of Water and Sky": "Gospel of Water and Sky",
+    "Gabriel Dagger": "Gospel of Water and Sky",
+    "Knight of Ice": "Knight of Ice",
+    "Ultima Staff": "Ultima Staff",
+    "Hraesvelgr": "Hraesvelgr",
+    "Bridekeeper": "Bridekeeper",
+    "Clockwork Blade: Kumogakure": "Clockwork Blade: Kumogakure",
+    "Octavia Blade": "Clockwork Blade: Kumogakure",
+    "Doombringer Edge": "Doombringer Edge",
+    "Destroyer": "Doombringer Edge"
+  }
+}

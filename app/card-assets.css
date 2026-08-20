@@ -5,3 +5,10 @@
   background-position: center !important;
   background-size: cover !important;
 }
+
+.weapon-art[data-asset="weapon"] {
+  height: auto !important;
+  aspect-ratio: 640 / 554;
+  background-position: center !important;
+  background-size: cover !important;
+}

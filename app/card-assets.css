@@ -1,0 +1,7 @@
+.portrait {
+  width: 100%;
+  height: auto !important;
+  aspect-ratio: 200 / 114;
+  background-position: center !important;
+  background-size: cover !important;
+}

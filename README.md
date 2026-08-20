@@ -15,6 +15,7 @@ Full Auto roadmap, not a universal tier list.
 - Local ownership checklists saved in the browser
 - Extended Mastery priorities for the core Water frontline
 - Detailed research notes in [`notes/`](./notes/)
+- A technical and session handover in [`docs/HANDOVER.md`](./docs/HANDOVER.md)
 
 ## Run locally
 

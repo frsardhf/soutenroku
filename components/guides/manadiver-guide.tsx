@@ -15,7 +15,6 @@ import {
   manaturaRows,
   nicheManatura,
 } from "@/data/guides/manadiver";
-import Link from "next/link";
 import {
   Accordion,
   AccordionContent,
@@ -339,7 +338,7 @@ export function ManadiverGuide() {
               <header>
                 <div>
                   <span className="guide-element-marker" data-element={item.element.toLowerCase()} />
-                  <h3><Link href={`/roadmaps/${item.element.toLowerCase()}`} prefetch={false}>{item.element}</Link></h3>
+                  <h3><a href={`/roadmaps/${item.element.toLowerCase()}`}>{item.element}</a></h3>
                 </div>
                 <span className="guide-status status-target">{item.verdict}</span>
               </header>

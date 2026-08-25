@@ -1,8 +1,8 @@
-import Link from "next/link";
+/* eslint-disable @next/next/no-html-link-for-pages */
 
 export default function Home(){
   return <main>
     <meta httpEquiv="refresh" content="0; url=/roadmaps/water"/>
-    <p>Opening the <Link href="/roadmaps/water" prefetch={false}>Water roadmap</Link>…</p>
+    <p>Opening the <a href="/roadmaps/water">Water roadmap</a>…</p>
   </main>;
 }

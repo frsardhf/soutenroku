@@ -104,7 +104,7 @@ export function RoadmapPage({plan}:{plan:Plan}){
     </section>
 
     <section id="grid" className="content-section">
-      <div className="section-heading"><div><span className="section-kicker">Grid</span><h2>Weapon roadmap</h2></div><p>Move one milestone at a time. Checked slots stay on this device and have been migrated from the old Skylog checklist.</p></div>
+      <div className="section-heading"><div><span className="section-kicker">Grid</span><h2>Weapon roadmap</h2></div><p>Move one milestone at a time. Checked slots stay on this device.</p></div>
       <div className="selection-tabs grid-selection" role="group" aria-label="Grid selection">{plan.grids.map((candidate,index)=><Button key={candidate.name} variant={gridIndex===index?"default":"outline"} aria-pressed={gridIndex===index} onClick={()=>select(teamIndex,index)}><span>{candidate.name}</span><small>{controlledStatus(candidate.tag)}</small></Button>)}</div>
       <div className="grid-context"><div><Badge className={`status-${controlledStatus(grid.tag).toLowerCase()}`}>{controlledStatus(grid.tag)}</Badge><h3>{grid.name}</h3></div><p>{grid.note}</p></div>
       <div className="weapon-grid">{slots.map((slot)=>{const progressId=weaponProgressId(plan,gridIndex,slot);const owned=!!values[progressId];const art=getWeaponAssetPath(slot.name);return <article className={`weapon-slot ${slot.index===0?"is-mainhand":""} ${owned?"is-owned":""}`} key={progressId}>

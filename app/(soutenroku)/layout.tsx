@@ -1,6 +1,6 @@
 import type {ReactNode} from "react";
 import {AppShell} from "@/components/shell/app-shell";
 
-export default function SkylogLayout({children}:{children:ReactNode}){
+export default function SoutenrokuLayout({children}:{children:ReactNode}){
   return <AppShell>{children}</AppShell>;
 }

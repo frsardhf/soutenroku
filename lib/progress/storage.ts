@@ -1,9 +1,9 @@
 import {
   createEmptyProgress,
   parseProgress,
-  SKYLOG_PROGRESS_STORAGE_KEY,
+  SOUTENROKU_PROGRESS_STORAGE_KEY,
   type ProgressItemId,
-  type SkylogProgressV2,
+  type SoutenrokuProgress,
 } from "./schema";
 
 export interface ProgressStorageOptions {
@@ -24,7 +24,7 @@ function resolveStorage(explicitStorage?: Storage | null): Storage | null {
 }
 
 function storageKey(options: ProgressStorageOptions): string {
-  return options.storageKey ?? SKYLOG_PROGRESS_STORAGE_KEY;
+  return options.storageKey ?? SOUTENROKU_PROGRESS_STORAGE_KEY;
 }
 
 function assertItemId(itemId: ProgressItemId): void {
@@ -33,7 +33,7 @@ function assertItemId(itemId: ProgressItemId): void {
 
 export function readProgress(
   options: ProgressStorageOptions = {},
-): SkylogProgressV2 {
+): SoutenrokuProgress {
   const storage = resolveStorage(options.storage);
   if (!storage) return createEmptyProgress();
 
@@ -46,7 +46,7 @@ export function readProgress(
 
 /** Returns false when persistence is unavailable while leaving the UI usable. */
 export function writeProgress(
-  progress: SkylogProgressV2,
+  progress: SoutenrokuProgress,
   options: ProgressStorageOptions = {},
 ): boolean {
   const storage = resolveStorage(options.storage);
@@ -64,10 +64,10 @@ export function setProgressValue(
   itemId: ProgressItemId,
   complete: boolean,
   options: ProgressStorageOptions = {},
-): SkylogProgressV2 {
+): SoutenrokuProgress {
   assertItemId(itemId);
   const current = readProgress(options);
-  const next: SkylogProgressV2 = {
+  const next: SoutenrokuProgress = {
     ...current,
     values: { ...current.values, [itemId]: complete },
     updatedAt: new Date().toISOString(),
@@ -79,10 +79,10 @@ export function setProgressValue(
 export function toggleProgressValue(
   itemId: ProgressItemId,
   options: ProgressStorageOptions = {},
-): SkylogProgressV2 {
+): SoutenrokuProgress {
   assertItemId(itemId);
   const current = readProgress(options);
-  const next: SkylogProgressV2 = {
+  const next: SoutenrokuProgress = {
     ...current,
     values: { ...current.values, [itemId]: !current.values[itemId] },
     updatedAt: new Date().toISOString(),
@@ -92,9 +92,8 @@ export function toggleProgressValue(
 }
 
 export function isProgressComplete(
-  progress: SkylogProgressV2,
+  progress: SoutenrokuProgress,
   itemId: ProgressItemId,
 ): boolean {
   return progress.values[itemId] === true;
 }
-

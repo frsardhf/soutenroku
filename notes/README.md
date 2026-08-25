@@ -1,4 +1,4 @@
-# Skylog planning notes
+# Soutenroku planning notes
 
 These notes preserve the account-specific research behind the visual planner.
 Recommendations are optimized for casual Full Auto play and may become outdated

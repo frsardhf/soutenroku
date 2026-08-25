@@ -14,18 +14,16 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
-  title: "Skylog — GBF Account Plan",
+  title: "Soutenroku — GBF Account Plan",
   description: "A visual roadmap for Granblue Fantasy teams, grids, and investments.",
   openGraph: {
-    title: "Skylog — GBF Account Plan",
+    title: "Soutenroku — GBF Account Plan",
     description: "Visual teams, weapon grids, and investment roadmaps across all six elements.",
-    images: [{ url: "/og.png", width: 1536, height: 1024, alt: "Skylog GBF account roadmap" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Skylog — GBF Account Plan",
+    title: "Soutenroku — GBF Account Plan",
     description: "Visual teams, weapon grids, and investment roadmaps across all six elements.",
-    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",

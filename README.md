@@ -1,6 +1,6 @@
-# Skylog
+# Soutenroku
 
-Skylog is a personal Granblue Fantasy account planner for comparing teams,
+Soutenroku is a personal Granblue Fantasy account planner for comparing teams,
 weapon-grid milestones, backline projects, and character investments across all
 six elements.
 

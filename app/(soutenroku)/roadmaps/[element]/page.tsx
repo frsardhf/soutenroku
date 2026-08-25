@@ -8,7 +8,7 @@ export function generateStaticParams(){return elementIds.map((element)=>({elemen
 
 export async function generateMetadata({params}:{params:Promise<{element:string}>}):Promise<Metadata>{
   const {element}=await params;const plan=getRoadmap(element);
-  return plan?{title:`${plan.element} Roadmap — Skylog`,description:`${plan.element} ${plan.subtitle} team, grid, Opus, mastery, awakening, and ring roadmap.`}:{};
+  return plan?{title:`${plan.element} Roadmap — Soutenroku`,description:`${plan.element} ${plan.subtitle} team, grid, Opus, mastery, awakening, and ring roadmap.`}:{};
 }
 
 export default async function ElementRoadmap({params}:{params:Promise<{element:string}>}){

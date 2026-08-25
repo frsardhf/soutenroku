@@ -149,7 +149,7 @@ export const manadiverEvidence: ManadiverEvidence[] = [
     id: "account-team-state",
     kind: "Account inference",
     claim:
-      "Skylog's current saved teams mix CA settings and classes; the generic CA-OFF starter therefore cannot be copied across every element without changing each team's intended behavior.",
+      "Soutenroku's current saved teams mix CA settings and classes; the generic CA-OFF starter therefore cannot be copied across every element without changing each team's intended behavior.",
     sourceIds: [],
     verifiedOn: MANADIVER_VERIFIED_ON,
   },
@@ -181,7 +181,7 @@ export const manadiverStarter = {
   manaturaNow: "Leviathan",
   manaturaLater: "Ouroboros",
   note:
-    "Use this to learn the class loop, not as a claim that every saved Skylog team should run CA OFF. Keep Leviathan while moving from M2 to M3; Ouroboros is a later damage upgrade after an Eternity Sand is genuinely affordable.",
+    "Use this to learn the class loop, not as a claim that every saved Soutenroku team should run CA OFF. Keep Leviathan while moving from M2 to M3; Ouroboros is a later damage upgrade after an Eternity Sand is genuinely affordable.",
   evidenceIds: ["fixed-and-ems", "short-sequence", "starter-manatura"],
 } satisfies EvidenceBacked & Record<string, unknown>;
 
@@ -461,7 +461,7 @@ export const jpConfigurationChecks = [
     element: "Earth",
     classChoice: "Glorybringer in the checked strict-short example",
     configuration: "No matching Manadiver proof from this source",
-    script: "Keep the Skylog Manadiver plan labeled as account inference",
+    script: "Keep the Soutenroku Manadiver plan labeled as account inference",
     conclusion: "Negative evidence matters",
     evidenceIds: ["jp-negative-cases"],
   },

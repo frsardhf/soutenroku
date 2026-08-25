@@ -1,10 +1,10 @@
-# Skylog master handover
+# Soutenroku master handover
 
 Last updated: 2026-08-24
 
 ## Purpose of this project
 
-Skylog turns one Granblue Fantasy account's research and progression plan into a
+Soutenroku turns one Granblue Fantasy account's research and progression plan into a
 visual reference. It is designed for a casual, Full Auto-oriented player who
 wants reliable event and Guild War rewards without building every premium grid
 or optimizing for competitive racing.
@@ -34,7 +34,7 @@ Each element received two deliberately different teams instead of many minor
 variants, plus backline projects and future spark targets. Detailed conclusions
 were preserved in [`notes/`](../notes/).
 
-Finally, the Markdown plan was converted into Skylog and later split into
+Finally, the Markdown plan was converted into Soutenroku and later split into
 routed roadmap, guide, and reference surfaces. During that work the session:
 
 - created the six-element visual planner;
@@ -56,7 +56,7 @@ routed roadmap, guide, and reference surfaces. During that work the session:
 - made Sabrina the Earth primary team and Summer Azusa the Dark primary team;
 - cleaned the starter repository and published it to GitHub.
 
-Automation or gameplay scripting is intentionally not part of Skylog. The app
+Automation or gameplay scripting is intentionally not part of Soutenroku. The app
 is a planning and reference tool only.
 
 ## Current account direction
@@ -88,7 +88,7 @@ General account philosophy:
 
 | Path | Responsibility |
 | --- | --- |
-| `app/(skylog)/` | Routed roadmap, guide, and reference pages |
+| `app/(soutenroku)/` | Routed roadmap, guide, and reference pages |
 | `app/globals.css` | Main layout and responsive presentation |
 | `components/shell/` | Desktop sidebar and mobile navigation sheet |
 | `components/roadmaps/` | Six-element account roadmap presentation |
@@ -180,7 +180,7 @@ decision changed.
 
 The source repository is:
 
-<https://github.com/frsardhf/skylog>
+<https://github.com/frsardhf/soutenroku>
 
 It is not yet deployed publicly. The current project supports the OpenAI Sites
 workflow and includes `.openai/hosting.json`, but the intended future direction

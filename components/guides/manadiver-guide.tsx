@@ -75,7 +75,7 @@ export function ManadiverGuide() {
           <h1>Manadiver</h1>
           <p className="guide-deck">
             A practical short-battle starting point, the resource loop behind it, and the
-            places where Skylog&apos;s saved teams intentionally do something different.
+            places where Soutenroku&apos;s saved teams intentionally do something different.
           </p>
         </div>
         <dl className="guide-verification-summary">
@@ -329,7 +329,7 @@ export function ManadiverGuide() {
 
       <section id="manadiver-account" className="guide-section">
         <GuideSectionHeading
-          kicker="SKYLOG APPLICATION"
+          kicker="SOUTENROKU APPLICATION"
           title="What changes in your six saved elements"
           description="Account inference is shown explicitly and kept separate from direct Japanese configuration evidence."
         />
@@ -458,7 +458,7 @@ export function ManadiverGuide() {
                   })}
                 </ul>
               ) : (
-                <p className="guide-source-note">Derived from the saved Skylog plan.</p>
+                <p className="guide-source-note">Derived from the saved Soutenroku plan.</p>
               )}
             </article>
           ))}

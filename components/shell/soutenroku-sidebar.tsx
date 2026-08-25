@@ -26,7 +26,7 @@ function Navigation({mobile=false}:{mobile?:boolean}){
     ? <SheetClose asChild><Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link></SheetClose>
     : <Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link>;
 
-  return <nav className="skylog-nav" aria-label="Skylog">
+  return <nav className="soutenroku-nav" aria-label="Soutenroku">
     <div className="nav-section">
       <span className="nav-label">Roadmaps</span>
       <div className="element-nav-grid">
@@ -45,8 +45,8 @@ function Navigation({mobile=false}:{mobile?:boolean}){
   </nav>;
 }
 
-function Brand(){return <Link href="/roadmaps/water" className="skylog-brand"><span className="brand-mark">SL</span><span><strong>Skylog</strong><small>GBF account plan</small></span></Link>}
+function Brand(){return <Link href="/roadmaps/water" className="soutenroku-brand"><span className="brand-mark">蒼</span><span><strong>Soutenroku</strong><small>GBF account plan</small></span></Link>}
 
 export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-08-24">Updated 24 Aug 2026</time></p></aside>}
 
-export function MobileHeader(){return <header className="mobile-header"><Brand/><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open navigation"><Menu aria-hidden="true"/></Button></SheetTrigger><SheetContent><SheetTitle className="sr-only">Skylog navigation</SheetTitle><SheetDescription className="sr-only">Open an element roadmap, guide, or reference page.</SheetDescription><div className="mobile-sheet-brand"><Brand/></div><Navigation mobile/></SheetContent></Sheet></header>}
+export function MobileHeader(){return <header className="mobile-header"><Brand/><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open navigation"><Menu aria-hidden="true"/></Button></SheetTrigger><SheetContent><SheetTitle className="sr-only">Soutenroku navigation</SheetTitle><SheetDescription className="sr-only">Open an element roadmap, guide, or reference page.</SheetDescription><div className="mobile-sheet-brand"><Brand/></div><Navigation mobile/></SheetContent></Sheet></header>}

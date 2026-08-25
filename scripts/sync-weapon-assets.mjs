@@ -52,7 +52,7 @@ async function resolveWeapon(name, assetFile, assetUrl) {
   if (assetUrl) {
     const response = await fetch(assetUrl, {
       redirect: "follow",
-      headers: { "User-Agent": "Skylog-GBF-Asset-Sync/1.0 (personal planner)" },
+      headers: { "User-Agent": "Soutenroku-GBF-Asset-Sync/1.0 (personal planner)" },
     });
     if (!response.ok) throw new Error(`Asset request failed for “${name}” (${response.status}).`);
     const bytes = new Uint8Array(await response.arrayBuffer());
@@ -70,7 +70,7 @@ async function resolveWeapon(name, assetFile, assetUrl) {
       const source = `https://gbf.wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
       const response = await fetch(source, {
         redirect: "follow",
-        headers: { "User-Agent": "Skylog-GBF-Asset-Sync/1.0 (personal planner)" },
+        headers: { "User-Agent": "Soutenroku-GBF-Asset-Sync/1.0 (personal planner)" },
       });
       if (!response.ok) continue;
       const bytes = new Uint8Array(await response.arrayBuffer());

@@ -2,35 +2,23 @@
  * Persistent checklist state. UI labels are deliberately not part of this
  * schema: callers own immutable IDs such as `weapon:water:m3:gaze-mare:1`.
  */
-export const SKYLOG_PROGRESS_VERSION = 2 as const;
-export const SKYLOG_PROGRESS_STORAGE_KEY = "skylog-progress-v2";
-export const SKYLOG_LEGACY_PROGRESS_STORAGE_KEY = "skylog-owned";
+export const SOUTENROKU_PROGRESS_VERSION = 2 as const;
+export const SOUTENROKU_PROGRESS_STORAGE_KEY = "soutenroku-progress";
 
 export type ProgressItemId = string;
 
 export type ProgressValues = Record<ProgressItemId, boolean>;
 
-export interface LegacyMigrationState {
-  storageKey: string;
-  /** Legacy keys already considered, including keys that mapped to `false`. */
-  migratedKeys: string[];
-}
-
-export interface SkylogProgressV2 {
-  version: typeof SKYLOG_PROGRESS_VERSION;
+export interface SoutenrokuProgress {
+  version: typeof SOUTENROKU_PROGRESS_VERSION;
   values: ProgressValues;
-  legacyMigration: LegacyMigrationState;
   updatedAt: string | null;
 }
 
-export function createEmptyProgress(): SkylogProgressV2 {
+export function createEmptyProgress(): SoutenrokuProgress {
   return {
-    version: SKYLOG_PROGRESS_VERSION,
+    version: SOUTENROKU_PROGRESS_VERSION,
     values: {},
-    legacyMigration: {
-      storageKey: SKYLOG_LEGACY_PROGRESS_STORAGE_KEY,
-      migratedKeys: [],
-    },
     updatedAt: null,
   };
 }
@@ -50,35 +38,19 @@ function booleanRecord(value: unknown): ProgressValues {
   );
 }
 
-function stringArray(value: unknown): string[] {
-  if (!Array.isArray(value)) return [];
-  return [...new Set(value.filter((item): item is string => typeof item === "string"))];
-}
-
 /** Parses and sanitizes stored JSON instead of trusting its compile-time type. */
-export function parseProgress(raw: string | null): SkylogProgressV2 | null {
+export function parseProgress(raw: string | null): SoutenrokuProgress | null {
   if (!raw) return null;
 
   try {
     const candidate: unknown = JSON.parse(raw);
-    if (!isRecord(candidate) || candidate.version !== SKYLOG_PROGRESS_VERSION) {
+    if (!isRecord(candidate) || candidate.version !== SOUTENROKU_PROGRESS_VERSION) {
       return null;
     }
 
-    const migration = isRecord(candidate.legacyMigration)
-      ? candidate.legacyMigration
-      : {};
-
     return {
-      version: SKYLOG_PROGRESS_VERSION,
+      version: SOUTENROKU_PROGRESS_VERSION,
       values: booleanRecord(candidate.values),
-      legacyMigration: {
-        storageKey:
-          typeof migration.storageKey === "string"
-            ? migration.storageKey
-            : SKYLOG_LEGACY_PROGRESS_STORAGE_KEY,
-        migratedKeys: stringArray(migration.migratedKeys),
-      },
       updatedAt:
         typeof candidate.updatedAt === "string" ? candidate.updatedAt : null,
     };

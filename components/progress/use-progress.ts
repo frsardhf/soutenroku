@@ -2,19 +2,18 @@
 /* eslint-disable react-hooks/set-state-in-effect */
 
 import {useCallback,useEffect,useState} from "react";
-import {buildLegacyProgressMap} from "@/data/progress-map";
-import {createEmptyProgress,migrateLegacyProgress,writeProgress,type ProgressItemId,type SkylogProgressV2} from "@/lib/progress";
+import {createEmptyProgress,readProgress,writeProgress,type ProgressItemId,type SoutenrokuProgress} from "@/lib/progress";
 
 export function useProgress(){
-  const [progress,setProgress]=useState<SkylogProgressV2>(()=>createEmptyProgress());
+  const [progress,setProgress]=useState<SoutenrokuProgress>(()=>createEmptyProgress());
 
   useEffect(()=>{
-    setProgress(migrateLegacyProgress(buildLegacyProgressMap()).progress);
+    setProgress(readProgress());
   },[]);
 
   const setComplete=useCallback((itemId:ProgressItemId,complete:boolean)=>{
     setProgress((current)=>{
-      const next:SkylogProgressV2={...current,values:{...current.values,[itemId]:complete},updatedAt:new Date().toISOString()};
+      const next:SoutenrokuProgress={...current,values:{...current.values,[itemId]:complete},updatedAt:new Date().toISOString()};
       writeProgress(next);
       return next;
     });
@@ -22,7 +21,7 @@ export function useProgress(){
 
   const toggle=useCallback((itemId:ProgressItemId)=>{
     setProgress((current)=>{
-      const next:SkylogProgressV2={...current,values:{...current.values,[itemId]:!current.values[itemId]},updatedAt:new Date().toISOString()};
+      const next:SoutenrokuProgress={...current,values:{...current.values,[itemId]:!current.values[itemId]},updatedAt:new Date().toISOString()};
       writeProgress(next);
       return next;
     });

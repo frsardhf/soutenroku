@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-20T13:36:18.884Z",
+  "generatedAt": "2026-08-23T23:48:54.579Z",
   "weapons": {
     "Staff of Renunciation": {
       "name": "Staff of Renunciation",
@@ -313,6 +313,162 @@
       "path": "/weapon-assets/advocatus-diaboli.png",
       "source": "https://gbf.wiki/Special:Redirect/file/Advocatus%20Diaboli.png",
       "resolvedUrl": "https://gbf.wiki/images/e/e2/Weapon_b_1040213300.png"
+    },
+    "Gauntlet of Proudearth": {
+      "name": "Gauntlet of Proudearth",
+      "path": "/weapon-assets/gauntlet-of-proudearth.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Gauntlet%20of%20Proudearth.png",
+      "resolvedUrl": "https://gbf.wiki/images/9/91/Weapon_b_1040611300.png"
+    },
+    "Yggdrasil's Bough": {
+      "name": "Yggdrasil's Bough",
+      "path": "/weapon-assets/yggdrasil-s-bough.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Yggdrasil's%20Bough.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/a5/Weapon_b_1040416600.png"
+    },
+    "Yggdrasil Crystal Blade Arbos": {
+      "name": "Yggdrasil Crystal Blade Arbos",
+      "path": "/weapon-assets/yggdrasil-crystal-blade-arbos.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Yggdrasil%20Crystal%20Blade%20Arbos.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/58/Weapon_b_1040026300.png"
+    },
+    "Covenant-Ruin Fist": {
+      "name": "Covenant-Ruin Fist",
+      "path": "/weapon-assets/covenant-ruin-fist.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Covenant-Ruin%20Fist.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/de/Weapon_b_1040618600.png"
+    },
+    "Ultima Claw": {
+      "name": "Ultima Claw",
+      "path": "/weapon-assets/ultima-claw.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ultima%20Claw.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/54/Weapon_b_1040608100.png"
+    },
+    "Exo Maitrah Karuna": {
+      "name": "Exo Maitrah Karuna",
+      "path": "/weapon-assets/exo-maitrah-karuna.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Exo%20Maitrah%20Karuna.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/a8/Weapon_b_1040118000.png"
+    },
+    "Colossus Cane Ira": {
+      "name": "Colossus Cane Ira",
+      "path": "/weapon-assets/colossus-cane-ira.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Colossus%20Cane%20Ira.png",
+      "resolvedUrl": "https://gbf.wiki/images/7/7c/Weapon_b_1040423100.png"
+    },
+    "Colossus Bomber Ira": {
+      "name": "Colossus Bomber Ira",
+      "path": "/weapon-assets/colossus-bomber-ira.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Colossus%20Bomber%20Ira.png",
+      "resolvedUrl": "https://gbf.wiki/images/7/76/Weapon_b_1040317400.png"
+    },
+    "Sol Remnant": {
+      "name": "Sol Remnant",
+      "path": "/weapon-assets/sol-remnant.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Sol%20Remnant.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/d7/Weapon_b_1040311800.png"
+    },
+    "Sword of Valorblaze": {
+      "name": "Sword of Valorblaze",
+      "path": "/weapon-assets/sword-of-valorblaze.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Sword%20of%20Valorblaze.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/09/Weapon_b_1040017200.png"
+    },
+    "Tiamat Edge Aura": {
+      "name": "Tiamat Edge Aura",
+      "path": "/weapon-assets/tiamat-edge-aura.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Tiamat%20Edge%20Aura.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/0e/Weapon_b_1040119200.png"
+    },
+    "Tiamat Bolt Aura": {
+      "name": "Tiamat Bolt Aura",
+      "path": "/weapon-assets/tiamat-bolt-aura.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Tiamat%20Bolt%20Aura.png",
+      "resolvedUrl": "https://gbf.wiki/images/8/83/Weapon_b_1040516800.png"
+    },
+    "Ewiyar's Beak": {
+      "name": "Ewiyar's Beak",
+      "path": "/weapon-assets/ewiyar-s-beak.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ewiyar's%20Beak.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/cc/Weapon_b_1040912400.png"
+    },
+    "Innocent Love": {
+      "name": "Innocent Love",
+      "path": "/weapon-assets/innocent-love.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Innocent%20Love.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/dc/Weapon_b_1040811600.png"
+    },
+    "Ring of Wandergale": {
+      "name": "Ring of Wandergale",
+      "path": "/weapon-assets/ring-of-wandergale.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ring%20of%20Wandergale.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/5e/Weapon_b_1040709100.png"
+    },
+    "Exo Heliocentrum": {
+      "name": "Exo Heliocentrum",
+      "path": "/weapon-assets/exo-heliocentrum.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Exo%20Heliocentrum.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/c1/Weapon_b_1040424300.png"
+    },
+    "Luminiera Bolt Credo": {
+      "name": "Luminiera Bolt Credo",
+      "path": "/weapon-assets/luminiera-bolt-credo.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Luminiera%20Bolt%20Credo.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/38/Weapon_b_1040516900.png"
+    },
+    "Luminiera Saber Credo": {
+      "name": "Luminiera Saber Credo",
+      "path": "/weapon-assets/luminiera-saber-credo.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Luminiera%20Saber%20Credo.png",
+      "resolvedUrl": "https://gbf.wiki/images/6/60/Weapon_b_1040916200.png"
+    },
+    "Unsigned Kaneshige": {
+      "name": "Unsigned Kaneshige",
+      "path": "/weapon-assets/unsigned-kaneshige.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Unsigned%20Kaneshige.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/3f/Weapon_b_1040909300_note.png"
+    },
+    "Celeste Grace Ater": {
+      "name": "Celeste Grace Ater",
+      "path": "/weapon-assets/celeste-grace-ater.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Celeste%20Grace%20Ater.png",
+      "resolvedUrl": "https://gbf.wiki/images/1/11/Weapon_b_1040618800.png"
+    },
+    "Celeste Saber Ater": {
+      "name": "Celeste Saber Ater",
+      "path": "/weapon-assets/celeste-saber-ater.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Celeste%20Saber%20Ater.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/0b/Weapon_b_1040916300.png"
+    },
+    "Scythe of Darkherald": {
+      "name": "Scythe of Darkherald",
+      "path": "/weapon-assets/scythe-of-darkherald.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Scythe%20of%20Darkherald.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/27/Weapon_b_1040310800.png"
+    },
+    "Tyros Zither": {
+      "name": "Tyros Zither",
+      "path": "/weapon-assets/tyros-zither.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Tyros%20Zither.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/32/Weapon_b_1040808200.png"
+    },
+    "Schrodinger": {
+      "name": "Schrodinger",
+      "path": "/weapon-assets/schrodinger.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Schrodinger.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/a9/Weapon_b_1040913800.png"
+    },
+    "Fediel's Spine": {
+      "name": "Fediel's Spine",
+      "path": "/weapon-assets/fediel-s-spine.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Fediel's%20Spine.png",
+      "resolvedUrl": "https://gbf.wiki/images/2/20/Weapon_b_1040020300.png"
+    },
+    "Ultima Staff (Water)": {
+      "name": "Ultima Staff (Water)",
+      "path": "/weapon-assets/ultima-staff-water.jpg",
+      "source": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040410900.jpg",
+      "resolvedUrl": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040410900.jpg"
     }
   },
   "aliases": {
@@ -333,6 +489,8 @@
     "Levi Cranium Mare": "Leviathan Cranium Mare",
     "Leviathan Spear Omega": "Leviathan Spear Omega",
     "Levi Spear": "Leviathan Spear Omega",
+    "Tyros Zither": "Tyros Zither",
+    "Schrodinger": "Schrodinger",
     "Altruism-Soul Staff": "Altruism-Soul Staff",
     "Celestial Staff": "Altruism-Soul Staff",
     "Rubea Stiria": "Rubea Stiria",
@@ -343,7 +501,8 @@
     "Gospel of Water and Sky": "Gospel of Water and Sky",
     "Gabriel Dagger": "Gospel of Water and Sky",
     "Knight of Ice": "Knight of Ice",
-    "Ultima Staff": "Ultima Staff",
+    "Ultima Staff (Water)": "Ultima Staff (Water)",
+    "Ultima Staff": "Ultima Staff (Water)",
     "Hraesvelgr": "Hraesvelgr",
     "Bridekeeper": "Bridekeeper",
     "Clockwork Blade: Kumogakure": "Clockwork Blade: Kumogakure",
@@ -355,6 +514,11 @@
     "Nilakantha": "Nilakantha",
     "True Infernal Flamescythe": "True Infernal Flamescythe",
     "Scythe of Renunciation": "Scythe of Renunciation",
+    "Exo Maitrah Karuna": "Exo Maitrah Karuna",
+    "Colossus Cane Ira": "Colossus Cane Ira",
+    "Colossus Bomber Ira": "Colossus Bomber Ira",
+    "Sol Remnant": "Sol Remnant",
+    "Sword of Valorblaze": "Sword of Valorblaze",
     "Last Sahrivar": "Last Sahrivar",
     "Nibelung Horn": "Nibelung Horn",
     "Yggdrasil Crystal Blade Omega": "Yggdrasil Crystal Blade Omega",
@@ -362,6 +526,13 @@
     "Ancient Perseus": "Ancient Perseus",
     "Harp of Renunciation": "Harp of Renunciation",
     "Gauntlet of Uriel (SSR)": "Gauntlet of Uriel (SSR)",
+    "Gauntlet of Proudearth": "Gauntlet of Proudearth",
+    "Yggdrasil's Bough": "Yggdrasil's Bough",
+    "Yggdrasil Crystal Blade Arbos": "Yggdrasil Crystal Blade Arbos",
+    "Arbos Sword": "Yggdrasil Crystal Blade Arbos",
+    "Covenant-Ruin Fist": "Covenant-Ruin Fist",
+    "Celestial Fist": "Covenant-Ruin Fist",
+    "Ultima Claw": "Ultima Claw",
     "Tiamat Bolt Omega": "Tiamat Bolt Omega",
     "Last Storm Harp": "Last Storm Harp",
     "Coruscant Crozier": "Coruscant Crozier",
@@ -369,18 +540,31 @@
     "True Conviction Flashspear": "True Conviction Flashspear",
     "Spear of Renunciation": "Spear of Renunciation",
     "Ring of Raphael (SSR)": "Ring of Raphael (SSR)",
+    "Tiamat Edge Aura": "Tiamat Edge Aura",
+    "Tiamat Bolt Aura": "Tiamat Bolt Aura",
+    "Ewiyar's Beak": "Ewiyar's Beak",
+    "Innocent Love": "Innocent Love",
+    "Ring of Wandergale": "Ring of Wandergale",
     "True Purity Sunblade": "True Purity Sunblade",
     "Luminiera Sword Omega": "Luminiera Sword Omega",
     "Cosmic Sword": "Cosmic Sword",
     "Sword of Renunciation": "Sword of Renunciation",
     "Harp of Everlore": "Harp of Everlore",
+    "Exo Heliocentrum": "Exo Heliocentrum",
+    "Luminiera Bolt Credo": "Luminiera Bolt Credo",
+    "Luminiera Saber Credo": "Luminiera Saber Credo",
     "Cerberus Order": "Cerberus Order",
     "Zechariah": "Zechariah",
     "Abyss Spine": "Abyss Spine",
+    "Fediel's Spine": "Fediel's Spine",
     "Celeste Zaghnal Omega": "Celeste Zaghnal Omega",
     "Advocatus Diaboli": "Advocatus Diaboli",
     "True Phantom Demon Blade": "True Phantom Demon Blade",
     "Katana of Renunciation": "Katana of Renunciation",
-    "Scythe of Belial (SSR)": "Scythe of Belial (SSR)"
+    "Scythe of Belial (SSR)": "Scythe of Belial (SSR)",
+    "Unsigned Kaneshige": "Unsigned Kaneshige",
+    "Celeste Grace Ater": "Celeste Grace Ater",
+    "Celeste Saber Ater": "Celeste Saber Ater",
+    "Scythe of Darkherald": "Scythe of Darkherald"
   }
 }

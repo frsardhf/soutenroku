@@ -1,3 +1,5 @@
-import Planner from "./planner";
-import WeaponAssetHydrator from "./weapon-asset-hydrator";
-export default function Home(){return <><Planner/><WeaponAssetHydrator/></>}
+import {redirect} from "next/navigation";
+
+export default function Home(){
+  redirect("/roadmaps/water");
+}

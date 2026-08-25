@@ -21,7 +21,7 @@ const slugify = (value) => value
 const normalize = (value) => value.trim().replace(/[’‘]/g, "'").replace(/\s+/g, " ");
 const catalog = JSON.parse(await readFile(catalogPath, "utf8"));
 const entries = requested.length
-  ? requested.map((name) => ({ name: normalize(name), aliases: [] }))
+  ? requested.map((name) => catalog.find((entry) => normalize(entry.name) === normalize(name)) || ({ name: normalize(name), aliases: [] }))
   : catalog;
 
 await mkdir(outputDir, { recursive: true });
@@ -48,12 +48,25 @@ function imageType(bytes, contentType) {
   return null;
 }
 
-async function resolveWeapon(name) {
+async function resolveWeapon(name, assetFile, assetUrl) {
+  if (assetUrl) {
+    const response = await fetch(assetUrl, {
+      redirect: "follow",
+      headers: { "User-Agent": "Skylog-GBF-Asset-Sync/1.0 (personal planner)" },
+    });
+    if (!response.ok) throw new Error(`Asset request failed for “${name}” (${response.status}).`);
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    const type = imageType(bytes, response.headers.get("content-type") || "");
+    if (!type || bytes.length < 1024) throw new Error(`Invalid weapon image for “${name}”.`);
+    return { bytes, type, source: assetUrl, resolvedUrl: response.url };
+  }
   const cleaned = normalize(name);
-  const candidates = [cleaned, cleaned.replace(/\s*\([^)]*\)$/, "")];
+  const candidates = assetFile
+    ? [assetFile.replace(/\.(?:png|jpg)$/i, "")]
+    : [cleaned, cleaned.replace(/\s*\([^)]*\)$/, "")];
   for (const title of [...new Set(candidates)]) {
     for (const extension of ["png", "jpg"]) {
-      const fileName = `${title}.${extension}`;
+      const fileName = assetFile || `${title}.${extension}`;
       const source = `https://gbf.wiki/Special:Redirect/file/${encodeURIComponent(fileName)}`;
       const response = await fetch(source, {
         redirect: "follow",
@@ -77,7 +90,7 @@ for (const entry of entries) {
     process.stdout.write(`cached  ${name}\n`);
   } else {
     try {
-      const asset = await resolveWeapon(name);
+      const asset = await resolveWeapon(name, entry.assetFile, entry.assetUrl);
       const file = `${slugify(name)}.${asset.type}`;
       await writeFile(path.join(outputDir, file), asset.bytes);
       manifest.weapons[name] = {

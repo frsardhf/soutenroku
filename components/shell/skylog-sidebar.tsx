@@ -1,0 +1,52 @@
+"use client";
+
+import * as React from "react";
+import Link from "next/link";
+import {usePathname} from "next/navigation";
+import {BookOpen,Menu,Route,ShoppingBasket,Swords} from "lucide-react";
+import {elementIds,getRoadmap} from "@/data/roadmaps";
+import {cn} from "@/lib/utils";
+import {Button} from "@/components/ui/button";
+import {Separator} from "@/components/ui/separator";
+import {Sheet,SheetClose,SheetContent,SheetDescription,SheetTitle,SheetTrigger} from "@/components/ui/sheet";
+
+const guideLinks=[
+  {href:"/guides/manadiver",label:"Manadiver",icon:Swords},
+  {href:"/guides/classes",label:"After Manadiver",icon:Route},
+] as const;
+
+const referenceLinks=[
+  {href:"/reference/exchanges",label:"Exchange priorities",icon:ShoppingBasket},
+  {href:"/reference/skill-levels",label:"Skill leveling",icon:BookOpen},
+] as const;
+
+function Navigation({mobile=false}:{mobile?:boolean}){
+  const pathname=usePathname();
+  const link=(href:string,content:React.ReactNode,className:string)=>mobile
+    ? <SheetClose asChild><Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link></SheetClose>
+    : <Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link>;
+
+  return <nav className="skylog-nav" aria-label="Skylog">
+    <div className="nav-section">
+      <span className="nav-label">Roadmaps</span>
+      <div className="element-nav-grid">
+        {elementIds.map((element)=>{const plan=getRoadmap(element)!;const href=`/roadmaps/${element}`;return <React.Fragment key={element}>{link(href,<><i className="element-dot" style={{"--element-color":plan.color} as React.CSSProperties}/><span>{plan.element}</span></>,cn("element-nav-link",pathname===href&&"is-active"))}</React.Fragment>})}
+      </div>
+    </div>
+    <Separator/>
+    <div className="nav-section">
+      <span className="nav-label">Guides</span>
+      {guideLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname===href&&"is-active"))}</React.Fragment>)}
+    </div>
+    <div className="nav-section nav-reference">
+      <span className="nav-label">Reference</span>
+      {referenceLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname===href&&"is-active"))}</React.Fragment>)}
+    </div>
+  </nav>;
+}
+
+function Brand(){return <Link href="/roadmaps/water" className="skylog-brand"><span className="brand-mark">SL</span><span><strong>Skylog</strong><small>GBF account plan</small></span></Link>}
+
+export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-08-24">Updated 24 Aug 2026</time></p></aside>}
+
+export function MobileHeader(){return <header className="mobile-header"><Brand/><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open navigation"><Menu aria-hidden="true"/></Button></SheetTrigger><SheetContent><SheetTitle className="sr-only">Skylog navigation</SheetTitle><SheetDescription className="sr-only">Open an element roadmap, guide, or reference page.</SheetDescription><div className="mobile-sheet-brand"><Brand/></div><Navigation mobile/></SheetContent></Sheet></header>}

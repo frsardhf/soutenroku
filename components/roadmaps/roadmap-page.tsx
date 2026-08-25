@@ -16,7 +16,7 @@ import {getWeaponAssetPath} from "@/lib/weapons/assets";
 
 const sections=[
   ["team","Team"],["targets","Targets"],["grid","Grid"],["summons","Summons"],["opus","Opus"],["mastery","Mastery"],
-  ["awakening","Awakening"],["rings","Rings"],["backline","Backline"],
+  ["awakening","Awakening"],["rings","Rings"],["artifacts","Artifacts"],["backline","Backline"],
 ] as const;
 
 function characterImage(id:string){
@@ -65,7 +65,7 @@ export function RoadmapPage({plan}:{plan:Plan}){
       <dl className="stage-summary"><dt>Current stage</dt><dd>{plan.current}</dd></dl>
     </header>
 
-    <nav className="anchor-nav" aria-label={`${plan.element} roadmap sections`}>{sections.map(([id,label])=><a href={`#${id}`} key={id}>{label}</a>)}</nav>
+    <nav className="anchor-nav" aria-label={`${plan.element} roadmap sections`}>{sections.filter(([id])=>id!=="artifacts"||plan.artifacts).map(([id,label])=><a href={`#${id}`} key={id}>{label}</a>)}</nav>
 
     <section id="team" className="content-section">
       <div className="section-heading"><div><span className="section-kicker">Team</span><h2>Frontline plan</h2></div><p>Team A is the account default. Team B is a real alternative, not a second mandatory investment path.</p></div>
@@ -145,6 +145,17 @@ export function RoadmapPage({plan}:{plan:Plan}){
       <div className="research-grid ring-grid">{plan.overMastery.map((entry)=><article className="research-tile" key={entry.name}><strong>{entry.name}</strong><dl><div><dt>Ring 3</dt><dd>{entry.ring3}</dd></div><div><dt>Ring 4</dt><dd>{entry.ring4}</dd></div><div><dt>Earring</dt><dd>{entry.earring}</dd></div></dl><p>{entry.note}</p></article>)}</div>
       <p className="source-note">Targets were cross-checked against current Japanese character guides and <a href="https://gbf.wiki/Permanent_Mastery#Over_Mastery" target="_blank" rel="noreferrer">GBF Wiki roll ranges <ExternalLink aria-hidden="true"/></a>.</p>
     </section>
+
+    {plan.artifacts&&<section id="artifacts" className="content-section">
+      <div className="section-heading"><div><span className="section-kicker">Artifacts</span><h2>2/3 starter bases</h2></div><p>Keep a base with the two highest-value core effects, then reroll the missing effect in its matching skill group.</p></div>
+      <aside className="inline-note"><strong>Slot groups cannot move</strong><span>Group I: ATK, elemental ATK, or TA · Group II: damage cap · Group III: conditional effects. Payila and Gabriel also need two separate Water Staff artifacts.</span></aside>
+      <div className="research-grid artifact-grid">{plan.artifacts.map((entry)=><article className="research-tile" key={entry.name}>
+        <div><strong>{entry.name}</strong><Badge>{entry.weapon}</Badge></div>
+        <dl><div><dt>Keep first</dt><dd>{entry.starter}</dd></div><div><dt>Alternative</dt><dd>{entry.alternative}</dd></div><div><dt>Ideal core</dt><dd>{entry.ideal}</dd></div><div><dt>Final reroll</dt><dd>{entry.reroll}</dd></div></dl>
+        <p><strong>Avoid:</strong> {entry.avoid}</p><p>{entry.note}</p>
+      </article>)}</div>
+      <p className="source-note">Critical DMG Cap assumes the active Water grid reaches reliable critical. Until then, use N.A. DMG Cap on Payila and Octavia.</p>
+    </section>}
 
     <section id="backline" className="content-section backline-section">
       <div className="section-heading"><div><span className="section-kicker">Backline</span><h2>Reserve plan</h2></div><p>Use this as a priority order, not a requirement to own every option immediately.</p></div>

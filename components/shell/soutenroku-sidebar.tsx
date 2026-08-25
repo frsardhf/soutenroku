@@ -23,8 +23,8 @@ const referenceLinks=[
 function Navigation({mobile=false}:{mobile?:boolean}){
   const pathname=usePathname();
   const link=(href:string,content:React.ReactNode,className:string)=>mobile
-    ? <SheetClose asChild><Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link></SheetClose>
-    : <Link href={href} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link>;
+    ? <SheetClose asChild><Link href={href} prefetch={false} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link></SheetClose>
+    : <Link href={href} prefetch={false} className={className} aria-current={pathname===href?"page":undefined}>{content}</Link>;
 
   return <nav className="soutenroku-nav" aria-label="Soutenroku">
     <div className="nav-section">
@@ -45,7 +45,7 @@ function Navigation({mobile=false}:{mobile?:boolean}){
   </nav>;
 }
 
-function Brand(){return <Link href="/roadmaps/water" className="soutenroku-brand"><span className="brand-mark">蒼</span><span><strong>Soutenroku</strong><small>GBF account plan</small></span></Link>}
+function Brand(){return <Link href="/roadmaps/water" prefetch={false} className="soutenroku-brand"><span className="brand-mark">蒼</span><span><strong>Soutenroku</strong><small>GBF account plan</small></span></Link>}
 
 export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-08-24">Updated 24 Aug 2026</time></p></aside>}
 

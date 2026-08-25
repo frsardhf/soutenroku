@@ -61,7 +61,7 @@ export function RoadmapPage({plan}:{plan:Plan}){
 
   return <div className="page-stack roadmap-page" style={{"--element-color":plan.color} as React.CSSProperties}>
     <header className="page-header">
-      <div><p className="breadcrumb"><Link href="/roadmaps/water">Roadmaps</Link><ChevronRight aria-hidden="true"/><span>{plan.element}</span></p><h1>{plan.element} roadmap</h1><p className="page-intro">{plan.subtitle} progression, primary frontline investment, and a grid path built for this account.</p></div>
+      <div><p className="breadcrumb"><Link href="/roadmaps/water" prefetch={false}>Roadmaps</Link><ChevronRight aria-hidden="true"/><span>{plan.element}</span></p><h1>{plan.element} roadmap</h1><p className="page-intro">{plan.subtitle} progression, primary frontline investment, and a grid path built for this account.</p></div>
       <dl className="stage-summary"><dt>Current stage</dt><dd>{plan.current}</dd></dl>
     </header>
 

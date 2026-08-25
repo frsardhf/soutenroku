@@ -131,7 +131,7 @@ Do not Damascus-bar the Magna grid. Exact counts should wait for the Wind weapon
 
 1. **Catura:** first target by overall gameplay value (roughly 60/40 over Summer Galleon). She completes the second team's CA engine and adds healing, clear, multi-hit omen cancellation and both CA/normal flexibility. Spark her on a worthwhile Legfest when she is actually in the spark pool.
 2. **Summer Galleon:** first target by scarcity/opportunity when she is actually sparkable on a 6% seasonal Gala. She upgrades Team 1 to Manadiver / Grand Narmaya / Summer Galleon / Raphael, bringing major personal and automatic damage. She is not required because Summer Mahira already makes Team 1 functional.
-3. **Indala:** later Legfest target for modern long Full Auto/control if Wind becomes a priority element.
+3. **Bride Meg:** later high-difficulty CA specialist for repeated ougis, hit counts, debuffs and dispels after Catura is secured.
 4. **Grand Ewiyar:** strong teamwide support, but lower urgency because Raphael, Grand Charlotta, Grand Kaguya and Cagliostro & Clarisse already cover broad support.
 5. **Modern Wind specialists such as Grand Metera or Noire:** consider only for a specific missing burst/skill role after the grid is developed.
 

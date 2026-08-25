@@ -81,20 +81,30 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Magna grid direction
 
-Do not spend Damascus bars on this grid. Farm the Earth Magna III/Arbos weapons and adjust quantities to the fight.
+Do not spend Damascus bars on this grid. The researched farm priority is **three 4-star Yggdrasil Crystal Blade Arbos**. Each supplies 20% Omega boost, big Omega ATK and Vivification attack/cap, making the sword the actual Magna III core rather than a generic flex piece.
 
-General double-sided Magna template:
+### Magna III transition grid
 
-- Main summon: Yggdrasil Magna 250
-- Support summon: Yggdrasil Magna 250
-- 2–3 Magna III Arbos attack/cap pieces
-- 1–2 Magna III pieces providing HP, defense or supplemental damage as required
-- 1 Magna Dark Opus, eventually 5-star or 6-star
-- 1 Ultima weapon matching the team when its keys are developed
-- 1 Celestial weapon appropriate to the dominant specialty
-- 1–2 flex slots: Draconic weapon for survival, World weapon, Revans weapon, Olden Perseus or another farmed cap/supplemental piece
+- Yggdrasil's Bough mainhand for Manadiver
+- 3 Yggdrasil Crystal Blade Arbos
+- 3 Nibelung Horn
+- Harp of Renunciation
+- Bahamut Dagger Coda
+- Gauntlet of Proudearth (the 4-star upgrade of Gauntlet of Uriel)
 
-Exact weapon counts should wait for the Earth weapon payload. The correct mix changes between Seox/Sabrina normal attacks, Metera skill damage and Golden Knight/Okto ougi teams.
+Keep three Nibelung Horns while the summon and boost package is incomplete. This is the safe farm-stage configuration and does not assume a 5-star Ultima weapon.
+
+### Double Yggdrasil 250 target
+
+- Yggdrasil's Bough mainhand
+- 3 Yggdrasil Crystal Blade Arbos
+- 2 Nibelung Horn
+- Harp of Renunciation
+- Covenant-Ruin Fist
+- Ultima Claw with Normal Cap and the seraphic key
+- Bahamut Dagger Coda
+
+At 400% total Omega boost, two Nibelung Horns provide guaranteed critical. Covenant-Ruin Fist and Ultima Claw are tailored to the saved teams: Cidala and Yukata Pholia match Melee in Team 1, while Cidala and Summer Seox match it in Team 2. Before Ultima Claw reaches 5-star with its seraphic key, retain Gauntlet of Proudearth and use the third Nibelung Horn instead of forcing the target configuration.
 
 ## Earth backline and Arcarum roadmap
 

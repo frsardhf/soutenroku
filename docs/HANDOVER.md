@@ -1,6 +1,6 @@
 # Skylog master handover
 
-Last updated: 2026-08-20
+Last updated: 2026-08-24
 
 ## Purpose of this project
 
@@ -34,15 +34,22 @@ Each element received two deliberately different teams instead of many minor
 variants, plus backline projects and future spark targets. Detailed conclusions
 were preserved in [`notes/`](../notes/).
 
-Finally, the Markdown plan was converted into Skylog. During that build the
-session:
+Finally, the Markdown plan was converted into Skylog and later split into
+routed roadmap, guide, and reference surfaces. During that work the session:
 
 - created the six-element visual planner;
 - added primary/alternative team tabs and progression-grid tabs;
 - added a 3-by-3 weapon-grid presentation with a prominent mainhand;
 - removed dark gradients from character and weapon artwork;
-- added local weapon ownership tracking;
-- added Water frontline Extended Mastery priorities;
+- added versioned local weapon and exchange tracking;
+- added frontline awakening and Over Mastery priorities for all six elements;
+- separated broad, one-turn, and high-level Full Auto gacha targets and retained
+  their source-backed account reasoning;
+- added six Magna III summon presets and the intended double-Varuna layout;
+- added a sourced Manadiver guide with account presets, skill configuration,
+  Manatura choices, and one-turn notes;
+- added a post-Manadiver class roadmap for unattended and low-intervention play;
+- added pendant, Daily Point, event-reward, and weapon-skill references;
 - added automatic local reload on Windows;
 - created a GBF Wiki weapon-asset synchronization script;
 - added exact Stage 7 Academy Magna grids for all six elements;
@@ -81,10 +88,21 @@ General account philosophy:
 
 | Path | Responsibility |
 | --- | --- |
-| `app/planner.tsx` | Account data, teams, grids, priorities, backlines, and mastery cards |
+| `app/(skylog)/` | Routed roadmap, guide, and reference pages |
 | `app/globals.css` | Main layout and responsive presentation |
-| `app/card-assets.css` | Character and weapon artwork behavior |
-| `app/weapon-asset-hydrator.tsx` | Applies generated weapon artwork to grid cards |
+| `components/shell/` | Desktop sidebar and mobile navigation sheet |
+| `components/roadmaps/` | Six-element account roadmap presentation |
+| `components/guides/` | Manadiver and post-Manadiver class guide presentation |
+| `components/reference/` | Exchange and skill-level reference presentation |
+| `components/ui/` | Reusable Radix-based interface primitives |
+| `data/roadmaps.ts` | Account teams, grids, priorities, backlines, and mastery data |
+| `data/roadmap-advice.ts` | Dated general, one-turn, high-level FA, and summon recommendations |
+| `data/roadmap-identity.ts` | Immutable URL and checklist IDs for roadmap records |
+| `data/guides/manadiver.ts` | Sourced Manadiver mechanics and account presets |
+| `data/guides/class-roadmap.ts` | Sourced post-Manadiver unlock order and account boundaries |
+| `data/reference/` | Exchange recommendations and skill-level tables |
+| `lib/progress/` | Versioned local progress storage and legacy migration |
+| `lib/weapons/assets.ts` | Direct weapon-art lookup from the generated manifest |
 | `app/generated-weapon-assets.json` | Generated browser-side weapon mapping |
 | `scripts/weapon-catalog.json` | Source list and aliases for weapon artwork |
 | `scripts/sync-weapon-assets.mjs` | Resolves and downloads weapon images from GBF Wiki |
@@ -110,29 +128,36 @@ Before committing application changes:
 ```bash
 npm run lint
 npm run build
+npx tsc --noEmit --incremental false
 ```
 
 ### Updating a character or team
 
-1. Edit the appropriate entry in `plans` inside `app/planner.tsx`.
+1. Edit the appropriate entry in `plans` inside `data/roadmaps.ts`.
 2. Keep exactly two meaningful team archetypes unless a third one serves a
    genuinely different encounter type.
 3. Add a character `id` when GBF Wiki has matching portrait artwork.
-4. Update the corresponding element note with the reasoning and date.
-5. Confirm that Primary and Alternative labels still match the intended order.
+4. When adding or reordering a team, add or reorder its literal ID in
+   `data/roadmap-identity.ts`. Never change an existing ID merely because its
+   display name changes: that ID preserves URLs and saved progress.
+5. Update the corresponding element note with the reasoning and date.
+6. Confirm that Primary and Alternative labels still match the intended order.
 
 ### Updating a weapon grid
 
 1. Add the weapon's GBF Wiki English title to `scripts/weapon-catalog.json`.
-2. Add aliases when the display name in `app/planner.tsx` differs.
-3. Run:
+2. Add aliases when the display name in `data/roadmaps.ts` differs.
+3. When adding or reordering a weapon group, update the matching literal ID in
+   `data/roadmap-identity.ts`. Existing IDs are immutable even when labels are
+   corrected.
+4. Run:
 
    ```bash
    npm run assets:weapons
    ```
 
-4. Commit the catalog, both generated manifests, and the downloaded image.
-5. Verify that expanded quantities still total ten visible slots and that the
+5. Commit the catalog, both generated manifests, and the downloaded image.
+6. Verify that expanded quantities still total ten visible slots and that the
    first slot is the intended mainhand.
 
 Do not manually edit `app/generated-weapon-assets.json` or
@@ -172,19 +197,20 @@ For direct Cloudflare deployment:
 4. Set `NEXT_PUBLIC_SITE_URL` to the final public origin so social metadata uses
    the correct absolute URL.
 
-No D1 database or R2 bucket is currently needed. Ownership checkmarks are stored
-only in the user's browser through `localStorage`.
+No D1 database or R2 bucket is currently needed. Checklist state is stored only
+in the user's browser through `localStorage`. The v2 schema uses immutable IDs;
+the migration retains the legacy key and lets existing v2 values win.
 
 ## Known limitations and next work
 
-- The planner data is embedded in one compact TypeScript file. Moving it to
-  typed per-element data files would improve maintainability.
+- Account roadmap data remains centralized in one typed file; per-element files
+  may become clearer if the research surface grows substantially.
 - Several character cards still use initials because their portrait IDs have
   not been entered.
-- Extended Mastery cards currently focus on the reviewed Water frontline.
-- Academy grids are exact starting templates; later Magna roadmaps still need
-  inventory-aware refinement for several elements.
-- Summon layouts are described in notes but do not yet have a visual planner.
+- Summon presets are recommendation-based because a complete summon-inventory
+  import is not yet available.
+- There is no inventory import, global search, or designed overview route; `/`
+  intentionally redirects to the Water roadmap.
 - Recommendations are dated and can become obsolete after balance changes or
   new releases.
 - The site is account-specific and should not be presented as a general GBF
@@ -199,4 +225,4 @@ At the start of a future session:
 3. Ask for updated character, weapon, or summon payloads when inventory matters.
 4. Preserve the casual Full Auto goal and the two-team-per-element structure.
 5. Keep planner data and its matching note synchronized.
-6. Run lint and build, then commit and push the verified change.
+6. Run lint, type-check, and build. Commit or deploy only when the user asks.

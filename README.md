@@ -10,10 +10,15 @@ Full Auto roadmap, not a universal tier list.
 ## Features
 
 - Primary and alternative teams for every element
-- Academy Magna and later progression grids
+- Routed Academy Magna, Magna III, and long-term progression grids
 - Weapon artwork synchronized from GBF Wiki
-- Local ownership checklists saved in the browser
-- Extended Mastery priorities for the core Water frontline
+- Versioned local ownership and monthly-exchange checklists saved in the browser
+- Frontline awakening and Over Mastery priorities for all six elements
+- Separate general-account, one-turn, and high-level Full Auto gacha targets with preserved reasoning
+- Magna III summon presets for every element plus the double-Varuna destination
+- A sourced Manadiver guide with account presets kept separate from generic advice
+- A post-Manadiver class roadmap for unattended and low-intervention play
+- Pendant, Daily Point, event-reward, and weapon-skill reference pages
 - Detailed research notes in [`notes/`](./notes/)
 - A technical and session handover in [`docs/HANDOVER.md`](./docs/HANDOVER.md)
 
@@ -39,6 +44,7 @@ npm run assets:weapons
 ```bash
 npm run build
 npm run lint
+npx tsc --noEmit --incremental false
 ```
 
 ## Notes

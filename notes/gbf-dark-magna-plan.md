@@ -5,7 +5,7 @@ Last updated: 2026-08-18
 ## Account direction
 
 - Remain **Dark Magna**. This account lacks the premium characters and weapon inventory that would justify Hades, and it does not own Ereshkigal.
-- Missing Summer Catura, Yukata Ilsa and Grand Sariel removes top-end normal-attack speed, but it does not prevent reliable casual Full Auto.
+- Missing Summer Catura and Grand Sariel removes top-end normal-attack speed, but it does not prevent reliable casual Full Auto.
 - The account owns a coherent modern sustain/skill core: **Grand Lich, Summer Magisa and Tsukuyomi**.
 - It also owns **Yukata Seofon, Summer Vajra and Grand Shalem**, which form a separate CA/control team rather than a weaker copy of the Lich team.
 - The account currently has no listed Seox. Recruiting and eventually transcending Seox is the largest deterministic character project.
@@ -54,34 +54,20 @@ Substitutions:
 - Replace Tsukuyomi with **Grand Ferry** if her debuff/dispel package specifically solves the fight, but Tsukuyomi is normally the better unattended sustain member.
 - Replace a damage slot with **Dark Grimnir** for an all-ally substitute/emergency tank turn.
 
-## Team 2: Summer Azusa CA/skill Full Auto
+## Team 2: Seox general Full Auto
 
-**MC Kengo / Summer Azusa / Grand Lich / Tsukuyomi**
+**MC Manadiver / Seox / Grand Lich / Tsukuyomi**
 
 - CA: **On**.
-- Summer Azusa is the main DPS. Her ougi adds a large follow-up and gives the party 50% damage reduction for that attack turn; her second skill can deal ten very high-multiplier hits.
-- Her accuracy penalty is managed by Mukyo stacks. Full Auto can maintain them through Skill 1 and, in longer battles, Skill 3.
-- Lich supplies automatic damage, delays and debuffs while participating in the CA cycle. Tsukuyomi makes the composition safe enough for unattended use.
-- Skill 3 makes Azusa stop normal attacking for five turns, but gives 80% damage reduction, high hostility, Mukyo generation and cooldown acceleration. Leave it **on** for long/dangerous FA and turn it **off** in the per-skill Full Auto settings for short damage races.
+- Seox is the primary self-sufficient normal/hybrid attacker. Lich supplies automatic damage, delays and debuffs, while Tsukuyomi makes the composition safe enough for unattended use.
+- Replace Tsukuyomi with Summer Magisa when survival is solved. Grand Sariel is the future offensive upgrade.
+- Use three Ater Fists and one Ater Katana so the grid retains HP, CA and specialty support instead of forcing five boost weapons.
 
-More offensive CA variation:
+Summer Azusa remains Team 1's offensive skill flex:
 
-**MC Kengo / Summer Azusa / Grand Lich / Summer Vajra**
+**MC Manadiver / Summer Azusa / Grand Lich / Summer Magisa**
 
-Vajra's 200% gauge, double CAs, cumulative debuffs and eventual partywide 100% gauge improve offensive CA output. Use this only when Tsukuyomi's sustain is unnecessary.
-
-Other flex choices:
-
-- **Grand Shalem** over Vajra/Tsukuyomi for permanent debuffs and high-difficulty control.
-- **Grand Ferry** for healing, charge bar, dispel and CA support.
-- **Yukata Seofon** for a slower-ramping alternative attacker/support; he is not the default main DPS over Azusa for this current roster.
-- **Summer Hallessena** for dodge/CA contribution.
-
-### Summer Azusa versus Seox
-
-- **Summer Azusa:** CA/skill main DPS, party damage reduction, emergency tanking and incidental healing. Best with CA on and skill/CA grid support.
-- **Seox:** normal-attack/self-buffing main DPS. Once developed to 5-star/transcendence, he is faster and more consistent in general offensive teams.
-- They can coexist as **MC / Seox / Summer Azusa / Lich or Tsukuyomi**, but this hybrid compromises one of the two axes. Maintain Azusa's Kengo preset and Seox's Manadiver preset separately when possible.
+For one-turn skill damage, enable Azusa's first and second skills and disable unnecessary party abilities. This uses Team 1's three-Fist/two-Katana skill grid and does not require Kaneshige.
 
 ## If Grand Orologia is acquired
 
@@ -132,14 +118,6 @@ Premium skill/general alternative:
 - CA **On**.
 - Prefer this over the Fighter Origin team for bosses that reward automatic skill damage, delays, debuffs and dispels.
 
-#### Premium short/manual Eresh ceiling
-
-**MC with Ereshkigal / Grand Sariel / Seox / Yukata Ilsa**, often using **The Death/Nier or another controlled swap** according to the exact farm.
-
-- This is the expensive racing/brick-farming direction that produces much of Ilsa's reputation.
-- Sariel may be deliberately sacrificed after his exceptional first turn so a prepared backliner enters.
-- It assumes Ereshkigal, developed Hades or specialized Magna weapons, premium summons and manual routing. It is not the account's planning target.
-
 #### Realistic team immediately after acquiring Sariel
 
 **MC Manadiver / Grand Sariel / Grand Lich / Tsukuyomi**
@@ -160,7 +138,7 @@ Short owned variation:
 **MC Manadiver / Grand Sariel / Summer Azusa / Cendrillon**
 
 - Usually CA **Off** or configured specifically for the target.
-- This approximates a low-input opening-damage composition, but it is materially below the premium Sariel/Seox/Bowman or Sariel/Ilsa engines. Do not invest heavily merely to optimize this temporary version.
+- This approximates a low-input opening-damage composition. Do not invest heavily merely to optimize this temporary version.
 
 #### After deterministic Seox recruitment
 
@@ -169,19 +147,13 @@ Short owned variation:
 - Default offensive general team after Seox is developed.
 - Replace Lich with Tsukuyomi for survival, or move Sariel to reserve if a particular mechanic requires three other frontline specialists. His 20% weapon-skill passive still applies.
 
-Reality check: Sariel would be an excellent acquisition even if he spent many battles in the backline. The account does not need Summer Catura, Orologia, Ilsa and Ereshkigal before Sariel becomes worthwhile.
+Reality check: Sariel would be an excellent acquisition even if he spent many battles in the backline. The account does not need Summer Catura, Orologia or Ereshkigal before Sariel becomes worthwhile.
 
 ### Summer Catura
 
 - Modern normal-team partner focused heavily on herself and MC.
 - Particularly strong with Fighter Origin: she improves MC and herself, triggers dispel skill damage after their TAs, and rewards multiple attack actions.
 - She is a normal/high-difficulty archetype upgrade, not a replacement for Lich's skill/debuff role.
-
-### Yukata Ilsa
-
-- Exceptional short normal attacker: guaranteed TA, three-hit normals, party cap/echo/critical support and up to four attack actions after ally deaths.
-- Her most famous value assumes Death swaps, Ereshkigal and premium normal/supplemental support.
-- Without Ereshkigal she remains strong, but is the lowest acquisition priority of these three for this casual Magna account.
 
 ## Current backline
 
@@ -233,17 +205,16 @@ Do not Damascus-bar farmable Magna pieces. Do not copy Ereshkigal/Hades grids wh
 1. **Grand Sariel:** highest overall Dark account value because his Primarch passive improves essentially every Dark grid even from reserve.
 2. **Grand Orologia:** highest immediate frontline improvement for the owned Lich/Tyra roster. If a full 300-draw spark is already available on the current worthwhile Flash Gala, Orologia is a defensible spark rather than a desperation pick.
 3. **Summer Catura:** premium future Fighter Origin/normal-team target. Her limited opportunity can move her ahead of Orologia when she is actually sparkable on a strong seasonal 6% Gala.
-4. **Yukata Ilsa:** lowest priority without Ereshkigal. Do not spend a Siero ticket solely to imitate an Eresh-based setup the account cannot run.
-
 Banner pools matter: Sariel is a Legfest target, while Orologia is a Flashfest target, so they can be planned in parallel rather than treated as mutually exclusive forever.
 
 ## Practical conclusion
 
 - Dark is not actually nonfunctional: the owned Lich/Magisa/Tsukuyomi combination is a strong casual Full Auto foundation.
 - **Current Team 1:** Manadiver / Grand Lich / Summer Magisa / Tsukuyomi.
-- **Current Team 2:** Kengo / Summer Azusa / Grand Lich / Tsukuyomi, with Vajra replacing Tsukuyomi for offensive CA output.
+- **Future Team 2:** Manadiver / Seox / Grand Lich / Tsukuyomi, with Summer Magisa replacing Tsukuyomi when survival is solved.
+- **Summer Azusa:** retained as Team 1's one-turn/offensive skill flex rather than requiring a separate Kengo preset.
 - **After Orologia:** Manadiver / Tyra / Grand Lich / Grand Orologia, or Lich/Orologia/Tsukuyomi for safety.
 - **Broad first target:** Grand Sariel.
 - **Current-banner immediate upgrade:** Grand Orologia, if and only if a complete spark is available and the banner itself is worth finishing.
-- **Seasonal target:** Summer Catura before Yukata Ilsa for a no-Eresh casual account.
+- **Seasonal target:** Summer Catura for the future normal/high-difficulty team.
 - **Farm priority:** Seox, The Death and Nier.

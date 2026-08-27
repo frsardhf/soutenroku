@@ -217,8 +217,8 @@ export const roadmapIdentity={
   },
   "dark": {
     "teams": [
-      "summer-azusa-ca-team",
-      "lich-skill-crest-fa"
+      "azusa-lich-skill-axis",
+      "seox-general-team"
     ],
     "grids": [
       {
@@ -238,7 +238,7 @@ export const roadmapIdentity={
       {
         "id": "magna-iii-farm",
         "weaponGroups": [
-          "unsigned-kaneshige",
+          "exo-hamartia",
           "celeste-grace-ater",
           "celeste-saber-ater",
           "zechariah",
@@ -248,14 +248,15 @@ export const roadmapIdentity={
         ]
       },
       {
-        "id": "kengo-ca",
+        "id": "seox-general-magna-iii",
         "weaponGroups": [
-          "unsigned-kaneshige",
+          "exo-hamartia",
           "celeste-grace-ater",
           "celeste-saber-ater",
+          "zechariah",
           "abyss-spine",
-          "fediel-spine",
           "katana-of-renunciation",
+          "covenant-ruin-fist",
           "scythe-of-darkherald"
         ]
       }

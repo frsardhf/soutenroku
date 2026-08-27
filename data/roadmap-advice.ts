@@ -347,14 +347,13 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       },
       later: [
         { name: "Grand Orologia", reason: "The largest immediate upgrade to the owned Lich/Tyra general team, but not mandatory for the first turn." },
-        { name: "Yukata Ilsa", reason: "Low priority without Ereshkigal; do not buy her merely to imitate an unavailable racing setup." },
       ],
       plan: {
-        current: "Kengo / Summer Azusa / Grand Lich / Summer Vajra",
-        target: "Manadiver / Grand Sariel / Summer Azusa / Cendrillon",
-        ca: "Usually Off",
-        opener: ["Use only the required MC/Sariel setup", "Attack", "Keep Kengo when the normal grid misses the honors threshold"],
-        verdict: "Sariel is both the broad and one-turn target. Summer Catura and Orologia strengthen later Fighter Origin or general play, but neither replaces Sariel's immediate first-turn value.",
+        current: "Manadiver / Grand Lich / Summer Magisa / Tsukuyomi",
+        target: "Manadiver / Seox / Grand Lich / Grand Sariel or Tsukuyomi",
+        ca: "On for general FA · configure Azusa's 1/2 for one-turn skill burst",
+        opener: ["Use the Lich/Magisa/Tsukuyomi frontline for sustained FA", "Replace Tsukuyomi with Summer Azusa when immediate skill damage matters", "Do not require Kaneshige for the general Magna III plan"],
+        verdict: "Maintain a shared Azusa/Lich skill shell and a balanced Seox general shell. Sariel remains the broad future target without requiring Ereshkigal or an unowned seasonal attacker.",
       },
       sources: [
         { label: "Current Sariel opening-turn reference", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/327535" },

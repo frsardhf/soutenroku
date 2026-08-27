@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-23T23:48:54.579Z",
+  "generatedAt": "2026-08-27T13:03:17.601Z",
   "weapons": {
     "Staff of Renunciation": {
       "name": "Staff of Renunciation",
@@ -469,6 +469,12 @@
       "path": "/weapon-assets/ultima-staff-water.jpg",
       "source": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040410900.jpg",
       "resolvedUrl": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040410900.jpg"
+    },
+    "Exo Hamartia": {
+      "name": "Exo Hamartia",
+      "path": "/weapon-assets/exo-hamartia.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Exo%20Hamartia.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b2/Weapon_b_1040423200.png"
     }
   },
   "aliases": {
@@ -562,6 +568,7 @@
     "True Phantom Demon Blade": "True Phantom Demon Blade",
     "Katana of Renunciation": "Katana of Renunciation",
     "Scythe of Belial (SSR)": "Scythe of Belial (SSR)",
+    "Exo Hamartia": "Exo Hamartia",
     "Unsigned Kaneshige": "Unsigned Kaneshige",
     "Celeste Grace Ater": "Celeste Grace Ater",
     "Celeste Saber Ater": "Celeste Saber Ater",

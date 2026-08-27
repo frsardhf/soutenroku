@@ -105,7 +105,7 @@ export const maintainedClasses = [
   {
     name: "Kengo",
     rule: "Maintain, do not replace",
-    note: "Stop after Water and Dark Kaneshige for now. Fire, Wind, and Light do have saved CA teams, but their current grids and primary Full Auto plans do not justify another CCW material cycle yet; Earth is even lower priority. Revisit one element only when its CA team becomes a frequently used preset with dedicated CA-cap support.",
+    note: "Stop after Water Kaneshige for now. Dark Azusa remains valuable for skill burst without making Dark Kaneshige a primary-grid prerequisite. Fire, Wind, and Light do have CA teams, but their current grids and primary Full Auto plans do not justify another CCW material cycle yet; Earth is even lower priority. Revisit one element only when its CA team becomes a frequently used preset with dedicated CA-cap support.",
   },
   {
     name: "Lumberjack",

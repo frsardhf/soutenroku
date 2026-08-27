@@ -1,6 +1,6 @@
 # GBF Light Magna Roster Plan
 
-Last updated: 2026-08-18
+Last updated: 2026-08-28
 
 ## Account direction
 
@@ -35,19 +35,19 @@ Last updated: 2026-08-18
 
 ### Current default for casual unattended Full Auto
 
-**MC Manadiver / Summer Payila / Basara / Grand Lu Woh**
+**MC Manadiver / Summer Payila / Basara / Grand Cosmos**
 
 - CA: **On**.
 - Payila and Basara are the offensive core. Basara's guaranteed TA and stronger multiattack turns feed the normal-attack game plan that Payila rewards.
-- Lu Woh is the default third member because the player's objective is reliable, unattended reward farming. His sustain and stability are more valuable here than Grand Jeanne's higher but less dependable burst contribution.
-- This is the first preset to test against an unfamiliar or higher-level boss.
+- Cosmos is the selected third member for repeated multi-hit skill damage, dispels and better mechanic coverage. Keep CA on so her CA/skill cycle develops instead of treating her as a first-turn normal attacker.
+- This version is more offensive and mechanically dense than Lu Woh, but it gives up his field, healing and sustain. Restore Lu Woh when the unattended run fails on survival rather than damage or dispel coverage.
 
 ### Current fast/easy variation
 
 **MC Manadiver / Summer Payila / Basara / Grand Jeanne d'Arc**
 
 - CA: **Off** for short normal farming; turn it **On** if the encounter needs CA effects or the team stalls.
-- Jeanne is the closest owned substitute for the offensive side of Nehan. Use her only when the Lu Woh version already survives comfortably and faster damage is worthwhile.
+- Jeanne is the closest owned substitute for the offensive side of Nehan. Use her only when the Cosmos version already survives comfortably and faster first-turn damage is worthwhile.
 - Jeanne does not reproduce Nehan's full double-strike/echo/supplemental package and is not the universal default.
 
 ### Mechanics variation
@@ -62,7 +62,7 @@ After acquiring Nehan, the speed preset becomes:
 
 **MC / Summer Payila / Basara / Nehan**
 
-- Nehan replaces Jeanne/Lu Woh/Narmaya, not Payila or Basara.
+- Nehan replaces Cosmos/Jeanne/Lu Woh/Narmaya, not Payila or Basara.
 - He greatly compresses damage through teamwide offensive buffs, echoes/supplemental support and additional attack actions, but his defensive drawback makes him less attractive for long unattended fights.
 - Therefore Nehan is a **speed luxury with real value**, not the first repair the account needs.
 
@@ -87,13 +87,30 @@ Damage-oriented substitutions:
 
 Summer Horus is the premium partner for Cosmos in CA/skill-heavy and high-difficulty content. She improves charge flow, skill frequency and multi-hit/omen coverage. She would normally replace Noa or Lu Woh according to whether the fight still needs Lu Woh's sustain. Cosmos remains useful without her; the owned version is simply slower and less mechanically dense.
 
+## Grand Cosmos investment
+
+Current Japanese guides agree on the important damage targets but present two LB finishes. For this account, use the defensive 18-star version because Cosmos is replacing Lu Woh's durability slot:
+
+- **LB:** Skill DMG Cap ★3 → CA DMG Cap ★3 → HP ★3 ×2 → Light ATK ★2 ×2 → Defense ★1 ×2.
+- **Awakening:** Defense. Balance is acceptable only when survival is already solved and does not justify spending an awakening jewel merely for a marginal change.
+- **Ring:** Skill DMG Cap 10–15%; keep DEF 10–20% as the fourth roll for unattended play.
+- **Earring:** Supplemental DMG 5–12.
+
+The offensive alternative is the 15-star core of CA DMG Cap ★3, Skill DMG Cap ★3, Light ATK ★3 ×2 and CA DMG ★3. Respec only after the Defense-awakened Cosmos consistently survives and damage—not stability—is the limiting factor.
+
+Research references:
+
+- Kamigame, current Cosmos evaluation and defensive 18-star LB/awakening/ring recommendations: https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%82%B3%E3%82%B9%E3%83%A2%E3%82%B9.html
+- GameWith, current Cosmos mechanics and offensive 15-star LB core: https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/404813
+- Japanese Magna Agastia Full Auto example using Defense awakening on Cosmos: https://sankakusuwari.hatenablog.com/entry/2024/03/18/213032
+
 ## The role of Grand Sandalphon
 
 Grand Sandalphon is not merely another damage dealer. His broad frontline utility and Light Primarch weapon-skill passive give him value even when a particular fight uses a different carry. He is the best broad account upgrade among the three missing 10-rated characters.
 
 He would usually replace the least necessary flex member:
 
-- normal/general FA: replace Jeanne or Lu Woh depending required safety;
+- normal/general FA: replace Jeanne, Cosmos or Lu Woh according to whether the fight needs speed, mechanics or sustain;
 - Cosmos team: replace Noa or Lu Woh if his mechanics cover the fight;
 - backline: retain his Primarch passive when he is not required in front.
 
@@ -186,9 +203,9 @@ This is not an absolute banner order. A proper Summer Horus spark opportunity sh
 ## Practical conclusion
 
 - **Best owned fast core:** Summer Payila + Basara.
-- **Current default casual preset:** Manadiver / Summer Payila / Basara / Grand Lu Woh, CA on.
+- **Current default casual preset:** Manadiver / Summer Payila / Basara / Grand Cosmos, CA on. Restore Grand Lu Woh when the fight specifically needs his sustain.
 - **Current fast/easy preset:** Manadiver / Summer Payila / Basara / Grand Jeanne, normally CA off.
-- **Best owned Nehan substitute:** Grand Jeanne only for offense; Grand Lu Woh is the better general unattended-FA third member. No owned character duplicates Nehan exactly.
+- **Selected owned Nehan substitute:** Grand Cosmos for sustained skill damage, dispels and mechanics; Grand Jeanne remains the short offensive flex and Grand Lu Woh the survival fallback. No owned character duplicates Nehan exactly.
 - **Long second preset:** Kengo / Grand Cosmos / Grand Noa / Grand Lu Woh.
 - **Best current reserve passives:** Yukata Zahlhamelina and Yukata Narmaya; Tikoh is manual-intervention insurance.
 - **First broad spark target:** Grand Sandalphon.

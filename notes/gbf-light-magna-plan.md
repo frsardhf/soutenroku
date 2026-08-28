@@ -25,6 +25,7 @@ Last updated: 2026-08-28
 - **Grand Jeanne d'Arc:** the closest owned substitute for the offensive side of Nehan. She can support a normal-burst turn and party damage, but she does not reproduce Nehan's entire package of double strike, echo/supplemental support and extreme short-fight compression.
 - **Kumbhira:** strong developed Full Auto attacker/tank, especially at 5-star. She is a practical long-fight frontline choice when Cosmos does not solve the encounter by herself.
 - **Grand Noa:** CA support, defensive utility and targeted CA reactivation. He is the cleanest owned support for the Cosmos CA preset.
+- **Summer Heles:** post-rebalance normal/CA flex attacker. She can impose an Overdrive-like state, enter an assassin window, guarantee triple attacks with a large echo and contribute party charge bar. She is worth building for short fights and OD-sensitive encounters, but does not replace Payila, Basara or Cosmos as the general unattended default.
 - **Grand Cagliostro:** specialized CA/control support whose restrictions and timing make her more encounter-dependent than her rating suggests.
 - **Grand Yuni:** excellent manual/high-difficulty utility, but her zero-turn buttons are a warning for strict one-button Full Auto because Full Auto does not automatically press zero-turn skills. Do not treat her as the default casual FA solution.
 - **Yukata Zahlhamelina:** valuable frontline buffer when needed and an excellent reserve passive: one opening debuff immunity plus 10% Dark-damage reduction for Light allies.
@@ -103,6 +104,22 @@ Research references:
 - Kamigame, current Cosmos evaluation and defensive 18-star LB/awakening/ring recommendations: https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%82%B3%E3%82%B9%E3%83%A2%E3%82%B9.html
 - GameWith, current Cosmos mechanics and offensive 15-star LB core: https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/404813
 - Japanese Magna Agastia Full Auto example using Defense awakening on Cosmos: https://sankakusuwari.hatenablog.com/entry/2024/03/18/213032
+
+## Summer Heles flex investment
+
+Use the current post-rebalance Japanese allocation rather than GameWith's mastery table, which that page explicitly labels as predating her balance adjustment:
+
+- **LB:** Light ATK ★3 ×2 → Crit ★3 → OD ATK ★3 → TA ★3 → ATK ★1 ×3.
+- **Awakening:** Balance for general use. Multiattack is the optional short normal-axis specialization for its 5% normal-damage bonus.
+- **Ring:** Stamina 5–10; CA DMG Cap 10–15% is the CA-heavy alternative. The listed fourth roll is TA 5–10%, but it is low urgency while her guaranteed-TA buff is active.
+- **Earring:** Stamina 5–12. Supplemental Damage 5–12 is a lower-priority alternative.
+
+The two Light ATK nodes, critical and OD Attack are the important damage core because her revised kit creates its own OD/assassin window. TA completes Kamigame's current 18-star path but is the first mastery node to replace with durability for a use case that never attacks outside her three-turn guaranteed-TA window. Do not spend stars on the low-rate counter support LB.
+
+Research references:
+
+- Kamigame, current post-rebalance Summer Heles LB, awakening, ring and earring recommendations: https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%83%98%E3%83%AB%E3%82%A8%E3%82%B9%EF%BC%88%E3%82%B5%E3%83%9E%E3%83%BCver%EF%BC%89.html
+- GameWith, current revised mechanics; its displayed mastery recommendation is explicitly marked pre-adjustment: https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/35539
 
 ## The role of Grand Sandalphon
 

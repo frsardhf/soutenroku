@@ -261,6 +261,8 @@ Nehan remains the strongest pure speed upgrade but is not required to make the o
 
 Current reserve choices are Yukata Zahlhamelina for opening debuff immunity and Dark-damage reduction, and Yukata Narmaya for the MC-ougi plain-damage/charge-bar effect. Tikoh adds an All-Potion but Full Auto will not consume it automatically. Geisenborger/The Star is the future Arcarum project; Fif and Tweyen are longer-term Eternal options. The detailed plan is recorded in `gbf-light-magna-plan.md`.
 
+Summer Heles was added to the Light investment references as a post-rebalance normal/CA flex rather than a default frontline replacement. The current Japanese path is Light ATK ★3 ×2, Critical ★3, OD Attack ★3, TA ★3 and three efficient Attack ★1 nodes; Balance awakening; Stamina ring and earring. CA DMG Cap is the ring alternative for CA-heavy use, while TA is a low-urgency fourth ring roll because her third skill already supplies three turns of guaranteed triple attacks. This uses Kamigame's current 18-star table because GameWith explicitly labels its displayed mastery allocation as pre-balance-adjustment.
+
 Grand Lucio is not owned. His 5-star level-100 form is strong rather than obsolete, but he is not an acquisition priority because the account benefits more from Grand Sandalphon's broad/passive value, Summer Horus's Cosmos synergy or Nehan's unique speed role.
 
 ## Dark roster mapping update

@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import {usePathname} from "next/navigation";
-import {BookOpen,Menu,Route,ShoppingBasket,Swords} from "lucide-react";
+import {BookOpen,Compass,Menu,Route,ShoppingBasket,Swords} from "lucide-react";
 import {elementIds,getRoadmap} from "@/data/roadmaps";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -11,6 +11,7 @@ import {Separator} from "@/components/ui/separator";
 import {Sheet,SheetClose,SheetContent,SheetDescription,SheetTitle,SheetTrigger} from "@/components/ui/sheet";
 
 const guideLinks=[
+  {href:"/guides/arcarum",label:"Arcarum path",icon:Compass},
   {href:"/guides/manadiver",label:"Manadiver",icon:Swords},
   {href:"/guides/classes",label:"After Manadiver",icon:Route},
 ] as const;
@@ -47,6 +48,6 @@ function Navigation({mobile=false}:{mobile?:boolean}){
 
 function Brand(){return <a href="/roadmaps/water" className="soutenroku-brand"><span className="brand-mark">蒼</span><span><strong>Soutenroku</strong><small>GBF account plan</small></span></a>}
 
-export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-08-24">Updated 24 Aug 2026</time></p></aside>}
+export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-09-01">Updated 1 Sep 2026</time></p></aside>}
 
 export function MobileHeader(){return <header className="mobile-header"><Brand/><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open navigation"><Menu aria-hidden="true"/></Button></SheetTrigger><SheetContent><SheetTitle className="sr-only">Soutenroku navigation</SheetTitle><SheetDescription className="sr-only">Open an element roadmap, guide, or reference page.</SheetDescription><div className="mobile-sheet-brand"><Brand/></div><Navigation mobile/></SheetContent></Sheet></header>}

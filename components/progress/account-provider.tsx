@@ -7,6 +7,7 @@ import {
   mergeAccounts,
   SOUTENROKU_STORAGE_KEY,
   type ProgressItemId,
+  type CollectionEntry,
   type RoadmapSelection,
   type SoutenrokuAccount,
 } from "@/lib/progress";
@@ -17,6 +18,7 @@ interface AccountContextValue {
   persistenceError:boolean;
   setComplete:(itemId:ProgressItemId,complete:boolean)=>void;
   setRoadmapSelection:(element:string,selection:RoadmapSelection)=>void;
+  setCollectionEntry:(kind:"characters"|"summons",id:string,entry:CollectionEntry)=>void;
   importAccount:(incoming:SoutenrokuAccount,mode:"merge"|"replace")=>void;
   resetAccount:()=>void;
 }
@@ -60,6 +62,11 @@ export function AccountProvider({children}:{children:ReactNode}){
     commit((current)=>({...current,roadmapSelections:{...current.roadmapSelections,[element]:selection}}));
   },[commit]);
 
+  const setCollectionEntry=useCallback((kind:"characters"|"summons",id:string,entry:CollectionEntry)=>{
+    if(!id.trim())return;
+    commit((current)=>({...current,collection:{...current.collection,[kind]:{...current.collection[kind],[id]:entry}}}));
+  },[commit]);
+
   const importAccount=useCallback((incoming:SoutenrokuAccount,mode:"merge"|"replace")=>{
     commit((current)=>mode==="merge"?mergeAccounts(current,incoming):incoming);
   },[commit]);
@@ -70,7 +77,7 @@ export function AccountProvider({children}:{children:ReactNode}){
     void localAccountRepository.clear().then((cleared)=>setPersistenceError(!cleared));
   },[]);
 
-  const value=useMemo(()=>({account,hydrated,persistenceError,setComplete,setRoadmapSelection,importAccount,resetAccount}),[account,hydrated,persistenceError,setComplete,setRoadmapSelection,importAccount,resetAccount]);
+  const value=useMemo(()=>({account,hydrated,persistenceError,setComplete,setRoadmapSelection,setCollectionEntry,importAccount,resetAccount}),[account,hydrated,persistenceError,setComplete,setRoadmapSelection,setCollectionEntry,importAccount,resetAccount]);
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }
 

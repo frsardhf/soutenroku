@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import {useDeferredValue,useEffect,useMemo,useRef,useState,type CSSProperties} from "react";
-import {CheckCircle2,ChevronDown,ChevronUp,ClipboardPaste,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
+import {CheckCircle2,ChevronDown,ChevronUp,ClipboardPaste,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,Trash2,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
 import {parseGbfCollectionResponse} from "@/lib/collection/gbf-import";
@@ -176,6 +176,7 @@ export function CollectionPage(){
   const [importOpen,setImportOpen]=useState(false);
   const [importText,setImportText]=useState("");
   const [importMessage,setImportMessage]=useState<string|null>(null);
+  const [confirmCollectionReset,setConfirmCollectionReset]=useState(false);
 
   useEffect(()=>{const controller=new AbortController();fetch("/data/gbf-collection.json",{signal:controller.signal}).then((response)=>{if(!response.ok)throw new Error("catalog");return response.json()}).then((value:CollectionCatalog)=>{if(value.schemaVersion!==1||!Array.isArray(value.items))throw new Error("catalog");setCatalog(value)}).catch((error)=>{if(error.name!=="AbortError")setLoadError(true)});return()=>controller.abort()},[]);
   const options=useMemo(()=>{
@@ -215,9 +216,14 @@ export function CollectionPage(){
   },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,effectMatch,race,specialty,style,released,sort,source,view]);
 
   const ownedCount=useMemo(()=>Object.values(kind==="character"?account.collection.characters:account.collection.summons).filter((entry)=>entry.owned).length,[account.collection,kind]);
+  const collectionCount=useMemo(()=>Object.values(account.collection.characters).filter((entry)=>entry.owned).length+Object.values(account.collection.summons).filter((entry)=>entry.owned).length,[account.collection]);
   const importPreview=useMemo(()=>importText.trim()&&catalog?parseGbfCollectionResponse(importText,catalog):null,[catalog,importText]);
   function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain([]);setSeries([]);setEffect([]);setRace([]);setSpecialty([]);setStyle([]);setReleased([]);setEffectMatch("any");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
   function changeKind(next:"character"|"summon"){setKind(next);if(next==="summon"&&view!=="collection")setView("collection")}
+  function clearCollection(){
+    importAccount({...account,collection:{characters:{},summons:{}}},"replace");
+    setConfirmCollectionReset(false);setImportMessage(null);
+  }
   function applyGbfImport(){
     if(!importPreview?.ok)return;
     const imported=importPreview.value.collection;
@@ -252,6 +258,7 @@ export function CollectionPage(){
       <div className="collection-switch" role="group" aria-label="Collection type"><Button variant={kind==="character"?"default":"outline"} onClick={()=>changeKind("character")}>Characters</Button><Button variant={kind==="summon"?"default":"outline"} onClick={()=>changeKind("summon")}>Summons</Button></div>
       {kind==="character"&&<><div className="collection-switch" role="group" aria-label="Rating source"><Button variant={source==="gamewith"?"default":"outline"} onClick={()=>setSource("gamewith")}>Gamewith</Button><Button variant={source==="kamigame"?"default":"outline"} onClick={()=>setSource("kamigame")}>Kamigame</Button></div><div className="collection-switch" role="group" aria-label="Display mode"><Button variant={view==="collection"?"default":"outline"} onClick={()=>setView("collection")}>Collection</Button><Button variant={view==="ratings"?"default":"outline"} onClick={()=>setView("ratings")}>Ratings</Button><Button variant={view==="grades"?"default":"outline"} onClick={()=>setView("grades")}>Grades</Button></div></>}
       <Button className="collection-import-trigger" variant="outline" onClick={()=>setImportOpen((value)=>!value)} aria-expanded={importOpen}><ClipboardPaste aria-hidden="true"/>Import GBF response</Button>
+      {!confirmCollectionReset?<Button className="collection-reset-trigger" variant="outline" onClick={()=>setConfirmCollectionReset(true)} disabled={!hydrated||collectionCount===0}><Trash2 aria-hidden="true"/>Reset collection</Button>:<div className="collection-reset-confirm" role="alert"><span>Clear {collectionCount} saved items?</span><Button size="sm" onClick={clearCollection}>Clear</Button><Button size="sm" variant="ghost" onClick={()=>setConfirmCollectionReset(false)}>Cancel</Button></div>}
     </div>
 
     {importOpen&&<section className="collection-import-panel">

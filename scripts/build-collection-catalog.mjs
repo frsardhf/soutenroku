@@ -46,12 +46,27 @@ const EFFECT_RULES={
 function tier(raw){
   if(!raw)return undefined;
   const rating=Number.parseFloat(raw.rating);
+  const sanitizeToken=(token)=>{
+    if(!token||!['text','term'].includes(token.kind)||typeof token.text!=="string"||!token.text.trim())return null;
+    const icon=typeof token.icon==="string"&&token.icon.startsWith("https://gbf.wiki/images/")?token.icon:undefined;
+    const href=typeof token.href==="string"&&token.href.startsWith("https://gbf.wiki/")?token.href:undefined;
+    return {kind:token.kind,text:token.text,...(icon?{icon}:{}),...(href?{href}:{})};
+  };
+  const sanitizeReason=(reason)=>{
+    if(!reason||!Array.isArray(reason.tokens))return null;
+    const tokens=reason.tokens.map(sanitizeToken).filter(Boolean);
+    if(!tokens.length)return null;
+    const children=Array.isArray(reason.children)?reason.children.map(sanitizeReason).filter(Boolean):[];
+    return {tokens,...(children.length?{children}:{})};
+  };
+  const summaryRich=Array.isArray(raw.summaryRich)?raw.summaryRich.map(sanitizeReason).filter(Boolean).slice(0,8):[];
   return {
     ...(Number.isFinite(rating)?{rating}:{}),
     ...(raw.grinding?{grinding:raw.grinding}:{}),
     ...(raw.fullAuto?{fullAuto:raw.fullAuto}:{}),
     ...(raw.highDifficulty?{highDifficulty:raw.highDifficulty}:{}),
     summary:Array.isArray(raw.summary)?raw.summary.filter((item)=>typeof item==="string"&&item.trim()).slice(0,8):[],
+    ...(summaryRich.length?{summaryRich}:{}),
   };
 }
 

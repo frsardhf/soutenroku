@@ -5,7 +5,7 @@ import {useDeferredValue,useEffect,useMemo,useRef,useState,type CSSProperties} f
 import {ChevronDown,ChevronUp,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
-import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource} from "@/lib/collection/types";
+import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource,type RatingSummaryItem,type RatingSummaryToken} from "@/lib/collection/types";
 
 type ViewMode="collection"|"ratings"|"grades";
 type OwnedFilter="all"|"owned"|"missing";
@@ -57,14 +57,32 @@ function GradeBadge({value,label}:{value?:Grade;label?:string}){
   return <span className={`collection-grade grade-${(value||"none").toLowerCase()}`}>{label&&<small>{label}</small>}{value||"—"}</span>;
 }
 
+const tierLabelValues={style:new Set(["attack","balanced","defense","heal","special"]),race:new Set(["draph","erune","harvin","human","other","primal"]),specialty:new Set(["axe","bow","dagger","gun","harp","katana","melee","sabre","spear","staff"])};
+function TierLabels({item}:{item:CollectionCatalogItem}){
+  const labels=[{kind:"style" as const,value:item.style},...item.race.map((value)=>({kind:"race" as const,value})),...item.specialty.map((value)=>({kind:"specialty" as const,value}))];
+  return <div className="hover-tier-labels">{labels.filter((entry)=>entry.value).map((entry)=>tierLabelValues[entry.kind].has(entry.value)?<img src={`/collection-icons/tier-${entry.kind}-${entry.value}.png`} alt={pretty(entry.value)} key={`${entry.kind}-${entry.value}`}/>:<span key={`${entry.kind}-${entry.value}`}>{pretty(entry.value)}</span>)}</div>;
+}
+
+function summaryText(reason:RatingSummaryItem){return reason.tokens.map((token)=>token.text).join("").trim()}
+function SummaryToken({token}:{token:RatingSummaryToken}){
+  if(token.kind==="text")return <>{token.text}</>;
+  const content=<>{token.icon&&<img src={token.icon} alt="" loading="lazy"/>}<span>{token.text}</span></>;
+  return token.href?<a className="hover-summary-term" href={token.href} target="_blank" rel="noreferrer">{content}</a>:<span className="hover-summary-term">{content}</span>;
+}
+function SummaryReasonList({reasons,nested=false}:{reasons:RatingSummaryItem[];nested?:boolean}){
+  return <ul className={nested?"is-nested":""}>{reasons.map((reason,index)=><li key={`${summaryText(reason)}-${index}`}><span>{reason.tokens.map((token,tokenIndex)=><SummaryToken token={token} key={`${token.kind}-${token.text}-${tokenIndex}`}/>)}</span>{reason.children?.length?<SummaryReasonList reasons={reason.children} nested/>:null}</li>)}</ul>;
+}
+
 function HoverSummary({item,source,style}:{item:CollectionCatalogItem;source:RatingSource;style?:CSSProperties}){
   const rating=item.ratings[source];
   if(item.kind!=="character")return <div className={`collection-hover-summary element-${item.element}`} style={style}><header><div><strong>{item.name}</strong><span>{pretty(item.rarity)} summon · {elementNames[item.element]??pretty(item.element)}</span></div></header><section className="hover-summary-section"><span>Released</span><p>{item.releaseDate||item.released||"Unknown"}</p></section></div>;
+  const richPoints=rating?.summaryRich?.filter((reason)=>!summaryText(reason).toLocaleLowerCase().startsWith("role:"));
   const points=rating?.summary.filter((line)=>!line.toLocaleLowerCase().startsWith("role:")).slice(0,4)??[];
   return <div className={`collection-hover-summary element-${item.element}`} role="tooltip" style={style}>
-    <header><div><strong>{item.name}</strong><span>{source==="gamewith"?"Gamewith":"Kamigame"} summary</span></div><RatingBadge rating={rating?.rating}/></header>
+    <header><strong><span>[{rating?.rating?.toFixed(rating.rating%1===0?0:1)??"—"}]</span> {item.name}</strong><small>{source==="gamewith"?"Gamewith":"Kamigame"} summary</small></header>
+    <TierLabels item={item}/>
     <div className="hover-grade-row"><GradeBadge label="Grinding" value={rating?.grinding}/><GradeBadge label="Full Auto" value={rating?.fullAuto}/><GradeBadge label="High difficulty" value={rating?.highDifficulty}/></div>
-    {points.length?<section className="hover-summary-points">{points.map((line)=><p key={line}>{line}</p>)}</section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
+    {richPoints?.length?<section className="hover-summary-points"><SummaryReasonList reasons={richPoints}/></section>:points.length?<section className="hover-summary-points">{points.map((line)=><p key={line}>{line}</p>)}</section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
   </div>;
 }
 
@@ -81,7 +99,7 @@ function Portrait({item,source,compact=false}:{item:CollectionCatalogItem;source
   function positionPopover(){
     const node=portraitRef.current;if(!node)return;
     const rect=node.getBoundingClientRect();
-    const width=Math.min(500,window.innerWidth-28);
+    const width=Math.min(620,window.innerWidth-28);
     const preferred=rect.width/2-width/2;
     const left=Math.min(Math.max(preferred,14-rect.left),window.innerWidth-14-rect.left-width);
     setPopoverPosition({left,arrow:Math.min(Math.max(rect.width/2-left,14),width-14)});

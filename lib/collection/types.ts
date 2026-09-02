@@ -2,12 +2,25 @@ export type CollectionKind="character"|"summon";
 export type RatingSource="gamewith"|"kamigame";
 export type Grade="SS"|"S"|"A"|"B"|"C"|"D"|"";
 
+export interface RatingSummaryToken {
+  kind:"text"|"term";
+  text:string;
+  icon?:string;
+  href?:string;
+}
+
+export interface RatingSummaryItem {
+  tokens:RatingSummaryToken[];
+  children?:RatingSummaryItem[];
+}
+
 export interface TierRating {
   rating?:number;
   grinding?:Grade;
   fullAuto?:Grade;
   highDifficulty?:Grade;
   summary:string[];
+  summaryRich?:RatingSummaryItem[];
 }
 
 export interface CollectionCatalogItem {

@@ -58,11 +58,14 @@ function GradeBadge({value,label}:{value?:Grade;label?:string}){
 
 function HoverSummary({item,source}:{item:CollectionCatalogItem;source:RatingSource}){
   const rating=item.ratings[source];
-  if(item.kind!=="character")return <div className="collection-hover-summary"><strong>{item.name}</strong><span>{pretty(item.rarity)} summon · {elementNames[item.element]??pretty(item.element)}</span><p>Released {item.releaseDate||item.released||"unknown"}.</p></div>;
-  return <div className="collection-hover-summary" role="tooltip">
+  if(item.kind!=="character")return <div className={`collection-hover-summary element-${item.element}`}><header><div><strong>{item.name}</strong><span>{pretty(item.rarity)} summon · {elementNames[item.element]??pretty(item.element)}</span></div></header><section className="hover-summary-section"><span>Released</span><p>{item.releaseDate||item.released||"Unknown"}</p></section></div>;
+  const role=rating?.summary.find((line)=>line.toLocaleLowerCase().startsWith("role:"));
+  const points=rating?.summary.filter((line)=>line!==role).slice(0,4)??[];
+  return <div className={`collection-hover-summary element-${item.element}`} role="tooltip">
     <header><div><strong>{item.name}</strong><span>{source==="gamewith"?"Gamewith":"Kamigame"} summary</span></div><RatingBadge rating={rating?.rating}/></header>
-    <div className="hover-grade-row"><GradeBadge label="Grind" value={rating?.grinding}/><GradeBadge label="FA" value={rating?.fullAuto}/><GradeBadge label="HL" value={rating?.highDifficulty}/></div>
-    {rating?.summary.length?<ul>{rating.summary.slice(0,4).map((line)=><li key={line}>{line}</li>)}</ul>:<p>No source summary is currently listed.</p>}
+    <div className="hover-grade-row"><GradeBadge label="Grinding" value={rating?.grinding}/><GradeBadge label="Full Auto" value={rating?.fullAuto}/><GradeBadge label="High difficulty" value={rating?.highDifficulty}/></div>
+    {role&&<section className="hover-summary-section"><span>Role</span><p>{role.replace(/^role:\s*/i,"")}</p></section>}
+    {points.length?<section className="hover-summary-points"><span>Key points</span><ul>{points.map((line)=><li key={line}>{line}</li>)}</ul></section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
   </div>;
 }
 

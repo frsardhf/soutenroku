@@ -58,6 +58,12 @@ function GradeBadge({value,label}:{value?:Grade;label?:string}){
   return <span className={`collection-grade grade-${(value||"none").toLowerCase()}`}>{label&&<small>{label}</small>}{value||"—"}</span>;
 }
 
+function UncapIndicator({uncap}:{uncap:number}){
+  if(uncap===0)return <span className="collection-uncap-empty">0★</span>;
+  const icon=uncap>=6?"/collection-icons/uncap-transcend-star.png":uncap===5?"/collection-icons/uncap-blue-star.png":"/collection-icons/uncap-yellow-star.png";
+  return <span className="collection-uncap-indicator"><strong>{uncap}</strong><img className="collection-uncap-icon" src={icon} alt=""/></span>;
+}
+
 const tierLabelValues={style:new Set(["attack","balanced","defense","heal","special"]),race:new Set(["draph","erune","harvin","human","other","primal"]),specialty:new Set(["axe","bow","dagger","gun","harp","katana","melee","sabre","spear","staff"])};
 function TierLabels({item}:{item:CollectionCatalogItem}){
   const labels=[{kind:"style" as const,value:item.style},...item.race.map((value)=>({kind:"race" as const,value})),...item.specialty.map((value)=>({kind:"specialty" as const,value}))];
@@ -111,7 +117,7 @@ function Portrait({item,source,compact=false}:{item:CollectionCatalogItem;source
       <img src={imageUrl(item)} alt="" loading="lazy"/>
       {item.kind==="character"&&<RatingBadge rating={item.ratings[source]?.rating}/>} 
     </button>
-    {!compact&&<div className="collection-card-meta"><strong title={item.name}>{item.name}</strong><span>{elementNames[item.element]??pretty(item.element)} · {item.rarity.toUpperCase()}</span><button type="button" onClick={cycleUncap} aria-label={`Set ${item.name} uncap; currently ${uncap} stars`}>{uncap}★<ChevronDown aria-hidden="true"/></button></div>}
+    {!compact&&<div className="collection-card-meta"><strong title={item.name}>{item.name}</strong><span>{elementNames[item.element]??pretty(item.element)} · {item.rarity.toUpperCase()}</span><button type="button" onClick={cycleUncap} aria-label={`Set ${item.name} uncap; currently ${uncap} stars`}><UncapIndicator uncap={uncap}/><ChevronDown aria-hidden="true"/></button></div>}
     <HoverSummary item={item} source={source} style={popoverStyle}/>
   </article>;
 }

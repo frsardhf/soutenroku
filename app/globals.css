@@ -179,6 +179,7 @@ a{color:inherit}
 
 /* Collection ownership and compact rating density */
 .collection-image-button{border-width:4px;border-color:#aeb9c1}.collection-image-button:hover{border-color:#697984}.collection-portrait.is-owned .collection-image-button{border-color:#168553;box-shadow:0 0 0 1px #16855333}.ratings-mirror{min-width:1100px}.ratings-mirror.is-single-element{min-width:0}.ratings-element-cell{display:grid;grid-template-columns:repeat(2,64px);align-content:start;justify-content:center}
+.collection-uncap-indicator{display:inline-flex;align-items:center;gap:2px}.collection-uncap-indicator strong{font:700 9px var(--font-geist-mono),monospace}.collection-card-meta button .collection-uncap-icon{display:block;width:16px;height:16px;object-fit:contain}.collection-uncap-empty{font:700 8px var(--font-geist-mono),monospace}
 .collection-reset-trigger{color:#855050}.collection-reset-trigger svg{width:14px}.collection-reset-confirm{display:flex;align-items:center;gap:5px;padding-left:8px;border-left:1px solid var(--line)}.collection-reset-confirm>span{margin-right:3px;color:#855050;font-size:10px;font-weight:650}.collection-reset-confirm .ui-button-default{border-color:#855050;background:#855050}.collection-reset-confirm .ui-button{min-height:30px}
 
 /* Collection response importer */

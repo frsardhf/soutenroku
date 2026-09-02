@@ -129,8 +129,8 @@ function ratingBand(item:CollectionCatalogItem,source:RatingSource){
 function RatingsGrid({items,source,element}:{items:CollectionCatalogItem[];source:RatingSource;element:string}){
   const bands=["10","9.9–9.5","9.4–9.0","8.9–8.5","8.4–8.0","Below 8 / unrated"];
   const columns=element==="all"?elements:elements.filter((entry)=>entry===element);
-  const gridStyle={gridTemplateColumns:`84px repeat(${columns.length}, minmax(108px, 1fr))`};
-  return <div className="ratings-mirror"><div className="ratings-mirror-head" style={gridStyle}><span>Rating</span>{columns.map((entry)=><strong key={entry}>{elementNames[entry]}</strong>)}</div>{bands.map((band)=><div className="ratings-mirror-row" style={gridStyle} key={band}><strong>{band}</strong>{columns.map((column)=><div className="ratings-element-cell" key={column}>{items.filter((item)=>item.element===column&&ratingBand(item,source)===band).map((item)=><Portrait compact key={item.id} item={item} source={source}/>)}</div>)}</div>)}</div>;
+  const gridStyle={gridTemplateColumns:`84px repeat(${columns.length}, minmax(145px, 1fr))`};
+  return <div className={`ratings-mirror ${columns.length===1?"is-single-element":""}`}><div className="ratings-mirror-head" style={gridStyle}><span>Rating</span>{columns.map((entry)=><strong key={entry}>{elementNames[entry]}</strong>)}</div>{bands.map((band)=><div className="ratings-mirror-row" style={gridStyle} key={band}><strong>{band}</strong>{columns.map((column)=><div className="ratings-element-cell" key={column}>{items.filter((item)=>item.element===column&&ratingBand(item,source)===band).map((item)=><Portrait compact key={item.id} item={item} source={source}/>)}</div>)}</div>)}</div>;
 }
 
 function GradesList({items,source,limit,onMore}:{items:CollectionCatalogItem[];source:RatingSource;limit:number;onMore:()=>void}){

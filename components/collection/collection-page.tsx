@@ -10,15 +10,20 @@ import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grad
 type ViewMode="collection"|"ratings"|"grades";
 type OwnedFilter="all"|"owned"|"missing";
 type GradeField="grinding"|"fullAuto"|"highDifficulty";
-type LongFilter="obtain"|"series"|"effect";
 
 const elements=["fire","water","earth","wind","light","dark","any"];
 const gradeOrder:Record<string,number>={SS:6,S:5,A:4,B:3,C:2,D:1,"":0};
 const elementNames:Record<string,string>={fire:"Fire",water:"Water",earth:"Earth",wind:"Wind",light:"Light",dark:"Dark",any:"Any"};
-const seriesPriority=["grand","12generals","summer","yukata","valentine"];
-const obtainPriority=["premium","grand","flash","gala","swimsuit","event","side_story"];
-const effectPriority=["dispel","delay","clear","veil","healing","auto-activation"];
+const seriesPriority=["summer","yukata","valentine","halloween","holiday","grand","12generals","eternals","evokers","formal","fantasy","4saints","13buddhas","providence","genesis","archangel","six dragons","optimus","omega","arcarum","acies","bellum","robur","dynamis","crest","odious","epic","carbuncle","upgrader","cryptid","collab"];
+const obtainPriority=["swimsuit","valentine","halloween","holiday","formal","grand","flash","gala","zodiac","premium","classic","classic2","classic3","event","side_story","arcarum","rotb","unf","academy","main_quest","collab","promotion","fate","casino","christmas","normal"];
+const effectPriority=["full-auto","auto-activation","dispel","delay","clear","veil","healing","mitigation","debuffs","cap-up","supplemental","echo","multiattack","charge-support","ca-support","high-difficulty","dodge","substitute","backline","burst"];
+const racePriority=["human","primal","erune","draph","harvin","other","levleath","wolvir","geonoid","grokkle"];
+const specialtyPriority=["staff","sabre","katana","melee","spear","axe","dagger","gun","harp","bow"];
+const stylePriority=["attack","special","balanced","heal","defense"];
+const releasedPriority=Array.from({length:13},(_,index)=>String(2026-index));
 const summonSeriesIcons=new Set(["acies","arcarum","archangel","bellum","carbuncle","crest","cryptid","demi optimus","dynamis","epic","genesis","odious","omega","optimus","providence","robur","six dragons","upgrader"]);
+
+function orderOptions(options:string[],priority:string[]){return [...new Set([...priority.filter((entry)=>options.includes(entry)),...options])]}
 
 function PillGroup({label,value,options,onChange,className=""}:{label:string;value:string;options:{value:string;label:string;icon?:string}[];onChange:(value:string)=>void;className?:string}){
   return <div className={`quick-filter-group ${className}`}><span>{label}</span><div role="group" aria-label={label}>{options.map((option)=><button type="button" className={`filter-pill ${value===option.value?"is-active":""}`} aria-pressed={value===option.value} onClick={()=>onChange(option.value)} key={option.value}>{option.icon&&<img className="filter-pill-icon" src={option.icon} alt=""/>}{option.label}</button>)}</div></div>;
@@ -29,6 +34,10 @@ function ExpandablePills({label,values,options,priority,expanded,onExpanded,onTo
   const visible=expanded?ordered:ordered.slice(0,6);
   const remaining=Math.max(0,ordered.length-visible.length);
   return <div className={`quick-filter-group is-expandable ${expanded?"is-expanded":""}`}><span>{label}</span><div role="group" aria-label={label}>{visible.map((option)=><button type="button" className={`filter-pill ${values.includes(option)?"is-active":""}`} aria-pressed={values.includes(option)} onClick={()=>onToggle(option)} key={option}>{iconFor&&<img className="filter-pill-icon" src={iconFor(option)} alt=""/>}{label==="Effects"?(effectLabels[option]??pretty(option)):pretty(option)}</button>)}{(remaining>0||expanded)&&<button type="button" className="filter-pill is-more" aria-expanded={expanded} onClick={onExpanded}>{expanded?<><ChevronUp aria-hidden="true"/>Less</>:<>+{remaining} more<ChevronDown aria-hidden="true"/></>}</button>}</div></div>;
+}
+
+function MultiPills({label,values,options,priority,onToggle,iconFor}:{label:string;values:string[];options:string[];priority:string[];onToggle:(value:string)=>void;iconFor?:(value:string)=>string}){
+  return <div className="quick-filter-group is-expanded"><span>{label}</span><div role="group" aria-label={label}>{orderOptions(options,priority).map((option)=><button type="button" className={`filter-pill ${values.includes(option)?"is-active":""}`} aria-pressed={values.includes(option)} onClick={()=>onToggle(option)} key={option}>{iconFor&&<img className="filter-pill-icon" src={iconFor(option)} alt=""/>}{label==="Effects"?(effectLabels[option]??pretty(option)):pretty(option)}</button>)}</div></div>;
 }
 
 function imageUrl(item:CollectionCatalogItem){
@@ -112,8 +121,12 @@ export function CollectionPage(){
   const [obtain,setObtain]=useState<string[]>([]);
   const [series,setSeries]=useState<string[]>([]);
   const [effect,setEffect]=useState<string[]>([]);
+  const [race,setRace]=useState<string[]>([]);
+  const [specialty,setSpecialty]=useState<string[]>([]);
+  const [style,setStyle]=useState<string[]>([]);
+  const [released,setReleased]=useState<string[]>([]);
   const [effectMatch,setEffectMatch]=useState<"any"|"all">("any");
-  const [expanded,setExpanded]=useState<Record<LongFilter,boolean>>({obtain:false,series:false,effect:false});
+  const [obtainExpanded,setObtainExpanded]=useState(false);
   const [minimumRating,setMinimumRating]=useState("all");
   const [gradeField,setGradeField]=useState<GradeField>("fullAuto");
   const [minimumGrade,setMinimumGrade]=useState("all");
@@ -123,7 +136,7 @@ export function CollectionPage(){
   useEffect(()=>{const controller=new AbortController();fetch("/data/gbf-collection.json",{signal:controller.signal}).then((response)=>{if(!response.ok)throw new Error("catalog");return response.json()}).then((value:CollectionCatalog)=>{if(value.schemaVersion!==1||!Array.isArray(value.items))throw new Error("catalog");setCatalog(value)}).catch((error)=>{if(error.name!=="AbortError")setLoadError(true)});return()=>controller.abort()},[]);
   const options=useMemo(()=>{
     const base=catalog?.items.filter((item)=>item.kind===kind)??[];
-    return {obtains:[...new Set(base.flatMap((item)=>item.obtain))].sort(),series:[...new Set(base.flatMap((item)=>item.series))].sort()};
+    return {obtains:[...new Set(base.flatMap((item)=>item.obtain))].sort(),series:[...new Set(base.flatMap((item)=>item.series))].sort(),races:[...new Set(base.flatMap((item)=>item.race))].sort(),specialties:[...new Set(base.flatMap((item)=>item.specialty))].sort(),styles:[...new Set(base.map((item)=>item.style).filter(Boolean))].sort(),released:[...new Set(base.map((item)=>item.releaseDate.slice(0,4)).filter(Boolean))].sort()};
   },[catalog,kind]);
 
   const filtered=useMemo(()=>{
@@ -138,11 +151,15 @@ export function CollectionPage(){
       if(owned==="missing"&&ownedMap[item.id]?.owned)return false;
       if(obtain.length&&!obtain.some((entry)=>item.obtain.includes(entry)))return false;
       if(series.length&&!series.some((entry)=>item.series.includes(entry)))return false;
-      if(effect.length&&!(effectMatch==="all"?effect.every((entry)=>item.effects.includes(entry)):effect.some((entry)=>item.effects.includes(entry))))return false;
+      if(kind==="character"&&effect.length&&!(effectMatch==="all"?effect.every((entry)=>item.effects.includes(entry)):effect.some((entry)=>item.effects.includes(entry))))return false;
+      if(kind==="character"&&race.length&&!race.some((entry)=>item.race.includes(entry)))return false;
+      if(kind==="character"&&specialty.length&&!specialty.some((entry)=>item.specialty.includes(entry)))return false;
+      if(kind==="character"&&style.length&&!style.includes(item.style))return false;
+      if(released.length&&!released.includes(item.releaseDate.slice(0,4)))return false;
       const rating=item.ratings[source];
       if(view!=="collection"&&kind==="character"&&!rating?.rating)return false;
-      if(minimumRating!=="all"&&(rating?.rating??0)<Number(minimumRating))return false;
-      if(minimumGrade!=="all"&&gradeOrder[rating?.[gradeField]??""]<gradeOrder[minimumGrade])return false;
+      if(kind==="character"&&minimumRating!=="all"&&(rating?.rating??0)<Number(minimumRating))return false;
+      if(kind==="character"&&minimumGrade!=="all"&&gradeOrder[rating?.[gradeField]??""]<gradeOrder[minimumGrade])return false;
       return true;
     });
     return result.sort((a,b)=>{
@@ -151,10 +168,10 @@ export function CollectionPage(){
       if(sort==="rating")return (b.ratings[source]?.rating??0)-(a.ratings[source]?.rating??0)||a.name.localeCompare(b.name);
       return 0;
     });
-  },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,effectMatch,sort,source,view]);
+  },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,effectMatch,race,specialty,style,released,sort,source,view]);
 
   const ownedCount=useMemo(()=>Object.values(kind==="character"?account.collection.characters:account.collection.summons).filter((entry)=>entry.owned).length,[account.collection,kind]);
-  function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain([]);setSeries([]);setEffect([]);setEffectMatch("any");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
+  function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain([]);setSeries([]);setEffect([]);setRace([]);setSpecialty([]);setStyle([]);setReleased([]);setEffectMatch("any");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
   function changeKind(next:"character"|"summon"){setKind(next);if(next==="summon"&&view!=="collection")setView("collection")}
   function toggleList(setter:React.Dispatch<React.SetStateAction<string[]>>,value:string){setter((current)=>current.includes(value)?current.filter((entry)=>entry!==value):[...current,value])}
   const activeFilters=[
@@ -163,9 +180,13 @@ export function CollectionPage(){
     ...(rarity!=="all"?[{key:"rarity",label:rarity.toUpperCase(),clear:()=>setRarity("all")}]:[]),
     ...obtain.map((value)=>({key:`obtain-${value}`,label:pretty(value),clear:()=>toggleList(setObtain,value)})),
     ...series.map((value)=>({key:`series-${value}`,label:pretty(value),clear:()=>toggleList(setSeries,value)})),
-    ...effect.map((value)=>({key:`effect-${value}`,label:effectLabels[value]??pretty(value),clear:()=>toggleList(setEffect,value)})),
-    ...(minimumRating!=="all"?[{key:"rating",label:`Rating ${minimumRating}+`,clear:()=>setMinimumRating("all")}]:[]),
-    ...(minimumGrade!=="all"?[{key:"grade",label:`${gradeField==="fullAuto"?"Full Auto":gradeField==="highDifficulty"?"High difficulty":"Grinding"} ${minimumGrade}+`,clear:()=>setMinimumGrade("all")}]:[]),
+    ...(kind==="character"?effect.map((value)=>({key:`effect-${value}`,label:effectLabels[value]??pretty(value),clear:()=>toggleList(setEffect,value)})):[]),
+    ...(kind==="character"?race.map((value)=>({key:`race-${value}`,label:pretty(value),clear:()=>toggleList(setRace,value)})):[]),
+    ...(kind==="character"?specialty.map((value)=>({key:`specialty-${value}`,label:pretty(value),clear:()=>toggleList(setSpecialty,value)})):[]),
+    ...(kind==="character"?style.map((value)=>({key:`style-${value}`,label:pretty(value),clear:()=>toggleList(setStyle,value)})):[]),
+    ...released.map((value)=>({key:`released-${value}`,label:value,clear:()=>toggleList(setReleased,value)})),
+    ...(kind==="character"&&minimumRating!=="all"?[{key:"rating",label:`Rating ${minimumRating}+`,clear:()=>setMinimumRating("all")}]:[]),
+    ...(kind==="character"&&minimumGrade!=="all"?[{key:"grade",label:`${gradeField==="fullAuto"?"Full Auto":gradeField==="highDifficulty"?"High difficulty":"Grinding"} ${minimumGrade}+`,clear:()=>setMinimumGrade("all")}]:[]),
   ];
 
   return <div className="page-stack collection-page">
@@ -186,10 +207,11 @@ export function CollectionPage(){
         <PillGroup label="Element" value={element} onChange={setElement} options={[{value:"all",label:"All"},...elements.map((entry)=>({value:entry,label:elementNames[entry],icon:`/collection-icons/element-${entry}.png`}))]}/>
         <div className="quick-filter-pair"><PillGroup label="Owned" value={owned} onChange={(value)=>setOwned(value as OwnedFilter)} options={[{value:"all",label:"All"},{value:"owned",label:"Owned"},{value:"missing",label:"Missing"}]}/><PillGroup label="Rarity" value={rarity} onChange={setRarity} options={[{value:"all",label:"All"},{value:"ssr",label:"SSR"},{value:"sr",label:"SR"},{value:"r",label:"R"}]}/></div>
         {kind==="character"&&view==="grades"&&<><PillGroup label="Purpose" value={gradeField} onChange={(value)=>setGradeField(value as GradeField)} options={[{value:"grinding",label:"Grinding"},{value:"fullAuto",label:"Full Auto"},{value:"highDifficulty",label:"High difficulty"}]}/><PillGroup label="Minimum grade" value={minimumGrade} onChange={setMinimumGrade} options={[{value:"all",label:"Any"},...(["B","A","S","SS"] as const).map((value)=>({value,label:`${value}+`}))]}/></>}
-        {kind==="character"&&view!=="grades"&&<PillGroup label="Minimum rating" value={minimumRating} onChange={setMinimumRating} options={[{value:"all",label:"Any"},...[9,9.5,9.8,10].map((value)=>({value:String(value),label:`${value}+`}))]}/>}
-        <ExpandablePills label="Series" values={series} options={options.series} priority={seriesPriority} expanded={expanded.series} onExpanded={()=>setExpanded((value)=>({...value,series:!value.series}))} onToggle={(value)=>toggleList(setSeries,value)} iconFor={(value)=>summonSeriesIcons.has(value)?`/collection-icons/series-summon-${value.replaceAll(" ","-")}.png`:`/collection-icons/series-${value}.png`}/>
-        <ExpandablePills label="Obtain" values={obtain} options={options.obtains} priority={obtainPriority} expanded={expanded.obtain} onExpanded={()=>setExpanded((value)=>({...value,obtain:!value.obtain}))} onToggle={(value)=>toggleList(setObtain,value)}/>
-        {kind==="character"&&<div className="effect-filter-wrap"><ExpandablePills label="Effects" values={effect} options={Object.keys(effectLabels)} priority={effectPriority} expanded={expanded.effect} onExpanded={()=>setExpanded((value)=>({...value,effect:!value.effect}))} onToggle={(value)=>toggleList(setEffect,value)}/>{effect.length>1&&<div className="effect-match"><span>Match</span><button type="button" aria-pressed={effectMatch==="any"} className={effectMatch==="any"?"is-active":""} onClick={()=>setEffectMatch("any")}>Any</button><button type="button" aria-pressed={effectMatch==="all"} className={effectMatch==="all"?"is-active":""} onClick={()=>setEffectMatch("all")}>All</button></div>}</div>}
+        {kind==="character"&&view!=="grades"&&<PillGroup label="Rating" value={minimumRating} onChange={setMinimumRating} options={[{value:"all",label:"Any"},...[9,9.5,9.8,10].map((value)=>({value:String(value),label:`${value}+`}))]}/>}
+        <MultiPills label="Series" values={series} options={options.series} priority={seriesPriority} onToggle={(value)=>toggleList(setSeries,value)} iconFor={(value)=>summonSeriesIcons.has(value)?`/collection-icons/series-summon-${value.replaceAll(" ","-")}.png`:`/collection-icons/series-${value}.png`}/>
+        <ExpandablePills label="Obtain" values={obtain} options={options.obtains} priority={obtainPriority} expanded={obtainExpanded} onExpanded={()=>setObtainExpanded((value)=>!value)} onToggle={(value)=>toggleList(setObtain,value)}/>
+        {kind==="character"&&<><div className="effect-filter-wrap"><MultiPills label="Effects" values={effect} options={Object.keys(effectLabels)} priority={effectPriority} onToggle={(value)=>toggleList(setEffect,value)}/>{effect.length>1&&<div className="effect-match"><span>Match</span><button type="button" aria-pressed={effectMatch==="any"} className={effectMatch==="any"?"is-active":""} onClick={()=>setEffectMatch("any")}>Any</button><button type="button" aria-pressed={effectMatch==="all"} className={effectMatch==="all"?"is-active":""} onClick={()=>setEffectMatch("all")}>All</button></div>}</div><MultiPills label="Race" values={race} options={options.races} priority={racePriority} onToggle={(value)=>toggleList(setRace,value)} iconFor={(value)=>`/collection-icons/race-${value}.png`}/><MultiPills label="Specialty" values={specialty} options={options.specialties} priority={specialtyPriority} onToggle={(value)=>toggleList(setSpecialty,value)}/><MultiPills label="Style" values={style} options={options.styles} priority={stylePriority} onToggle={(value)=>toggleList(setStyle,value)}/></>}
+        <MultiPills label="Released" values={released} options={options.released} priority={releasedPriority} onToggle={(value)=>toggleList(setReleased,value)}/>
       </div>
       {activeFilters.length>0&&<div className="active-filter-strip"><span>Active</span><div>{activeFilters.map((filter)=><button type="button" onClick={filter.clear} key={filter.key}>{filter.label}<X aria-hidden="true"/></button>)}</div><button type="button" className="clear-filter-link" onClick={resetFilters}>Clear all</button></div>}
       {kind==="character"&&<p className="effect-filter-note">Effect tags are searchable hints derived from the mirrored rating summaries. They are useful for discovery, but they are not yet a complete skill-by-skill kit index.</p>}

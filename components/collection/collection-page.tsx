@@ -2,9 +2,10 @@
 /* eslint-disable @next/next/no-img-element */
 
 import {useDeferredValue,useEffect,useMemo,useRef,useState,type CSSProperties} from "react";
-import {ChevronDown,ChevronUp,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
+import {CheckCircle2,ChevronDown,ChevronUp,ClipboardPaste,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
+import {parseGbfCollectionResponse} from "@/lib/collection/gbf-import";
 import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource,type RatingSummaryItem,type RatingSummaryToken} from "@/lib/collection/types";
 
 type ViewMode="collection"|"ratings"|"grades";
@@ -79,7 +80,7 @@ function HoverSummary({item,source,style}:{item:CollectionCatalogItem;source:Rat
   const richPoints=rating?.summaryRich?.filter((reason)=>!summaryText(reason).toLocaleLowerCase().startsWith("role:"));
   const points=rating?.summary.filter((line)=>!line.toLocaleLowerCase().startsWith("role:")).slice(0,4)??[];
   return <div className={`collection-hover-summary element-${item.element}`} role="tooltip" style={style}>
-    <header><strong><span>[{rating?.rating?.toFixed(rating.rating%1===0?0:1)??"—"}]</span> {item.name}</strong><small>{source==="gamewith"?"Gamewith":"Kamigame"} summary</small></header>
+    <header><strong><span>[{rating?.rating?.toFixed(rating.rating%1===0?0:1)??"—"}]</span> {item.name}</strong></header>
     <TierLabels item={item}/>
     <div className="hover-grade-row"><GradeBadge label="Grinding" value={rating?.grinding}/><GradeBadge label="Full Auto" value={rating?.fullAuto}/><GradeBadge label="High difficulty" value={rating?.highDifficulty}/></div>
     {richPoints?.length?<section className="hover-summary-points"><SummaryReasonList reasons={richPoints}/></section>:points.length?<section className="hover-summary-points">{points.map((line)=><p key={line}>{line}</p>)}</section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
@@ -147,7 +148,7 @@ function GradesList({items,source,limit,onMore}:{items:CollectionCatalogItem[];s
 }
 
 export function CollectionPage(){
-  const {account,hydrated}=useAccount();
+  const {account,hydrated,importAccount}=useAccount();
   const [catalog,setCatalog]=useState<CollectionCatalog|null>(null);
   const [loadError,setLoadError]=useState(false);
   const [kind,setKind]=useState<"character"|"summon">("character");
@@ -172,6 +173,9 @@ export function CollectionPage(){
   const [minimumGrade,setMinimumGrade]=useState("all");
   const [sort,setSort]=useState("default");
   const [limit,setLimit]=useState(120);
+  const [importOpen,setImportOpen]=useState(false);
+  const [importText,setImportText]=useState("");
+  const [importMessage,setImportMessage]=useState<string|null>(null);
 
   useEffect(()=>{const controller=new AbortController();fetch("/data/gbf-collection.json",{signal:controller.signal}).then((response)=>{if(!response.ok)throw new Error("catalog");return response.json()}).then((value:CollectionCatalog)=>{if(value.schemaVersion!==1||!Array.isArray(value.items))throw new Error("catalog");setCatalog(value)}).catch((error)=>{if(error.name!=="AbortError")setLoadError(true)});return()=>controller.abort()},[]);
   const options=useMemo(()=>{
@@ -211,8 +215,20 @@ export function CollectionPage(){
   },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,effectMatch,race,specialty,style,released,sort,source,view]);
 
   const ownedCount=useMemo(()=>Object.values(kind==="character"?account.collection.characters:account.collection.summons).filter((entry)=>entry.owned).length,[account.collection,kind]);
+  const importPreview=useMemo(()=>importText.trim()&&catalog?parseGbfCollectionResponse(importText,catalog):null,[catalog,importText]);
   function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain([]);setSeries([]);setEffect([]);setRace([]);setSpecialty([]);setStyle([]);setReleased([]);setEffectMatch("any");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
   function changeKind(next:"character"|"summon"){setKind(next);if(next==="summon"&&view!=="collection")setView("collection")}
+  function applyGbfImport(){
+    if(!importPreview?.ok)return;
+    const imported=importPreview.value.collection;
+    const mergeEntries=(current:Record<string,{owned:boolean;uncap?:number;note?:string}>,incoming:Record<string,{owned:boolean;uncap?:number;note?:string}>)=>Object.fromEntries(Object.entries({...current,...incoming}).map(([id,entry])=>{
+      const existing=current[id];const added=incoming[id];
+      return [id,added?{...existing,...added,uncap:Math.max(existing?.uncap??0,added.uncap??0)}:entry];
+    }));
+    importAccount({...account,collection:{characters:mergeEntries(account.collection.characters,imported.characters),summons:mergeEntries(account.collection.summons,imported.summons)}},"replace");
+    const {matched,page}=importPreview.value;
+    setImportText("");setImportMessage(`${matched} ${matched===1?"item":"items"} added${page&&page.last>1?` from page ${page.current} of ${page.last}`:""}.`);
+  }
   function toggleList(setter:React.Dispatch<React.SetStateAction<string[]>>,value:string){setter((current)=>current.includes(value)?current.filter((entry)=>entry!==value):[...current,value])}
   const activeFilters=[
     ...(element!=="all"?[{key:"element",label:elementNames[element],clear:()=>setElement("all")}]:[]),
@@ -235,7 +251,16 @@ export function CollectionPage(){
     <div className="collection-toolbar">
       <div className="collection-switch" role="group" aria-label="Collection type"><Button variant={kind==="character"?"default":"outline"} onClick={()=>changeKind("character")}>Characters</Button><Button variant={kind==="summon"?"default":"outline"} onClick={()=>changeKind("summon")}>Summons</Button></div>
       {kind==="character"&&<><div className="collection-switch" role="group" aria-label="Rating source"><Button variant={source==="gamewith"?"default":"outline"} onClick={()=>setSource("gamewith")}>Gamewith</Button><Button variant={source==="kamigame"?"default":"outline"} onClick={()=>setSource("kamigame")}>Kamigame</Button></div><div className="collection-switch" role="group" aria-label="Display mode"><Button variant={view==="collection"?"default":"outline"} onClick={()=>setView("collection")}>Collection</Button><Button variant={view==="ratings"?"default":"outline"} onClick={()=>setView("ratings")}>Ratings</Button><Button variant={view==="grades"?"default":"outline"} onClick={()=>setView("grades")}>Grades</Button></div></>}
+      <Button className="collection-import-trigger" variant="outline" onClick={()=>setImportOpen((value)=>!value)} aria-expanded={importOpen}><ClipboardPaste aria-hidden="true"/>Import GBF response</Button>
     </div>
+
+    {importOpen&&<section className="collection-import-panel">
+      <div><span className="section-kicker">Smart parser</span><h2>Paste a GBF inventory response</h2><p>In DevTools Network, open a character or summon list request and choose <strong>Copy → Copy response</strong>. Response JSON contains no request cookies or headers.</p></div>
+      <textarea value={importText} onChange={(event)=>{setImportText(event.target.value);setImportMessage(null)}} placeholder={'{"list":[{"master":{"id":"304…"},"param":{"evolution":"4"}}],"current":1,"last":1,"count":1}'} spellCheck={false}/>
+      {importPreview?.ok&&<div className="collection-import-preview"><p><strong>{importPreview.value.matched}</strong> matched of {importPreview.value.received} entries{importPreview.value.unknownIds.length?` · ${importPreview.value.unknownIds.length} unknown`:""}{importPreview.value.page?` · page ${importPreview.value.page.current} of ${importPreview.value.page.last}`:""}</p>{importPreview.value.page&&importPreview.value.page.current<importPreview.value.page.last&&<p className="is-warning">This response has more pages. Import this page, then paste each remaining page.</p>}<Button onClick={applyGbfImport} disabled={importPreview.value.matched===0}>Add to collection</Button></div>}
+      {importPreview&&!importPreview.ok&&<p className="data-message is-error">{importPreview.error}</p>}
+      {importMessage&&<p className="data-message is-success"><CheckCircle2 aria-hidden="true"/>{importMessage}</p>}
+    </section>}
 
     <section id="filters" className="collection-filter-panel">
       <header><div><Filter aria-hidden="true"/><strong>Filters</strong><span>{filtered.length} results</span></div><Button variant="ghost" size="sm" onClick={resetFilters}><RotateCcw aria-hidden="true"/>Reset</Button></header>

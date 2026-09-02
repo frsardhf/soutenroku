@@ -63,7 +63,7 @@ function HoverSummary({item,source}:{item:CollectionCatalogItem;source:RatingSou
   return <div className={`collection-hover-summary element-${item.element}`} role="tooltip">
     <header><div><strong>{item.name}</strong><span>{source==="gamewith"?"Gamewith":"Kamigame"} summary</span></div><RatingBadge rating={rating?.rating}/></header>
     <div className="hover-grade-row"><GradeBadge label="Grinding" value={rating?.grinding}/><GradeBadge label="Full Auto" value={rating?.fullAuto}/><GradeBadge label="High difficulty" value={rating?.highDifficulty}/></div>
-    {points.length?<section className="hover-summary-points"><ul>{points.map((line)=><li key={line}>{line}</li>)}</ul></section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
+    {points.length?<section className="hover-summary-points">{points.map((line)=><p key={line}>{line}</p>)}</section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
   </div>;
 }
 

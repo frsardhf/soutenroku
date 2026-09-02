@@ -1,13 +1,14 @@
 "use client";
 /* eslint-disable react-hooks/set-state-in-effect */
 
-import {useCallback,useEffect,useMemo,useState} from "react";
+import {useEffect,useMemo,useRef,useState} from "react";
 /* eslint-disable @next/next/no-html-link-for-pages */
 import {Check,ChevronRight,ExternalLink} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
 import {Button} from "@/components/ui/button";
 import {Checkbox} from "@/components/ui/checkbox";
 import {useProgress} from "@/components/progress/use-progress";
+import {useAccount} from "@/components/progress/account-provider";
 import {expandWeaponSlots,weaponProgressId} from "@/data/progress-map";
 import {roadmapAdvice,roadmapAdviceReviewedAt} from "@/data/roadmap-advice";
 import {gridId,teamId,weaponGroupIds,type StableElementId} from "@/data/roadmap-identity";
@@ -31,9 +32,10 @@ function controlledStatus(tag:string){
   return "Conditional";
 }
 
-function selectionFromUrl(plan:Plan){
-  if(typeof window==="undefined")return {team:0,grid:0};
+function legacySelectionFromUrl(plan:Plan){
+  if(typeof window==="undefined")return null;
   const query=new URLSearchParams(window.location.search);
+  if(!query.has("team")&&!query.has("grid"))return null;
   const team=Math.max(0,plan.teams.findIndex((_,index)=>teamId(plan,index)===query.get("team")));
   const grid=Math.max(0,plan.grids.findIndex((_,index)=>gridId(plan,index)===query.get("grid")));
   return {team,grid};
@@ -43,20 +45,37 @@ export function RoadmapPage({plan}:{plan:Plan}){
   const [teamIndex,setTeamIndex]=useState(0);
   const [gridIndex,setGridIndex]=useState(0);
   const {values,setComplete}=useProgress();
+  const {account,hydrated,setRoadmapSelection}=useAccount();
+  const legacyHandled=useRef(false);
+  const elementId=plan.element.toLowerCase() as StableElementId;
   const advice=roadmapAdvice[plan.element.toLowerCase() as StableElementId];
   const team=plan.teams[teamIndex]??plan.teams[0];
   const grid=plan.grids[gridIndex]??plan.grids[0];
   const slots=useMemo(()=>expandWeaponSlots(grid.weapons,weaponGroupIds(plan,gridIndex)),[grid,gridIndex,plan]);
 
-  const readUrl=useCallback(()=>{const selected=selectionFromUrl(plan);setTeamIndex(selected.team);setGridIndex(selected.grid);},[plan]);
-  useEffect(()=>{readUrl();window.addEventListener("popstate",readUrl);return()=>window.removeEventListener("popstate",readUrl)},[readUrl]);
+  useEffect(()=>{
+    if(!hydrated)return;
+    if(!legacyHandled.current){
+      legacyHandled.current=true;
+      const legacy=legacySelectionFromUrl(plan);
+      if(legacy){
+        setTeamIndex(legacy.team);setGridIndex(legacy.grid);
+        setRoadmapSelection(elementId,{teamId:teamId(plan,legacy.team),gridId:gridId(plan,legacy.grid)});
+        const url=new URL(window.location.href);url.searchParams.delete("team");url.searchParams.delete("grid");
+        window.history.replaceState({},"",`${url.pathname}${url.search}${url.hash}`);
+        return;
+      }
+    }
+    const stored=account.roadmapSelections[elementId];
+    if(!stored)return;
+    const storedTeam=plan.teams.findIndex((_,index)=>teamId(plan,index)===stored.teamId);
+    const storedGrid=plan.grids.findIndex((_,index)=>gridId(plan,index)===stored.gridId);
+    setTeamIndex(storedTeam>=0?storedTeam:0);setGridIndex(storedGrid>=0?storedGrid:0);
+  },[account.roadmapSelections,elementId,hydrated,plan,setRoadmapSelection]);
 
   function select(nextTeam:number,nextGrid:number){
     setTeamIndex(nextTeam);setGridIndex(nextGrid);
-    const url=new URL(window.location.href);
-    url.searchParams.set("team",teamId(plan,nextTeam));
-    url.searchParams.set("grid",gridId(plan,nextGrid));
-    window.history.pushState({},"",url);
+    setRoadmapSelection(elementId,{teamId:teamId(plan,nextTeam),gridId:gridId(plan,nextGrid)});
   }
 
   return <div className="page-stack roadmap-page" style={{"--element-color":plan.color} as React.CSSProperties}>

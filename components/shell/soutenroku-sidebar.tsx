@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import {usePathname} from "next/navigation";
-import {BookOpen,Compass,Menu,Route,ShoppingBasket,Swords} from "lucide-react";
+import {BookOpen,Compass,Database,Menu,Route,ShoppingBasket,Swords} from "lucide-react";
 import {elementIds,getRoadmap} from "@/data/roadmaps";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -19,6 +19,10 @@ const guideLinks=[
 const referenceLinks=[
   {href:"/reference/exchanges",label:"Exchange priorities",icon:ShoppingBasket},
   {href:"/reference/skill-levels",label:"Skill leveling",icon:BookOpen},
+] as const;
+
+const accountLinks=[
+  {href:"/account/data",label:"Local data",icon:Database},
 ] as const;
 
 function Navigation({mobile=false}:{mobile?:boolean}){
@@ -42,6 +46,10 @@ function Navigation({mobile=false}:{mobile?:boolean}){
     <div className="nav-section nav-reference">
       <span className="nav-label">Reference</span>
       {referenceLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname===href&&"is-active"))}</React.Fragment>)}
+    </div>
+    <div className="nav-section nav-account">
+      <span className="nav-label">Account</span>
+      {accountLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname===href&&"is-active"))}</React.Fragment>)}
     </div>
   </nav>;
 }

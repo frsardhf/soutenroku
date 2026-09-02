@@ -1,8 +1,8 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 
-import {useDeferredValue,useEffect,useMemo,useState} from "react";
-import {Check,ChevronDown,ChevronUp,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
+import {useDeferredValue,useEffect,useMemo,useRef,useState,type CSSProperties} from "react";
+import {ChevronDown,ChevronUp,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
 import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource} from "@/lib/collection/types";
@@ -10,6 +10,7 @@ import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grad
 type ViewMode="collection"|"ratings"|"grades";
 type OwnedFilter="all"|"owned"|"missing";
 type GradeField="grinding"|"fullAuto"|"highDifficulty";
+type GradeSortKey="rating"|GradeField;
 
 const elements=["fire","water","earth","wind","light","dark","any"];
 const gradeOrder:Record<string,number>={SS:6,S:5,A:4,B:3,C:2,D:1,"":0};
@@ -56,11 +57,11 @@ function GradeBadge({value,label}:{value?:Grade;label?:string}){
   return <span className={`collection-grade grade-${(value||"none").toLowerCase()}`}>{label&&<small>{label}</small>}{value||"—"}</span>;
 }
 
-function HoverSummary({item,source}:{item:CollectionCatalogItem;source:RatingSource}){
+function HoverSummary({item,source,style}:{item:CollectionCatalogItem;source:RatingSource;style?:CSSProperties}){
   const rating=item.ratings[source];
-  if(item.kind!=="character")return <div className={`collection-hover-summary element-${item.element}`}><header><div><strong>{item.name}</strong><span>{pretty(item.rarity)} summon · {elementNames[item.element]??pretty(item.element)}</span></div></header><section className="hover-summary-section"><span>Released</span><p>{item.releaseDate||item.released||"Unknown"}</p></section></div>;
+  if(item.kind!=="character")return <div className={`collection-hover-summary element-${item.element}`} style={style}><header><div><strong>{item.name}</strong><span>{pretty(item.rarity)} summon · {elementNames[item.element]??pretty(item.element)}</span></div></header><section className="hover-summary-section"><span>Released</span><p>{item.releaseDate||item.released||"Unknown"}</p></section></div>;
   const points=rating?.summary.filter((line)=>!line.toLocaleLowerCase().startsWith("role:")).slice(0,4)??[];
-  return <div className={`collection-hover-summary element-${item.element}`} role="tooltip">
+  return <div className={`collection-hover-summary element-${item.element}`} role="tooltip" style={style}>
     <header><div><strong>{item.name}</strong><span>{source==="gamewith"?"Gamewith":"Kamigame"} summary</span></div><RatingBadge rating={rating?.rating}/></header>
     <div className="hover-grade-row"><GradeBadge label="Grinding" value={rating?.grinding}/><GradeBadge label="Full Auto" value={rating?.fullAuto}/><GradeBadge label="High difficulty" value={rating?.highDifficulty}/></div>
     {points.length?<section className="hover-summary-points">{points.map((line)=><p key={line}>{line}</p>)}</section>:<p className="hover-summary-empty">No source summary is currently listed.</p>}
@@ -69,19 +70,30 @@ function HoverSummary({item,source}:{item:CollectionCatalogItem;source:RatingSou
 
 function Portrait({item,source,compact=false}:{item:CollectionCatalogItem;source:RatingSource;compact?:boolean}){
   const {account,setCollectionEntry}=useAccount();
+  const portraitRef=useRef<HTMLElement>(null);
+  const [popoverPosition,setPopoverPosition]=useState<{left:number;arrow:number}|null>(null);
   const key=item.kind==="character"?"characters":"summons";
   const stored=account.collection[key][item.id];
   const owned=stored?.owned===true;
   const uncap=stored?.uncap??0;
   function toggle(){setCollectionEntry(key,item.id,{...stored,owned:!owned,uncap})}
   function cycleUncap(event:React.MouseEvent){event.stopPropagation();const next=uncap>=item.maxUncap?0:uncap+1;setCollectionEntry(key,item.id,{...stored,owned:next>0||owned,uncap:next})}
-  return <article className={`collection-portrait ${compact?"is-compact":""} ${owned?"is-owned":""}`}>
+  function positionPopover(){
+    const node=portraitRef.current;if(!node)return;
+    const rect=node.getBoundingClientRect();
+    const width=Math.min(500,window.innerWidth-28);
+    const preferred=rect.width/2-width/2;
+    const left=Math.min(Math.max(preferred,14-rect.left),window.innerWidth-14-rect.left-width);
+    setPopoverPosition({left,arrow:Math.min(Math.max(rect.width/2-left,14),width-14)});
+  }
+  const popoverStyle=popoverPosition?({left:popoverPosition.left,transform:"none","--popover-arrow-x":`${popoverPosition.arrow}px`} as CSSProperties):undefined;
+  return <article ref={portraitRef} className={`collection-portrait ${compact?"is-compact":""} ${owned?"is-owned":""}`} onMouseEnter={positionPopover} onFocusCapture={positionPopover}>
     <button className="collection-image-button" type="button" aria-pressed={owned} aria-label={`${owned?"Remove":"Add"} ${item.name} ${owned?"from":"to"} collection`} onClick={toggle}>
-      <img src={imageUrl(item)} alt="" loading="lazy"/><span className="owned-mark"><Check aria-hidden="true"/></span>
+      <img src={imageUrl(item)} alt="" loading="lazy"/>
       {item.kind==="character"&&<RatingBadge rating={item.ratings[source]?.rating}/>} 
     </button>
     {!compact&&<div className="collection-card-meta"><strong title={item.name}>{item.name}</strong><span>{elementNames[item.element]??pretty(item.element)} · {item.rarity.toUpperCase()}</span><button type="button" onClick={cycleUncap} aria-label={`Set ${item.name} uncap; currently ${uncap} stars`}>{uncap}★<ChevronDown aria-hidden="true"/></button></div>}
-    <HoverSummary item={item} source={source}/>
+    <HoverSummary item={item} source={source} style={popoverStyle}/>
   </article>;
 }
 
@@ -103,8 +115,17 @@ function RatingsGrid({items,source,element}:{items:CollectionCatalogItem[];sourc
 }
 
 function GradesList({items,source,limit,onMore}:{items:CollectionCatalogItem[];source:RatingSource;limit:number;onMore:()=>void}){
-  const shown=items.slice(0,limit);
-  return <><div className="grades-list"><div className="grades-list-head"><span>Character</span><span>Rating</span><span>Grinding</span><span>Full Auto</span><span>High difficulty</span></div>{shown.map((item)=><article key={item.id}><div className="grade-character"><Portrait compact item={item} source={source}/><strong>{item.name}</strong></div><RatingBadge rating={item.ratings[source]?.rating}/><GradeBadge value={item.ratings[source]?.grinding}/><GradeBadge value={item.ratings[source]?.fullAuto}/><GradeBadge value={item.ratings[source]?.highDifficulty}/></article>)}</div>{shown.length<items.length&&<div className="collection-load-more"><Button variant="outline" onClick={onMore}>Show 120 more</Button><span>{shown.length} of {items.length}</span></div>}</>;
+  const [sortState,setSortState]=useState<{key:GradeSortKey;direction:"asc"|"desc"}>({key:"rating",direction:"desc"});
+  function changeSort(key:GradeSortKey){setSortState((current)=>({key,direction:current.key===key&&current.direction==="desc"?"asc":"desc"}))}
+  const sorted=[...items].sort((a,b)=>{
+    const aRating=a.ratings[source];const bRating=b.ratings[source];
+    const aValue=sortState.key==="rating"?(aRating?.rating??0):gradeOrder[aRating?.[sortState.key]??""];
+    const bValue=sortState.key==="rating"?(bRating?.rating??0):gradeOrder[bRating?.[sortState.key]??""];
+    return (sortState.direction==="asc"?aValue-bValue:bValue-aValue)||a.name.localeCompare(b.name);
+  });
+  const shown=sorted.slice(0,limit);
+  const headings:[GradeSortKey,string][]=[["rating","Rating"],["grinding","Grinding"],["fullAuto","Full Auto"],["highDifficulty","High difficulty"]];
+  return <><div className="grades-list"><div className="grades-list-head"><span>Character</span>{headings.map(([key,label])=><button type="button" className={sortState.key===key?"is-active":""} onClick={()=>changeSort(key)} aria-label={`Sort ${label} ${sortState.key===key&&sortState.direction==="desc"?"ascending":"descending"}`} key={key}><span>{label}</span>{sortState.key===key?(sortState.direction==="desc"?<ChevronDown aria-hidden="true"/>:<ChevronUp aria-hidden="true"/>):null}</button>)}</div>{shown.map((item)=><article key={item.id}><div className="grade-character"><Portrait compact item={item} source={source}/></div><RatingBadge rating={item.ratings[source]?.rating}/><GradeBadge value={item.ratings[source]?.grinding}/><GradeBadge value={item.ratings[source]?.fullAuto}/><GradeBadge value={item.ratings[source]?.highDifficulty}/></article>)}</div>{shown.length<items.length&&<div className="collection-load-more"><Button variant="outline" onClick={onMore}>Show 120 more</Button><span>{shown.length} of {items.length}</span></div>}</>;
 }
 
 export function CollectionPage(){

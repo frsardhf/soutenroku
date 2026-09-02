@@ -2,7 +2,7 @@
 /* eslint-disable @next/next/no-img-element */
 
 import {useDeferredValue,useEffect,useMemo,useState} from "react";
-import {Check,ChevronDown,ExternalLink,Filter,LoaderCircle,RotateCcw,Search} from "lucide-react";
+import {Check,ChevronDown,ChevronUp,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
 import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource} from "@/lib/collection/types";
@@ -10,17 +10,34 @@ import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grad
 type ViewMode="collection"|"ratings"|"grades";
 type OwnedFilter="all"|"owned"|"missing";
 type GradeField="grinding"|"fullAuto"|"highDifficulty";
+type LongFilter="obtain"|"series"|"effect";
 
 const elements=["fire","water","earth","wind","light","dark","any"];
 const gradeOrder:Record<string,number>={SS:6,S:5,A:4,B:3,C:2,D:1,"":0};
 const elementNames:Record<string,string>={fire:"Fire",water:"Water",earth:"Earth",wind:"Wind",light:"Light",dark:"Dark",any:"Any"};
+const seriesPriority=["grand","12generals","summer","yukata","valentine"];
+const obtainPriority=["premium","grand","flash","gala","swimsuit","event","side_story"];
+const effectPriority=["dispel","delay","clear","veil","healing","auto-activation"];
+const summonSeriesIcons=new Set(["acies","arcarum","archangel","bellum","carbuncle","crest","cryptid","demi optimus","dynamis","epic","genesis","odious","omega","optimus","providence","robur","six dragons","upgrader"]);
+
+function PillGroup({label,value,options,onChange,className=""}:{label:string;value:string;options:{value:string;label:string;icon?:string}[];onChange:(value:string)=>void;className?:string}){
+  return <div className={`quick-filter-group ${className}`}><span>{label}</span><div role="group" aria-label={label}>{options.map((option)=><button type="button" className={`filter-pill ${value===option.value?"is-active":""}`} aria-pressed={value===option.value} onClick={()=>onChange(option.value)} key={option.value}>{option.icon&&<img className="filter-pill-icon" src={option.icon} alt=""/>}{option.label}</button>)}</div></div>;
+}
+
+function ExpandablePills({label,values,options,priority,expanded,onExpanded,onToggle,iconFor}:{label:string;values:string[];options:string[];priority:string[];expanded:boolean;onExpanded:()=>void;onToggle:(value:string)=>void;iconFor?:(value:string)=>string}){
+  const ordered=[...new Set([...values,...priority.filter((entry)=>options.includes(entry)),...options])];
+  const visible=expanded?ordered:ordered.slice(0,6);
+  const remaining=Math.max(0,ordered.length-visible.length);
+  return <div className={`quick-filter-group is-expandable ${expanded?"is-expanded":""}`}><span>{label}</span><div role="group" aria-label={label}>{visible.map((option)=><button type="button" className={`filter-pill ${values.includes(option)?"is-active":""}`} aria-pressed={values.includes(option)} onClick={()=>onToggle(option)} key={option}>{iconFor&&<img className="filter-pill-icon" src={iconFor(option)} alt=""/>}{label==="Effects"?(effectLabels[option]??pretty(option)):pretty(option)}</button>)}{(remaining>0||expanded)&&<button type="button" className="filter-pill is-more" aria-expanded={expanded} onClick={onExpanded}>{expanded?<><ChevronUp aria-hidden="true"/>Less</>:<>+{remaining} more<ChevronDown aria-hidden="true"/></>}</button>}</div></div>;
+}
 
 function imageUrl(item:CollectionCatalogItem){
   const file=item.kind==="character"?`Npc_m_${item.id}_01.jpg`:`Summon_m_${item.id}.jpg`;
   return `https://gbf.wiki/Special:Redirect/file/${file}`;
 }
 
-function pretty(value:string){return value.replaceAll("_"," ").replace(/\b\w/g,(letter)=>letter.toUpperCase())}
+const friendlyLabels:Record<string,string>={"12generals":"12 Generals","13buddhas":"13 Buddhas","4saints":"4 Saints",classic2:"Classic II",classic3:"Classic III",rotb:"Rise of the Beasts",unf:"Unite and Fight",swimsuit:"Summer / Swimsuit",zodiac:"Zodiac"};
+function pretty(value:string){return friendlyLabels[value]??value.replaceAll("_"," ").replace(/\b\w/g,(letter)=>letter.toUpperCase())}
 
 function RatingBadge({rating}:{rating?:number}){
   return <span className="collection-rating">{rating?.toFixed(rating%1===0?0:1)??"—"}</span>;
@@ -92,9 +109,11 @@ export function CollectionPage(){
   const [element,setElement]=useState("all");
   const [rarity,setRarity]=useState("all");
   const [owned,setOwned]=useState<OwnedFilter>("all");
-  const [obtain,setObtain]=useState("all");
-  const [series,setSeries]=useState("all");
-  const [effect,setEffect]=useState("all");
+  const [obtain,setObtain]=useState<string[]>([]);
+  const [series,setSeries]=useState<string[]>([]);
+  const [effect,setEffect]=useState<string[]>([]);
+  const [effectMatch,setEffectMatch]=useState<"any"|"all">("any");
+  const [expanded,setExpanded]=useState<Record<LongFilter,boolean>>({obtain:false,series:false,effect:false});
   const [minimumRating,setMinimumRating]=useState("all");
   const [gradeField,setGradeField]=useState<GradeField>("fullAuto");
   const [minimumGrade,setMinimumGrade]=useState("all");
@@ -117,9 +136,9 @@ export function CollectionPage(){
       if(rarity!=="all"&&item.rarity!==rarity)return false;
       if(owned==="owned"&&!ownedMap[item.id]?.owned)return false;
       if(owned==="missing"&&ownedMap[item.id]?.owned)return false;
-      if(obtain!=="all"&&!item.obtain.includes(obtain))return false;
-      if(series!=="all"&&!item.series.includes(series))return false;
-      if(effect!=="all"&&!item.effects.includes(effect))return false;
+      if(obtain.length&&!obtain.some((entry)=>item.obtain.includes(entry)))return false;
+      if(series.length&&!series.some((entry)=>item.series.includes(entry)))return false;
+      if(effect.length&&!(effectMatch==="all"?effect.every((entry)=>item.effects.includes(entry)):effect.some((entry)=>item.effects.includes(entry))))return false;
       const rating=item.ratings[source];
       if(view!=="collection"&&kind==="character"&&!rating?.rating)return false;
       if(minimumRating!=="all"&&(rating?.rating??0)<Number(minimumRating))return false;
@@ -132,11 +151,22 @@ export function CollectionPage(){
       if(sort==="rating")return (b.ratings[source]?.rating??0)-(a.ratings[source]?.rating??0)||a.name.localeCompare(b.name);
       return 0;
     });
-  },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,sort,source,view]);
+  },[account.collection,catalog,deferredSearch,element,gradeField,kind,minimumGrade,minimumRating,obtain,owned,rarity,series,effect,effectMatch,sort,source,view]);
 
   const ownedCount=useMemo(()=>Object.values(kind==="character"?account.collection.characters:account.collection.summons).filter((entry)=>entry.owned).length,[account.collection,kind]);
-  function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain("all");setSeries("all");setEffect("all");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
+  function resetFilters(){setSearch("");setElement("all");setRarity("all");setOwned("all");setObtain([]);setSeries([]);setEffect([]);setEffectMatch("any");setMinimumRating("all");setMinimumGrade("all");setSort("default")}
   function changeKind(next:"character"|"summon"){setKind(next);if(next==="summon"&&view!=="collection")setView("collection")}
+  function toggleList(setter:React.Dispatch<React.SetStateAction<string[]>>,value:string){setter((current)=>current.includes(value)?current.filter((entry)=>entry!==value):[...current,value])}
+  const activeFilters=[
+    ...(element!=="all"?[{key:"element",label:elementNames[element],clear:()=>setElement("all")}]:[]),
+    ...(owned!=="all"?[{key:"owned",label:owned==="owned"?"Owned":"Missing",clear:()=>setOwned("all")}]:[]),
+    ...(rarity!=="all"?[{key:"rarity",label:rarity.toUpperCase(),clear:()=>setRarity("all")}]:[]),
+    ...obtain.map((value)=>({key:`obtain-${value}`,label:pretty(value),clear:()=>toggleList(setObtain,value)})),
+    ...series.map((value)=>({key:`series-${value}`,label:pretty(value),clear:()=>toggleList(setSeries,value)})),
+    ...effect.map((value)=>({key:`effect-${value}`,label:effectLabels[value]??pretty(value),clear:()=>toggleList(setEffect,value)})),
+    ...(minimumRating!=="all"?[{key:"rating",label:`Rating ${minimumRating}+`,clear:()=>setMinimumRating("all")}]:[]),
+    ...(minimumGrade!=="all"?[{key:"grade",label:`${gradeField==="fullAuto"?"Full Auto":gradeField==="highDifficulty"?"High difficulty":"Grinding"} ${minimumGrade}+`,clear:()=>setMinimumGrade("all")}]:[]),
+  ];
 
   return <div className="page-stack collection-page">
     <header className="page-header"><div><p className="breadcrumb"><span>Collection</span></p><h1>Roster tracker</h1><p className="page-intro">Track ownership and uncaps, compare Gamewith and Kamigame ratings, and find characters by the utility described in their source summaries.</p></div><dl className="stage-summary"><dt>{kind==="character"?"Characters":"Summons"} owned</dt><dd>{hydrated?ownedCount:"—"}</dd></dl></header>
@@ -148,16 +178,20 @@ export function CollectionPage(){
 
     <section id="filters" className="collection-filter-panel">
       <header><div><Filter aria-hidden="true"/><strong>Filters</strong><span>{filtered.length} results</span></div><Button variant="ghost" size="sm" onClick={resetFilters}><RotateCcw aria-hidden="true"/>Reset</Button></header>
-      <div className="collection-filters">
+      <div className="collection-filter-tools">
         <label className="collection-search"><span>Search</span><div><Search aria-hidden="true"/><input value={search} onChange={(event)=>setSearch(event.target.value)} placeholder="Name, JP name, or ID"/></div></label>
-        <label><span>Element</span><select value={element} onChange={(event)=>setElement(event.target.value)}><option value="all">All elements</option>{elements.map((entry)=><option key={entry} value={entry}>{elementNames[entry]}</option>)}</select></label>
-        <label><span>Rarity</span><select value={rarity} onChange={(event)=>setRarity(event.target.value)}><option value="all">All rarities</option><option value="ssr">SSR</option><option value="sr">SR</option><option value="r">R</option></select></label>
-        <label><span>Owned</span><select value={owned} onChange={(event)=>setOwned(event.target.value as OwnedFilter)}><option value="all">Owned + missing</option><option value="owned">Owned only</option><option value="missing">Missing only</option></select></label>
-        <label><span>Obtain</span><select value={obtain} onChange={(event)=>setObtain(event.target.value)}><option value="all">All methods</option>{options.obtains.map((entry)=><option key={entry} value={entry}>{pretty(entry)}</option>)}</select></label>
-        <label><span>Series</span><select value={series} onChange={(event)=>setSeries(event.target.value)}><option value="all">All series</option>{options.series.map((entry)=><option key={entry} value={entry}>{pretty(entry)}</option>)}</select></label>
-        {kind==="character"&&<><label><span>Effect / use</span><select value={effect} onChange={(event)=>setEffect(event.target.value)}><option value="all">All summary tags</option>{Object.entries(effectLabels).map(([value,label])=><option value={value} key={value}>{label}</option>)}</select></label><label><span>Minimum rating</span><select value={minimumRating} onChange={(event)=>setMinimumRating(event.target.value)}><option value="all">Any rating</option>{[10,9.8,9.5,9,8.5].map((rating)=><option value={rating} key={rating}>{rating}+</option>)}</select></label><label><span>Grade category</span><select value={gradeField} onChange={(event)=>setGradeField(event.target.value as GradeField)}><option value="grinding">Grinding</option><option value="fullAuto">Full Auto</option><option value="highDifficulty">High difficulty</option></select></label><label><span>Minimum grade</span><select value={minimumGrade} onChange={(event)=>setMinimumGrade(event.target.value)}><option value="all">Any grade</option>{["SS","S","A","B"].map((grade)=><option value={grade} key={grade}>{grade}+</option>)}</select></label></>}
-        <label><span>Sort</span><select value={sort} onChange={(event)=>setSort(event.target.value)}><option value="default">Wiki order</option><option value="name">Name A–Z</option><option value="newest">Newest first</option>{kind==="character"&&<option value="rating">Highest rating</option>}</select></label>
+        <label className="collection-sort"><span>Sort</span><select value={sort} onChange={(event)=>setSort(event.target.value)}><option value="default">Wiki order</option><option value="name">Name A–Z</option><option value="newest">Newest first</option>{kind==="character"&&<option value="rating">Highest rating</option>}</select></label>
       </div>
+      <div className="collection-quick-filters">
+        <PillGroup label="Element" value={element} onChange={setElement} options={[{value:"all",label:"All"},...elements.map((entry)=>({value:entry,label:elementNames[entry],icon:`/collection-icons/element-${entry}.png`}))]}/>
+        <div className="quick-filter-pair"><PillGroup label="Owned" value={owned} onChange={(value)=>setOwned(value as OwnedFilter)} options={[{value:"all",label:"All"},{value:"owned",label:"Owned"},{value:"missing",label:"Missing"}]}/><PillGroup label="Rarity" value={rarity} onChange={setRarity} options={[{value:"all",label:"All"},{value:"ssr",label:"SSR"},{value:"sr",label:"SR"},{value:"r",label:"R"}]}/></div>
+        {kind==="character"&&view==="grades"&&<><PillGroup label="Purpose" value={gradeField} onChange={(value)=>setGradeField(value as GradeField)} options={[{value:"grinding",label:"Grinding"},{value:"fullAuto",label:"Full Auto"},{value:"highDifficulty",label:"High difficulty"}]}/><PillGroup label="Minimum grade" value={minimumGrade} onChange={setMinimumGrade} options={[{value:"all",label:"Any"},...(["B","A","S","SS"] as const).map((value)=>({value,label:`${value}+`}))]}/></>}
+        {kind==="character"&&view!=="grades"&&<PillGroup label="Minimum rating" value={minimumRating} onChange={setMinimumRating} options={[{value:"all",label:"Any"},...[9,9.5,9.8,10].map((value)=>({value:String(value),label:`${value}+`}))]}/>}
+        <ExpandablePills label="Series" values={series} options={options.series} priority={seriesPriority} expanded={expanded.series} onExpanded={()=>setExpanded((value)=>({...value,series:!value.series}))} onToggle={(value)=>toggleList(setSeries,value)} iconFor={(value)=>summonSeriesIcons.has(value)?`/collection-icons/series-summon-${value.replaceAll(" ","-")}.png`:`/collection-icons/series-${value}.png`}/>
+        <ExpandablePills label="Obtain" values={obtain} options={options.obtains} priority={obtainPriority} expanded={expanded.obtain} onExpanded={()=>setExpanded((value)=>({...value,obtain:!value.obtain}))} onToggle={(value)=>toggleList(setObtain,value)}/>
+        {kind==="character"&&<div className="effect-filter-wrap"><ExpandablePills label="Effects" values={effect} options={Object.keys(effectLabels)} priority={effectPriority} expanded={expanded.effect} onExpanded={()=>setExpanded((value)=>({...value,effect:!value.effect}))} onToggle={(value)=>toggleList(setEffect,value)}/>{effect.length>1&&<div className="effect-match"><span>Match</span><button type="button" aria-pressed={effectMatch==="any"} className={effectMatch==="any"?"is-active":""} onClick={()=>setEffectMatch("any")}>Any</button><button type="button" aria-pressed={effectMatch==="all"} className={effectMatch==="all"?"is-active":""} onClick={()=>setEffectMatch("all")}>All</button></div>}</div>}
+      </div>
+      {activeFilters.length>0&&<div className="active-filter-strip"><span>Active</span><div>{activeFilters.map((filter)=><button type="button" onClick={filter.clear} key={filter.key}>{filter.label}<X aria-hidden="true"/></button>)}</div><button type="button" className="clear-filter-link" onClick={resetFilters}>Clear all</button></div>}
       {kind==="character"&&<p className="effect-filter-note">Effect tags are searchable hints derived from the mirrored rating summaries. They are useful for discovery, but they are not yet a complete skill-by-skill kit index.</p>}
     </section>
 

@@ -1,7 +1,7 @@
 # GBF Water — Magna to Varuna Plan
 
 Last updated: 2026-08-20  
-Profile: casual, Full Auto oriented, with an eventual double-Varuna transition.
+Profile: casual, Full Auto oriented, with a single-sided Varuna entry and optional double-Varuna endpoint.
 
 ## Account core and teams
 
@@ -35,27 +35,6 @@ Macula Marius, Grand Poseidon, Lily and Joel are control or survival substitutio
 - Grand Yatima: **Defense** for medium/long and high-difficulty fights. Balance is acceptable when conserving awakening orbs; Multiattack is a fixed-route damage specialization.
 - Grand Sylvia: **Defense** for the owned Kengo/high-difficulty role. Attack is limited to safe CA farming where survival is already solved.
 
-## Immediate Academy Magna grid
-
-| Slot | Weapon | Purpose |
-|---|---|---|
-| Mainhand | Water Dark Opus or Wamdus's Cnidocyte | Choose according to MC class |
-| 2–5 | Ancient Auberon ×4 | Magna ATK, HP, DA and critical rate |
-| 6–7 | Wamdus's Cnidocyte ×2 | Up to 100,000 supplemental damage on critical hits |
-| 8 | Bahamut Dagger Coda | Supports MC, Payila and Octavia |
-| 9 | Fateful End | EX ATK and general filler |
-| 10 | Gabriel's Wand | Seraphic modifier against Fire enemies |
-
-The Bahamut Dagger is **not outdated at this stage**. It supports the Human MC and Erunes Payila and Octavia, so three of four frontline members benefit. Replace it only when a concrete modern weapon produces more total value.
-
-Replacement order:
-
-1. Weak Academy EX/mainhand filler
-2. Fourth Ancient Auberon when crit requirements allow
-3. Bahamut Dagger
-4. Remaining Ancient Auberons as Magna III weapons arrive
-5. Gabriel Wand after obtaining an appropriate Ultima Seraphic key
-
 ## Mainhands
 
 ### Wamdus's Cnidocyte
@@ -84,7 +63,9 @@ Replacement order:
 
 Two Wamdus spears supply a combined flat 40% crit rate and reach their shared 100,000 supplemental cap when attacks crit. Magna crit weapons provide the remainder. Do not force both copies into a setup that cannot crit reliably.
 
-## Practical double-Varuna destination
+## Practical single-sided Varuna entry
+
+Use an owned route-defining main summon—such as Yatima, Beelzebub, Orologia or Versusia when its specific effect is useful—and borrow a level-250 Varuna. Personal Varuna is not required to activate the Primal grid.
 
 | Slot | Weapon |
 |---|---|
@@ -98,7 +79,7 @@ Two Wamdus spears supply a combined flat 40% crit rate and reach their shared 10
 | 9 | Ultima Staff |
 | 10 | Celestial, Destroyer or encounter flex |
 
-Modern Varuna commonly uses only one Wamdus spear. Varuna-boosted weapons supply most of the crit rate; one Wamdus finishes it and contributes 50,000 crit supplemental damage. A second Gospel eventually replaces the second Wamdus because Gospel is unconditional while both share the same 100,000 supplemental cap.
+Modern Varuna commonly uses only one Wamdus spear. Rubea Stiria boost weapons, Gabriel's passive and the remaining Varuna-boosted weapons let a single borrowed aura reach useful thresholds; one Wamdus can finish critical rate and contributes 50,000 crit supplemental damage. Verify 100% critical for the exact one-sided preset rather than copying a double-sided grid unchanged.
 
 ### Transition threshold
 
@@ -106,9 +87,13 @@ Modern Varuna commonly uses only one Wamdus spear. Varuna-boosted weapons supply
 2. Galilei's Insight ×1
 3. Taisai Spirit Bow ×1
 4. Rubea Stiria ×2
-5. Varuna obtained and sufficiently uncapped
+5. An owned main summon whose aura or opening call the saved route actually uses
 
-Stay Magna until most of this package is ready. One Yatima weapon and one Gabriel weapon alone are not enough reason to spend bars and transition.
+Stay Magna until most of this package is ready. One Yatima weapon and one Gabriel weapon alone are not enough reason to spend bars and transition. Test the completed package with support Varuna 250 before investing in a personal Varuna transcendence.
+
+### Double Varuna remains a later option
+
+Personal Varuna 250 is valuable when a repeated encounter needs boosted HP, Garrison, healing, TA or easier critical thresholds, and it removes dependence on finding the correct support. At level 250 it can also provide 20% Water elemental ATK and HP from a sub slot when another summon is main; this sub aura does not boost Primal weapon skills. These are flexibility benefits, not prerequisites for the first Primal transition.
 
 ## Extreme-investment alternative
 
@@ -128,25 +113,24 @@ It requires Soldier, bullets, premium characters, summon support and enough TA t
 ## Summons, backline and action plan
 
 - Current main/support: Leviathan Omega
-- Eventual main/support: Varuna × Varuna
+- Primal entry: owned Yatima, Beelzebub, Orologia, Versusia or encounter utility × support Varuna 250
+- Later durable option: personal Varuna 250 × support Varuna 250
 - Calls: FLB Triple Zero, FLB Beelzebub, Yatima and encounter utility
 - Sub auras: The Moon and Gabriel
 - Farm Haaselia/The Moon first, then Maria Theresa/Justice.
 
 Progression:
 
-1. Finish Academy and retain Bahamut Dagger.
-2. Use both Wamdus spears in the Academy crit grid.
-3. Use Wamdus mainhand only while a spear class requires it.
-4. Move to Dark Opus mainhand with Manadiver.
-5. Farm two Leviathan Gaze Mare and two Leviathan Cranium Mare.
-6. Stay Magna until Varuna and the premium transition package are complete.
-7. Expect one Wamdus spear in eventual Varuna.
-8. Ignore Hraesvelgr unless deliberately adopting a specialized manual/short-burst plan.
+1. Farm two Leviathan Gaze Mare and two Leviathan Cranium Mare.
+2. Move to Dark Opus mainhand with Manadiver.
+3. Keep both Wamdus spears only when the active Magna III grid reaches reliable critical.
+4. Stay Magna until the premium weapon package is complete, then test it single-sided with support Varuna 250.
+5. Expect one Wamdus spear in eventual Varuna.
+6. Ignore Hraesvelgr unless deliberately adopting a specialized manual/short-burst plan.
+7. Transcend a personal Varuna only when double-sided durability, support independence or its level-250 sub aura solves a repeated need.
 
 ## Sources
 
-- [Sierokarte's Academy — Water](https://gbf.wiki/Sierokarte%27s_Knickknack_Academy#Water)
 - [Wamdus's Cnidocyte](https://gbf.wiki/Wamdus%27s_Cnidocyte)
 - [Advanced Leviathan](https://gbf.wiki/Advanced_Grids/Leviathan)
 - [Advanced Varuna](https://gbf.wiki/Advanced_Grids/Varuna)

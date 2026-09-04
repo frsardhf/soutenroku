@@ -218,7 +218,7 @@ Water awakening guidance was revised against current Japanese character guides a
 
 A third owned skill-damage direction is Manadiver / Gabriel / Cupitan 5★ / Yatima or Sylvia. Grand Lancelot is an optional future specialist for this archetype, not an immediate necessity.
 
-Water acquisition priorities are now: farm Haaselia, acquire Varuna, level the modern owned roster, then decide whether Grand Lancelot, Vajra, Yukata Aria or Summer Tefnut solves a real remaining problem.
+Water acquisition priorities are now: farm Haaselia, finish Magna III, assemble the premium weapon package, then test single-sided Primal with an owned utility/Providence main and support Varuna 250. Personal Varuna and its level-250 transcendence are later flexibility investments for double-sided durability, support independence and the 20% Water elemental ATK/HP sub aura—not the transition gate. Only afterward decide whether Grand Lancelot, Vajra, Yukata Aria or Summer Tefnut solves a real remaining problem.
 
 ## Pause point
 

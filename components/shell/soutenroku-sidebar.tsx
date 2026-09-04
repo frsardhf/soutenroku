@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import {usePathname} from "next/navigation";
-import {BookOpen,Compass,Database,Gem,Menu,Route,ShoppingBasket,Sparkles,Swords,Users} from "lucide-react";
+import {BookOpen,Compass,Database,Gem,Menu,Route,ShoppingBasket,Sparkles,Swords,Users,UsersRound} from "lucide-react";
 import {elementIds,getRoadmap} from "@/data/roadmaps";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -12,6 +12,7 @@ import {Sheet,SheetClose,SheetContent,SheetDescription,SheetTitle,SheetTrigger} 
 
 const guideLinks=[
   {href:"/guides/arcarum",label:"Arcarum path",icon:Compass},
+  {href:"/guides/eternals",label:"Eternal plans",icon:UsersRound},
   {href:"/guides/primals",label:"Primals",icon:Gem},
   {href:"/guides/manadiver",label:"Manadiver",icon:Swords},
   {href:"/guides/classes",label:"After Manadiver",icon:Route},

@@ -27,6 +27,14 @@ Grand Yatima replaces Octavia when Octavia's HP/TA requirements are not met. Gra
 
 Macula Marius, Grand Poseidon, Lily and Joel are control or survival substitutions.
 
+### Awakening types
+
+- Payila: **Multiattack**. Guaranteed TA wastes the DATA portion, but the 5% normal-attack amplification applies to every normal action and reattack. Use Attack only as a temporary under-cap option on a weak grid.
+- Grand Gabriel: **Multiattack**. TA directly builds Pargos for recurring automatic damage and dispel; normal-attack amplification remains useful afterward.
+- Grand Octavia: **Multiattack** in Team A. The normal-attack amplification scales her repeated attacks and post-CA assassin turn. Attack is only an under-cap fallback.
+- Grand Yatima: **Defense** for medium/long and high-difficulty fights. Balance is acceptable when conserving awakening orbs; Multiattack is a fixed-route damage specialization.
+- Grand Sylvia: **Defense** for the owned Kengo/high-difficulty role. Attack is limited to safe CA farming where survival is already solved.
+
 ## Immediate Academy Magna grid
 
 | Slot | Weapon | Purpose |

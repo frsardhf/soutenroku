@@ -214,6 +214,8 @@ The primary Payila/Gabriel/Octavia team was validated against Japanese 2026 Guil
 
 The account already owns a distinct second archetype: Kengo / Grand Sylvia / Grand Yatima / Wamdus for CA-On long Full Auto and high-difficulty play. Macula, Poseidon, Lily or Joel can replace Wamdus depending on control or healing requirements.
 
+Water awakening guidance was revised against current Japanese character guides and 2026 composition reports. Payila, Grand Gabriel and Grand Octavia use Multiattack in the normal team: Gabriel consumes the TA rate for Pargos, while Payila and Octavia primarily value its 5% normal-attack amplification even when some DATA is redundant. Attack is only an under-cap fallback for Payila or Octavia. Grand Yatima and Grand Sylvia use Defense for their owned medium/long and high-difficulty roles; Balance is an economical Yatima fallback, and offensive awakenings are encounter-specific.
+
 A third owned skill-damage direction is Manadiver / Gabriel / Cupitan 5★ / Yatima or Sylvia. Grand Lancelot is an optional future specialist for this archetype, not an immediate necessity.
 
 Water acquisition priorities are now: farm Haaselia, acquire Varuna, level the modern owned roster, then decide whether Grand Lancelot, Vajra, Yukata Aria or Summer Tefnut solves a real remaining problem.

@@ -35,9 +35,11 @@ export const plans:Plan[]=[
 {name:"Grand Gabriel",status:"DONE",priority:"Skill DMG Cap ★3 ×2 → Water ATK ★3 → TA ★3 ×2",note:"15 core stars. For the last 3, use Defense ★3 for casual Full Auto durability. TA helps her reliably generate Pargos and trigger her automatic damage/dispel."},
 {name:"Grand Octavia",status:"DONE",priority:"TA ★3 ×3 → Skill DMG Cap ★3 ×2 → Water ATK ★3",note:"Full 18-star normal/skill setup. TA stabilizes her normal turns outside the 50% TA buff window; both cap nodes strengthen her post-attack and special-triggered skill damage."}
 ],awakenings:[
-{name:"Payila",type:"Attack",note:"Previously researched Water baseline. Her guaranteed TA makes DATA unnecessary, while Attack helps her amplified normal turns reach cap."},
-{name:"Grand Gabriel",type:"Multiattack",note:"Previously researched Water baseline. TA directly improves Pargos generation and recurring post-attack damage/dispel."},
-{name:"Grand Octavia",type:"Attack",note:"Previously researched Water baseline. Use raw Attack for her normal and post-attack damage; her kit and LB already address TA consistency."}
+{name:"Payila",type:"Multiattack",note:"JP default once her normal attacks approach cap. Her guaranteed TA wastes the DATA portion, but the 5% normal-attack amplification scales every normal action and reattack. Attack is only an under-cap fallback for the current weak grid."},
+{name:"Grand Gabriel",type:"Multiattack",note:"TA directly builds Pargos and increases the frequency of her automatic damage and dispel. The 5% normal-attack amplification remains useful after the team reaches its TA target."},
+{name:"Grand Octavia",type:"Multiattack",note:"Preferred in the Payila normal team: the 5% normal-attack amplification scales her repeated attacks and post-CA assassin turn. Attack is a temporary alternative only while her normal and skill hits remain clearly under cap."},
+{name:"Grand Yatima",type:"Defense",note:"Default for her medium/long-fight role. Extra HP and defense help her survive targeted turns while building delta Adaptation. Balance is an acceptable no-orb option; Multiattack is reserved for optimized fixed-turn routes."},
+{name:"Grand Sylvia",type:"Defense",note:"Her owned-team role is CA sustain in difficult Full Auto, where survival is more valuable than personal damage. Attack is only a safe CA-farming specialization when durability is already solved."}
 ],overMastery:[
 {name:"Payila",ring3:"Stamina 5–10",ring4:"DEF 10–20%",earring:"Supplemental DMG 5–12",note:"JP rates Stamina and Supplemental highest. Her permanent guaranteed TA makes a fourth-slot TA roll unnecessary, so keep a strong DEF pair for unattended play."},
 {name:"Grand Gabriel",ring3:"Skill DMG Cap 10–15%",ring4:"TA 5–10%",earring:"Supplemental DMG 5–12",note:"This is the explicit JP ideal pair: skill cap plus TA. TA builds Pargos; Supplemental improves her frequent multi-hit automatic skill."},

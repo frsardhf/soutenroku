@@ -12,17 +12,6 @@ export const roadmapIdentity={
     ],
     "grids": [
       {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "sword-of-michael-ssr",
-          "ancient-ecke-sachs",
-          "nilakantha",
-          "true-infernal-flamescythe",
-          "bahamut-dagger",
-          "scythe-of-renunciation"
-        ]
-      },
-      {
         "id": "magna-iii-farm",
         "weaponGroups": [
           "exo-maitrah-karuna",
@@ -42,17 +31,6 @@ export const roadmapIdentity={
       "ca-high-difficulty"
     ],
     "grids": [
-      {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "dark-opus",
-          "ancient-auberon",
-          "wamdus-spear",
-          "bahamut-dagger",
-          "fateless",
-          "gabriel-wand"
-        ]
-      },
       {
         "id": "magna-iii",
         "weaponGroups": [
@@ -76,6 +54,20 @@ export const roadmapIdentity={
           "staff-of-renunciation",
           "altruism-soul-staff",
           "wand-of-charmtide"
+        ]
+      },
+      {
+        "id": "single-sided-varuna",
+        "weaponGroups": [
+          "dark-opus",
+          "rubea-stiria",
+          "taisai-bow",
+          "galilei",
+          "gabriel-dagger",
+          "wamdus-spear",
+          "knight-of-ice",
+          "ultima-staff",
+          "celestial-flex"
         ]
       },
       {
@@ -113,19 +105,6 @@ export const roadmapIdentity={
     ],
     "grids": [
       {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "last-sahrivar",
-          "nibelung-horn",
-          "yggdrasil-crystal-blade-omega",
-          "nibelung-klinge",
-          "ancient-perseus",
-          "harp-of-renunciation",
-          "bahamut-dagger",
-          "gauntlet-of-uriel-ssr"
-        ]
-      },
-      {
         "id": "magna-iii-farm",
         "weaponGroups": [
           "yggdrasil-s-bough",
@@ -157,19 +136,6 @@ export const roadmapIdentity={
     ],
     "grids": [
       {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "tiamat-bolt-omega",
-          "last-storm-harp",
-          "coruscant-crozier",
-          "true-conviction-flashspear",
-          "arkab-prior",
-          "bahamut-dagger",
-          "spear-of-renunciation",
-          "ring-of-raphael-ssr"
-        ]
-      },
-      {
         "id": "magna-iii-farm",
         "weaponGroups": [
           "tiamat-edge-aura",
@@ -191,17 +157,6 @@ export const roadmapIdentity={
     ],
     "grids": [
       {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "true-purity-sunblade",
-          "luminiera-sword-omega",
-          "cosmic-sword",
-          "sword-of-renunciation",
-          "bahamut-dagger",
-          "harp-of-everlore"
-        ]
-      },
-      {
         "id": "magna-iii-farm",
         "weaponGroups": [
           "exo-heliocentrum",
@@ -221,20 +176,6 @@ export const roadmapIdentity={
       "seox-general-team"
     ],
     "grids": [
-      {
-        "id": "academy-magna",
-        "weaponGroups": [
-          "cerberus-order",
-          "zechariah",
-          "abyss-spine",
-          "celeste-zaghnal-omega",
-          "advocatus-diaboli",
-          "true-phantom-demon-blade",
-          "katana-of-renunciation",
-          "bahamut-dagger",
-          "scythe-of-belial-ssr"
-        ]
-      },
       {
         "id": "magna-iii-farm",
         "weaponGroups": [

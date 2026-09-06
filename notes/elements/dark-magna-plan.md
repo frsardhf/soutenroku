@@ -171,8 +171,8 @@ Future default reserve:
 ## Arcarum and Eternal roadmap
 
 1. **The Death summon:** immediate Dark progression and future swap utility. Its call enables controlled sacrifice strategies, but casual presets do not need to force them.
-2. **Nier:** Dark's Evoker and the main Arcarum character project. Her developed frontline/entry value is more important than treating her solely as a passive backliner.
-3. **Seox recruitment, 5-star and transcendence:** the highest deterministic character priority. Seox remains an elite self-sufficient Dark attacker and is a natural future partner for Grand Sariel.
+2. **Nier:** the next female-only Evoker project after Haaselia and Fraux. Her developed frontline/entry value is more important than treating her solely as a passive backliner; use Death rather than forcing Seox-centered teams.
+3. **Anti-Seox Dark development:** prioritize Grand Sariel, Grand Lich, Orologia, Summer Magisa, Tyra and Cendrillon as the owned non-Seox core. Seox remains optional rather than a required deterministic project.
 
 ## Magna grid direction
 

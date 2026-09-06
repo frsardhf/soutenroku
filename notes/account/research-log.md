@@ -236,8 +236,9 @@ Earth should remain Magna. The first broad Earth Gala target is Uriel; Valentine
 
 ## Arcarum backline roadmap update
 
-- **Fire:** pursue Alanaan/The Sun first for summon and burst value, then Fraux/The Devil for Full Auto sustain and debuff control. Michael remains the standard gacha passive backline option.
-- **Water:** Haaselia/The Moon is the highest priority, followed by Maria Theresa/Justice. Gabriel occupies a passive backline slot whenever she is not required in front.
+- **Female-only sequence:** Haaselia/The Moon → Fraux/The Devil → Nier/The Death → Maria Theresa/Justice. Recruitment can happen early when spare Evolites exist, but the active 5★ project remains protected.
+- **Fire:** the general male-inclusive route may still pursue Alanaan/The Sun for burst, but the active female-only route uses Fraux after Haaselia for Fire Full Auto sustain and debuff control.
+- **Water:** Haaselia/The Moon is first. The default reserve is Haaselia + Grand Gabriel; Maria Theresa is the specialized dispel/high-difficulty option, not the automatic second project.
 - **Earth:** Caim/The Hanged Man comes first, with the warning that his reverse-position passive requires ten different grid weapons. Lobelia/The Tower is the later skill-damage project. Summer Tikoh is the best currently owned Earth passive backliner.
 - Evokers should not always be treated as permanent slot-six passives. Their correct-position entrance effects and developed frontline kits are often a major part of their value.
 
@@ -279,4 +280,4 @@ Dark acquisition priority is Grand Sariel for broad account value, Orologia for 
 
 The Grand Sariel team ladder is now explicit. The premium no-Eresh normal destination is Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia. The premium skill/general alternative is Manadiver / Sariel / Lich / Orologia. The Eresh ceiling uses Sariel with Seox and Yukata Ilsa plus controlled Death/Nier swaps, but is outside this account's casual plan. Immediately after acquiring Sariel, the realistic default is Manadiver / Sariel / Lich / Tsukuyomi; Summer Magisa replaces Tsukuyomi when the fight is safe. After deterministic Seox recruitment, use Manadiver / Sariel / Seox / Lich, rotating Tsukuyomi in for survival.
 
-The deterministic roadmap is Seox recruitment/development first, then The Death and Nier alongside Celeste Omega 250 and Magna III. The detailed plan is recorded in `../elements/dark-magna-plan.md`.
+The deterministic Dark roadmap is The Death and Nier alongside Celeste Omega 250 and Magna III; Seox is optional because the account is deliberately pursuing anti-Seox teams. The detailed plan is recorded in `../elements/dark-magna-plan.md`.

@@ -115,7 +115,18 @@ It requires Soldier, bullets, premium characters, summon support and enough TA t
 - Later durable option: personal Varuna 250 × support Varuna 250
 - Calls: FLB Triple Zero, FLB Beelzebub, Yatima and encounter utility
 - Sub auras: The Moon and Gabriel
-- Farm Haaselia/The Moon first, then Maria Theresa/Justice.
+- Farm the female-only Evoker sequence: **Haaselia/The Moon → Fraux/The Devil → Nier/The Death → Maria Theresa/Justice**.
+- Haaselia is the first Water project; recruit and complete 5★ before diverting major materials.
+- Recruitment may happen before the previous Evoker reaches 5★ when Evolite and recruitment materials are spare, but never at the cost of the active 5★ project.
+
+### Water backline priorities
+
+- **Default:** Haaselia + Grand Gabriel; use Maria Theresa, Urki, Macula Marius or a defensive flex in the remaining reserve slot.
+- **Dispel-heavy high difficulty:** Manadiver / Grand Gabriel / Grand Octavia / Grand Yatima, with Haaselia + Maria Theresa in reserve.
+- Replace Yatima with Grand Sylvia for a charge-attack/dispel setup.
+- Replace Octavia with Sylvia when manual dispel timing and omen control matter more than automatic Full Auto dispels.
+- Use Macula Marius instead of Maria for crest-based skill teams, or Summer Kolulu for crest-based normal-attack teams.
+- Maria is a specialized Water high-difficulty backliner, not the default next Evoker after Haaselia.
 
 Progression:
 

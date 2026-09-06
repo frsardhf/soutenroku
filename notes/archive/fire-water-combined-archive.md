@@ -3,7 +3,7 @@
 Last updated: 2026-08-18  
 Player profile: casual, Full Auto oriented, aiming to collect event/Guild War rewards without competing at the highest level.
 
-> Superseded by the separate [Fire Magna plan](./gbf-fire-magna-plan.md) and [Water Magna-to-Varuna plan](./gbf-water-magna-varuna-plan.md). This document remains the complete historical roster/research archive.
+> Superseded by the separate [Fire Magna plan](../elements/fire-magna-plan.md) and [Water Magna-to-Varuna plan](../elements/water-magna-varuna-plan.md). This document remains the complete historical roster/research archive.
 
 ## Scope and assumptions
 
@@ -46,7 +46,6 @@ The two Fire network responses contained 39 Fire SSRs. The most relevant owned c
 
 ### Recommended offensive Full Auto
 
-- MC: Manadiver
 - Grand Zeta
 - Michael
 - Grand Wilnas
@@ -61,7 +60,6 @@ Why this works:
 
 ### Efficient farming alternative
 
-- MC: Manadiver
 - Grand Zeta
 - Michael
 - Yukata Izmir
@@ -73,7 +71,6 @@ Izmir caveat: before her third CA, she is forced to single-attack. Ordinary DA/T
 
 ### Utility-oriented Full Auto
 
-- MC: Manadiver
 - Grand Zeta
 - Michael
 - Yukata Aglovale
@@ -83,7 +80,6 @@ Aglovale is preferred when Veil, Dispel Cancel and automatic skill damage matter
 
 ### Defensive unattended Full Auto
 
-- MC: Manadiver
 - Grand Zeta
 - Michael
 - Athena
@@ -93,7 +89,6 @@ This is slower but safer against frequent special attacks and difficult mechanic
 
 ### Charge-attack alternative
 
-- MC: Rising Force or Kengo
 - Sato
 - Shion
 - Michael or Wilnas
@@ -108,13 +103,13 @@ The account can deliberately maintain two Fire teams instead of forcing every st
 
 Current versions:
 
-- MC / Grand Zeta / Michael / Grand Wilnas
-- MC / Grand Zeta / Michael / Yukata Izmir
-- MC / Grand Zeta / Michael / Yukata Aglovale
+- Grand Zeta / Michael / Grand Wilnas
+- Grand Zeta / Michael / Yukata Izmir
+- Grand Zeta / Michael / Yukata Aglovale
 
 After Grand Percival:
 
-- MC / Grand Zeta / Grand Percival / Grand Wilnas, Izmir or Aglovale
+- Grand Zeta / Grand Percival / Grand Wilnas, Izmir or Aglovale
 - Michael moves to the backline unless active dispel/delay or charge support is needed.
 
 This is the general reward-farming and short/medium Full Auto team.
@@ -125,7 +120,6 @@ Sandira's distinctive role is a CA and Fatal Chain engine, including a 200% maxi
 
 Best currently owned no-Summer-Atum version:
 
-- MC: Kengo with Unsigned Kaneshige
 - Sandira
 - Fire Sevilbarra
 - Sato
@@ -153,7 +147,7 @@ Ragazzo should be treated as a deliberate frontline sacrifice/swap piece, not as
 
 Example:
 
-- MC / Grand Zeta / Michael / Ragazzo
+- Grand Zeta / Michael / Ragazzo
 - Grand Wilnas or Yukata Izmir in the first backline position
 
 Ragazzo contributes strong early damage and is knocked out after his timed state, bringing the first backline attacker forward. This can be useful when:
@@ -316,7 +310,6 @@ The network payload shows Payila, Gabriel and Octavia already at level 80. Yatim
 
 ### Team A — normal-attack Full Auto
 
-- MC: Lancer Origin for optimized short/medium content, or Manadiver for a more general setup
 - Payila
 - Grand Gabriel
 - Grand Octavia
@@ -338,7 +331,6 @@ Practical variants:
 
 The account already owns the modern foundation:
 
-- MC: Kengo with Unsigned Kaneshige
 - Grand Sylvia
 - Grand Yatima
 - Wamdus
@@ -360,7 +352,6 @@ This second team should be leveled and tested before spending a spark. It is gen
 
 The roster can also form a skill-focused team without new pulls:
 
-- MC: Manadiver
 - Grand Gabriel
 - Cupitan 5★
 - Grand Yatima or Grand Sylvia

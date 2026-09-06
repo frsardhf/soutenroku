@@ -38,7 +38,7 @@ Ultimate Friday, Nectar, Sho, Yodarha, Nezha, Enyo, Randall, Therese, Yurius, Fl
 
 ## Team 1: Grand Narmaya normal Full Auto
 
-**MC Manadiver / Summer Mahira / Grand Narmaya / Raphael**
+**Summer Mahira / Grand Narmaya / Raphael**
 
 - Formation matters: **Summer Mahira must be immediately before Narmaya** so her next-position buff targets Narmaya.
 - CA: **On** for general medium Full Auto so Mahira can improve her chosen ally and Raphael can benefit from chain bursts. Use **Off** only for a deliberately short normal-attack finish.
@@ -47,13 +47,13 @@ Ultimate Friday, Nectar, Sho, Yodarha, Nezha, Enyo, Randall, Therese, Yurius, Fl
 
 Safer variation:
 
-**MC / Summer Mahira / Grand Narmaya / Cagliostro & Clarisse**
+**Summer Mahira / Grand Narmaya / Cagliostro & Clarisse**
 
 Use this when healing, clear and automatic dispels matter more than Raphael's faster offensive contribution. Raphael then moves to the backline.
 
 ## Team 2: safe long Full Auto/CA team
 
-**MC Kengo / Grand Charlotta / Cagliostro & Clarisse / Raphael**
+**Grand Charlotta / Cagliostro & Clarisse / Raphael**
 
 - CA: **On**.
 - This team does not depend on Grand Narmaya.
@@ -70,7 +70,7 @@ Limited substitutions rather than separate saved teams:
 
 ### Future Team 2 after acquiring Catura
 
-**MC Kengo / Catura / Grand Charlotta / Raphael**
+**Catura / Grand Charlotta / Raphael**
 
 - Keep CA **On** and normally set Catura's Skill 3 **Off**. Skill 3 is her normal-attack stance and consumes charge bar, which conflicts with the repeated-CA purpose of this preset.
 - Catura supplies 100% gauge and CA reactivation to herself and MC, cooldown reduction from her CAs, up to 24-hit skill damage, healing, clear and strong V2 omen coverage.

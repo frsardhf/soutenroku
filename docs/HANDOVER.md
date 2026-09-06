@@ -166,10 +166,10 @@ Do not manually edit `app/generated-weapon-assets.json` or
 ## Research-note structure
 
 - `notes/README.md` is the index.
-- The six element files are the current account plans.
-- `gbf-conversation-research-log.md` stores cross-element mechanics and broader
-  conclusions.
-- `gbf-fire-varuna-plan.md` is a historical combined archive and should not
+- `notes/elements/` contains the current account plans.
+- `notes/account/` stores cross-element mechanics and broader conclusions.
+- `notes/research/` stores focused technical research notes.
+- `notes/archive/fire-water-combined-archive.md` is a historical combined archive and should not
   override the newer Fire and Water files.
 
 When advice changes, update the current element note and its visible planner

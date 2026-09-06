@@ -9,7 +9,6 @@ Owned core includes Payila, Grand Gabriel, Grand Octavia, Grand Yatima, Grand Sy
 
 ### Team A — normal-attack Full Auto
 
-- MC: Manadiver eventually; spear class temporarily
 - Payila
 - Grand Gabriel
 - Grand Octavia
@@ -19,7 +18,6 @@ Grand Yatima replaces Octavia when Octavia's HP/TA requirements are not met. Gra
 
 ### Team B — CA/high-difficulty Full Auto
 
-- MC: Kengo with Unsigned Kaneshige
 - Grand Sylvia
 - Grand Yatima
 - Wamdus

@@ -39,7 +39,7 @@ The supplied payload contains 35 Dark SSRs.
 
 ## Team 1: default casual skill/sustain Full Auto
 
-**MC Manadiver / Grand Lich / Summer Magisa / Tsukuyomi**
+**Grand Lich / Summer Magisa / Tsukuyomi**
 
 - CA: **On**.
 - This is the account's strongest current general-purpose Dark team.
@@ -56,7 +56,7 @@ Substitutions:
 
 ## Team 2: Seox general Full Auto
 
-**MC Manadiver / Seox / Grand Lich / Tsukuyomi**
+**Seox / Grand Lich / Tsukuyomi**
 
 - CA: **On**.
 - Seox is the primary self-sufficient normal/hybrid attacker. Lich supplies automatic damage, delays and debuffs, while Tsukuyomi makes the composition safe enough for unattended use.
@@ -65,7 +65,7 @@ Substitutions:
 
 Summer Azusa remains Team 1's offensive skill flex:
 
-**MC Manadiver / Summer Azusa / Grand Lich / Summer Magisa**
+**Summer Azusa / Grand Lich / Summer Magisa**
 
 For one-turn skill damage, enable Azusa's first and second skills and disable unnecessary party abilities. This uses Team 1's three-Fist/two-Katana skill grid and does not require Kaneshige.
 
@@ -75,7 +75,7 @@ Orologia is not merely a rating chase for this roster. The account already owns 
 
 Recommended general Full Auto:
 
-**MC Manadiver / Tyra / Grand Lich / Grand Orologia**
+**Tyra / Grand Lich / Grand Orologia**
 
 - CA: **On**.
 - This closely follows a current Japanese Magna Full Auto example used for 150-HELL.
@@ -84,7 +84,7 @@ Recommended general Full Auto:
 
 Safer Orologia version:
 
-**MC Manadiver / Grand Lich / Grand Orologia / Tsukuyomi**
+**Grand Lich / Grand Orologia / Tsukuyomi**
 
 Use this for unfamiliar bosses or casual unattended farming. It sacrifices Tyra's speed for Tsukuyomi's damage reduction and healing.
 
@@ -97,7 +97,7 @@ Orologia would replace Summer Magisa or Tsukuyomi according to the encounter; Li
 - Highest broad account value.
 - Adds 20% to Dark/Oblivion/Malice/Misty Gloom Omega weapon skills from the frontline or backline, benefiting Magna and Hades.
 - Strong opening attacker with repeated attacks, skill follow-ups and unique party echo.
-- Future normal/general shell: **MC / Grand Sariel / Seox / flex**, with Orologia, Summer Catura, Lich or a defensive unit filling the final role.
+- Future normal/general shell: **Grand Sariel / Seox / flex**, with Orologia, Summer Catura, Lich or a defensive unit filling the final role.
 
 ### Grand Sariel team ladder: premium to current reality
 
@@ -105,7 +105,7 @@ Sariel's best teammates depend on whether the objective is manual/very short bur
 
 #### Premium normal/general Full Auto (no Eresh required)
 
-**MC Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia**
+**Summer Catura / Grand Sariel / Grand Orologia**
 
 - CA **Off** for short normal farming; **On** for medium/long Full Auto when ougi effects and stability matter.
 - Catura concentrates support on herself and MC, while Sariel supplies unique echo, damage reduction and a powerful opening. Orologia adds veil, team damage/cap support and recovery.
@@ -113,14 +113,14 @@ Sariel's best teammates depend on whether the objective is manual/very short bur
 
 Premium skill/general alternative:
 
-**MC Manadiver / Grand Sariel / Grand Lich / Grand Orologia**
+**Grand Sariel / Grand Lich / Grand Orologia**
 
 - CA **On**.
 - Prefer this over the Fighter Origin team for bosses that reward automatic skill damage, delays, debuffs and dispels.
 
 #### Realistic team immediately after acquiring Sariel
 
-**MC Manadiver / Grand Sariel / Grand Lich / Tsukuyomi**
+**Grand Sariel / Grand Lich / Tsukuyomi**
 
 - CA **On**.
 - This is the recommended default for the player's actual roster. Sariel and Lich provide damage, debuffs and skill follow-ups; Tsukuyomi supplies damage reduction, debuff-duration reduction, shields and healing.
@@ -128,21 +128,21 @@ Premium skill/general alternative:
 
 Faster owned variation:
 
-**MC Manadiver / Grand Sariel / Grand Lich / Summer Magisa**
+**Grand Sariel / Grand Lich / Summer Magisa**
 
 - CA **On**.
 - Use when the boss is easy enough to give up Tsukuyomi's sustain. Magisa adds crest scaling, multi-hit damage and dispels.
 
 Short owned variation:
 
-**MC Manadiver / Grand Sariel / Summer Azusa / Cendrillon**
+**Grand Sariel / Summer Azusa / Cendrillon**
 
 - Usually CA **Off** or configured specifically for the target.
 - This approximates a low-input opening-damage composition. Do not invest heavily merely to optimize this temporary version.
 
 #### After deterministic Seox recruitment
 
-**MC Manadiver / Grand Sariel / Seox / Grand Lich**
+**Grand Sariel / Seox / Grand Lich**
 
 - Default offensive general team after Seox is developed.
 - Replace Lich with Tsukuyomi for survival, or move Sariel to reserve if a particular mechanic requires three other frontline specialists. His 20% weapon-skill passive still applies.

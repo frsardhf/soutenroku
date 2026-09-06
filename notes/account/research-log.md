@@ -1,10 +1,10 @@
 # GBF Conversation Research Log
 
-> Current plans: [Fire](./gbf-fire-magna-plan.md), [Water](./gbf-water-magna-varuna-plan.md), [Earth](./gbf-earth-magna-plan.md), [Wind](./gbf-wind-magna-plan.md), [Light](./gbf-light-magna-plan.md), and [Dark](./gbf-dark-magna-plan.md).
+> Current plans: [Fire](../elements/fire-magna-plan.md), [Water](../elements/water-magna-varuna-plan.md), [Earth](../elements/earth-magna-plan.md), [Wind](../elements/wind-magna-plan.md), [Light](../elements/light-magna-plan.md), and [Dark](../elements/dark-magna-plan.md).
 
 Last updated: 2026-08-18
 
-This note records broader conclusions and open questions from the conversation. The current element-specific plans are linked above; `gbf-fire-varuna-plan.md` is retained only as a detailed historical archive.
+This note records broader conclusions and open questions from the conversation. The current element-specific plans are linked above; `../archive/fire-water-combined-archive.md` is retained only as a detailed historical archive.
 
 ## Player goals and constraints
 
@@ -232,7 +232,7 @@ Sabrina is a valid short normal attacker rather than a mistaken choice. Her imme
 
 The default owned casual Full Auto team is Manadiver / Cidala / Summer Seox / Earth Satyr with CA on. The fast normal alternative is Sabrina / Cidala / Yukata Pholia, while Kengo / Golden Knight / Earth Satyr / Holiday Anthuria provides a stable ougi team.
 
-Earth should remain Magna. The first broad Earth Gala target is Uriel; Valentine Makora, Summer Raziel, Christmas Shalem and Summer Lu Woh are later archetype-specific seasonal upgrades. The detailed plan is recorded in `gbf-earth-magna-plan.md`.
+Earth should remain Magna. The first broad Earth Gala target is Uriel; Valentine Makora, Summer Raziel, Christmas Shalem and Summer Lu Woh are later archetype-specific seasonal upgrades. The detailed plan is recorded in `../elements/earth-magna-plan.md`.
 
 ## Arcarum backline roadmap update
 
@@ -251,7 +251,7 @@ Only two Wind presets should be maintained. Team 1 is Manadiver / Summer Mahira 
 
 Current backline priority is non-Grand Ewiyar plus Raphael when Raphael is not in front. Long-term projects are Estarriola first, Katzelia second and Niyon 150 as the parallel Eternal project. Wind should remain Magna.
 
-The two future gacha targets are Catura and Summer Galleon. Catura has slightly higher general account-value priority because she completes the safe CA team with healing, clear, multi-hit omen handling and MC acceleration. Summer Galleon upgrades the fast Narmaya team and has higher opportunity priority only when she is actually sparkable on a 6% seasonal Gala. Do not chase her off-rate or spend a Siero ticket while a realistic future spark route remains. The detailed plan is recorded in `gbf-wind-magna-plan.md`.
+The two future gacha targets are Catura and Summer Galleon. Catura has slightly higher general account-value priority because she completes the safe CA team with healing, clear, multi-hit omen handling and MC acceleration. Summer Galleon upgrades the fast Narmaya team and has higher opportunity priority only when she is actually sparkable on a 6% seasonal Gala. Do not chase her off-rate or spend a Siero ticket while a realistic future spark route remains. The detailed plan is recorded in `../elements/wind-magna-plan.md`.
 
 ## Light roster mapping update
 
@@ -261,7 +261,7 @@ Only two Light archetypes are recommended. Team 1's current default casual prese
 
 Nehan remains the strongest pure speed upgrade but is not required to make the owned normal team work. Grand Sandalphon is the highest broad account-value missing target because of his frontline utility and Light Primarch passive. Summer Horus is the strongest specific upgrade to the already-owned Cosmos archetype and can take acquisition priority when she has a proper seasonal spark opportunity.
 
-Current reserve choices are Yukata Zahlhamelina for opening debuff immunity and Dark-damage reduction, and Yukata Narmaya for the MC-ougi plain-damage/charge-bar effect. Tikoh adds an All-Potion but Full Auto will not consume it automatically. Geisenborger/The Star is the future Arcarum project; Fif and Tweyen are longer-term Eternal options. The detailed plan is recorded in `gbf-light-magna-plan.md`.
+Current reserve choices are Yukata Zahlhamelina for opening debuff immunity and Dark-damage reduction, and Yukata Narmaya for the MC-ougi plain-damage/charge-bar effect. Tikoh adds an All-Potion but Full Auto will not consume it automatically. Geisenborger/The Star is the future Arcarum project; Fif and Tweyen are longer-term Eternal options. The detailed plan is recorded in `../elements/light-magna-plan.md`.
 
 Summer Heles was added to the Light investment references as a post-rebalance normal/CA flex rather than a default frontline replacement. The current Japanese path is Light ATK ★3 ×2, Critical ★3, OD Attack ★3, TA ★3 and three efficient Attack ★1 nodes; Balance awakening; Stamina ring and earring. CA DMG Cap is the ring alternative for CA-heavy use, while TA is a low-urgency fourth ring roll because her third skill already supplies three turns of guaranteed triple attacks. This uses Kamigame's current 18-star table because GameWith explicitly labels its displayed mastery allocation as pre-balance-adjustment.
 
@@ -279,4 +279,4 @@ Dark acquisition priority is Grand Sariel for broad account value, Orologia for 
 
 The Grand Sariel team ladder is now explicit. The premium no-Eresh normal destination is Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia. The premium skill/general alternative is Manadiver / Sariel / Lich / Orologia. The Eresh ceiling uses Sariel with Seox and Yukata Ilsa plus controlled Death/Nier swaps, but is outside this account's casual plan. Immediately after acquiring Sariel, the realistic default is Manadiver / Sariel / Lich / Tsukuyomi; Summer Magisa replaces Tsukuyomi when the fight is safe. After deterministic Seox recruitment, use Manadiver / Sariel / Seox / Lich, rotating Tsukuyomi in for survival.
 
-The deterministic roadmap is Seox recruitment/development first, then The Death and Nier alongside Celeste Omega 250 and Magna III. The detailed plan is recorded in `gbf-dark-magna-plan.md`.
+The deterministic roadmap is Seox recruitment/development first, then The Death and Nier alongside Celeste Omega 250 and Magna III. The detailed plan is recorded in `../elements/dark-magna-plan.md`.

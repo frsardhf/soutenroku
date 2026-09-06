@@ -35,7 +35,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Team 1: recommended general Full Auto
 
-**MC Manadiver / Cidala / Summer Seox / Earth Satyr**
+**Cidala / Summer Seox / Earth Satyr**
 
 - CA: **On**.
 - Cidala and Seox are the damage core; Satyr keeps the run stable and handles common boss mechanics.
@@ -45,7 +45,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Team 2: Sabrina normal-attack team
 
-**MC Manadiver or Panacea / Sabrina / Cidala / Yukata Pholia**
+**Sabrina / Cidala / Yukata Pholia**
 
 - CA: **Off** for short fights; **On** if the fight lasts long enough to value Pholia's ougi echo.
 - Use Yukata Pholia skill 1 at the opening. Party assassin plus guaranteed TA strongly complements Sabrina and Cidala.
@@ -54,7 +54,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Team 3: Summer Seox burst-cycle team
 
-**MC Manadiver / Summer Seox / Cidala / Yukata Pholia**
+**Summer Seox / Cidala / Yukata Pholia**
 
 - CA: usually **On** for repeated cycles because Seox's ougi resets his skills.
 - Seox cannot deliver his full pattern on turn 1; he becomes attractive from turn 2 onward and in short-to-medium fights.
@@ -63,7 +63,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Team 4: stable ougi team
 
-**MC Kengo / Golden Knight / Earth Satyr / Holiday Anthuria**
+**Golden Knight / Earth Satyr / Holiday Anthuria**
 
 - CA: **On**.
 - Mainhand: Unsigned Kaneshige when available.
@@ -73,7 +73,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 
 ## Team 5: skill-damage alternative
 
-**MC Manadiver / Summer Metera / Cidala / Earth Satyr**
+**Summer Metera / Cidala / Earth Satyr**
 
 - CA: **On** for general Full Auto.
 - Metera supplies multi-hit damage and skill supplemental; Manadiver and Cidala benefit from the damage support.

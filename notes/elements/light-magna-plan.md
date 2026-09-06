@@ -36,7 +36,7 @@ Last updated: 2026-08-28
 
 ### Current default for casual unattended Full Auto
 
-**MC Manadiver / Summer Payila / Basara / Grand Cosmos**
+**Summer Payila / Basara / Grand Cosmos**
 
 - CA: **On**.
 - Payila and Basara are the offensive core. Basara's guaranteed TA and stronger multiattack turns feed the normal-attack game plan that Payila rewards.
@@ -45,7 +45,7 @@ Last updated: 2026-08-28
 
 ### Current fast/easy variation
 
-**MC Manadiver / Summer Payila / Basara / Grand Jeanne d'Arc**
+**Summer Payila / Basara / Grand Jeanne d'Arc**
 
 - CA: **Off** for short normal farming; turn it **On** if the encounter needs CA effects or the team stalls.
 - Jeanne is the closest owned substitute for the offensive side of Nehan. Use her only when the Cosmos version already survives comfortably and faster first-turn damage is worthwhile.
@@ -53,7 +53,7 @@ Last updated: 2026-08-28
 
 ### Mechanics variation
 
-**MC / Summer Payila / Basara / Yukata Narmaya**
+**Summer Payila / Basara / Yukata Narmaya**
 
 Use Narmaya when reactive dispel, slow and automatic skill damage are useful. Keep CA **On** here because her kit scales with Light CAs and gives MC/self CA reactivation. This is a hybrid, not the fastest pure normal preset.
 
@@ -61,7 +61,7 @@ Use Narmaya when reactive dispel, slow and automatic skill damage are useful. Ke
 
 After acquiring Nehan, the speed preset becomes:
 
-**MC / Summer Payila / Basara / Nehan**
+**Summer Payila / Basara / Nehan**
 
 - Nehan replaces Cosmos/Jeanne/Lu Woh/Narmaya, not Payila or Basara.
 - He greatly compresses damage through teamwide offensive buffs, echoes/supplemental support and additional attack actions, but his defensive drawback makes him less attractive for long unattended fights.
@@ -69,7 +69,7 @@ After acquiring Nehan, the speed preset becomes:
 
 ## Team 2: Cosmos CA/skill Full Auto without Summer Horus
 
-**MC Kengo / Grand Cosmos / Grand Noa / Grand Lu Woh**
+**Grand Cosmos / Grand Noa / Grand Lu Woh**
 
 - CA: **On**.
 - Cosmos supplies multi-hit skill damage, dispels and encounter-mechanic coverage.
@@ -135,7 +135,7 @@ He would usually replace the least necessary flex member:
 
 Primary normal/general Full Auto:
 
-**MC Manadiver / Summer Payila / Basara / Grand Sandalphon**
+**Summer Payila / Basara / Grand Sandalphon**
 
 - Use CA **Off** for genuinely short normal farming and **On** for medium/long general Full Auto.
 - Sandalphon's partywide 20% Light echo directly strengthens Payila and Basara's repeated normal attacks. His own guaranteed-TA/flurry window, turn-without-passing attack, dispels, cumulative debuffs and defensive support make this much broader than the Jeanne version.
@@ -143,7 +143,7 @@ Primary normal/general Full Auto:
 
 Long/difficult Full Auto:
 
-**MC Manadiver / Grand Sandalphon / Grand Cosmos / Grand Lu Woh**
+**Grand Sandalphon / Grand Cosmos / Grand Lu Woh**
 
 - Keep CA **On**. Sandalphon's ougis extend his party buff, while healing accelerates access to his strongest state; Lu Woh supplies sustain and Cosmos supplies dispels/multi-hit mechanics.
 - Replace Cosmos with Summer Payila when the fight favors normal attacks, or replace Lu Woh with Grand Noa/Yukata Narmaya when more CA or skill output is required and survival is already sufficient.

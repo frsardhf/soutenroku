@@ -7,7 +7,6 @@ Profile: casual, Full Auto oriented, prioritizing reliable event and Guild War r
 
 ## Team A — Grand Zeta normal attacks
 
-- MC: Manadiver
 - Grand Zeta
 - Michael
 - Grand Wilnas, Yukata Izmir, or Yukata Aglovale
@@ -17,14 +16,13 @@ Grand Zeta is the main attacker. Michael supplies Fire ATK, echo, charge support
 
 After obtaining Grand Percival:
 
-- MC / Grand Zeta / Grand Percival / Grand Wilnas or Yukata Izmir
+- Grand Zeta / Grand Percival / Grand Wilnas or Yukata Izmir
 - Move Michael to reserve when her active utility is unnecessary.
 
 Grand Percival remains the first Fire spark target. Grand Yuel is a later improvement, not a prerequisite.
 
 ## Team B — Sandira CA/Fatal Chain
 
-- MC: Kengo with Unsigned Kaneshige
 - Sandira
 - Fire Sevilbarra
 - Sato
@@ -62,4 +60,4 @@ Use double Colossus Omega 250 for general Full Auto. If Ultima carries the Serap
 - Farm Alanaan/The Sun first, then Fraux/The Devil.
 - Spark Grand Percival before Grand Yuel.
 
-The complete SSR mapping, substitution analysis, Ragazzo explanation and echo/DATA comparison remain in [the archived combined plan](./gbf-fire-varuna-plan.md).
+The complete SSR mapping, substitution analysis, Ragazzo explanation and echo/DATA comparison remain in [the archived combined plan](../archive/fire-water-combined-archive.md).

@@ -8,7 +8,7 @@ Last updated: 2026-08-18
 - Missing Summer Catura and Grand Sariel removes top-end normal-attack speed, but it does not prevent reliable casual Full Auto.
 - The account owns a coherent modern sustain/skill core: **Grand Lich, Summer Magisa and Tsukuyomi**.
 - It also owns **Yukata Seofon, Summer Vajra and Grand Shalem**, which form a separate CA/control team rather than a weaker copy of the Lich team.
-- The account currently has no listed Seox. Recruiting and eventually transcending Seox is the largest deterministic character project.
+- Seox is deliberately excluded from the personal team plan. If recruited for collection, stop at base 4-star under the male-Eternal policy.
 
 ## Roster mapping
 
@@ -54,14 +54,14 @@ Substitutions:
 - Replace Tsukuyomi with **Grand Ferry** if her debuff/dispel package specifically solves the fight, but Tsukuyomi is normally the better unattended sustain member.
 - Replace a damage slot with **Dark Grimnir** for an all-ally substitute/emergency tank turn.
 
-## Team 2: Seox general Full Auto
+## Team 2: generic non-Seox CA/skill Full Auto
 
-**Seox / Grand Lich / Tsukuyomi**
+**Summer Azusa / Grand Lich / Tsukuyomi**
 
 - CA: **On**.
-- Seox is the primary self-sufficient normal/hybrid attacker. Lich supplies automatic damage, delays and debuffs, while Tsukuyomi makes the composition safe enough for unattended use.
-- Replace Tsukuyomi with Summer Magisa when survival is solved. Grand Sariel is the future offensive upgrade.
-- Use three Ater Fists and one Ater Katana so the grid retains HP, CA and specialty support instead of forcing five boost weapons.
+- Azusa is the main CA/skill attacker, Lich supplies recurring damage, delays and debuffs, and Tsukuyomi stabilizes unattended runs.
+- Replace Tsukuyomi with Summer Vajra when offensive CA output matters more than safety.
+- Use the skill-oriented Ater Fist/Katana grid rather than constructing a separate Seox grid.
 
 Summer Azusa remains Team 1's offensive skill flex:
 
@@ -97,7 +97,7 @@ Orologia would replace Summer Magisa or Tsukuyomi according to the encounter; Li
 - Highest broad account value.
 - Adds 20% to Dark/Oblivion/Malice/Misty Gloom Omega weapon skills from the frontline or backline, benefiting Magna and Hades.
 - Strong opening attacker with repeated attacks, skill follow-ups and unique party echo.
-- Future normal/general shell: **Grand Sariel / Seox / flex**, with Orologia, Summer Catura, Lich or a defensive unit filling the final role.
+- Future normal/general shell: **Grand Sariel / Grand Orologia / flex**, with Summer Catura, Lich or a defensive unit filling the final role.
 
 ### Grand Sariel team ladder: premium to current reality
 
@@ -140,12 +140,12 @@ Short owned variation:
 - Usually CA **Off** or configured specifically for the target.
 - This approximates a low-input opening-damage composition. Do not invest heavily merely to optimize this temporary version.
 
-#### After deterministic Seox recruitment
+#### Non-Seox Sariel destination
 
-**Grand Sariel / Seox / Grand Lich**
+**Grand Sariel / Grand Lich / Grand Orologia**
 
-- Default offensive general team after Seox is developed.
-- Replace Lich with Tsukuyomi for survival, or move Sariel to reserve if a particular mechanic requires three other frontline specialists. His 20% weapon-skill passive still applies.
+- Default premium skill/general destination without Seox.
+- Replace Orologia or Lich with Tsukuyomi for survival, or move Sariel to reserve if a particular mechanic requires three other frontline specialists. His 20% weapon-skill passive still applies.
 
 Reality check: Sariel would be an excellent acquisition even if he spent many battles in the backline. The account does not need Summer Catura, Orologia or Ereshkigal before Sariel becomes worthwhile.
 
@@ -196,9 +196,9 @@ Do not Damascus-bar farmable Magna pieces. Do not copy Ereshkigal/Hades grids wh
 
 ### Deterministic projects
 
-1. Recruit and develop **Seox**.
-2. Farm **The Death** and recruit/develop **Nier**.
-3. Complete Celeste Omega 250 and the Magna III/Opus foundation.
+1. Farm **The Death** and recruit/develop **Nier**.
+2. Complete Celeste Omega 250 and the Magna III/Opus foundation.
+3. Recruit Seox only to base 4-star if desired for collection; do not allocate 5-star or Transcendence materials.
 
 ### Gacha targets
 
@@ -211,10 +211,10 @@ Banner pools matter: Sariel is a Legfest target, while Orologia is a Flashfest t
 
 - Dark is not actually nonfunctional: the owned Lich/Magisa/Tsukuyomi combination is a strong casual Full Auto foundation.
 - **Current Team 1:** Manadiver / Grand Lich / Summer Magisa / Tsukuyomi.
-- **Future Team 2:** Manadiver / Seox / Grand Lich / Tsukuyomi, with Summer Magisa replacing Tsukuyomi when survival is solved.
+- **Team 2:** Kengo or Manadiver / Summer Azusa / Grand Lich / Tsukuyomi, with Summer Vajra replacing Tsukuyomi when offensive CA output matters more than safety.
 - **Summer Azusa:** retained as Team 1's one-turn/offensive skill flex rather than requiring a separate Kengo preset.
 - **After Orologia:** Manadiver / Tyra / Grand Lich / Grand Orologia, or Lich/Orologia/Tsukuyomi for safety.
 - **Broad first target:** Grand Sariel.
 - **Current-banner immediate upgrade:** Grand Orologia, if and only if a complete spark is available and the banner itself is worth finishing.
 - **Seasonal target:** Summer Catura for the future normal/high-difficulty team.
-- **Farm priority:** Seox, The Death and Nier.
+- **Farm priority:** The Death and Nier; Seox is collection-only at base 4-star.

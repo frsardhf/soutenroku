@@ -1,26 +1,21 @@
 import {ExternalLink} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import {ARCARUM_REVIEWED_ON,arcarumDecisionGates,arcarumSources,arcarumSummons,baseBacklineSummary} from "@/data/guides/arcarum";
+import {ARCARUM_REVIEWED_ON,ARCARUM_VERSION,arcarumDecisionGates,arcarumSources,arcarumSummons,arcarumTranscendenceNotes,baseBacklineSummary,evokerMaterialTotals,femaleEvokerOrder} from "@/data/guides/arcarum";
 
 const elementClass=(element:string)=>`arcarum-element arcarum-${element.toLowerCase()}`;
 
 export function ArcarumGuide(){
   return <article className="manadiver-guide arcarum-guide">
     <header className="guide-page-header">
-      <div><p className="guide-kicker">GUIDES / ACCOUNT PROGRESSION</p><h1>Arcarum path</h1><p className="guide-deck">A provisional route for the six damage summons, Haaselia’s first major uncap, and the account checks that determine every Evoker investment after that.</p></div>
-      <dl className="guide-verification-summary"><div><dt>Current recruits</dt><dd>Caim · Haaselia</dd></div><div><dt>Last checked</dt><dd>{ARCARUM_REVIEWED_ON}</dd></div></dl>
+      <div><p className="guide-kicker">GUIDES / ACCOUNT PROGRESSION</p><h1>Arcarum path</h1><p className="guide-deck">A female-only Evoker investment queue, the six damage summons, and the material gates behind each concentrated 5★ route.</p></div>
+      <dl className="guide-verification-summary"><div><dt>Plan version</dt><dd>{ARCARUM_VERSION}</dd></div><div><dt>Last checked</dt><dd>{ARCARUM_REVIEWED_ON}</dd></div></dl>
     </header>
-    <nav className="guide-on-this-page" aria-label="On this page"><span>On this page</span><a href="#arcarum-plan">Current plan</a><a href="#arcarum-six">Six summons</a><a href="#arcarum-gates">After Haaselia</a><a href="#arcarum-base">Base backline</a><a href="#arcarum-sources">Sources</a></nav>
-    <aside className="guide-correction"><strong>Working plan · revisit later</strong><p>Raise The Sun, The Moon, The Hanged Man, Judgement, The Star and Death to 4★ for the 10% superior-element damage sub-aura. In parallel, make Haaselia the first 5★ Evoker project. Do not wait for all ten recruits before uncapping her.</p></aside>
+    <nav className="guide-on-this-page" aria-label="On this page"><span>On this page</span><a href="#arcarum-plan">Female queue</a><a href="#arcarum-six">Six summons</a><a href="#arcarum-gates">Project gates</a><a href="#arcarum-materials">Materials</a><a href="#arcarum-transcendence">Transcendence</a><a href="#arcarum-base">Backline</a><a href="#arcarum-sources">Sources</a></nav>
+    <aside className="guide-correction"><strong>Active female-only route</strong><p>Haaselia → Fraux → Nier → Maria Theresa. Recruitment may use genuinely spare Evolite before the prior 5★ is complete, but major materials stay concentrated on one active project.</p></aside>
 
     <section id="arcarum-plan" className="guide-section">
-      <header className="guide-section-heading"><p className="guide-kicker">ORDER OF OPERATIONS</p><h2>Broad summon value, one focused Evoker</h2><p>The summon goal and character goal are related but not identical. Build the six broadly useful sub-auras while concentrating scarce Evoker materials on one proven upgrade.</p></header>
-      <ol className="arcarum-plan-list">
-        <li><span>01</span><div><strong>Complete the six 4★ damage summons</strong><p>Their sub-aura rises from 7% to 10% superior-element damage. This is not ordinary damage-cap up, although it can increase damage beyond the normal capped result.</p></div></li>
-        <li><span>02</span><div><strong>Prepare Haaselia 5★ and fourth skill in parallel</strong><p>She is the first concentrated character investment for general Water, Full Auto and charge-attack teams.</p></div></li>
-        <li><span>03</span><div><strong>Protect Magna III progression</strong><p>If Eternity Sands are still gating essential Magna summons, collect Haaselia’s materials without forcing the NWF weapon step ahead of the account’s wider grid foundation.</p></div></li>
-        <li><span>04</span><div><strong>Use account needs—not completion count—for the next Evolite</strong><p>After Haaselia, choose the next recruit or uncap from the decision gates below. All ten Evokers remain a completion goal, not the next power breakpoint.</p></div></li>
-      </ol>
+      <header className="guide-section-heading"><p className="guide-kicker">ORDER OF OPERATIONS</p><h2>One fixed queue, one major sink at a time</h2><p>The account values the women first. This personal sequence overrides generic aggregate tier-list order while retaining each character’s actual role.</p></header>
+      <ol className="arcarum-plan-list">{femaleEvokerOrder.map((item,index)=><li key={item.name}><span>{String(index+1).padStart(2,"0")}</span><div><strong>{item.name} · {item.summon}</strong><p>{item.element} · {item.target}. {item.reason}</p></div></li>)}</ol>
     </section>
 
     <section id="arcarum-six" className="guide-section">
@@ -29,8 +24,19 @@ export function ArcarumGuide(){
     </section>
 
     <section id="arcarum-gates" className="guide-section">
-      <header className="guide-section-heading"><p className="guide-kicker">AFTER HAASELIA</p><h2>Let the next bottleneck decide</h2><p>These are triggers, not another fixed queue. Choose the first condition that is actually affecting a saved team or repeated farm.</p></header>
+      <header className="guide-section-heading"><p className="guide-kicker">PROJECT GATES</p><h2>Keep the fixed order without blocking recruitment</h2><p>These gates distinguish spending a spare Evolite from diverting the Veritas, Ideas, quartz and sands belonging to the active 5★ project.</p></header>
       <div className="arcarum-gates">{arcarumDecisionGates.map((item,index)=><article key={item.trigger}><span>{String(index+1).padStart(2,"0")}</span><div><p>{item.trigger}</p><h3>{item.action}</h3><small>{item.reason}</small></div></article>)}</div>
+    </section>
+
+    <section id="arcarum-materials" className="guide-section">
+      <header className="guide-section-heading"><p className="guide-kicker">SANDBOX MATERIAL GATES</p><h2>Typical Domain plus Foundation 5★ totals</h2><p>Approximate one-Evoker route totals. For Haaselia, prioritize Moon Veritas and Moon Ideas while combining Mundus five-gauge enemies with Sephira boxes.</p></header>
+      <div className="guide-table-wrap"><table className="guide-table"><caption>Approximate materials for one concentrated Evoker route</caption><thead><tr><th scope="col">Material</th><th scope="col">Amount</th><th scope="col">Planning note</th></tr></thead><tbody>{evokerMaterialTotals.map((item)=><tr key={item.material}><th scope="row">{item.material}</th><td><strong>{item.amount}</strong></td><td>{item.note}</td></tr>)}</tbody></table></div>
+      <aside className="guide-correction"><strong>Xeno Lucky Loot</strong><p>Choose Sephira Evolite while this female-only route is active. Use Xeno Cocytus Militis or Xeno Vohu Manah Militis—whichever clears faster. Gold Brick or Lapis Merit becomes preferable only after Evolite stops being the recruitment bottleneck.</p></aside>
+    </section>
+
+    <section id="arcarum-transcendence" className="guide-section">
+      <header className="guide-section-heading"><p className="guide-kicker">2026 STATUS</p><h2>Evoker Transcendence releases</h2><p>Separate older 5★ tier-list rankings from the newer Transcendence kits.</p></header>
+      <ol className="arcarum-plan-list">{arcarumTranscendenceNotes.map((item,index)=><li key={item}><span>{String(index+1).padStart(2,"0")}</span><div><strong>{item}</strong></div></li>)}</ol>
     </section>
 
     <section id="arcarum-base" className="guide-section">

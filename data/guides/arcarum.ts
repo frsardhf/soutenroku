@@ -1,37 +1,60 @@
 export type ArcarumSource = {label:string;publisher:string;url:string;scope:string};
 
-export const ARCARUM_REVIEWED_ON="1 Sep 2026";
+export const ARCARUM_VERSION="v1.1";
+export const ARCARUM_REVIEWED_ON="8 Sep 2026";
+
+export const femaleEvokerOrder=[
+  {name:"Haaselia",summon:"The Moon",element:"Water",target:"First 5★ project",reason:"Default Water backline and a premier frontline engine after correct-position entry."},
+  {name:"Fraux",summon:"The Devil",element:"Fire",target:"Second 5★ project",reason:"Full Auto healing, debuff extension, dispel and long-fight stability."},
+  {name:"Nier",summon:"Death",element:"Dark",target:"Third 5★ project",reason:"Controlled Death entry, burst, Full Auto and the account's non-Seox Dark direction."},
+  {name:"Maria Theresa",summon:"Justice",element:"Water",target:"Fourth 5★ project",reason:"Specialized dispel-heavy Water backline and high-difficulty option; consider Transcendence after 5★."},
+] as const;
 
 export const arcarumSummons=[
-  {element:"Fire",summon:"The Sun",evoker:"Alanaan",state:"Build to 4★",note:"The summon is broadly valuable; the Evoker is a later manual/short-burst investment for this account."},
-  {element:"Water",summon:"The Moon",evoker:"Haaselia",state:"Recruited",note:"Completed damage-summon route and the first Evoker selected for concentrated 5★ investment."},
-  {element:"Earth",summon:"The Hanged Man",evoker:"Caim",state:"Recruited",note:"Completed route. Base Caim already supplies the high-value Highlander backline passive."},
-  {element:"Wind",summon:"Judgement",evoker:"Katzelia",state:"Build to 4★",note:"Katzelia becomes an attractive recruit when Wind can reliably maintain an ally debuff."},
-  {element:"Light",summon:"The Star",evoker:"Geisenborger",state:"Build to 4★",note:"The summon is the immediate damage objective. Base Geisenborger is defensive rather than an automatic damage upgrade."},
-  {element:"Dark",summon:"Death",evoker:"Nier",state:"Build to 4★",note:"The summon is broadly useful; recruit Nier when Dark burst or her survival utility has a real preset."},
+  {element:"Fire",summon:"The Sun",evoker:"Alanaan",state:"Build to 4★",note:"Complete the damage sub-aura; Alanaan is not part of the active female recruitment queue."},
+  {element:"Water",summon:"The Moon",evoker:"Haaselia",state:"Recruited",note:"First concentrated 5★ Evoker project and a permanent Water damage summon."},
+  {element:"Earth",summon:"The Hanged Man",evoker:"Caim",state:"Recruited",note:"Completed route. Existing recruitment does not change the active female-only sequence."},
+  {element:"Wind",summon:"Judgement",evoker:"Katzelia",state:"Build to 4★",note:"Complete the damage sub-aura; defer male Evoker investment while the female queue is active."},
+  {element:"Light",summon:"The Star",evoker:"Geisenborger",state:"Build to 4★",note:"The summon is the damage objective; its associated male Evoker is not an active recruitment target."},
+  {element:"Dark",summon:"Death",evoker:"Nier",state:"Build to 4★",note:"Complete the summon and use it with Nier as the third female 5★ project."},
 ] as const;
 
 export const arcarumDecisionGates=[
-  {trigger:"Full Auto coverage is the priority",action:"Recruit Estarriola",reason:"His automatic kit and chain-burst backline buffs fit low-intervention play even though Temperance is not one of the six damage summons."},
-  {trigger:"Light survival is blocking clears",action:"Recruit Geisenborger",reason:"At base he caps Dark damage received at 10,000 per hit. Treat his offensive cap stacking as a later level-95 upgrade."},
-  {trigger:"Wind has a reliable self-debuff setup",action:"Recruit Katzelia",reason:"His base reverse-position passive supplies 30% perpetuity ATK while Wind allies are debuffed."},
-  {trigger:"Dark burst becomes a saved, repeated farm",action:"Recruit Nier",reason:"Death and Nier become a deliberate burst/survival package instead of a checklist recruit."},
-  {trigger:"Earth high difficulty or Solomnas is next",action:"Return to Caim 5★ / fourth skill",reason:"Base Caim already covers general backline value; spend the additional Evolite and sands when his frontline and transcendence route will be used."},
-  {trigger:"Fire short manual burst becomes important",action:"Recruit and later uncap Alanaan",reason:"The Sun should be completed early, but Alanaan's premium value is less aligned with the current unattended preference."},
+  {trigger:"Haaselia materials are still active",action:"Do not split the 5★ grind",reason:"Recruit another woman only when Evolite and recruitment materials are genuinely spare; do not delay Haaselia's active 5★ route."},
+  {trigger:"Haaselia 5★ is secured",action:"Move major materials to Fraux",reason:"Fraux is the second female project for Fire Full Auto, healing, dispels and debuff extension."},
+  {trigger:"Fraux 5★ is secured",action:"Move major materials to Nier",reason:"Nier and Death support Dark burst, Full Auto and the account's anti-Seox direction."},
+  {trigger:"Nier 5★ is secured",action:"Move major materials to Maria Theresa",reason:"Maria is a specialized Water dispel/high-difficulty backliner rather than the default partner beside Haaselia."},
+] as const;
+
+export const evokerMaterialTotals=[
+  {material:"Corresponding Veritas",amount:"~720",note:"Usually the first visible gate."},
+  {material:"Corresponding Astra",amount:"~550",note:"Farm alongside Ideas and boxes; do not shortcut with New World Quartz."},
+  {material:"Corresponding Ideas",amount:"~440",note:"Often becomes the longer Sandbox grind after Veritas."},
+  {material:"Corresponding Brights",amount:"~250",note:"Route-specific Sandbox material."},
+  {material:"Vellum Documents",amount:"~1,060",note:"Accumulates across the wider route."},
+  {material:"New World Quartz",amount:"~90",note:"Protect this stock from inefficient Astra shortcuts."},
+  {material:"Time Sands",amount:"3",note:"Needed for the Foundation weapon 5★ route."},
+] as const;
+
+export const arcarumTranscendenceNotes=[
+  "Maria Theresa received the first Evoker Transcendence release on 21 July 2026, initially to Lv110.",
+  "The announced October 2026 batch is Nier, Estarriola and Fraux.",
+  "Maria's older low 5★ priority does not describe her newer dispel-focused Transcendence value.",
+  "Do not assume dates for the remaining Evokers until Cygames announces them.",
 ] as const;
 
 export const baseBacklineSummary=[
-  {name:"Caim",value:"20% perpetuity ATK, 50% DEF and 10% damage cap with ten different grid weapons.",rating:"Core now"},
-  {name:"Haaselia",value:"Per-turn unique ATK and DEF, reaching 20% ATK and 40% DEF at turn 10.",rating:"Core now"},
-  {name:"Katzelia",value:"30% perpetuity ATK while Wind allies are debuffed; healing while they are not.",rating:"Conditional offense"},
-  {name:"Lobelia",value:"Earth allies stack skill-damage cap after casting skills, up to 30%.",rating:"Skill teams"},
-  {name:"Estarriola",value:"A Wind chain burst grants one random offensive or defensive buff.",rating:"FA utility"},
-  {name:"Geisenborger",value:"Caps Dark damage received by Light allies at 10,000 per hit.",rating:"Defense only at base"},
+  {name:"Haaselia",value:"Per-turn unique ATK and DEF, reaching 20% ATK and 40% DEF at turn 10.",rating:"Water default"},
+  {name:"Maria Theresa",value:"Specialized Water support triggered by party dispels; strongest in dispel-heavy teams.",rating:"Water specialist"},
+  {name:"Caim",value:"20% perpetuity ATK, 50% DEF and 10% damage cap with ten different grid weapons.",rating:"Already recruited"},
+  {name:"Fraux",value:"Her major account value is the developed frontline package rather than a universal base backline slot.",rating:"Fire project"},
+  {name:"Nier",value:"Death/correct-position entry enables her intended Dark burst, survival and Full Auto roles.",rating:"Dark project"},
 ] as const;
 
 export const arcarumSources:Record<string,ArcarumSource>={
-  recruitment:{label:"Evoker recruitment priority",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/189651",scope:"Current pre-5★ acquisition roles and reverse-position value."},
-  uncap:{label:"Evoker 5★ and fourth-skill priority",publisher:"Kamigame JP",url:"https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%A2%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%A0%E3%81%AE%E8%BB%A2%E4%B8%96/%E5%8D%81%E8%B3%A2%E8%80%85%E3%81%AE%E6%9C%80%E7%B5%82%E4%B8%8A%E9%99%90%E8%A7%A3%E6%94%BE.html",scope:"Current Japanese comparison of 5★, fourth-skill, Full Auto, short-fight, and high-difficulty value."},
+  recruitment:{label:"Evoker recruitment priority",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/189651",scope:"Current acquisition roles and reverse-position value."},
+  uncap:{label:"Evoker 5★ and fourth-skill priority",publisher:"Kamigame JP",url:"https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%A2%E3%83%BC%E3%82%AB%E3%83%AB%E3%83%A0%E3%81%AE%E8%BB%A2%E4%B8%96/%E5%8D%81%E8%B3%A2%E8%80%85%E3%81%AE%E6%9C%80%E7%B5%82%E4%B8%8A%E9%99%90%E8%A7%A3%E6%94%BE.html",scope:"Current 5★, fourth-skill, Full Auto, short-fight and high-difficulty comparison."},
   mechanics:{label:"Arcarum summon progression",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/84200",scope:"Summon sub-aura progression and the six superior-element damage routes."},
-  transcendence:{label:"Solomnas and Evoker transcendence",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/562526",scope:"2026 transcendence requirements and the long-term Wonder system."},
+  transcendence:{label:"Solomnas and Evoker transcendence",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/562526",scope:"2026 Transcendence requirements and long-term progression."},
+  announcement:{label:"2026 Summer Stream announcements",publisher:"Famitsu",url:"https://www.famitsu.com/article/202608/84013?page=1",scope:"October 2026 Evoker Transcendence batch announcement."},
 };

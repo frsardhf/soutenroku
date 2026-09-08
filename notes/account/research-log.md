@@ -250,7 +250,7 @@ Grand Narmaya remains the best owned immediate normal-attack carry, but is not u
 
 Only two Wind presets should be maintained. Team 1 is Manadiver / Summer Mahira / Grand Narmaya / Raphael for fast normal Full Auto. Team 2 is Kengo / Grand Charlotta / Cagliostro & Clarisse / Raphael for safe long Full Auto/CA play. Other characters are substitutions, not separate saved teams. Cagliostro & Clarisse are a particularly important long-fight healer, clearer and multi-dispeller despite being a regular-pool character.
 
-Current backline priority is non-Grand Ewiyar plus Raphael when Raphael is not in front. Long-term projects are Estarriola first, Katzelia second and Niyon 150 as the parallel Eternal project. Wind should remain Magna.
+Current backline priority is non-Grand Ewiyar plus Raphael when Raphael is not in front. Long-term Evoker projects are Estarriola first and Katzelia second. Under the female-only Transcendence policy, Niyon remains level 100 unless a specific Wind team justifies committing directly to level 150. Wind should remain Magna.
 
 The two future gacha targets are Catura and Summer Galleon. Catura has slightly higher general account-value priority because she completes the safe CA team with healing, clear, multi-hit omen handling and MC acceleration. Summer Galleon upgrades the fast Narmaya team and has higher opportunity priority only when she is actually sparkable on a 6% seasonal Gala. Do not chase her off-rate or spend a Siero ticket while a realistic future spark route remains. The detailed plan is recorded in `../elements/wind-magna-plan.md`.
 
@@ -278,6 +278,10 @@ Orologia has unusually good immediate account fit: GameWith's current Magna Full
 
 Dark acquisition priority is Grand Sariel for broad account value, Orologia for the immediate owned Lich/Tyra team, Summer Catura for the future Fighter Origin normal team, then Yukata Ilsa. Summer Catura's limited opportunity can temporarily outrank Orologia. Yukata Ilsa remains lowest priority because the account lacks Ereshkigal and does not target manual racing.
 
-The Grand Sariel team ladder is now explicit. The premium no-Eresh normal destination is Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia. The premium skill/general alternative is Manadiver / Sariel / Lich / Orologia. The Eresh ceiling uses Sariel with Seox and Yukata Ilsa plus controlled Death/Nier swaps, but is outside this account's casual plan. Immediately after acquiring Sariel, the realistic default is Manadiver / Sariel / Lich / Tsukuyomi; Summer Magisa replaces Tsukuyomi when the fight is safe. After deterministic Seox recruitment, use Manadiver / Sariel / Seox / Lich, rotating Tsukuyomi in for survival.
+The Grand Sariel team ladder is now explicit. The premium no-Eresh normal destination is Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia. The premium skill/general alternative is Manadiver / Sariel / Lich / Orologia. Immediately after acquiring Sariel, the realistic default is Manadiver / Sariel / Lich / Tsukuyomi; Summer Magisa replaces Tsukuyomi when the fight is safe. Seox is excluded from the personal team plan.
 
 The deterministic Dark roadmap is The Death and Nier alongside Celeste Omega 250 and Magna III; Seox is optional because the account is deliberately pursuing anti-Seox teams. The detailed plan is recorded in `../elements/dark-magna-plan.md`.
+
+## Eternal investment policy
+
+Only the five female Eternals receive 5-star and Transcendence investment for now. The researched breakpoint order is Fif 130 (then 150 for Light HL/solo), Threo 130, Tien 120, Tweyen 110 and Niyon level 100 unless committing directly to 150. Anre, Feower, Seox, Seofon and Eahta are recruitment/base-4-star projects only. Seox is additionally excluded from personal Dark team planning. See `./eternal-plans.md` for the maintained rationale and Kamigame sources.

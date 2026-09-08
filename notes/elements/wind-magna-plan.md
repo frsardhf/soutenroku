@@ -97,7 +97,7 @@ Suggested configurations:
 
 1. **Estarriola / Temperance:** first Wind Evoker for this casual Full Auto plan. His reserve effects and developed frontline kit provide automatic skill damage, dispels, healing and low-input stability. He is especially suitable for long fights and Manadiver/skill teams.
 2. **Katzelia / The Judgement:** second Wind Evoker. His reverse-position support helps when allies receive debuffs or elemental damage, and his developed frontline form is valuable in CA and difficult content.
-3. **Niyon 150:** high-priority Eternal project for Wind. She supplies powerful team buffs, echo, control and excellent general Full Auto support. This is separate from the Evoker farm and may require a long transcendence investment.
+3. **Niyon:** female-only Transcendence option, but remain at level 100 unless committing directly to level 150. Her level-150 cap support, normal amplification and partywide Dispel Cancel are powerful, but Kamigame currently treats her as a lower-priority substitute for modern Wind supports rather than an automatic account project.
 
 Long-term backline commonly becomes Raphael plus Estarriola/Katzelia, but Evokers may be intentionally brought into the frontline to activate their correct-position effects. Ewiyar remains an excellent low-cost passive option.
 
@@ -124,7 +124,7 @@ Do not Damascus-bar the Magna grid. Exact counts should wait for the Wind weapon
 
 1. Complete the Magna III foundation and Magna Dark Opus.
 2. Recruit/develop Estarriola.
-3. Progress Niyon toward 150 if the material cost is acceptable.
+3. Leave Niyon at level 100 until a specific Wind team justifies the full level-150 commitment.
 4. Develop Katzelia later for CA/high-difficulty use.
 
 ### Gacha planning

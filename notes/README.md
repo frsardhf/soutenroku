@@ -18,5 +18,6 @@ as Granblue Fantasy changes.
 - [Conversation research log](./account/research-log.md)
 - [Other Magna roadmaps](./account/other-magna-roadmaps.md)
 - [Arcarum and Evoker research](./account/arcarum-evoker-research.md)
+- [Eternal investment plan](./account/eternal-plans.md)
 - [Historical combined Fire/Water archive](./archive/fire-water-combined-archive.md)
 - [Dark Opus research](./research/dark-opus-research.md)

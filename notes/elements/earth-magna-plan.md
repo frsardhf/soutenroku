@@ -69,7 +69,7 @@ Earth Ilsa, Benjamin, Vaseraga, Soriz, Ladiva, Fiorito, Aletheia, Laguna, Ayer, 
 - Mainhand: Unsigned Kaneshige when available.
 - This is slower than the normal teams but much safer and more consistent for long Full Auto.
 - Summer Illnott can replace Anthuria when opening charge bar matters more than sustain.
-- Long-term farm target: Okto 150 can replace Golden Knight or Anthuria depending on the encounter.
+- Eahta may be recruited to base 4-star for collection, but his 5-star uncap and Transcendence are outside the active female-only investment plan.
 
 ## Team 5: skill-damage alternative
 
@@ -108,6 +108,11 @@ At 400% total Omega boost, two Nibelung Horns provide guaranteed critical. Coven
 
 ## Earth backline and Arcarum roadmap
 
+### Eternal project
+
+- **Threo:** the Earth entry in the female-only Eternal Transcendence plan. Target level 130 as the meaningful offensive breakpoint; continue to level 150 only if she earns a stable place in long Full Auto or manual Earth teams.
+- **Eahta:** recruitment/base 4-star only under the current male-Eternal policy.
+
 ### Current practical backline
 
 - **Summer Tikoh** is the best owned passive backline character. She adds a blue potion at battle start and shortens Earth allies' debuff durations whenever a chain burst occurs.
@@ -127,7 +132,7 @@ Use **Summer Tikoh plus a reinforcement** now. Later, use Caim when the weapon g
 2. Level Sabrina because she is liked and already has a real role.
 3. Level Summer Metera, Golden Knight and Holiday Anthuria for the alternate teams.
 4. Farm a completed Magna III foundation and Magna Dark Opus before considering Titan.
-5. Farm Caim and Okto; their final/transcendence investment is long-term rather than urgent.
+5. Farm Caim. Recruit Eahta only to base 4-star; reserve Eternal 5-star and Transcendence materials for the female-only plan.
 6. Spark **Uriel** as the first broadly useful Earth Gala target. His frontline utility and Earth-weapon-skill/backline value improve multiple teams.
 7. Seasonal luxury targets: Valentine Makora for top normal/FA play; Summer Raziel for optimized normal burst; Christmas Shalem or Summer Lu Woh for demanding CA/high-difficulty teams.
 8. Earth Olivia is a strong normal/FA option if obtainable conveniently, but the owned normal attackers mean she is not an emergency purchase.

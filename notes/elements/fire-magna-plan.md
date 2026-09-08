@@ -59,6 +59,7 @@ Use double Colossus Omega 250 for general Full Auto. If Ultima carries the Serap
 - Backline: Michael plus defensive/replacement flex
 - Farm Alanaan/The Sun first, then Fraux/The Devil.
 - For the account's female-only Evoker route, Fraux follows Haaselia and is the next Fire 5★ project: healing, debuff extension, dispel and long-fight Full Auto stability.
+- **Tien:** the Fire entry in the female-only Eternal Transcendence plan. Target level 120 for Treasure Hunt 10, then stop while Grand Zeta and other modern Fire attackers cover combat. Levels 130–150 are optional only if Tien becomes an active frontline project.
 - Spark Grand Percival before Grand Yuel.
 
 The complete SSR mapping, substitution analysis, Ragazzo explanation and echo/DATA comparison remain in [the archived combined plan](../archive/fire-water-combined-archive.md).

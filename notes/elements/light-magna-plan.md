@@ -187,8 +187,8 @@ Alternative:
 ## Future Arcarum and Eternal roadmap
 
 1. **Geisenborger / The Star:** Light's Evoker project. His reserve passive limits incoming Dark damage per hit, while his developed frontline form provides tanking and difficult-content utility. Farm The Star summon for Light damage progression even before the character is complete.
-2. **Fif transcendence:** the safer Eternal project for casual long Full Auto and difficult content; prioritize only if the material burden is acceptable.
-3. **Tweyen transcendence:** damage, debuff and hit-count specialist. She can help substitute for missing hit-count tools in specific content, but is not required merely to run daily Full Auto.
+2. **Fif transcendence:** first female Eternal project. Target level 130 for serious high-difficulty use, then level 150 when Light solo/HL stability justifies it.
+3. **Tweyen transcendence:** target level 110 as the economical Full Auto breakpoint. Continue to 130/150 only when her damage, debuffs and hit-count package solves a demonstrated encounter need.
 
 ## Magna grid direction
 

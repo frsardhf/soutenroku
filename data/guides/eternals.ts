@@ -1,46 +1,40 @@
-export type EternalPlan = {
-  name:string;
-  element:string;
-  base:string;
-  final:string;
-  transcendence:string;
-  accountPlan:string;
-};
-
+export type EternalPlan = { name:string; element:string; base:string; final:string; transcendence:string; accountPlan:string };
 export type EternalSource = {label:string;publisher:string;url:string;scope:string};
 
-export const ETERNALS_VERSION="v1.0";
-export const ETERNALS_REVIEWED_ON="4 Sep 2026";
+export const ETERNALS_VERSION="v1.1";
+export const ETERNALS_REVIEWED_ON="8 Sep 2026";
 
 export const eternalRules=[
-  {title:"4★ is a valid endpoint",detail:"Keep an Eternal at recruitment when the account only needs their passive or farming utility. Esser's drop-rate passive, Siete's CA support and Threo's basic Ground Zero do not require transcendence."},
-  {title:"5★ is the normal functional endpoint",detail:"Final uncap is for an Eternal that will actually enter a frontline. It is not necessary to final-uncap all ten until a deliberate Lv140–150 project requires that prerequisite."},
-  {title:"Transcendence needs a named job",detail:"Do not spend a gold bar or blue paper for tier-list value alone. Identify the saved team and repeated content that uses the new breakpoint first."},
+  {title:"Female-only transcendence",detail:"Only Tweyen, Threo, Fif, Niyon and Tien receive 5★ and Transcendence investment during this plan. Their useful stopping points matter more than completing level 150 automatically."},
+  {title:"Male Eternals stop at base 4★",detail:"Recruit Anre, Feower, Seox, Seofon and Eahta for collection only. Do not allocate their 5★ Gold Brick, Revenant fragments or blue papers until this policy is revisited."},
+  {title:"Seox is excluded from Dark teams",detail:"This is a personal roster decision, not a power claim. Dark progression uses The Death and Nier alongside Lich, Sariel, Orologia, Magisa, Tsukuyomi, Tyra and Azusa."},
 ] as const;
 
 export const eternalPlans:EternalPlan[]=[
-  {name:"Uno",element:"Water",base:"Usually enough",final:"Only for a specific defensive strategy",transcendence:"Skip; Lv150 is specialized counter/burst value",accountPlan:"Leave at 4★. Payila, Gabriel, Octavia and Haaselia are ahead of him."},
-  {name:"Tweyen",element:"Light",base:"Basic paralysis utility",final:"Useful debuff and CA upgrade if fielded",transcendence:"Optional Lv110; no default reason to go higher",accountPlan:"Keep at 4★ until a Light team specifically needs her."},
-  {name:"Threo",element:"Earth",base:"Ground Zero farming utility",final:"Optional frontline improvement",transcendence:"Lv120–130 only for committed Sandbox or Earth burst",accountPlan:"Recruit-level utility is enough for now."},
-  {name:"Feower",element:"Water",base:"Basic dispel and delay utility",final:"Only if actively fielded",transcendence:"Skip; optional Lv110 is not an account priority",accountPlan:"Leave at 4★. Do not divert Water resources from Haaselia."},
-  {name:"Fif",element:"Light",base:"Basic healing and revival",final:"Worthwhile for serious manual or difficult fights",transcendence:"Lv150-or-stop specialist for modern Light healing/HL",accountPlan:"Future specialist only after the Light roster exposes a real survival gap."},
-  {name:"Seox",element:"Dark",base:"Self-contained attacker",final:"Strong personal damage",transcendence:"Lv130 burst / Lv150 long-fight damage",accountPlan:"Excluded by preference. Recruit only for prerequisites; do not build teams around him."},
-  {name:"Siete",element:"Wind",base:"Backline CA-damage support already works",final:"Useful only if fielded",transcendence:"Lv150 for unique Fated Chain omen cancellation",accountPlan:"Best eventual max target, but only when a V2 raid creates the need."},
-  {name:"Eahta",element:"Earth",base:"Not the intended endpoint",final:"Functional Earth CA engine",transcendence:"Lv110 efficient; Lv150 for dedicated Earth CA/HL",accountPlan:"First sensible combat transcendence once an Earth CA preset exists."},
-  {name:"Niyon",element:"Wind",base:"Basic buffs and debuffs",final:"Minimum sensible frontline version",transcendence:"Lv130 normal-axis breakpoint; Lv150 only for committed Wind",accountPlan:"Conditional project, not an automatic Lv150 target."},
-  {name:"Esser",element:"Fire",base:"Drop-rate passive already works",final:"Only for frontline burst and stronger active utility",transcendence:"Lv110 optional; Lv150 for committed Fire/TH frontline use",accountPlan:"Recruit early and keep at 4★ unless she gains a saved frontline."},
+  {name:"Anre",element:"Water",base:"Recruit for collection",final:"Deferred",transcendence:"Deferred under the male-Eternal rule",accountPlan:"Stop at base 4★."},
+  {name:"Tweyen",element:"Light",base:"Recruit before beginning her selected project",final:"Complete when ready to transcend",transcendence:"Lv110 economical FA breakpoint; 130–150 only for a named debuff, hit-count or skill role",accountPlan:"Female project #4: target Lv110."},
+  {name:"Threo",element:"Earth",base:"Ground Zero utility",final:"Required for her selected transcendence",transcendence:"Lv130 offensive breakpoint; Lv150 only for sustained long-fight use",accountPlan:"Female project #2: target Lv130."},
+  {name:"Feower",element:"Water",base:"Recruit for collection",final:"Deferred",transcendence:"Deferred under the male-Eternal rule",accountPlan:"Stop at base 4★."},
+  {name:"Fif",element:"Light",base:"Healing and revival",final:"Complete before the first female transcendence",transcendence:"Lv130 for serious HL; Lv150 when Light solo/HL stability justifies it",accountPlan:"Female project #1: target Lv130, then 150 conditionally."},
+  {name:"Seox",element:"Dark",base:"Recruit for collection only",final:"Deferred",transcendence:"Excluded by preference",accountPlan:"Stop at base 4★ and do not build Dark teams around him."},
+  {name:"Seofon",element:"Wind",base:"Recruit for collection",final:"Deferred",transcendence:"Deferred even though Lv150 has valuable V2 utility",accountPlan:"Stop at base 4★."},
+  {name:"Eahta",element:"Earth",base:"Recruit for collection",final:"Deferred",transcendence:"Deferred even though dedicated Earth CA teams value him",accountPlan:"Stop at base 4★."},
+  {name:"Niyon",element:"Wind",base:"Recruit and retain at base until selected",final:"Lv100 is the holding point",transcendence:"Commit directly toward Lv150 for cap support, normal amplification and dispel immunity",accountPlan:"Female project #5: stay Lv100 unless the full Lv150 role is needed."},
+  {name:"Tien",element:"Fire",base:"Drop-rate passive works immediately",final:"Complete before her selected transcendence",transcendence:"Lv120 unlocks Treasure Hunt 10; 130–150 only as an active Fire frontline",accountPlan:"Female project #3: target Lv120."},
 ];
 
 export const eternalOrder=[
-  "Complete Haaselia's selected 5★ and fourth-skill route before any Water Eternal transcendence.",
-  "Recruit Esser for passive farming value; keep Uno and Feower at 4★.",
-  "Save blue papers. Consider Eahta 110 only after creating an Earth CA preset.",
-  "Build Siete directly toward 150 only when FC omen cancellation is needed for repeated V2 content.",
-  "Revisit Fif 150, Niyon 130–150 or Esser 150 only when their element becomes an active project.",
+  "Finish the active Haaselia/Evoker material project before opening a major Eternal sink.",
+  "Fif to Lv130; continue to Lv150 only for repeated Light solo or high-difficulty use.",
+  "Threo to Lv130; reserve Lv150 for sustained Earth use.",
+  "Tien to Lv120 for Treasure Hunt 10; stop while modern Fire attackers cover combat.",
+  "Tweyen to Lv110; continue only for a demonstrated Light mechanic.",
+  "Keep Niyon at Lv100 unless committing directly toward her meaningful Lv150 package.",
+  "Keep Anre, Feower, Seox, Seofon and Eahta at base 4★.",
 ] as const;
 
 export const eternalSources:Record<string,EternalSource>={
-  priority:{label:"Eternal recruitment, final and transcendence priorities",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/22885",scope:"Current 2026 comparison and practical level breakpoints for all ten Eternals."},
-  comparison:{label:"Eternal transcendence comparison",publisher:"Kamigame JP",url:"https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%B2%E3%83%BC%E3%83%A0%E7%9F%A5%E8%AD%98/%E5%8D%81%E5%A4%A9%E8%A1%86.html",scope:"Current 120, 140 and 150 evaluations, including specialist endgame roles."},
-  community:{label:"All-Eternals transcendence assessment",publisher:"No-nashi / note",url:"https://note.com/ineptus/n/n4268e3317991",scope:"2026 Rank 400 player experience covering practical use frequency and Siete's unique FC role."},
+  comparison:{label:"Eternal transcendence priority and breakpoints",publisher:"Kamigame JP",url:"https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%B2%E3%83%BC%E3%83%A0%E7%9F%A5%E8%AD%98/%E5%8D%81%E5%A4%A9%E8%A1%86%E3%81%AE%E9%99%90%E7%95%8C%E8%B6%85%E8%B6%8A.html",scope:"Current investment stars and useful level stops for all ten Eternals."},
+  recruitment:{label:"Eternal recruitment, final and transcendence overview",publisher:"Kamigame JP",url:"https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%B2%E3%83%BC%E3%83%A0%E7%9F%A5%E8%AD%98/%E5%8D%81%E5%A4%A9%E8%A1%86.html",scope:"Current recruitment and final-uncap context; account policy intentionally overrides aggregate male priorities."},
+  gamewith:{label:"Eternal recruitment and transcendence priorities",publisher:"GameWith JP",url:"https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/22885",scope:"Secondary comparison for role and breakpoint context."},
 };

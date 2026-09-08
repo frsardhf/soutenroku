@@ -9,7 +9,7 @@ export function EternalsGuide(){
       <dl className="guide-verification-summary"><div><dt>Plan version</dt><dd>{ETERNALS_VERSION}</dd></div><div><dt>Last checked</dt><dd>{ETERNALS_REVIEWED_ON}</dd></div></dl>
     </header>
     <nav className="guide-on-this-page" aria-label="On this page"><span>On this page</span><a href="#eternal-policy">Policy</a><a href="#eternal-ten">All ten</a><a href="#eternal-order">Account order</a><a href="#eternal-sources">Sources</a></nav>
-    <aside className="guide-correction"><strong>Working plan · revisit later</strong><p>Haaselia remains ahead of every Eternal transcendence project. No Eternal is automatically taken beyond 5★; Seox is excluded by preference, and Siete 150 is reserved for a future V2 requirement.</p></aside>
+    <aside className="guide-correction"><strong>Active account policy</strong><p>Only female Eternals receive 5★ and Transcendence investment. Male Eternals stop at base 4★ for now, and Seox is excluded from personal Dark teams.</p></aside>
 
     <section id="eternal-policy" className="guide-section">
       <header className="guide-section-heading"><p className="guide-kicker">INVESTMENT POLICY</p><h2>Stop where the account gets the value</h2><p>Recruitment, final uncap and transcendence solve different problems. A higher endpoint is not automatically a better use of scarce materials.</p></header>
@@ -22,7 +22,7 @@ export function EternalsGuide(){
     </section>
 
     <section id="eternal-order" className="guide-section">
-      <header className="guide-section-heading"><p className="guide-kicker">ACCOUNT ORDER</p><h2>Only open one material sink at a time</h2><p>This queue protects Haaselia and preserves blue papers until a team has a defined breakpoint.</p></header>
+      <header className="guide-section-heading"><p className="guide-kicker">ACCOUNT ORDER</p><h2>Female-only transcendence queue</h2><p>This queue protects the active Evoker project and stops each Eternal where the account receives the intended value.</p></header>
       <ol className="arcarum-plan-list">{eternalOrder.map((step,index)=><li key={step}><span>{String(index+1).padStart(2,"0")}</span><div><strong>{step}</strong></div></li>)}</ol>
     </section>
 

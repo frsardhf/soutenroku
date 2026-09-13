@@ -226,11 +226,11 @@ The initial Fire and Water planning phase ended here. Earth, Wind, Light and Dar
 
 ## Earth roster mapping update
 
-The supplied Earth payload contains 26 SSRs. The important owned core is Cidala, Summer Seox (master ID 3040673000), Sabrina, Yukata Pholia and Earth Satyr. Summer Metera, Golden Knight, Holiday Anthuria and Summer Illnott enable alternate skill and ougi teams.
+The supplied Earth payload contains 26 SSRs. The active non-Seox core is Cidala, Sabrina, Yukata Pholia, Earth Satyr, Aletheia and Holiday Anthuria. These support three maintained teams: general Full Auto, short normal Full Auto and entry Diaspora CA.
 
-Sabrina is a valid short normal attacker rather than a mistaken choice. Her immediate guaranteed-TA/follow-up pattern works especially well with Yukata Pholia. Summer Seox is the newer cyclic normal attacker: he needs a setup turn, uses his ougi to reset skills and can exceed Sabrina after setup, so the two have different timing niches.
+Sabrina is a valid short normal attacker rather than a mistaken choice. Her immediate guaranteed-TA/follow-up pattern works especially well with Yukata Pholia and remains the account's preferred non-Seox short route.
 
-The default owned casual Full Auto team is Manadiver / Cidala / Summer Seox / Earth Satyr with CA on. The fast normal alternative is Sabrina / Cidala / Yukata Pholia, while Kengo / Golden Knight / Earth Satyr / Holiday Anthuria provides a stable ougi team.
+The revised Earth defaults are Onmyoji / Cidala / Yukata Pholia / Earth Satyr for general CA-on Full Auto, Manadiver / Sabrina / Cidala / Yukata Pholia for short CA-off Full Auto, and Kengo / Aletheia / Earth Satyr / Holiday Anthuria for the no-Okto entry Diaspora route. The general Onmyoji setup uses a 5-star Attack-awakened Exo Ashavan; the CA setup uses an Earth Devilry Kaneshige.
 
 Earth should remain Magna. The first broad Earth Gala target is Uriel; Valentine Makora, Summer Raziel, Christmas Shalem and Summer Lu Woh are later archetype-specific seasonal upgrades. The detailed plan is recorded in `../elements/earth-magna-plan.md`.
 

@@ -100,14 +100,15 @@ export const roadmapIdentity={
   },
   "earth": {
     "teams": [
+      "onmyoji-general-fa",
       "sabrina-fast-normal",
-      "summer-seox-general-fa"
+      "entry-diaspora-ca"
     ],
     "grids": [
       {
         "id": "magna-iii-farm",
         "weaponGroups": [
-          "yggdrasil-s-bough",
+          "exo-ashavan",
           "yggdrasil-crystal-blade-arbos",
           "nibelung-horn",
           "harp-of-renunciation",
@@ -118,7 +119,7 @@ export const roadmapIdentity={
       {
         "id": "magna-iii-250",
         "weaponGroups": [
-          "yggdrasil-s-bough",
+          "exo-ashavan",
           "yggdrasil-crystal-blade-arbos",
           "nibelung-horn",
           "harp-of-renunciation",

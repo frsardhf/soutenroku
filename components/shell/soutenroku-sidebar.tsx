@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import {usePathname} from "next/navigation";
-import {BookOpen,Compass,Database,Gem,Menu,Route,ShoppingBasket,Sparkles,Swords,Users,UsersRound} from "lucide-react";
+import {BookOpen,Compass,Database,Gem,Menu,Route,Shield,ShoppingBasket,Sparkles,Swords,Users,UsersRound} from "lucide-react";
 import {elementIds,getRoadmap} from "@/data/roadmaps";
 import {cn} from "@/lib/utils";
 import {Button} from "@/components/ui/button";
@@ -32,6 +32,10 @@ const collectionLinks=[
   {href:"/collection#filters",label:"Effect finder",icon:Sparkles},
 ] as const;
 
+const raidLinks=[
+  {href:"/raids/revans",label:"Revans raids",icon:Shield},
+] as const;
+
 function Navigation({mobile=false}:{mobile?:boolean}){
   const pathname=usePathname();
   const link=(href:string,content:React.ReactNode,className:string)=>mobile
@@ -49,6 +53,10 @@ function Navigation({mobile=false}:{mobile?:boolean}){
     <div className="nav-section">
       <span className="nav-label">Collection</span>
       {collectionLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname==="/collection"&&href==="/collection"&&"is-active"))}</React.Fragment>)}
+    </div>
+    <div className="nav-section">
+      <span className="nav-label">Raids</span>
+      {raidLinks.map(({href,label,icon:Icon})=><React.Fragment key={href}>{link(href,<><Icon aria-hidden="true"/><span>{label}</span></>,cn("utility-nav-link",pathname.startsWith(href)&&"is-active"))}</React.Fragment>)}
     </div>
     <div className="nav-section">
       <span className="nav-label">Guides</span>

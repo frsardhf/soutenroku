@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-08-27T13:03:17.601Z",
+  "generatedAt": "2026-09-12T02:41:55.728Z",
   "weapons": {
     "Staff of Renunciation": {
       "name": "Staff of Renunciation",
@@ -475,6 +475,12 @@
       "path": "/weapon-assets/exo-hamartia.png",
       "source": "https://gbf.wiki/Special:Redirect/file/Exo%20Hamartia.png",
       "resolvedUrl": "https://gbf.wiki/images/b/b2/Weapon_b_1040423200.png"
+    },
+    "Exo Ashavan": {
+      "name": "Exo Ashavan",
+      "path": "/weapon-assets/exo-ashavan.jpg",
+      "source": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040119900.jpg",
+      "resolvedUrl": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040119900.jpg"
     }
   },
   "aliases": {
@@ -534,6 +540,9 @@
     "Gauntlet of Uriel (SSR)": "Gauntlet of Uriel (SSR)",
     "Gauntlet of Proudearth": "Gauntlet of Proudearth",
     "Yggdrasil's Bough": "Yggdrasil's Bough",
+    "Exo Ashavan": "Exo Ashavan",
+    "Exo Woff Dagger": "Exo Ashavan",
+    "Exo Woff dagger": "Exo Ashavan",
     "Yggdrasil Crystal Blade Arbos": "Yggdrasil Crystal Blade Arbos",
     "Arbos Sword": "Yggdrasil Crystal Blade Arbos",
     "Covenant-Ruin Fist": "Covenant-Ruin Fist",

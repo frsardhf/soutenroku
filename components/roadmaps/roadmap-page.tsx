@@ -87,14 +87,16 @@ export function RoadmapPage({plan}:{plan:Plan}){
     <nav className="anchor-nav" aria-label={`${plan.element} roadmap sections`}>{sections.filter(([id])=>id!=="artifacts"||plan.artifacts).map(([id,label])=><a href={`#${id}`} key={id}>{label}</a>)}</nav>
 
     <section id="team" className="content-section">
-      <div className="section-heading"><div><span className="section-kicker">Team</span><h2>Frontline plan</h2></div><p>Team A is the account default. Team B is a real alternative, not a second mandatory investment path.</p></div>
-      <div className="selection-tabs" role="group" aria-label="Team selection">{plan.teams.map((candidate,index)=><Button key={candidate.name} variant={teamIndex===index?"default":"outline"} aria-pressed={teamIndex===index} onClick={()=>select(index,gridIndex)}><span>Team {index===0?"A":"B"}</span><small>{index===0?"Primary":"Alternative"}</small></Button>)}</div>
+      <div className="section-heading"><div><span className="section-kicker">Team</span><h2>Frontline plan</h2></div><p>Each preset separates the three frontline characters, two reserve slots, and the MC configuration that makes the archetype work.</p></div>
+      <div className="selection-tabs" role="group" aria-label="Team selection">{plan.teams.map((candidate,index)=><Button key={candidate.name} variant={teamIndex===index?"default":"outline"} aria-pressed={teamIndex===index} onClick={()=>select(index,gridIndex)}><span>Team {String.fromCharCode(65+index)}</span><small>{index===0?"Primary":"Alternative"}</small></Button>)}</div>
       <div className="team-layout">
         <article className="team-surface">
           <div className="surface-heading"><Badge>{team.mode}</Badge><span>{teamIndex===0?"Primary":"Alternative"}</span></div>
           <h3>{team.name}</h3>
-          <div className="lineup">{team.units.map((unit)=><article className="unit" key={unit.name}><div className="portrait" style={unit.id?{backgroundImage:`url(${characterImage(unit.id)})`,backgroundColor:plan.color}:{backgroundColor:plan.color}}><span>{unit.id?"":unit.name[0]}</span></div><strong>{unit.name}</strong><small>{unit.role}</small></article>)}</div>
+          <div className={`lineup ${team.units.length===5?"has-five":""}`}>{team.units.map((unit)=><article className="unit" key={unit.name}><div className="portrait" style={unit.id?{backgroundImage:`url(${characterImage(unit.id)})`,backgroundColor:plan.color}:{backgroundColor:plan.color}}><span>{unit.id?"":unit.name[0]}</span></div><strong>{unit.name}</strong><small>{unit.role}</small></article>)}</div>
+          {team.mc&&<div className="mc-config"><div><span className="section-kicker">MC configuration</span><strong>{team.mc.className}</strong></div><dl><div><dt>Charge attacks</dt><dd>{team.mc.ca}</dd></div><div><dt>Mainhand</dt><dd>{team.mc.mainhand}</dd></div><div><dt>Skills</dt><dd>{team.mc.skills.join(" · ")}</dd></div></dl><p>{team.mc.note}</p></div>}
           <p className="team-note">{team.note}</p>
+          {team.guide&&<a className="team-guide-link" href={team.guide.href}>{team.guide.label}<ChevronRight aria-hidden="true"/></a>}
         </article>
         <aside className="priority-list"><span className="section-kicker">Investment queue</span><ol>{plan.priorities.map((item,index)=><li key={item}><span>{String(index+1).padStart(2,"0")}</span><p>{item}</p></li>)}</ol></aside>
       </div>

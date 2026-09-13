@@ -230,11 +230,11 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
         { name: "Summer Raziel", reason: "Optimized normal burst after the account is developed; her cannon needs accumulated skill counts and does not replace Makora on the immediate first turn." },
       ],
       plan: {
-        current: "Wrestler / Sabrina / Cidala / Yukata Pholia",
-        target: "Wrestler / Sabrina / Valentine Makora / Yukata Pholia · Grand Uriel reserve",
+        current: "Manadiver / Sabrina / Cidala / Yukata Pholia",
+        target: "Manadiver / Sabrina / Valentine Makora / Yukata Pholia · Grand Uriel reserve",
         ca: "Off",
-        opener: ["Yukata Pholia S1", "Optional debuff or MC buff", "Tag Team", "Attack"],
-        verdict: "The owned Sabrina/Pholia shell is already valid. Uriel remains the better general spark, but Makora—not Uriel or Summer Raziel—is the premium one-turn frontline upgrade.",
+        opener: ["Enable Yukata Pholia S1", "Enable only required MC buffs", "Keep CA off", "Start Full Auto"],
+        verdict: "The owned Sabrina/Pholia shell is already valid for low-intervention short Full Auto. Uriel remains the better general spark, but Makora—not Uriel or Summer Raziel—is the premium first-turn frontline upgrade.",
       },
       sources: [
         { label: "2026 Earth Magna one-turn example", url: "https://t.co/rt4mQFFp4W" },

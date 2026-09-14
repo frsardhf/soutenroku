@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-09-12T02:41:55.728Z",
+  "generatedAt": "2026-09-13T06:21:07.207Z",
   "weapons": {
     "Staff of Renunciation": {
       "name": "Staff of Renunciation",
@@ -481,6 +481,162 @@
       "path": "/weapon-assets/exo-ashavan.jpg",
       "source": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040119900.jpg",
       "resolvedUrl": "https://prd-game-a-granbluefantasy.akamaized.net/assets_en/img_mid/sp/assets/weapon/m/1040119900.jpg"
+    },
+    "Draconic Harp": {
+      "name": "Draconic Harp",
+      "path": "/weapon-assets/draconic-harp.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Draconic%20Harp.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/44/Weapon_b_1040811900.png"
+    },
+    "Ultima Spear": {
+      "name": "Ultima Spear",
+      "path": "/weapon-assets/ultima-spear.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ultima%20Spear.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/df/Weapon_b_1040208800.png"
+    },
+    "Draconic Buster": {
+      "name": "Draconic Buster",
+      "path": "/weapon-assets/draconic-buster.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Draconic%20Buster.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/07/Weapon_b_1040311900.png"
+    },
+    "Staff of Bahamut Coda": {
+      "name": "Staff of Bahamut Coda",
+      "path": "/weapon-assets/staff-of-bahamut-coda.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Staff%20of%20Bahamut%20Coda.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/d1/Weapon_b_1040407000.png"
+    },
+    "Ultima Blade": {
+      "name": "Ultima Blade",
+      "path": "/weapon-assets/ultima-blade.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ultima%20Blade.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/a3/Weapon_b_1040907500.png"
+    },
+    "Reflection of The Moon": {
+      "name": "Reflection of The Moon",
+      "path": "/weapon-assets/reflection-of-the-moon.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Reflection%20of%20The%20Moon.png",
+      "resolvedUrl": "https://gbf.wiki/images/7/77/Weapon_b_1040710700.png"
+    },
+    "Galleon's Jaw": {
+      "name": "Galleon's Jaw",
+      "path": "/weapon-assets/galleon-s-jaw.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Galleon's%20Jaw.png",
+      "resolvedUrl": "https://gbf.wiki/images/9/90/Weapon_b_1040513400.png"
+    },
+    "Ished": {
+      "name": "Ished",
+      "path": "/weapon-assets/ished.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Ished.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/ce/Weapon_b_1040711900.png"
+    },
+    "Baihu Claw Malus": {
+      "name": "Baihu Claw Malus",
+      "path": "/weapon-assets/baihu-claw-malus.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Baihu%20Claw%20Malus.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/39/Weapon_b_1040607000.png"
+    },
+    "Gateway-Star Sword": {
+      "name": "Gateway-Star Sword",
+      "path": "/weapon-assets/gateway-star-sword.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Gateway-Star%20Sword.png",
+      "resolvedUrl": "https://gbf.wiki/images/f/f7/Weapon_b_1040025400.png"
+    },
+    "Binds of The Hanged Man": {
+      "name": "Binds of The Hanged Man",
+      "path": "/weapon-assets/binds-of-the-hanged-man.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Binds%20of%20The%20Hanged%20Man.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/4a/Weapon_b_1040215500.png"
+    },
+    "Tribunal Lyre Militis": {
+      "name": "Tribunal Lyre Militis",
+      "path": "/weapon-assets/tribunal-lyre-militis.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Tribunal%20Lyre%20Militis.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/c1/Weapon_b_1040814900.png"
+    },
+    "Pistol of Bahamut Coda": {
+      "name": "Pistol of Bahamut Coda",
+      "path": "/weapon-assets/pistol-of-bahamut-coda.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Pistol%20of%20Bahamut%20Coda.png",
+      "resolvedUrl": "https://gbf.wiki/images/5/55/Weapon_b_1040504500.png"
+    },
+    "Exo Australis": {
+      "name": "Exo Australis",
+      "path": "/weapon-assets/exo-australis.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Exo%20Australis.png",
+      "resolvedUrl": "https://gbf.wiki/images/1/18/Weapon_b_1040712400.png"
+    },
+    "Melody of Judgement": {
+      "name": "Melody of Judgement",
+      "path": "/weapon-assets/melody-of-judgement.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Melody%20of%20Judgement.png",
+      "resolvedUrl": "https://gbf.wiki/images/3/3c/Weapon_b_1040813300.png"
+    },
+    "Harakhte": {
+      "name": "Harakhte",
+      "path": "/weapon-assets/harakhte.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Harakhte.png",
+      "resolvedUrl": "https://gbf.wiki/images/1/15/Weapon_b_1040913300.png"
+    },
+    "Shooting of The Star": {
+      "name": "Shooting of The Star",
+      "path": "/weapon-assets/shooting-of-the-star.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Shooting%20of%20The%20Star.png",
+      "resolvedUrl": "https://gbf.wiki/images/8/8d/Weapon_b_1040513700.png"
+    },
+    "Worldforging Moros": {
+      "name": "Worldforging Moros",
+      "path": "/weapon-assets/worldforging-moros.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Worldforging%20Moros.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/cb/Weapon_b_1040815000.png"
+    },
+    "Forbidden Agastia": {
+      "name": "Forbidden Agastia",
+      "path": "/weapon-assets/forbidden-agastia.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Forbidden%20Agastia.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/d2/Weapon_b_1040421300.png"
+    },
+    "Pain and Suffering": {
+      "name": "Pain and Suffering",
+      "path": "/weapon-assets/pain-and-suffering.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Pain%20and%20Suffering.png",
+      "resolvedUrl": "https://gbf.wiki/images/b/b3/Weapon_b_1040314300.png"
+    },
+    "Draconic Fire": {
+      "name": "Draconic Fire",
+      "path": "/weapon-assets/draconic-fire.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Draconic%20Fire.png",
+      "resolvedUrl": "https://gbf.wiki/images/c/c9/Weapon_b_1040512300.png"
+    },
+    "Worldvexing Angelos": {
+      "name": "Worldvexing Angelos",
+      "path": "/weapon-assets/worldvexing-angelos.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Worldvexing%20Angelos.png",
+      "resolvedUrl": "https://gbf.wiki/images/d/dd/Weapon_b_1040815400.png"
+    },
+    "Heat of The Sun": {
+      "name": "Heat of The Sun",
+      "path": "/weapon-assets/heat-of-the-sun.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Heat%20of%20The%20Sun.png",
+      "resolvedUrl": "https://gbf.wiki/images/a/a3/Weapon_b_1040912600.png"
+    },
+    "Spear of Bahamut Coda": {
+      "name": "Spear of Bahamut Coda",
+      "path": "/weapon-assets/spear-of-bahamut-coda.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Spear%20of%20Bahamut%20Coda.png",
+      "resolvedUrl": "https://gbf.wiki/images/0/09/Weapon_b_1040205400.png"
+    },
+    "Colomba": {
+      "name": "Colomba",
+      "path": "/weapon-assets/colomba.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Colomba.png",
+      "resolvedUrl": "https://gbf.wiki/images/f/f2/Weapon_b_1040711000.png"
+    },
+    "Festering of Mournful Obsequies": {
+      "name": "Festering of Mournful Obsequies",
+      "path": "/weapon-assets/festering-of-mournful-obsequies.png",
+      "source": "https://gbf.wiki/Special:Redirect/file/Festering%20of%20Mournful%20Obsequies.png",
+      "resolvedUrl": "https://gbf.wiki/images/4/4c/Weapon_b_1040516500.png"
     }
   },
   "aliases": {
@@ -581,6 +737,34 @@
     "Unsigned Kaneshige": "Unsigned Kaneshige",
     "Celeste Grace Ater": "Celeste Grace Ater",
     "Celeste Saber Ater": "Celeste Saber Ater",
-    "Scythe of Darkherald": "Scythe of Darkherald"
+    "Scythe of Darkherald": "Scythe of Darkherald",
+    "Draconic Harp": "Draconic Harp",
+    "Ultima Spear": "Ultima Spear",
+    "Draconic Buster": "Draconic Buster",
+    "Staff of Bahamut Coda": "Staff of Bahamut Coda",
+    "Bahamut Staff Coda": "Staff of Bahamut Coda",
+    "Ultima Blade": "Ultima Blade",
+    "Reflection of The Moon": "Reflection of The Moon",
+    "Galleon's Jaw": "Galleon's Jaw",
+    "Ished": "Ished",
+    "Baihu Claw Malus": "Baihu Claw Malus",
+    "Gateway-Star Sword": "Gateway-Star Sword",
+    "Celestial Sword": "Gateway-Star Sword",
+    "Binds of The Hanged Man": "Binds of The Hanged Man",
+    "Tribunal Lyre Militis": "Tribunal Lyre Militis",
+    "Pistol of Bahamut Coda": "Pistol of Bahamut Coda",
+    "Exo Australis": "Exo Australis",
+    "Melody of Judgement": "Melody of Judgement",
+    "Harakhte": "Harakhte",
+    "Shooting of The Star": "Shooting of The Star",
+    "Worldforging Moros": "Worldforging Moros",
+    "Forbidden Agastia": "Forbidden Agastia",
+    "Pain and Suffering": "Pain and Suffering",
+    "Draconic Fire": "Draconic Fire",
+    "Worldvexing Angelos": "Worldvexing Angelos",
+    "Heat of The Sun": "Heat of The Sun",
+    "Spear of Bahamut Coda": "Spear of Bahamut Coda",
+    "Colomba": "Colomba",
+    "Festering of Mournful Obsequies": "Festering of Mournful Obsequies"
   }
 }

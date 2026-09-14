@@ -1,6 +1,10 @@
 # GBF Fire Magna Plan
 
-Last updated: 2026-08-20  
+Last updated: 2026-09-13
+
+Revans update: the Seofon preset is an owned self-host durability test, not the
+verified Percival/Ragazzo short-rescue route. See the
+[Revans research note](../research/revans-research.md#seofon--fire).
 Profile: casual, Full Auto oriented, prioritizing reliable event and Guild War rewards.
 
 > This is the authoritative Fire note. Broader background and earlier research are retained in the conversation research log.

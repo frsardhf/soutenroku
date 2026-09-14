@@ -1,12 +1,12 @@
 import {ArrowRight,ShieldCheck} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import {revansRaidIds,revansRaids} from "@/data/guides/revans";
+import {revansRaidIds,revansRaids,revansReviewedAt} from "@/data/guides/revans";
 
 export function RevansGuide(){
   return <div className="page-stack revans-page">
     <header className="page-header">
       <div><p className="breadcrumb"><span>Raids</span></p><h1>Revans raids</h1><p className="page-intro">Account-specific entry paths separated by host preparation, rescue contribution, and full-clear expectations.</p></div>
-      <dl className="stage-summary"><dt>Recommended start</dt><dd>Diaspora → Seofon</dd></dl>
+      <dl className="stage-summary"><dt>Reviewed {revansReviewedAt}</dt><dd>Diaspora → Seofon</dd></dl>
     </header>
 
     <aside className="guide-correction"><strong>Read the activity label first</strong><p>“Full Auto” alone is not enough information. A host-preparation team, a blue-chest rescue team, and a solo-clear team can use different characters, settings, and stopping points.</p></aside>

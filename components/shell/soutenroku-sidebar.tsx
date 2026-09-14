@@ -75,6 +75,6 @@ function Navigation({mobile=false}:{mobile?:boolean}){
 
 function Brand(){return <a href="/roadmaps/water" className="soutenroku-brand"><span className="brand-mark">蒼</span><span><strong>Soutenroku</strong><small>GBF account plan</small></span></a>}
 
-export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-09-04">Updated 4 Sep 2026</time></p></aside>}
+export function DesktopSidebar(){return <aside className="desktop-sidebar"><Brand/><Navigation/><p className="sidebar-foot">Personal roadmap<br/><time dateTime="2026-09-13">Updated 13 Sep 2026</time></p></aside>}
 
 export function MobileHeader(){return <header className="mobile-header"><Brand/><Sheet><SheetTrigger asChild><Button variant="outline" size="icon" aria-label="Open navigation"><Menu aria-hidden="true"/></Button></SheetTrigger><SheetContent><SheetTitle className="sr-only">Soutenroku navigation</SheetTitle><SheetDescription className="sr-only">Open an element roadmap, guide, or reference page.</SheetDescription><div className="mobile-sheet-brand"><Brand/></div><Navigation mobile/></SheetContent></Sheet></header>}

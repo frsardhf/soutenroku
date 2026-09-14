@@ -1,6 +1,10 @@
 # GBF Earth Magna Roster Plan
 
-Last updated: 2026-09-12
+Last updated: 2026-09-13
+
+Revans update: the roadmap now includes the complete 13-slot all-unique
+Diaspora host grid and the no-Okto CA-100 stopping procedure. See the
+[Revans research note](../research/revans-research.md#diaspora--earth).
 
 ## Account direction
 

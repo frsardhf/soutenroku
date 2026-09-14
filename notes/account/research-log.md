@@ -2,7 +2,10 @@
 
 > Current plans: [Fire](../elements/fire-magna-plan.md), [Water](../elements/water-magna-varuna-plan.md), [Earth](../elements/earth-magna-plan.md), [Wind](../elements/wind-magna-plan.md), [Light](../elements/light-magna-plan.md), and [Dark](../elements/dark-magna-plan.md).
 
-Last updated: 2026-08-18
+Last updated: 2026-09-13
+
+The current raid-specific findings are maintained separately in the
+[Revans account research](../research/revans-research.md) note.
 
 This note records broader conclusions and open questions from the conversation. The current element-specific plans are linked above; `../archive/fire-water-combined-archive.md` is retained only as a detailed historical archive.
 
@@ -218,7 +221,7 @@ Water awakening guidance was revised against current Japanese character guides a
 
 A third owned skill-damage direction is Manadiver / Gabriel / Cupitan 5★ / Yatima or Sylvia. Grand Lancelot is an optional future specialist for this archetype, not an immediate necessity.
 
-Water acquisition priorities are now: farm Haaselia, finish Magna III, assemble the premium weapon package, then test single-sided Primal with an owned utility/Providence main and support Varuna 250. Personal Varuna and its level-250 transcendence are later flexibility investments for double-sided durability, support independence and the 20% Water elemental ATK/HP sub aura—not the transition gate. Only afterward decide whether Grand Lancelot, Vajra, Yukata Aria or Summer Tefnut solves a real remaining problem.
+Water acquisition priorities are now: farm Haaselia, finish Magna III, and use Grand Europa as the first missing Water Flash spark target. Her 5-star character directly improves general Full Auto and Galilei's Insight is part of the planned premium weapon package. Grand Pholia is not an equal character target: only spark her from Legfest when the exact future Varuna critical grid still needs Taisai Spirit Bow. After assembling the package, test single-sided Primal with an owned utility/Providence main and support Varuna 250. Personal Varuna and its level-250 transcendence are later flexibility investments for double-sided durability, support independence and the 20% Water elemental ATK/HP sub aura—not the transition gate. Yukata Alliah and Summer Tefnut remain seasonal Full Auto specialists; Grand Lancelot and Vajra are later archetype-specific targets.
 
 ## Pause point
 

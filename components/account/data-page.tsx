@@ -63,7 +63,7 @@ export function DataPage(){
     </header>
 
     <section className="content-section">
-      <div className="section-heading"><div><span className="section-kicker">Account snapshot</span><h2>What is saved</h2></div><p>Roadmap checks and selected team/grid tabs now share one clean, versioned account file. Collection totals are ready for the upcoming tracker.</p></div>
+      <div className="section-heading"><div><span className="section-kicker">Account snapshot</span><h2>What is saved</h2></div><p>Collection progress and selected team templates share one clean, versioned account file.</p></div>
       <div className="data-count-grid" aria-busy={!hydrated}>
         <article><strong>{hydrated?currentCounts.progress:"—"}</strong><span>Completed checks</span></article>
         <article><strong>{hydrated?currentCounts.roadmaps:"—"}</strong><span>Roadmap selections</span></article>

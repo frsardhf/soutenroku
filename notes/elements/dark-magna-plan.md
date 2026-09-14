@@ -1,6 +1,10 @@
 # GBF Dark Magna Roster Plan
 
-Last updated: 2026-08-18
+Last updated: 2026-09-13
+
+Revans update: Cosmos remains blocked until a verified red/blue gauge-control
+core is owned. Summer Magisa is not substituted for Summer Magus. See the
+[Revans research note](../research/revans-research.md#cosmos--dark).
 
 ## Account direction
 

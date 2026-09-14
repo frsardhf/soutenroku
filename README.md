@@ -23,6 +23,7 @@ Full Auto roadmap, not a universal tier list.
 - A sourced Manadiver guide with account presets kept separate from generic advice
 - A post-Manadiver class roadmap for unattended and low-intervention play
 - A sourced Arcarum route covering the six damage summons, Haaselia, and later Evoker decisions
+- Sourced Revans host, rescue, semi-Full Auto, and full-clear paths linked to element-specific teams and 13-slot Extra grids
 - Pendant, Daily Point, event-reward, and weapon-skill reference pages
 - Detailed research notes in [`notes/`](./notes/)
 - A technical and session handover in [`docs/HANDOVER.md`](./docs/HANDOVER.md)

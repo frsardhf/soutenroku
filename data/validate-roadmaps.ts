@@ -16,7 +16,7 @@ export function validateRoadmap(plan:Plan){
     if(new Set(groupIds).size!==groupIds.length)errors.push(`${grid.name} stable weapon group IDs must be unique`);
     const slots=expandWeaponSlots(grid.weapons,groupIds);
     if(grid.weapons[0]?.[0]!=="MH")errors.push(`${grid.name} must start with one mainhand`);
-    if(slots.length!==10)errors.push(`${grid.name} expands to ${slots.length} slots instead of 10`);
+    if(slots.length!==10&&slots.length!==13)errors.push(`${grid.name} expands to ${slots.length} slots instead of 10 or 13`);
   });
   if(identity&&new Set(identity.teams).size!==identity.teams.length)errors.push("stable team IDs must be unique");
   if(identity&&new Set(identity.grids.map((grid)=>grid.id)).size!==identity.grids.length)errors.push("stable grid IDs must be unique");

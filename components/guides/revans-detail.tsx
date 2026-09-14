@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-import {ArrowLeft,Check,ExternalLink} from "lucide-react";
+import {ArrowLeft,ArrowRight,Check,ExternalLink} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
-import type {RevansRaid} from "@/data/guides/revans";
+import {revansReviewedAt,type RevansRaid} from "@/data/guides/revans";
 
 export function RevansDetail({raid}:{raid:RevansRaid}){
   return <div className="page-stack revans-page" style={{"--raid-color":raid.color} as React.CSSProperties}>
@@ -11,7 +11,7 @@ export function RevansDetail({raid}:{raid:RevansRaid}){
       <dl className="stage-summary"><dt>{raid.priority}</dt><dd>{raid.readiness}</dd></dl>
     </header>
 
-    <a className="revans-back" href="/raids/revans"><ArrowLeft aria-hidden="true"/>All Revans raids</a>
+    <div className="revans-route-links"><a className="revans-back" href="/raids/revans"><ArrowLeft aria-hidden="true"/>All Revans raids</a><a className="revans-roadmap-link" href={`/roadmaps/${raid.playerElement.toLowerCase()}`}>Open {raid.playerElement} team and grid<ArrowRight aria-hidden="true"/></a></div>
     <aside className="guide-correction"><strong>Account recommendation</strong><p>{raid.recommendation}</p></aside>
 
     <section className="content-section">
@@ -32,7 +32,7 @@ export function RevansDetail({raid}:{raid:RevansRaid}){
     </section>
 
     <section className="content-section">
-      <div className="section-heading"><div><span className="section-kicker">Research</span><h2>Japanese sources</h2></div><p>Use the scope notes to distinguish mechanics references from practical composition reports.</p></div>
+      <div className="section-heading"><div><span className="section-kicker">Research · reviewed {revansReviewedAt}</span><h2>Japanese sources</h2></div><p>Use the scope notes to distinguish mechanics references from practical composition reports.</p></div>
       <div className="revans-source-list">{raid.sources.map((source)=><a href={source.url} target="_blank" rel="noreferrer" key={source.url}><div><strong>{source.label}</strong><p>{source.scope}</p></div><ExternalLink aria-hidden="true"/></a>)}</div>
     </section>
   </div>;

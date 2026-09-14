@@ -1,6 +1,10 @@
 # GBF Wind Magna Roster Plan
 
-Last updated: 2026-08-18
+Last updated: 2026-09-13
+
+Revans update: Siegfried uses a dedicated defensive control target rather than
+the normal-attack road team. See the
+[Revans research note](../research/revans-research.md#siegfried--wind).
 
 ## Account direction
 

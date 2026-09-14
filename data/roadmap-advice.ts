@@ -10,12 +10,19 @@ export type TargetChoice = {
   reason: string;
 };
 
+export type TargetUnit = {
+  name: string;
+  role: string;
+  id: string;
+};
+
 export type OneTurnPlan = {
   current: string;
   target: string;
   ca: string;
   opener: string[];
   verdict: string;
+  units: TargetUnit[];
 };
 
 export type GachaAdvice = {
@@ -28,6 +35,7 @@ export type GachaAdvice = {
     team: string;
     reason: string;
     skip: string;
+    units: TargetUnit[];
     sources: AdviceSource[];
   };
   later: TargetChoice[];
@@ -57,7 +65,7 @@ export type RoadmapAdvice = {
   summons: SummonAdvice;
 };
 
-export const roadmapAdviceReviewedAt = "24 Aug 2026";
+export const roadmapAdviceReviewedAt = "14 Sep 2026";
 
 const magnaPreset = (
   main: string,
@@ -95,88 +103,242 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
     gacha: {
       general: {
         name: "Grand Percival",
-        reason: "He is the broadest missing upgrade for the owned Zeta normal team and also converts Fire from its slower CA fallback into a modern first-turn normal setup.",
+        reason:
+          "He is the broadest missing upgrade for the owned Zeta normal team and also converts Fire from its slower CA fallback into a modern first-turn normal setup.",
       },
       oneTurn: {
         name: "Grand Percival",
-        reason: "Current JP short-fight routing is built around The Sun, Secret Triad and Percival S3. Zeta S1 is the first optional extra button when the honors threshold is missed.",
+        reason:
+          "Current JP short-fight routing is built around The Sun, Secret Triad and Percival S3. Zeta S1 is the first optional extra button when the honors threshold is missed.",
       },
       highLevel: {
-        primary: "Summer Atum",
+        primary: "Wamdus (Holiday)",
         secondary: "Grand Yuel",
         intervention: "Zero-touch",
-        team: "Onmyoji or Kengo / Sandira / Summer Atum / Sato or Fire Sevilbarra",
-        reason: "Atum completes the owned Sandira CA shell with automatic gauge, post-ougi damage, hit-count coverage, healing, and durability. Grand Yuel is the later comfort pick for automatic healing, debuff shortening, and dispel.",
-        skip: "Do not mistake Christmas Wamdus or Alanaan swap ceilings for requirements. Grand Percival remains the general and one-turn target, not the first specialist for difficult unattended fights.",
+        team: "Lancer Origin / Wamdus (Holiday) / Tien 150 / Grand Percival",
+        reason:
+          "A documented 2026 NM100/150 Full Auto used Holiday Wamdus with Tien 150 and Grand Percival, backed by Fraux and Michael. This is a later seasonal ceiling, while Grand Yuel remains the more general comfort alternative.",
+        skip: "Skipping Sandira is coherent with the account plan: it removes the reason to chase Summer Atum as the next Fire specialist. Finish Tien 150 and prioritize Grand Percival; reassess the remaining Legfest releases before committing another spark.",
+        units: [
+          {
+            name: "Wamdus (Holiday)",
+            role: "Frontline · later seasonal",
+            id: "3040562000",
+          },
+          {
+            name: "Tien",
+            role: "Frontline · transcendence 150",
+            id: "3040039000",
+          },
+          {
+            name: "Grand Percival",
+            role: "Frontline · spark target",
+            id: "3040425000",
+          },
+          { name: "Michael", role: "Backline · Primarch", id: "3040440000" },
+          { name: "Fraux", role: "Backline · sustain", id: "3040161000" },
+        ],
         sources: [
-          { label: "Current JP Fire character and high-difficulty templates", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0/%E6%9C%80%E5%BC%B7%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0.html" },
+          {
+            label: "2026 Fire NM100/150 Full Auto record",
+            url: "https://note.com/kyoka_h/n/ne28ec9360f7c",
+          },
+          {
+            label: "Kamigame Tien 150 evaluation and Full Auto example",
+            url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E9%99%90%E7%95%8C%E8%B6%85%E8%B6%8A%E3%82%A8%E3%83%83%E3%82%BB%E3%83%AB.html",
+          },
         ],
       },
       later: [
-        { name: "Grand Yuel", reason: "A later general-team refinement, not a prerequisite for the Percival shell." },
+        {
+          name: "Grand Yuel",
+          reason:
+            "A later general-team refinement, not a prerequisite for the Percival shell.",
+        },
       ],
       plan: {
-        current: "Existing Sandira Kengo preset",
-        target: "Manadiver / Grand Zeta / Grand Percival / Grand Wilnas · Michael reserve",
+        current:
+          "Manadiver / Grand Zeta / Michael / Ragazzo · Alanaan or Fraux reserve",
+        target:
+          "Manadiver / Grand Zeta / Grand Percival / Ragazzo · Michael + Alanaan",
         ca: "Off",
-        opener: ["The Sun summon", "Secret Triad", "Percival S3", "Optional Zeta S1", "Attack"],
-        verdict: "Percival genuinely changes the account's Fire one-turn route. Christmas Wamdus and Alanaan-swap versions are ceiling variants, while owned Wilnas is the reasonable M3 substitute.",
+        opener: [
+          "The Sun summon",
+          "Secret Triad",
+          "Percival S3",
+          "Optional Zeta S1",
+          "Attack",
+        ],
+        verdict:
+          "Ragazzo is the correct Wilnas replacement for this short normal job. Percival is still the missing piece that turns it into the current meta shell; Michael moves to reserve rather than competing for its third frontline slot.",
+        units: [
+          { name: "Grand Zeta", role: "Frontline · owned", id: "3040499000" },
+          {
+            name: "Grand Percival",
+            role: "Frontline · spark target",
+            id: "3040425000",
+          },
+          { name: "Ragazzo", role: "Frontline · owned", id: "3040481000" },
+          {
+            name: "Michael",
+            role: "Reserve · owned Primarch",
+            id: "3040440000",
+          },
+          { name: "Alanaan", role: "Reserve · burst option", id: "3040167000" },
+        ],
       },
       sources: [
-        { label: "Current JP Fire short-fight templates", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%83%91%E3%83%BC%E3%83%86%E3%82%A3%E7%B7%A8%E6%88%90/%E7%81%AB%E5%B1%9E%E6%80%A7PT.html" },
+        {
+          label: "Gamewith 2026 Fire 150HELL Zeta / Percival / Ragazzo route",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/504195",
+        },
+        {
+          label: "Kamigame Tien 150 evaluation and team example",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E9%99%90%E7%95%8C%E8%B6%85%E8%B6%8A%E3%82%A8%E3%83%83%E3%82%BB%E3%83%AB.html",
+        },
       ],
     },
     summons: {
-      presets: [magnaPreset("Colossus Omega", "Michael", "The Sun", "Beelzebub for damage and dispel; The Devil when difficult Full Auto needs HP.")],
-      notes: ["Keep The Sun callable only when the opening route actually uses its call; otherwise its low stats make the sub-aura-only row appropriate."],
+      presets: [
+        magnaPreset(
+          "Colossus Omega",
+          "Michael",
+          "The Sun",
+          "Beelzebub for damage and dispel; The Devil when difficult Full Auto needs HP.",
+        ),
+      ],
+      notes: [
+        "Keep The Sun callable only when the opening route actually uses its call; otherwise its low stats make the sub-aura-only row appropriate.",
+      ],
       sources: commonMagnaSources,
     },
   },
   water: {
     gacha: {
       general: {
-        name: "Save",
-        reason: "The owned Payila, Gabriel, Octavia, Yatima and Sylvia core is already unusually complete. Haaselia and the Varuna summon/weapon package improve the account more than another generic frontline pull.",
+        name: "Grand Europa",
+        reason:
+          "The best missing Water Gala character for this account. Her 5★ kit adds strong damage, recurring healing and clear, Fire switch, dispel guard, and long-fight reattack support; Galilei's Insight is also one of the exact pieces in the planned Varuna transition.",
       },
       oneTurn: {
         name: "None",
-        reason: "Payila, Gabriel and Octavia are already the intended modern normal shell. Re-test them after Leviathan M3, Opus and Haaselia rather than buying a redundant character.",
+        reason:
+          "Payila, Gabriel and Octavia are already the intended modern normal shell. Re-test them after Leviathan M3, Opus and Haaselia rather than buying a redundant character.",
       },
       highLevel: {
         primary: "Yukata Aria",
         secondary: "Summer Tefnut",
         intervention: "Zero-touch · non-urgent",
         team: "Manadiver / Yukata Aria / Yatima or Payila / Gabriel",
-        reason: "Aria adds near-every-turn dispel, Water healing, cover utility, and MC amplification. This is a comfort upgrade because the owned Yatima, Sylvia, Payila, Gabriel, Octavia, and Wamdus roster already covers high-level play unusually well.",
+        reason:
+          "Aria adds near-every-turn dispel, Water healing, cover utility, and MC amplification. This is a comfort upgrade because the owned Yatima, Sylvia, Payila, Gabriel, Octavia, and Wamdus roster already covers high-level play unusually well.",
         skip: "Bride Ilsa belongs to specialized short-fight and Hraesvelgr routes. Do not spark her for this Full Auto objective.",
+        units: [
+          {
+            name: "Yukata Alliah",
+            role: "Frontline · comfort target",
+            id: "3040648000",
+          },
+          {
+            name: "Grand Yatima",
+            role: "Frontline · owned flex",
+            id: "3040566000",
+          },
+          { name: "Payila", role: "Frontline · owned flex", id: "3040502000" },
+          {
+            name: "Grand Gabriel",
+            role: "Frontline / reserve · owned",
+            id: "3040492000",
+          },
+        ],
         sources: [
-          { label: "Current JP Yukata Aria Full Auto evaluation", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/page/415884431597807974.html" },
+          {
+            label: "Current JP Yukata Aria Full Auto evaluation",
+            url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/page/415884431597807974.html",
+          },
         ],
       },
       later: [
-        { name: "Grand Lancelot", reason: "Only when deliberately committing to the separate skill-damage archetype." },
-        { name: "Vajra", reason: "A dedicated Kengo improvement, but not urgent with Sylvia, Yatima and Wamdus already owned." },
+        {
+          name: "Grand Pholia · weapon-conditioned",
+          reason:
+            "Do not spark her as an equal alternative to Europa. Her character is now a niche single-target buffer whose personal barrier can fail in long Full Auto, but Taisai Spirit Bow remains useful when the exact future Varuna critical grid calls for it.",
+        },
+        {
+          name: "Grand Lancelot",
+          reason:
+            "Only when deliberately committing to the separate skill-damage archetype.",
+        },
+        {
+          name: "Vajra",
+          reason:
+            "A dedicated Kengo improvement, but not urgent with Sylvia, Yatima and Wamdus already owned.",
+        },
       ],
       plan: {
         current: "Kengo CA fallback or the owned normal team after testing",
         target: "Manadiver / Payila / Grand Gabriel / Grand Octavia",
         ca: "Off for the one-turn test",
-        opener: ["Enable Payila's normal support", "Add only the required MC buffs", "Attack", "Return to Kengo if the honors target is missed"],
-        verdict: "No Water gacha character is required. Normal attack becomes preferable when it reaches the honors target with fewer animations; Kengo remains the reliable weak-grid fallback.",
+        opener: [
+          "Enable Payila's normal support",
+          "Add only the required MC buffs",
+          "Attack",
+          "Return to Kengo if the honors target is missed",
+        ],
+        verdict:
+          "No Water character is required to begin testing this route. Water Zeta is the dedicated speed upgrade shown in current JP short-fight templates, but she is a normal-pool Suptix target rather than a reason to spend a Gala spark. Kengo remains the reliable weak-grid fallback.",
+        units: [
+          { name: "Payila", role: "Frontline · owned", id: "3040502000" },
+          {
+            name: "Grand Gabriel",
+            role: "Frontline · owned",
+            id: "3040492000",
+          },
+          {
+            name: "Grand Octavia",
+            role: "Frontline · owned",
+            id: "3040644000",
+          },
+        ],
       },
       sources: [
-        { label: "2026 Water GW Payila / Octavia / Gabriel report", url: "https://aytj9.hatenablog.com/entry/2026/04/11/003328" },
+        {
+          label: "Kamigame Grand Europa 5★ evaluation and team examples",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%82%A8%E3%82%A6%E3%83%AD%E3%83%9A.html",
+        },
+        {
+          label: "Kamigame Grand Pholia current evaluation",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%83%95%E3%82%A9%E3%83%AA%E3%82%A2.html",
+        },
+        {
+          label: "Current Varuna grids and exact Taisai / Galilei usage",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/21615",
+        },
+        {
+          label: "2026 Water GW Payila / Octavia / Gabriel report",
+          url: "https://aytj9.hatenablog.com/entry/2026/04/11/003328",
+        },
       ],
     },
     summons: {
       presets: [
-        magnaPreset("Leviathan Omega", "Gabriel", "The Moon", "Beelzebub for general damage and dispel; Justice for difficult Full Auto."),
+        magnaPreset(
+          "Leviathan Omega",
+          "Gabriel",
+          "The Moon",
+          "Beelzebub for general damage and dispel; Justice for difficult Full Auto.",
+        ),
         {
           name: "Single-sided Varuna · Primal entry",
           main: "Owned Yatima, Beelzebub, Orologia, Versusia or encounter utility",
           support: "Varuna 250",
           quickSummon: "Route-dependent",
-          subSummons: ["Gabriel 4★", "Lucifer 250", "Triple Zero 4★", "Flex or personal Varuna 250 later"],
+          subSummons: [
+            "Gabriel 4★",
+            "Lucifer 250",
+            "Triple Zero 4★",
+            "Flex or personal Varuna 250 later",
+          ],
           subAuras: ["The Moon 5★", "Wamdus 4★"],
           flex: "Choose the main summon for the route: Yatima for intentional call combinations and Haaselia entry, Beelzebub for immediate damage/debuffs, Orologia or Versusia for their specialized main effects. Do not assume these summons are interchangeable.",
           note: "This is the first Primal test. Borrowed Varuna 250 supplies the 170% aura; Rubea Stiria boost weapons, Gabriel's passive and exact crit pieces make one-sided play viable. Personal Varuna is not the gate.",
@@ -198,10 +360,22 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       ],
       sources: [
         ...commonMagnaSources,
-        { label: "Current single-sided and double-sided Varuna grids", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/21615" },
-        { label: "2026 double-Varuna Full Auto summon examples", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/483025" },
-        { label: "Wamdus 4★ sub-aura mechanics", url: "https://gbf.wiki/Wamdus_%28Summon%29" },
-        { label: "Current Evoker transcendence and Wonders", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/537602" },
+        {
+          label: "Current single-sided and double-sided Varuna grids",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/21615",
+        },
+        {
+          label: "2026 double-Varuna Full Auto summon examples",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/483025",
+        },
+        {
+          label: "Wamdus 4★ sub-aura mechanics",
+          url: "https://gbf.wiki/Wamdus_%28Summon%29",
+        },
+        {
+          label: "Current Evoker transcendence and Wonders",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/537602",
+        },
       ],
     },
   },
@@ -209,44 +383,131 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
     gacha: {
       general: {
         name: "Grand Uriel",
-        reason: "He remains the broad first Earth target because his frontline utility and Primarch weapon-skill passive improve several teams, including from reserve.",
+        reason:
+          "He remains the broad first Earth target because his frontline utility and Primarch weapon-skill passive improve several teams, including from reserve.",
       },
       oneTurn: {
         name: "Valentine Makora",
-        reason: "Unlike Uriel's usual reserve contribution, Makora directly increases the first turn through permanent double attacks, guaranteed DA and post-normal damage.",
+        reason:
+          "Unlike Uriel's usual reserve contribution, Makora directly increases the first turn through permanent double attacks, guaranteed DA and post-normal damage.",
       },
       highLevel: {
-        primary: "Summer Lu Woh",
-        secondary: "Christmas Shalem",
+        primary: "Grand Bhaisa",
+        secondary: "Summer Lu Woh",
         intervention: "Zero-touch",
-        team: "Rising Force, Kengo, or Onmyoji / Summer Lu Woh / Christmas Shalem / flexible third",
-        reason: "Lu Woh is first for unattended stability through gauge, mitigation, healing, and full HP/debuff recovery. Shalem follows for repeated debuffs, dispels, and high-frequency ougis; together they form the premium Earth CA and omen-control package.",
-        skip: "Valentine Makora remains the normal-attack and one-turn acquisition. Grand Uriel remains the broad account target; neither replaces this specialist survival pair.",
+        team: "Onmyoji, Kengo, or Rising Force / Grand Bhaisa / Summer Lu Woh / Christmas Shalem",
+        reason:
+          "Bhaisa is the missing bridge between the roadmap's CA team and modern difficult Full Auto: she opens with 40% bar plus one CA reactivation for every Earth ally, then supplies recurring gauge, healing, CA buffs, permanent debuffs, and automatic multi-hit damage. She also sharply shortens Diaspora's CA-activation phase. Summer Lu Woh is the next comfort upgrade; Christmas Shalem completes the premium dispel and omen-control shell.",
+        skip: "Bhaisa is the CA and high-level target, not the upgrade for Sabrina's CA-off normal team. Grand Uriel remains the broadest account pull because his weapon-skill passive works from reserve; Valentine Makora remains the strict one-turn normal target.",
+        units: [
+          {
+            name: "Grand Bhaisa",
+            role: "Frontline · primary target",
+            id: "3040630000",
+          },
+          {
+            name: "Summer Lu Woh",
+            role: "Frontline · comfort target",
+            id: "3040583000",
+          },
+          {
+            name: "Holiday Shalem",
+            role: "Frontline · seasonal completion",
+            id: "3040497000",
+          },
+        ],
         sources: [
-          { label: "Current JP Summer Lu Woh evaluation and endgame example", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E6%B0%B4%E7%9D%80%E3%83%AB%E3%82%AA%E3%83%BC.html" },
+          {
+            label: "Kamigame · Bhaisa evaluation and Full Auto examples",
+            url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/page/402447158495721208.html",
+          },
+          {
+            label: "Gamewith · Bhaisa mechanics and current evaluation",
+            url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/537569",
+          },
+          {
+            label: "Gamewith · current Diaspora CA-activation teams",
+            url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/322609",
+          },
         ],
       },
       later: [
-        { name: "Summer Raziel", reason: "Optimized normal burst after the account is developed; her cannon needs accumulated skill counts and does not replace Makora on the immediate first turn." },
+        {
+          name: "Christmas Shalem",
+          reason:
+            "The seasonal third member for the premium CA/high-difficulty shell: repeated debuffs, dispels, and high-frequency charge attacks. Bhaisa is the foundational target first.",
+        },
+        {
+          name: "Summer Raziel",
+          reason:
+            "Optimized normal burst after the account is developed; her cannon needs accumulated skill counts and does not replace Makora on the immediate first turn.",
+        },
       ],
       plan: {
         current: "Manadiver / Sabrina / Cidala / Yukata Pholia",
-        target: "Manadiver / Sabrina / Valentine Makora / Yukata Pholia · Grand Uriel reserve",
+        target:
+          "Manadiver / Sabrina / Valentine Makora / Yukata Pholia · Grand Uriel reserve",
         ca: "Off",
-        opener: ["Enable Yukata Pholia S1", "Enable only required MC buffs", "Keep CA off", "Start Full Auto"],
-        verdict: "The owned Sabrina/Pholia shell is already valid for low-intervention short Full Auto. Uriel remains the better general spark, but Makora—not Uriel or Summer Raziel—is the premium first-turn frontline upgrade.",
+        opener: [
+          "Enable Yukata Pholia S1",
+          "Enable only required MC buffs",
+          "Keep CA off",
+          "Start Full Auto",
+        ],
+        verdict:
+          "The owned Sabrina/Pholia shell is already valid for low-intervention short Full Auto. Uriel remains the better general spark, but Makora—not Uriel or Summer Raziel—is the premium first-turn frontline upgrade.",
+        units: [
+          { name: "Sabrina", role: "Frontline · owned", id: "3040514000" },
+          {
+            name: "Valentine Makora",
+            role: "Frontline · spark target",
+            id: "3040579000",
+          },
+          {
+            name: "Yukata Pholia",
+            role: "Frontline · owned",
+            id: "3040469000",
+          },
+          {
+            name: "Grand Uriel",
+            role: "Reserve · general target",
+            id: "3040501000",
+          },
+        ],
       },
       sources: [
-        { label: "2026 Earth Magna one-turn example", url: "https://t.co/rt4mQFFp4W" },
-        { label: "Current Valentine Makora breakdown", url: "https://granbluefantasyblog.com/makura-valentine/" },
+        {
+          label: "2026 Earth Magna one-turn example",
+          url: "https://t.co/rt4mQFFp4W",
+        },
+        {
+          label: "Current Valentine Makora breakdown",
+          url: "https://granbluefantasyblog.com/makura-valentine/",
+        },
+        {
+          label: "Current JP Bhaisa evaluation",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/page/402447158495721208.html",
+        },
       ],
     },
     summons: {
-      presets: [magnaPreset("Yggdrasil Omega", "Uriel", "The Hanged Man", "Beelzebub for general damage; The Tower when difficult Full Auto needs HP.")],
-      notes: ["After transcending Caim and enabling his Wonder, remove The Hanged Man: the Wonder reproduces its damage sub-aura and frees the summon slot."],
+      presets: [
+        magnaPreset(
+          "Yggdrasil Omega",
+          "Uriel",
+          "The Hanged Man",
+          "Beelzebub for general damage; The Tower when difficult Full Auto needs HP.",
+        ),
+      ],
+      notes: [
+        "After transcending Caim and enabling his Wonder, remove The Hanged Man: the Wonder reproduces its damage sub-aura and frees the summon slot.",
+      ],
       sources: [
         ...commonMagnaSources,
-        { label: "Caim transcendence and Hanged Man Wonder", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/537602" },
+        {
+          label: "Caim transcendence and Hanged Man Wonder",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/537602",
+        },
       ],
     },
   },
@@ -254,41 +515,107 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
     gacha: {
       general: {
         name: "Catura",
-        reason: "She gives the largest broad improvement to the safe CA/long-FA team through healing, clear, omen support and flexible normal/CA value.",
+        reason:
+          "She gives the largest broad improvement to the safe CA/long-FA team through healing, clear, omen support and flexible normal/CA value.",
       },
       oneTurn: {
         name: "Summer Galleon",
-        reason: "JP short-fight teams continue to use Narmaya plus Summer Galleon as the immediate normal-burst foundation. Catura does not replace Galleon's first-turn role.",
+        reason:
+          "JP short-fight teams continue to use Narmaya plus Summer Galleon as the immediate normal-burst foundation. Catura does not replace Galleon's first-turn role.",
       },
       highLevel: {
         primary: "Catura",
         secondary: "Bride Meg",
         intervention: "Usually zero-touch",
         team: "Kengo or Mariachi / Catura / Grand Charlotta / flexible sustain or omen slot",
-        reason: "Catura is the rare overlap between broad account value and high-level FA: she repeatedly accelerates MC and her own ougis while supporting the CA loop. Bride Meg is the later specialist for repeated ougis, hit counts, debuffs, and dispels.",
+        reason:
+          "Catura is the rare overlap between broad account value and high-level FA: she repeatedly accelerates MC and her own ougis while supporting the CA loop. Bride Meg is the later specialist for repeated ougis, hit counts, debuffs, and dispels.",
         skip: "The highest solo examples can require a Catura skill-cooldown Artifact. Treat that as a ceiling condition, not a requirement for ordinary Full Auto.",
+        units: [
+          {
+            name: "Catura",
+            role: "Frontline · primary target",
+            id: "3040313000",
+          },
+          {
+            name: "Grand Charlotta",
+            role: "Frontline · owned",
+            id: "3040438000",
+          },
+          {
+            name: "Cagliostro & Clarisse",
+            role: "Frontline · owned sustain",
+            id: "3040593000",
+          },
+          {
+            name: "Formal Meg & Mari",
+            role: "Later specialist flex",
+            id: "3040662000",
+          },
+        ],
         sources: [
-          { label: "Current JP Wind high-difficulty example", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A8%E3%82%B9%E3%83%88/%E3%83%95%E3%83%AA%E3%82%AF%E3%82%A8%E5%A4%A9%E5%85%83.html" },
+          {
+            label: "Current JP Wind high-difficulty example",
+            url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AF%E3%82%A8%E3%82%B9%E3%83%88/%E3%83%95%E3%83%AA%E3%83%BC%E3%82%A8%E3%82%B9%E3%83%88/%E3%83%95%E3%83%AA%E3%82%AF%E3%82%A8%E5%A4%A9%E5%85%83.html",
+          },
         ],
       },
       later: [
-        { name: "Grand Ewiyar", reason: "Strong broad support, but lower urgency because Raphael, Charlotta, Kaguya and Cagliostro & Clarisse are already owned." },
+        {
+          name: "Grand Ewiyar",
+          reason:
+            "Strong broad support, but lower urgency because Raphael, Charlotta, Kaguya and Cagliostro & Clarisse are already owned.",
+        },
       ],
       plan: {
         current: "Manadiver or Glory / Summer Mahira / Grand Narmaya / Raphael",
         target: "Manadiver or Glory / Grand Narmaya / Summer Galleon / Raphael",
         ca: "Off",
-        opener: ["Current team: Mahira targets Narmaya", "Narmaya S1 and S3", "Required MC damage or echo buff", "Attack"],
-        verdict: "Keep Catura first for general account value, but move Summer Galleon ahead whenever judging one-turn performance or a proper seasonal spark opportunity.",
+        opener: [
+          "Current team: Mahira targets Narmaya",
+          "Narmaya S1 and S3",
+          "Required MC damage or echo buff",
+          "Attack",
+        ],
+        verdict:
+          "Keep Catura first for general account value, but move Summer Galleon ahead whenever judging one-turn performance or a proper seasonal spark opportunity.",
+        units: [
+          {
+            name: "Grand Narmaya",
+            role: "Frontline · owned",
+            id: "3040335000",
+          },
+          {
+            name: "Summer Galleon",
+            role: "Frontline · spark target",
+            id: "3040544000",
+          },
+          { name: "Raphael", role: "Frontline · owned", id: "3040568000" },
+        ],
       },
       sources: [
-        { label: "2026 JP Wind short-team discussion", url: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13323977208" },
-        { label: "Japanese Wind one-turn example", url: "https://artsgraffiti.jimdofree.com/gb-2024-wind-preparation/" },
+        {
+          label: "2026 JP Wind short-team discussion",
+          url: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13323977208",
+        },
+        {
+          label: "Japanese Wind one-turn example",
+          url: "https://artsgraffiti.jimdofree.com/gb-2024-wind-preparation/",
+        },
       ],
     },
     summons: {
-      presets: [magnaPreset("Tiamat Omega", "Raphael", "Judgement", "Beelzebub for damage and dispel; Temperance for difficult Full Auto.")],
-      notes: ["Summer Galleon changes the frontline but does not change the standard Magna III summon skeleton."],
+      presets: [
+        magnaPreset(
+          "Tiamat Omega",
+          "Raphael",
+          "Judgement",
+          "Beelzebub for damage and dispel; Temperance for difficult Full Auto.",
+        ),
+      ],
+      notes: [
+        "Summer Galleon changes the frontline but does not change the standard Magna III summon skeleton.",
+      ],
       sources: commonMagnaSources,
     },
   },
@@ -296,42 +623,117 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
     gacha: {
       general: {
         name: "Grand Sandalphon",
-        reason: "He is the broad account upgrade because his active utility and Primarch weapon-skill passive remain valuable even when another frontline is used.",
+        reason:
+          "He is the broad account upgrade because his active utility and Primarch weapon-skill passive remain valuable even when another frontline is used.",
       },
       oneTurn: {
         name: "Nehan",
-        reason: "Nehan compresses the first turn with guaranteed TA, echo and double strike for the other three members. That is materially different from Sandalphon's usual reserve contribution.",
+        reason:
+          "Nehan compresses the first turn with guaranteed TA, echo and double strike for the other three members. That is materially different from Sandalphon's usual reserve contribution.",
       },
       highLevel: {
         primary: "Summer Horus",
         secondary: "Save after Horus",
         intervention: "Zero-touch",
         team: "Kengo / Grand Cosmos / Summer Horus / Grand Noa or Grand Lu Woh",
-        reason: "Horus is the cleanest account-specific target because Cosmos is already owned. Party charge, immediate FC, huge debuff counts, double ougis, healing, and gauge support directly answer V2 omens without a manual loop.",
+        reason:
+          "Horus is the cleanest account-specific target because Cosmos is already owned. Party charge, immediate FC, huge debuff counts, double ougis, healing, and gauge support directly answer V2 omens without a manual loop.",
         skip: "Grand Yuni's important zero-turn choices require setup, so she is excluded from the unattended priority. Nehan stays on the separate one-turn list.",
+        units: [
+          {
+            name: "Grand Cosmos",
+            role: "Frontline · owned core",
+            id: "3040467000",
+          },
+          {
+            name: "Summer Horus",
+            role: "Frontline · primary target",
+            id: "3040518000",
+          },
+          {
+            name: "Grand Noa",
+            role: "Frontline · owned flex",
+            id: "3040255000",
+          },
+          {
+            name: "Grand Lu Woh",
+            role: "Frontline · owned sustain",
+            id: "3040449000",
+          },
+        ],
         sources: [
-          { label: "Current JP Summer Horus evaluation and Agastia Full Auto", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/441131" },
+          {
+            label: "Current JP Summer Horus evaluation and Agastia Full Auto",
+            url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/441131",
+          },
         ],
       },
       later: [
-        { name: "Grand Sandalphon reserve", reason: "Once acquired, keep his Primarch passive active from reserve when the Nehan short team occupies the frontline." },
+        {
+          name: "Grand Sandalphon reserve",
+          reason:
+            "Once acquired, keep his Primarch passive active from reserve when the Nehan short team occupies the frontline.",
+        },
       ],
       plan: {
         current: "Manadiver / Summer Payila / Basara / Grand Jeanne",
         target: "Manadiver / Summer Payila / Nehan / Basara or Grand Jeanne",
         ca: "Off",
-        opener: ["Summer Payila S1", "Nehan S1 and S2", "Nehan S3 only if required", "MC buff or summon only if required", "Attack"],
-        verdict: "Grand Sandalphon remains the first broad spark, but Nehan is unquestionably the account's first Light acquisition when the objective is one-turn honors farming.",
+        opener: [
+          "Summer Payila S1",
+          "Nehan S1 and S2",
+          "Nehan S3 only if required",
+          "MC buff or summon only if required",
+          "Attack",
+        ],
+        verdict:
+          "Grand Sandalphon remains the first broad spark, but Nehan is unquestionably the account's first Light acquisition when the objective is one-turn honors farming.",
+        units: [
+          {
+            name: "Summer Payila",
+            role: "Frontline · owned",
+            id: "3040672000",
+          },
+          {
+            name: "Nehan",
+            role: "Frontline · one-turn target",
+            id: "3040341000",
+          },
+          { name: "Basara", role: "Frontline · owned", id: "3040582000" },
+          {
+            name: "Grand Jeanne",
+            role: "Frontline · owned flex",
+            id: "3040245000",
+          },
+        ],
       },
       sources: [
-        { label: "Summer Payila mechanics", url: "https://granbluefantasyblog.com/payila-summer/" },
-        { label: "Nehan mechanics", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/284496" },
-        { label: "Current JP Summer Payila setup reports", url: "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&ifr=tl_unit&p=%E6%B0%B4%E7%9D%80%E3%83%8F%E3%82%A4%E3%83%A9+ta&rkf=1" },
+        {
+          label: "Summer Payila mechanics",
+          url: "https://granbluefantasyblog.com/payila-summer/",
+        },
+        {
+          label: "Nehan mechanics",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/284496",
+        },
+        {
+          label: "Current JP Summer Payila setup reports",
+          url: "https://search.yahoo.co.jp/realtime/search?ei=UTF-8&ifr=tl_unit&p=%E6%B0%B4%E7%9D%80%E3%83%8F%E3%82%A4%E3%83%A9+ta&rkf=1",
+        },
       ],
     },
     summons: {
-      presets: [magnaPreset("Luminiera Omega", "Metatron", "The Star", "Beelzebub for the general team; Bahamut 250 for the Cosmos CA preset.")],
-      notes: ["For the Nehan one-turn preset, replace the sustain flex with the minimum summon or passive needed to reach the honors target."],
+      presets: [
+        magnaPreset(
+          "Luminiera Omega",
+          "Metatron",
+          "The Star",
+          "Beelzebub for the general team; Bahamut 250 for the Cosmos CA preset.",
+        ),
+      ],
+      notes: [
+        "For the Nehan one-turn preset, replace the sustain flex with the minimum summon or passive needed to reach the honors target.",
+      ],
       sources: commonMagnaSources,
     },
   },
@@ -339,40 +741,112 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
     gacha: {
       general: {
         name: "Grand Sariel",
-        reason: "He has the highest broad Dark account value because his Primarch passive improves every grid even from reserve while his frontline kit remains immediately relevant.",
+        reason:
+          "He has the highest broad Dark account value because his Primarch passive improves every grid even from reserve while his frontline kit remains immediately relevant.",
       },
       oneTurn: {
         name: "Grand Sariel",
-        reason: "He starts with guaranteed TA, takes three attack actions and adds post-normal skill damage, making him the direct first-turn acquisition without requiring Ereshkigal.",
+        reason:
+          "He starts with guaranteed TA, takes three attack actions and adds post-normal skill damage, making him the direct first-turn acquisition without requiring Ereshkigal.",
       },
       highLevel: {
         primary: "Summer Catura",
-        secondary: "Valentine Wamdus · Orologia if one opening setup is acceptable",
+        secondary:
+          "Valentine Wamdus · Orologia if one opening setup is acceptable",
         intervention: "Catura/Wamdus zero-touch · Orologia semi-auto",
         team: "Fighter Origin / Summer Catura / Grand Lich / Tsukuyomi or Grand Sariel",
-        reason: "Summer Catura continuously strengthens MC and herself, dispels automatically, and gives MC party-wide cover. Valentine Wamdus is the safer CA alternative; Orologia remains powerful when a one-time opening choice is acceptable.",
+        reason:
+          "Summer Catura continuously strengthens MC and herself, dispels automatically, and gives MC party-wide cover. Valentine Wamdus is the safer CA alternative; Orologia remains powerful when a one-time opening choice is acceptable.",
         skip: "Rei swaps, Ereshkigal racing, and manual omen scripts are deliberately excluded. Sariel remains the broad and one-turn target even though Catura is the stronger high-difficulty FA specialist.",
+        units: [
+          {
+            name: "Summer Catura",
+            role: "Frontline · primary target",
+            id: "3040610000",
+          },
+          {
+            name: "Grand Lich",
+            role: "Frontline · owned core",
+            id: "3040357000",
+          },
+          {
+            name: "Tsukuyomi",
+            role: "Frontline · owned sustain",
+            id: "3040581000",
+          },
+          {
+            name: "Grand Sariel",
+            role: "Frontline / reserve · target",
+            id: "3040611000",
+          },
+        ],
         sources: [
-          { label: "Current JP Dark Full Auto and high-difficulty comparison", url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0/%E6%9C%80%E5%BC%B7%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0.html" },
+          {
+            label: "Current JP Dark Full Auto and high-difficulty comparison",
+            url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0/%E6%9C%80%E5%BC%B7%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0.html",
+          },
         ],
       },
       later: [
-        { name: "Grand Orologia", reason: "The largest immediate upgrade to the owned Lich/Tyra general team, but not mandatory for the first turn." },
+        {
+          name: "Grand Orologia",
+          reason:
+            "The largest immediate upgrade to the owned Lich/Tyra general team, but not mandatory for the first turn.",
+        },
       ],
       plan: {
         current: "Manadiver / Grand Lich / Summer Magisa / Tsukuyomi",
         target: "Manadiver / Seox / Grand Lich / Grand Sariel or Tsukuyomi",
         ca: "On for general FA · configure Azusa's 1/2 for one-turn skill burst",
-        opener: ["Use the Lich/Magisa/Tsukuyomi frontline for sustained FA", "Replace Tsukuyomi with Summer Azusa when immediate skill damage matters", "Do not require Kaneshige for the general Magna III plan"],
-        verdict: "Maintain a shared Azusa/Lich skill shell and a balanced Seox general shell. Sariel remains the broad future target without requiring Ereshkigal or an unowned seasonal attacker.",
+        opener: [
+          "Use the Lich/Magisa/Tsukuyomi frontline for sustained FA",
+          "Replace Tsukuyomi with Summer Azusa when immediate skill damage matters",
+          "Do not require Kaneshige for the general Magna III plan",
+        ],
+        verdict:
+          "Maintain a shared Azusa/Lich skill shell and a balanced Seox general shell. Sariel remains the broad future target without requiring Ereshkigal or an unowned seasonal attacker.",
+        units: [
+          {
+            name: "Seox",
+            role: "Frontline · general attacker",
+            id: "3040035000",
+          },
+          {
+            name: "Grand Lich",
+            role: "Frontline · owned core",
+            id: "3040357000",
+          },
+          {
+            name: "Grand Sariel",
+            role: "Frontline / reserve · target",
+            id: "3040611000",
+          },
+          {
+            name: "Tsukuyomi",
+            role: "Frontline · owned flex",
+            id: "3040581000",
+          },
+        ],
       },
       sources: [
-        { label: "Current Sariel opening-turn reference", url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/327535" },
+        {
+          label: "Current Sariel opening-turn reference",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/327535",
+        },
       ],
     },
     summons: {
-      presets: [magnaPreset("Celeste Omega", "Sariel", "Death", "Bahamut 250 for the saved Azusa Kengo team; Beelzebub for Manadiver or general damage.")],
-      notes: ["Belial is a short-fight option only when its maximum-HP penalty does not threaten the unattended run."],
+      presets: [
+        magnaPreset(
+          "Celeste Omega",
+          "Sariel",
+          "Death",
+          "Bahamut 250 for the saved Azusa Kengo team; Beelzebub for Manadiver or general damage.",
+        ),
+      ],
+      notes: [
+        "Belial is a short-fight option only when its maximum-HP penalty does not threaten the unattended run.",
+      ],
       sources: commonMagnaSources,
     },
   },

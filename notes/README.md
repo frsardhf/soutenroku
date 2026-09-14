@@ -21,3 +21,4 @@ as Granblue Fantasy changes.
 - [Eternal investment plan](./account/eternal-plans.md)
 - [Historical combined Fire/Water archive](./archive/fire-water-combined-archive.md)
 - [Dark Opus research](./research/dark-opus-research.md)
+- [Revans account research](./research/revans-research.md)

@@ -1,6 +1,10 @@
 # GBF Light Magna Roster Plan
 
-Last updated: 2026-08-28
+Last updated: 2026-09-13
+
+Revans update: Agastia now has a distinct Cosmos/Pijiu CA entry target, with
+Grand Noa visibly labelled as an unverified account substitution. See the
+[Revans research note](../research/revans-research.md#agastia--light).
 
 ## Account direction
 

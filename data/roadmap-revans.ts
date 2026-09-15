@@ -171,44 +171,6 @@ const revisions: Record<string, ElementRevision> = {
     ],
   },
   wind: {
-    teams: [
-      {
-        name: "Siegfried control target",
-        mode: "TARGET FA · GUARD ON",
-        note: "The account owns Cagliostro and Clarisse plus Grand Rosetta, but Estarriola is still the missing automatic-dispel core. This is a future target, not a claim that the current Narmaya team can brute-force Siegfried.",
-        units: [
-          {
-            name: "Estarriola",
-            role: "Frontline · future core",
-            id: "3040163000",
-          },
-          {
-            name: "Cagliostro and Clarisse",
-            role: "Frontline · heal / dispel",
-            id: "3040593000",
-          },
-          {
-            name: "Grand Rosetta",
-            role: "Frontline · cover",
-            id: "3040068000",
-          },
-          { name: "Raphael", role: "Backline · Primarch", id: "3040568000" },
-          {
-            name: "Grand Ewiyar",
-            role: "Backline · dodge sustain",
-            id: "3040452000",
-          },
-        ],
-        mc: {
-          className: "Boogeyman",
-          ca: "ON",
-          mainhand: "Exo Australis · Attack awakening",
-          skills: ["Dispel", "Continental Tailor", "Miserable Mist"],
-          note: "Full Auto ON and Full Guard ON. The current JP Magna template disables selected character skills, and pure Full Auto is slow enough that reloads are recommended. Control CT specials and Kvalfang rather than stacking fast normal attackers.",
-        },
-        guide: guide("siegfried", "Open the Siegfried control checklist"),
-      },
-    ],
     grids: [
       {
         name: "Siegfried control target",
@@ -254,11 +216,15 @@ const revisions: Record<string, ElementRevision> = {
             id: "3040255000",
           },
           {
-            name: "Grand Lu Woh",
-            role: "Backline · sustain",
-            id: "3040449000",
+            name: "Grand Sandalphon",
+            role: "Backline · Primarch target",
+            id: "3040515000",
           },
-          { name: "Yukata Narmaya", role: "Backline · MC CA follow-up" },
+          {
+            name: "Yukata Narmaya",
+            role: "Backline · MC CA follow-up",
+            id: "3040392000",
+          },
         ],
         mc: {
           className: "Kengo",

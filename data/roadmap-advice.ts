@@ -527,9 +527,9 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
         primary: "Catura",
         secondary: "Bride Meg",
         intervention: "Usually zero-touch",
-        team: "Kengo or Mariachi / Catura / Grand Charlotta / flexible sustain or omen slot",
+        team: "Kengo / Catura / Grand Charlotta / Cagliostro & Clarisse",
         reason:
-          "Catura is the rare overlap between broad account value and high-level FA: she repeatedly accelerates MC and her own ougis while supporting the CA loop. Bride Meg is the later specialist for repeated ougis, hit counts, debuffs, and dispels.",
+          "Catura is the direct upgrade for the account's third template: she repeatedly accelerates MC and her own ougis while adding healing, clear and multi-hit omen coverage. Charlotta and Cagliostro & Clarisse are already owned, so this target completes a coherent CA/V2 shell rather than requiring a new seasonal core.",
         skip: "The highest solo examples can require a Catura skill-cooldown Artifact. Treat that as a ceiling condition, not a requirement for ordinary Full Auto.",
         units: [
           {
@@ -548,9 +548,14 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             id: "3040593000",
           },
           {
-            name: "Formal Meg & Mari",
-            role: "Later specialist flex",
-            id: "3040662000",
+            name: "Raphael",
+            role: "Backline · Primarch",
+            id: "3040568000",
+          },
+          {
+            name: "Ewiyar",
+            role: "Backline · owned sustain",
+            id: "3040378000",
           },
         ],
         sources: [
@@ -568,39 +573,61 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
         },
       ],
       plan: {
-        current: "Manadiver or Glory / Summer Mahira / Grand Narmaya / Raphael",
-        target: "Manadiver or Glory / Grand Narmaya / Summer Galleon / Raphael",
-        ca: "Off",
+        current: "Manadiver / Yukata Vampy / Grand Narmaya / Azusa · Raphael + Ewiyar",
+        target: "Manadiver or Glory / Summer Galleon / Grand Narmaya / Yukata Vampy · Raphael + Ewiyar",
+        ca: "On for Arbos · Off only after testing the short route",
         opener: [
-          "Current team: Mahira targets Narmaya",
-          "Narmaya S1 and S3",
-          "Required MC damage or echo buff",
+          "Use the required quick summon or MC debuffs",
+          "Summer Galleon S1 when acquired",
+          "Narmaya S1 and S3; Vampy S2 and S1 as required",
           "Attack",
         ],
         verdict:
-          "Keep Catura first for general account value, but move Summer Galleon ahead whenever judging one-turn performance or a proper seasonal spark opportunity.",
+          "Summer Galleon is the first direct upgrade to the active Arbos/fast-normal team and completes the published Galleon / Narmaya / Vampy shell. Keep Azusa until the route reliably clears Arbos's debuff checks. Catura remains the broader second target because she completes the separate CA/V2 team.",
         units: [
+          {
+            name: "Summer Galleon",
+            role: "Frontline · first spark target",
+            id: "3040544000",
+          },
           {
             name: "Grand Narmaya",
             role: "Frontline · owned",
             id: "3040335000",
           },
           {
-            name: "Summer Galleon",
-            role: "Frontline · spark target",
-            id: "3040544000",
+            name: "Yukata Vampy",
+            role: "Frontline · owned",
+            id: "3040478000",
           },
-          { name: "Raphael", role: "Frontline · owned", id: "3040568000" },
+          {
+            name: "Raphael",
+            role: "Backline · Primarch",
+            id: "3040568000",
+          },
+          {
+            name: "Ewiyar",
+            role: "Backline · owned sustain",
+            id: "3040378000",
+          },
         ],
       },
       sources: [
         {
-          label: "2026 JP Wind short-team discussion",
-          url: "https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q13323977208",
+          label: "Gamewith Summer Galleon evaluation and teams",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/458527",
         },
         {
-          label: "Japanese Wind one-turn example",
-          url: "https://artsgraffiti.jimdofree.com/gb-2024-wind-preparation/",
+          label: "Kamigame Summer Galleon evaluation and teams",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E6%B0%B4%E7%9D%80%E3%82%AC%E3%83%AC%E3%83%B2%E3%83%B3.html",
+        },
+        {
+          label: "Gamewith Yggdrasil Arbos guide",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/451305",
+        },
+        {
+          label: "Gamewith Catura evaluation",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/246430",
         },
       ],
     },
@@ -627,18 +654,18 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
           "He is the broad account upgrade because his active utility and Primarch weapon-skill passive remain valuable even when another frontline is used.",
       },
       oneTurn: {
-        name: "Nehan",
+        name: "Halloween Vajra",
         reason:
-          "Nehan compresses the first turn with guaranteed TA, echo and double strike for the other three members. That is materially different from Sandalphon's usual reserve contribution.",
+          "After Bhadra's release, Vajra is no longer a narrow burst luxury. She immediately replaces Basara beside Summer Payila, while guaranteed TA, double strike, automatic damage and dispel also give her a future long-Full-Auto destination.",
       },
       highLevel: {
         primary: "Summer Horus",
-        secondary: "Save after Horus",
+        secondary: "Grand Sandalphon",
         intervention: "Zero-touch",
-        team: "Kengo / Grand Cosmos / Summer Horus / Grand Noa or Grand Lu Woh",
+        team: "Kengo / Grand Cosmos / Summer Horus / Grand Noa · Yukata Narmaya + Grand Sandalphon",
         reason:
           "Horus is the cleanest account-specific target because Cosmos is already owned. Party charge, immediate FC, huge debuff counts, double ougis, healing, and gauge support directly answer V2 omens without a manual loop.",
-        skip: "Grand Yuni's important zero-turn choices require setup, so she is excluded from the unattended priority. Nehan stays on the separate one-turn list.",
+        skip: "This is the Cosmos CA/V2 job, not the default normal team. Grand Yuni's important zero-turn choices require setup, so she remains outside the unattended priority.",
         units: [
           {
             name: "Grand Cosmos",
@@ -656,9 +683,14 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             id: "3040255000",
           },
           {
-            name: "Grand Lu Woh",
-            role: "Frontline · owned sustain",
-            id: "3040449000",
+            name: "Yukata Narmaya",
+            role: "Backline · owned MC CA follow-up",
+            id: "3040392000",
+          },
+          {
+            name: "Grand Sandalphon",
+            role: "Backline · Primarch target",
+            id: "3040515000",
           },
         ],
         sources: [
@@ -670,24 +702,29 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       },
       later: [
         {
-          name: "Grand Sandalphon reserve",
+          name: "Bhadra long-FA specialization",
           reason:
-            "Once acquired, keep his Primarch passive active from reserve when the Nehan short team occupies the frontline.",
+            "Bhadra turns Halloween Vajra into part of a published CA-off long-Full-Auto shell through permanent post-normal skill damage, skill cap and amplification plus substantial defensive support. Pursue him after Vajra when specializing Light further.",
+        },
+        {
+          name: "Nehan manual-speed specialization",
+          reason:
+            "Nehan remains excellent for compressed first-turn burst, but Halloween Vajra ranks above him for this account because she upgrades the Payila team and retains a low-intervention Bhadra destination.",
         },
       ],
       plan: {
         current: "Manadiver / Summer Payila / Basara / Grand Jeanne",
-        target: "Manadiver / Summer Payila / Nehan / Basara or Grand Jeanne",
+        target: "Manadiver / Summer Payila / Halloween Vajra / Grand Jeanne · Summer Heles + Grand Sandalphon",
         ca: "Off",
         opener: [
           "Summer Payila S1",
-          "Nehan S1 and S2",
-          "Nehan S3 only if required",
+          "Halloween Vajra S2",
+          "Grand Jeanne's required team buffs",
           "MC buff or summon only if required",
           "Attack",
         ],
         verdict:
-          "Grand Sandalphon remains the first broad spark, but Nehan is unquestionably the account's first Light acquisition when the objective is one-turn honors farming.",
+          "Halloween Vajra is the first opportunity target: she directly replaces Basara now, pairs naturally with Summer Payila, and gains a second endgame role beside Bhadra. Summer Horus remains the next distinct unlock for Cosmos CA/V2; Grand Sandalphon is the broad reserve target.",
         units: [
           {
             name: "Summer Payila",
@@ -695,16 +732,17 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             id: "3040672000",
           },
           {
-            name: "Nehan",
-            role: "Frontline · one-turn target",
-            id: "3040341000",
+            name: "Halloween Vajra",
+            role: "Frontline · priority seasonal target",
+            id: "3040617000",
           },
-          { name: "Basara", role: "Frontline · owned", id: "3040582000" },
           {
             name: "Grand Jeanne",
-            role: "Frontline · owned flex",
+            role: "Frontline · owned burst support",
             id: "3040245000",
           },
+          { name: "Summer Heles", role: "Backline · owned", id: "3040091000" },
+          { name: "Grand Sandalphon", role: "Backline · Primarch target", id: "3040515000" },
         ],
       },
       sources: [
@@ -713,8 +751,16 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
           url: "https://granbluefantasyblog.com/payila-summer/",
         },
         {
-          label: "Nehan mechanics",
-          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/284496",
+          label: "Current Gamewith Halloween Vajra evaluation",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/524435",
+        },
+        {
+          label: "Current Kamigame Halloween Vajra evaluation",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%B4%E3%82%A1%E3%82%B8%E3%83%A9.html",
+        },
+        {
+          label: "Current Gamewith Bhadra evaluation and Full Auto setups",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/574426",
         },
         {
           label: "Current JP Summer Payila setup reports",

@@ -247,15 +247,15 @@ Earth should remain Magna. The first broad Earth Gala target is Uriel; Valentine
 
 ## Wind roster mapping update
 
-The supplied Wind payload contains 35 SSRs. Its core is unusually deep: Grand Narmaya, Raphael, Grand Charlotta, Grand Kaguya, Grand Grimnir, Summer Mahira, Yukata Vania and Cagliostro & Clarisse are all owned. Other meaningful pieces include Spinnah SSR, Grand Monika, Andira, Elea, non-Grand Ewiyar and several older specialists.
+The supplied Wind payload contains 35 SSRs. Its core is unusually deep: Grand Narmaya, Raphael, Grand Charlotta, Grand Kaguya, Grand Grimnir, Summer Mahira, Yukata Vampy and Cagliostro & Clarisse are all owned. Other meaningful pieces include Wind Azusa, Spinnah SSR, Grand Monika, Andira, Elea, non-Grand Ewiyar and several older specialists.
 
-Grand Narmaya remains the best owned immediate normal-attack carry, but is not universal for long Full Auto. The recommended normal team is Manadiver / Summer Mahira / Grand Narmaya / Raphael, with Mahira directly before Narmaya so the next-position buff targets her.
+Grand Narmaya remains the best owned immediate normal-attack carry, but is not universal for long Full Auto. The current Arbos/fast-normal team is Manadiver / Yukata Vampy / Grand Narmaya / Wind Azusa, with Raphael and non-Grand Ewiyar in reserve. Azusa is retained because Arbos requires escalating debuff counts rather than because she is the current universal Wind ceiling.
 
-Only two Wind presets should be maintained. Team 1 is Manadiver / Summer Mahira / Grand Narmaya / Raphael for fast normal Full Auto. Team 2 is Kengo / Grand Charlotta / Cagliostro & Clarisse / Raphael for safe long Full Auto/CA play. Other characters are substitutions, not separate saved teams. Cagliostro & Clarisse are a particularly important long-fight healer, clearer and multi-dispeller despite being a regular-pool character.
+Three Wind presets are maintained. Team A is the Arbos/fast-normal team above. Team B is Manadiver / Yukata Vampy / Cagliostro & Clarisse / Grand Charlotta for general Full Auto. Team C is Kengo / Grand Kaguya / Grand Charlotta / Cagliostro & Clarisse for CA/V2 Full Auto, with Catura replacing Kaguya after acquisition. Raphael and non-Grand Ewiyar occupy the two reserve slots in all three templates.
 
 Current backline priority is non-Grand Ewiyar plus Raphael when Raphael is not in front. Long-term Evoker projects are Estarriola first and Katzelia second. Under the female-only Transcendence policy, Niyon remains level 100 unless a specific Wind team justifies committing directly to level 150. Wind should remain Magna.
 
-The two future gacha targets are Catura and Summer Galleon. Catura has slightly higher general account-value priority because she completes the safe CA team with healing, clear, multi-hit omen handling and MC acceleration. Summer Galleon upgrades the fast Narmaya team and has higher opportunity priority only when she is actually sparkable on a 6% seasonal Gala. Do not chase her off-rate or spend a Siero ticket while a realistic future spark route remains. The detailed plan is recorded in `../elements/wind-magna-plan.md`.
+The two future gacha targets are Summer Galleon and Catura. Summer Galleon is first for the active Team A because the published ceiling shell is Summer Galleon / Grand Narmaya / Yukata Vampy. Catura remains the broader second target because she completes the separate CA/V2 team with healing, clear, multi-hit omen handling and MC acceleration. Do not chase either target off-rate or spend a Siero ticket while a realistic future spark route remains. The detailed plan is recorded in `../elements/wind-magna-plan.md`.
 
 ## Light roster mapping update
 

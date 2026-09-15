@@ -184,7 +184,7 @@ export const roadmapIdentity={
     "teams": [
       "grand-narmaya-fast-normal",
       "safe-ca-long-fa",
-      "siegfried-control-target"
+      "catura-ca-v2"
     ],
     "grids": [
       {
@@ -218,6 +218,7 @@ export const roadmapIdentity={
   "light": {
     "teams": [
       "summer-payila-general-fa",
+      "payila-vajra-general-fa",
       "cosmos-ca-team",
       "agastia-entry-cosmos-ca"
     ],

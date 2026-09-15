@@ -1,6 +1,6 @@
 # GBF Wind Magna Roster Plan
 
-Last updated: 2026-09-13
+Last updated: 2026-09-14
 
 Revans update: Siegfried uses a dedicated defensive control target rather than
 the normal-attack road team. See the
@@ -10,20 +10,20 @@ the normal-attack road team. See the
 
 - Remain Magna. The account owns many Wind Grands, but owning characters is not the same as owning enough copies of the correct Zephyrus weapons.
 - Grand Narmaya is the best owned immediate normal-attack burst carry, but she is not the universal answer for every long Full Auto encounter.
-- The account already owns a strong independent long-fight core: Raphael, Grand Charlotta and Cagliostro & Clarisse.
-- Summer Mahira, Yukata Vania, Grand Kaguya and Spinnah provide additional normal/skill configurations.
-- The two principal future character targets are **Catura** for the safe CA team and **Summer Galleon** for the Narmaya normal team. Catura has slightly higher overall account-value priority; Galleon has higher opportunity priority when she is actually sparkable on a 6% seasonal Gala.
+- The account already owns a strong independent long-fight core: Yukata Vampy, Grand Charlotta and Cagliostro & Clarisse, with Raphael now serving as the default Primarch backliner.
+- Wind Azusa remains useful in the current Yggdrasil Arbos team because that raid asks for 9, 12 and 15 debuffs to remove its buffs.
+- The two principal future character targets are **Summer Galleon** for the active fast-normal team and **Catura** for the separate CA/V2 team. Summer Galleon is the exact first upgrade to the team currently being played; Catura remains the broader long-term account target.
 
 ## Important owned characters
 
 ### Core modern characters
 
 - **Grand Narmaya:** primary short and medium normal-attack carry. Guaranteed TA, echo, assassin and reattack make her excellent when supported, but her kit contributes less healing or encounter control than newer FA specialists.
-- **Raphael:** broad attacker/support and Primarch passive. He gains resources through four-chain bursts or Wind Fated Chains, supplies permanent team strengthening, defensive utility and supplemental damage, and works in both Magna and Zephyrus.
+- **Raphael:** broad attacker/support and Primarch passive. He remains usable in front, but the current three-template plan keeps him in reserve so every team retains his Primarch weapon-skill boost without displacing a role-specific frontline member.
 - **Cagliostro & Clarisse:** premier long Full Auto support, healer, debuffer and dispeller. They heal/clear after enemy specials, can double dispel, inflict numerous debuffs and gain a permanent team-strengthening state in sufficiently long fights.
 - **Grand Charlotta:** defensive support and long-fight attacker. She provides 40% starting charge bar, permanent team ATK/DEF/debuff-resistance support, delay/dispel utility and becomes substantially stronger after turn 10.
-- **Summer Mahira:** targeted normal/skill support. Her first skill buffs the Wind ally immediately after her in formation; repeated hits trigger dispels and automatic multi-hit skill damage. Her ougi further upgrades the chosen ally's normal attacks.
-- **Yukata Vania:** strong flexible Full Auto attacker/support with good normal and skill contribution.
+- **Summer Mahira:** still a usable targeted normal/skill support, but no longer the default because Yukata Vampy is the account's stronger current fit.
+- **Yukata Vampy:** default owned offensive support for both Arbos/fast-normal and general Full Auto.
 
 ### Strong secondary pieces
 
@@ -33,54 +33,50 @@ the normal-attack road team. See the
 - **Grand Monika:** flexible dodge, skill and ougi utility.
 - **Andira 5-star:** older all-purpose healer/buffer/debuffer who remains useful while the account develops.
 - **Elea:** useful CA/debuff alternative; her position changes the number of hits on her post-CA skill.
-- **Azusa:** competent older attacker, but lower investment priority than the modern core.
+- **Wind Azusa:** the current Arbos specialist. Her debuffs and automatic multihit response make her more useful here than her general rating suggests, although Summer Galleon replaces her in the target-complete damage shell.
 - **Ewiyar (non-Grand cat):** valuable owned backline support rather than a normal frontline attacker.
 
 ### Situational roster depth
 
 Ultimate Friday, Nectar, Sho, Yodarha, Nezha, Enyo, Randall, Therese, Yurius, Florence, Sutera, Heles, Yuisis, Catherine, Selfira, Grand Rosetta, Metera, Yggdrasil, Wind Lily and Wind Societte remain niche substitutes. They should not consume priority resources before the core above.
 
-## Team 1: Grand Narmaya normal Full Auto
+## Team A: Arbos and fast-normal Full Auto
 
-**Summer Mahira / Grand Narmaya / Raphael**
+**Yukata Vampy / Grand Narmaya / Wind Azusa**
 
-- Formation matters: **Summer Mahira must be immediately before Narmaya** so her next-position buff targets Narmaya.
-- CA: **On** for general medium Full Auto so Mahira can improve her chosen ally and Raphael can benefit from chain bursts. Use **Off** only for a deliberately short normal-attack finish.
-- Mahira gives Narmaya echo/multiattack support, automatic multi-hit damage and repeated dispel access. Narmaya's guaranteed TA and reattack generate the hit count Mahira wants.
-- Raphael supplies broad team damage and defensive support while also covering the Primarch passive.
+Backline: **Raphael / non-Grand Ewiyar**
 
-Safer variation:
+MC: **Manadiver**, Tiamat Edge Aura mainhand
 
-**Summer Mahira / Grand Narmaya / Cagliostro & Clarisse**
+- Keep CA **On** for unattended Yggdrasil Arbos runs. Turn it off only after a deliberately short route has been tested against the exact grid and support summon.
+- Arbos removes its buffs at 9, 12 and 15 debuffs. Azusa therefore remains the correct owned third member even though she is not the current general Wind ceiling.
+- **Summer Galleon replaces Azusa** in the target-complete fast-normal shell. Current Japanese examples explicitly use Summer Galleon / Grand Narmaya / Yukata Vampy, but that does not excuse missing Arbos's debuff checks.
 
-Use this when healing, clear and automatic dispels matter more than Raphael's faster offensive contribution. Raphael then moves to the backline.
+## Team B: general Full Auto
 
-## Team 2: safe long Full Auto/CA team
+**Yukata Vampy / Cagliostro & Clarisse / Grand Charlotta**
 
-**Grand Charlotta / Cagliostro & Clarisse / Raphael**
+Backline: **Raphael / non-Grand Ewiyar**
 
-- CA: **On**.
-- This team does not depend on Grand Narmaya.
-- Charlotta's 40% starting gauge accelerates the opening and supplies strong defensive foundations. Raphael benefits from four-chain bursts/Fated Chains, while Cagliostro & Clarisse handle enemy specials, recovery, debuffs and dispels.
-- This is the preferred team for difficult event bosses, high-level Full Auto and fights long enough for Charlotta and Cagliostro & Clarisse to finish ramping.
-- Grand Kaguya can replace Raphael or Charlotta when additional control and survivability are more important than speed.
+MC: **Manadiver**, Tiamat Edge Aura mainhand
 
-Limited substitutions rather than separate saved teams:
+- Keep CA **On**.
+- Vampy provides the offensive engine, Cagliostro & Clarisse answer enemy specials with healing, clear and dispels, and Charlotta supplies the defensive foundation and improves in longer fights.
+- Replace Charlotta with **Grand Kaguya** only when maximum control and survivability matter more than clear speed.
 
-- Use **Manadiver or Fighter Origin** instead of Kengo if the encounter rewards skill/normal damage more than repeated CAs.
-- Replace Charlotta with **Elea** when additional charge-bar support and post-CA debuffs are preferable to Charlotta's defense.
-- Replace Raphael or Charlotta with **Grand Kaguya** for maximum safety; move Raphael to the backline if removed.
-- **Yukata Vania** is the default offensive replacement if one of the main members does not fit a boss.
+## Team C: CA and V2 Full Auto
 
-### Future Team 2 after acquiring Catura
+Current: **Grand Kaguya / Grand Charlotta / Cagliostro & Clarisse**
 
-**Catura / Grand Charlotta / Raphael**
+Target: **Catura / Grand Charlotta / Cagliostro & Clarisse**
 
-- Keep CA **On** and normally set Catura's Skill 3 **Off**. Skill 3 is her normal-attack stance and consumes charge bar, which conflicts with the repeated-CA purpose of this preset.
-- Catura supplies 100% gauge and CA reactivation to herself and MC, cooldown reduction from her CAs, up to 24-hit skill damage, healing, clear and strong V2 omen coverage.
-- Charlotta directly supports Catura with starting gauge, post-CA gauge, permanent defense and multi-hit damage that benefits from Catura's supplemental effects.
-- Raphael benefits from the resulting four-chain bursts and Fated Chains.
-- Cagliostro & Clarisse do not become obsolete. Replace Charlotta with them for dispel/heal-heavy fights, or replace Raphael and move him to the backline for maximum safety.
+Backline: **Raphael / non-Grand Ewiyar**
+
+MC: **Kengo**, Wind Unsigned Kaneshige with Devilry emblem
+
+- Keep CA **On**. This template exists for repeated CAs, V2 omens and difficult encounters, not short farming.
+- Catura is the direct upgrade over Grand Kaguya. She repeatedly accelerates MC and herself while adding healing, clear, cooldown reduction and up to 24-hit skill damage.
+- Grand Charlotta and Cagliostro & Clarisse are retained because the account already owns the defensive, sustain and dispel support Catura needs.
 
 ## Current backline
 
@@ -89,13 +85,7 @@ Limited substitutions rather than separate saved teams:
 1. **Ewiyar (non-Grand cat):** approximately 20% dodge support for Wind allies; after a successful dodge it provides healing and one debuff removal. These effects work while Ewiyar is a sub ally.
 2. **Raphael**, whenever he is not frontline, for his Primarch weapon-skill passive.
 
-If Raphael is frontline, use Ewiyar plus the strongest emergency reinforcement. Grand Kaguya is the safest reserve, while Yukata Vania or Grand Narmaya is the offensive reserve.
-
-Suggested configurations:
-
-- Narmaya team with Raphael front: Ewiyar / Grand Kaguya
-- Narmaya team with Cagliostro & Clarisse front: Ewiyar / Raphael
-- Safe/CA team with Raphael front: Ewiyar / Grand Kaguya or Yukata Vania
+All three primary templates use this pair. Grand Kaguya is the safest frontline substitute or emergency reinforcement; Raphael only returns to the frontline for a boss-specific reason.
 
 ## Future Arcarum and Eternal roadmap
 
@@ -133,8 +123,8 @@ Do not Damascus-bar the Magna grid. Exact counts should wait for the Wind weapon
 
 ### Gacha planning
 
-1. **Catura:** first target by overall gameplay value (roughly 60/40 over Summer Galleon). She completes the second team's CA engine and adds healing, clear, multi-hit omen cancellation and both CA/normal flexibility. Spark her on a worthwhile Legfest when she is actually in the spark pool.
-2. **Summer Galleon:** first target by scarcity/opportunity when she is actually sparkable on a 6% seasonal Gala. She upgrades Team 1 to Manadiver / Grand Narmaya / Summer Galleon / Raphael, bringing major personal and automatic damage. She is not required because Summer Mahira already makes Team 1 functional.
+1. **Summer Galleon:** first direct upgrade to the active Team A and the exact missing member of the published Summer Galleon / Grand Narmaya / Yukata Vampy shell. Spark only when she is actually available on a worthwhile 6% seasonal Gala.
+2. **Catura:** broader long-term target and the direct completion piece for Team C. She adds MC acceleration, healing, clear, multi-hit omen cancellation and CA/normal flexibility when she is actually in the Legfest spark pool.
 3. **Bride Meg:** later high-difficulty CA specialist for repeated ougis, hit counts, debuffs and dispels after Catura is secured.
 4. **Grand Ewiyar:** strong teamwide support, but lower urgency because Raphael, Grand Charlotta, Grand Kaguya and Cagliostro & Clarisse already cover broad support.
 5. **Modern Wind specialists such as Grand Metera or Noire:** consider only for a specific missing burst/skill role after the grid is developed.
@@ -146,9 +136,10 @@ Do not chase Summer Galleon when she is merely an extremely low off-rate result 
 ## Practical conclusion
 
 - **Best owned immediate DPS:** Grand Narmaya.
-- **Best normal team:** Summer Mahira / Grand Narmaya / Raphael.
-- **Best independent second team:** Kengo / Grand Charlotta / Cagliostro & Clarisse / Raphael.
-- **Future Team 2:** Kengo / Catura / Grand Charlotta / Raphael, with Cagliostro & Clarisse rotating in for mechanic-heavy bosses.
-- **Best owned passive backliner:** Ewiyar, with Raphael joining whenever he is not in front.
+- **Best current Arbos/normal team:** Manadiver / Yukata Vampy / Grand Narmaya / Wind Azusa.
+- **Best general Full Auto team:** Manadiver / Yukata Vampy / Cagliostro & Clarisse / Grand Charlotta.
+- **Current CA/V2 team:** Kengo / Grand Kaguya / Grand Charlotta / Cagliostro & Clarisse.
+- **Future CA/V2 team:** Kengo / Catura / Grand Charlotta / Cagliostro & Clarisse.
+- **Default backline for all three:** Raphael / non-Grand Ewiyar.
 - **First Wind Evoker:** Estarriola.
-- **Gacha priority:** Catura first by general account value; Summer Galleon first only when her rarer proper spark opportunity arrives before a suitable Catura banner.
+- **Gacha priority:** Summer Galleon first for the currently active Team A; Catura remains the broader second target for Team C and future high-level play.

@@ -255,6 +255,7 @@ export const roadmapIdentity={
     "teams": [
       "azusa-lich-skill-axis",
       "seox-general-team",
+      "future-normal-full-auto",
       "cosmos-readiness-blocked"
     ],
     "grids": [

@@ -65,7 +65,7 @@ export type RoadmapAdvice = {
   summons: SummonAdvice;
 };
 
-export const roadmapAdviceReviewedAt = "14 Sep 2026";
+export const roadmapAdviceReviewedAt = "16 Sep 2026";
 
 const magnaPreset = (
   main: string,
@@ -797,13 +797,12 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       },
       highLevel: {
         primary: "Summer Catura",
-        secondary:
-          "Valentine Wamdus · Orologia if one opening setup is acceptable",
-        intervention: "Catura/Wamdus zero-touch · Orologia semi-auto",
-        team: "Fighter Origin / Summer Catura / Grand Lich / Tsukuyomi or Grand Sariel",
+        secondary: "Grand Orologia · Valentine Wamdus for CA specialization",
+        intervention: "Catura/Orologia zero-touch · Valentine Wamdus CA specialization",
+        team: "Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia · Grand Lich + Tsukuyomi",
         reason:
-          "Summer Catura continuously strengthens MC and herself, dispels automatically, and gives MC party-wide cover. Valentine Wamdus is the safer CA alternative; Orologia remains powerful when a one-time opening choice is acceptable.",
-        skip: "Rei swaps, Ereshkigal racing, and manual omen scripts are deliberately excluded. Sariel remains the broad and one-turn target even though Catura is the stronger high-difficulty FA specialist.",
+          "Summer Catura continuously strengthens MC and herself, dispels automatically, and gives MC party-wide cover. Sariel supplies the opening and universal Primarch passive, while Orologia adds amplification, automatic dispels and emergency recovery.",
+        skip: "Rei swaps, Ereshkigal racing, and manual omen scripts are deliberately excluded. Valentine Wamdus remains a later CA-specialist option rather than a prerequisite for the general team.",
         units: [
           {
             name: "Summer Catura",
@@ -811,19 +810,24 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             id: "3040610000",
           },
           {
+            name: "Grand Sariel",
+            role: "Frontline · Primarch target",
+            id: "3040611000",
+          },
+          {
+            name: "Grand Orologia",
+            role: "Frontline · general FA target",
+            id: "3040536000",
+          },
+          {
             name: "Grand Lich",
-            role: "Frontline · owned core",
+            role: "Backline · owned reinforcement",
             id: "3040357000",
           },
           {
             name: "Tsukuyomi",
-            role: "Frontline · owned sustain",
+            role: "Backline · owned sustain",
             id: "3040581000",
-          },
-          {
-            name: "Grand Sariel",
-            role: "Frontline / reserve · target",
-            id: "3040611000",
           },
         ],
         sources: [
@@ -831,45 +835,59 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             label: "Current JP Dark Full Auto and high-difficulty comparison",
             url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0/%E6%9C%80%E5%BC%B7%E3%82%AD%E3%83%A3%E3%83%A9%E3%83%A9%E3%83%B3%E3%82%AD%E3%83%B3%E3%82%B0.html",
           },
+          {
+            label: "Current Fighter Origin Full Auto skill presets",
+            url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/512606",
+          },
         ],
       },
       later: [
         {
-          name: "Grand Orologia",
+          name: "Valentine Wamdus",
           reason:
-            "The largest immediate upgrade to the owned Lich/Tyra general team, but not mandatory for the first turn.",
+            "A premium CA and difficult-content specialist, but she does not replace the first three general-account targets.",
+        },
+        {
+          name: "Yukata Osiris",
+          reason:
+            "Excellent in dedicated long CA encounters, but a narrower seasonal target than Catura and more dependent on the surrounding CA ecosystem.",
         },
       ],
       plan: {
-        current: "Manadiver / Grand Lich / Summer Magisa / Tsukuyomi",
-        target: "Manadiver / Seox / Grand Lich / Grand Sariel or Tsukuyomi",
-        ca: "On for general FA · configure Azusa's 1/2 for one-turn skill burst",
+        current: "Manadiver / Grand Lich / Summer Magisa / Tsukuyomi · Tyra + Summer Azusa",
+        target: "Fighter Origin / Summer Catura / Grand Sariel / Grand Orologia · Grand Lich + Tsukuyomi",
+        ca: "On · turn off only for a separately tested short route",
         opener: [
-          "Use the Lich/Magisa/Tsukuyomi frontline for sustained FA",
-          "Replace Tsukuyomi with Summer Azusa when immediate skill damage matters",
-          "Do not require Kaneshige for the general Magna III plan",
+          "Use Lich / Magisa / Tsukuyomi for the current unattended general team",
+          "Use Tyra / Magisa / Tsukuyomi with Dark Kaneshige for long CA fights",
+          "Build the Catura / Sariel / Orologia team only when all three targets are available",
         ],
         verdict:
-          "Maintain a shared Azusa/Lich skill shell and a balanced Seox general shell. Sariel remains the broad future target without requiring Ereshkigal or an unowned seasonal attacker.",
+          "Spark Grand Sariel first for universal value, take Summer Catura when her seasonal window is favorable, then complete the future normal team with Grand Orologia. Valentine Wamdus and Yukata Osiris are later CA specialists.",
         units: [
           {
-            name: "Seox",
-            role: "Frontline · general attacker",
-            id: "3040035000",
-          },
-          {
-            name: "Grand Lich",
-            role: "Frontline · owned core",
-            id: "3040357000",
+            name: "Summer Catura",
+            role: "Frontline · seasonal target",
+            id: "3040610000",
           },
           {
             name: "Grand Sariel",
-            role: "Frontline / reserve · target",
+            role: "Frontline · Primarch target",
             id: "3040611000",
           },
           {
+            name: "Grand Orologia",
+            role: "Frontline · general FA target",
+            id: "3040536000",
+          },
+          {
+            name: "Grand Lich",
+            role: "Backline · owned reinforcement",
+            id: "3040357000",
+          },
+          {
             name: "Tsukuyomi",
-            role: "Frontline · owned flex",
+            role: "Backline · owned sustain",
             id: "3040581000",
           },
         ],
@@ -878,6 +896,14 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
         {
           label: "Current Sariel opening-turn reference",
           url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/327535",
+        },
+        {
+          label: "Current Summer Catura evaluation and Fighter Origin synergy",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/512602",
+        },
+        {
+          label: "Current Grand Orologia evaluation",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/453316",
         },
       ],
     },

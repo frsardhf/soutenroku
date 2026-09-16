@@ -265,27 +265,13 @@ const revisions: Record<string, ElementRevision> = {
     ],
   },
   dark: {
-    current: "Skill FA + non-Seox CA",
-    replaceTeam: {
-      index: 1,
-      team: {
-        name: "Azusa CA / skill Full Auto",
-        mode: "CA ON",
-        note: "This is the maintained non-Seox second team. Summer Azusa supplies immediate CA and skill damage, Lich adds recurring damage and delays, and Tsukuyomi supplies unattended sustain.",
-        units: [
-          { name: "MC", role: "Kengo" },
-          { name: "Summer Azusa", role: "CA / skill DPS", id: "3040453000" },
-          { name: "Grand Lich", role: "Damage / debuffs", id: "3040357000" },
-          { name: "Tsukuyomi", role: "Sustain", id: "3040581000" },
-        ],
-      },
-    },
+    current: "Skill/sustain FA + Kengo CA progression",
     replaceGrid: {
       index: 1,
       grid: {
-        name: "Non-Seox CA Magna III",
+        name: "Kengo CA Magna III",
         tag: "TARGET",
-        note: "Dark Kaneshige remains justified for the maintained Azusa/Lich/Tsukuyomi CA team. Three Ater fists keep the M3 boost core while Fediel's Spine and Abyss Spine add the CA layer; this grid does not assume Seox.",
+        note: "Dark Kaneshige remains justified for the maintained Tyra/Magisa/Tsukuyomi long-fight team. Three Ater fists keep the M3 boost core while Fediel's Spine and Abyss Spine add the CA layer.",
         weapons: [
           ["MH", "Unsigned Kaneshige", "Dark · Devilry emblem"],
           ["×3", "Celeste Grace Ater", "M3 boost + cap"],
@@ -301,32 +287,44 @@ const revisions: Record<string, ElementRevision> = {
     replaceOpus: {
       index: 1,
       opus: {
-        team: "TEAM B · NON-SEOX CA / SKILL",
+        team: "TEAM B · KENGO CA / LONG FA",
         cap: "Gamma · CA DMG Cap",
         pendulum: "Pendulum of Strength",
         transcend: "Pendulum of Exaltation",
-        note: "Azusa is the direct CA/skill attacker while Lich and Tsukuyomi keep automatic skills and sustain active. Gamma and Exaltation belong to this dedicated CA preset; keep Beta/Sagacity on the separate general skill team.",
+        note: "Tyra, Magisa and Tsukuyomi form the maintained long-fight CA team. Gamma and Exaltation belong to this dedicated preset; keep Beta and Sagacity on the separate general skill team.",
       },
     },
     teams: [
       {
         name: "Cosmos readiness · blocked",
         mode: "NOT READY",
-        note: "Do not send the ordinary Lich/Magisa/Tsukuyomi team into Cosmos unattended. Lich can push the gauge toward blue, but the current roster lacks a verified large-hit counterweight and the modern Summer Magus / Vikala / Indala control core.",
+        note: "Do not send the ordinary Lich/Magisa/Tsukuyomi team into Cosmos unattended. This card shows the verified target control core so the missing pieces are visible; it is not an owned team.",
         units: [
           {
-            name: "Grand Lich",
-            role: "Owned · blue pressure",
-            id: "3040357000",
+            name: "Summer Magus",
+            role: "Frontline target · red control",
+            id: "3040517000",
           },
           {
-            name: "Summer Magisa",
-            role: "Owned · skill damage",
-            id: "3040412000",
+            name: "Vikala",
+            role: "Frontline target · gauge / defense",
+            id: "3040252000",
           },
-          { name: "Tsukuyomi", role: "Owned · sustain", id: "3040581000" },
-          { name: "Nier", role: "Backline · future", id: "3040169000" },
-          { name: "Grand Sariel", role: "Backline · future target" },
+          {
+            name: "Indala",
+            role: "Frontline target · blue control",
+            id: "3040569000",
+          },
+          {
+            name: "Kou",
+            role: "Backline target · emergency sustain",
+            id: "3040242000",
+          },
+          {
+            name: "Grand Orologia",
+            role: "Backline target · recovery",
+            id: "3040536000",
+          },
         ],
         mc: {
           className: "Manadiver",
@@ -338,7 +336,7 @@ const revisions: Record<string, ElementRevision> = {
             "Wild Magica",
             "Miserable Mist",
           ],
-          note: "Reference configuration only. The verified Magna rescue template is Summer Magus / Vikala / Indala with Indala skill 3 disabled, a 100% join, and an opening All-Potion. Keep this preset blocked until the team can push both red and blue safely.",
+          note: "Reference configuration only. Disable Indala skill 3, join at 100%, and use the opening All-Potion required by the checked route. Keep this preset blocked until the complete team can push both red and blue safely.",
         },
         guide: guide("cosmos", "Open the Cosmos gauge and readiness guide"),
       },
@@ -368,7 +366,6 @@ const revisions: Record<string, ElementRevision> = {
     ],
     priorities: [
       "Keep Cosmos blocked until a verified gauge-control core is owned",
-      "Do not reintroduce Seox into the personal roadmap",
     ],
   },
 };
@@ -386,9 +383,7 @@ export function applyRevansRoadmapExtensions(plan: Plan): Plan {
   const opus = [...plan.opus];
   if (revision.replaceOpus)
     opus[revision.replaceOpus.index] = revision.replaceOpus.opus;
-  const originalPriorities = revision.current
-    ? plan.priorities.filter((item) => !item.toLowerCase().includes("seox"))
-    : plan.priorities;
+  const originalPriorities = plan.priorities;
   return {
     ...plan,
     current: revision.current ?? plan.current,

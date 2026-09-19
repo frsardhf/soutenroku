@@ -1007,17 +1007,21 @@ const basePlans: Plan[] = [
     current: "Magna III farm",
     teams: [
       team(
-        "Payila / Vajra fast normal",
-        "SHORT FA · CA OFF",
-        "Halloween Vajra is the priority replacement for Basara. Her guaranteed TA, double strike, automatic dispel/debuff damage and extra-action payoff make this the stronger Payila normal shell; Grand Jeanne remains the owned burst support.",
+        "Europa / Payila / Vajra normal FA",
+        "NORMAL FA · CA OFF",
+        "This is the preferred medium-to-long normal-pressure shell. Formal Europa must be placed immediately after MC: her opening no-turn MC attack and party TA, echo and mitigation work immediately, then Europa Castle becomes the payoff after five separate 50-hit turns.",
         [
+          {
+            name: "Formal Europa",
+            role: "Frontline · preferred normal support",
+            id: "3040663000",
+          },
           { name: "Summer Payila", role: "Frontline · owned main DPS", id: "3040672000" },
           {
             name: "Halloween Vajra",
             role: "Frontline · priority seasonal target",
             id: "3040617000",
           },
-          { name: "Grand Jeanne", role: "Frontline · owned burst support", id: "3040245000" },
           { name: "Summer Heles", role: "Backline · owned", id: "3040091000" },
           { name: "Grand Sandalphon", role: "Backline · Primarch target", id: "3040515000" },
         ],
@@ -1026,13 +1030,13 @@ const basePlans: Plan[] = [
           ca: "OFF",
           mainhand: "Exo Heliocentrum · Attack awakening",
           skills: ["Aether Siphon", "Secret Triad", "Wild Magica", "Miserable Mist"],
-          note: "Use Basara in Vajra's slot until she is acquired. This is the short normal preset; do not reuse CA OFF automatically for the longer Full Auto team.",
+          note: "Use Basara in Vajra's slot until she is acquired. Futonomitama is the ceiling mainhand, not a prerequisite; Exo Heliocentrum is the accessible start. Grand Jeanne is the tuned compressed-burst substitute, not the default low-intervention slot.",
         },
       ),
       team(
-        "Payila / Vajra general Full Auto",
-        "GENERAL FA · CA ON",
-        "Yukata Narmaya provides the owned low-intervention support slot. Halloween Vajra improves both the current Payila team and a future Bhadra long-FA team, so she is no longer treated as a burst-only luxury.",
+        "Payila / Vajra mechanic Full Auto",
+        "MECHANIC FA · CA ON",
+        "Use Yukata Narmaya instead of Formal Europa when the boss demands dependable reactive Dispel, Delay, CA support or V2 coverage. This is the safer generalist variant, while Europa is the stronger dedicated normal-pressure choice.",
         [
           { name: "Summer Payila", role: "Frontline · owned main DPS", id: "3040672000" },
           { name: "Halloween Vajra", role: "Frontline · priority seasonal target", id: "3040617000" },
@@ -1045,7 +1049,7 @@ const basePlans: Plan[] = [
           ca: "ON",
           mainhand: "Exo Heliocentrum · Attack awakening",
           skills: ["Aether Siphon", "Secret Triad", "Wild Magica", "Miserable Mist"],
-          note: "Keep CA on for unattended general play. Basara remains the temporary Vajra substitute; Bhadra is a later specialization rather than a prerequisite for using Vajra here.",
+          note: "Keep CA on for unattended mechanic-heavy play. Yukata Narmaya supplies automatic Dispel after enemy specials and can return to the backline for her MC CA follow-up when Europa is used in front.",
         },
       ),
       team(
@@ -1089,6 +1093,7 @@ const basePlans: Plan[] = [
       "Attack-awaken Exo Heliocentrum",
       "Raise Luminiera toward 250",
       "Halloween Vajra at the next suitable Halloween spark",
+      "Formal Europa for the preferred Payila / Vajra normal shell",
       "Summer Horus for Cosmos CA / V2",
       "Grand Sandalphon for the universal reserve slot",
       "Bhadra later for the Vajra long-FA ceiling",
@@ -1096,14 +1101,20 @@ const basePlans: Plan[] = [
     backline: ["Summer Heles", "Grand Sandalphon target", "Yukata Narmaya for Cosmos CA / V2"],
     opus: [
       {
-        team: "TEAM A / B · PAYILA / VAJRA NORMAL",
+        team: "TEAM A / B · PAYILA / VAJRA",
         cap: "Beta · Skill DMG Cap",
         pendulum: "Pendulum of Strength · Temptation only for short fights",
         transcend: "Pendulum of Extremity (preliminary)",
-        note: "Payila and Vajra keep Teams A and B normal-led, so Extremity remains the evidence-based direction and Beta leaves Normal Cap to Ultima. Team A runs CA off for speed; Team B keeps CA on for unattended general play.",
+        note: "Payila and Vajra keep both teams normal-led, so Extremity remains the evidence-based direction and Beta leaves Normal Cap to Ultima. Team A runs CA off to preserve TA and hit-count pressure for Europa; Team B keeps CA on for Narmaya's safer mechanic coverage.",
       },
     ],
     mastery: [
+      {
+        name: "Formal Europa",
+        status: "PENDING",
+        priority: "TA ★3 ×2 → Skill DMG Cap ★3 → Light ATK ★3 → ATK ★3 ×2",
+        note: "The two TA nodes help maintain the separate 50-hit turns needed for Dance Lv5, while Skill DMG Cap scales her repeated 8-hit skill inside Europa Castle. Light ATK and both Attack nodes complete the current JP 18-star offensive allocation.",
+      },
       {
         name: "Summer Payila",
         status: "DONE",
@@ -1133,6 +1144,11 @@ const basePlans: Plan[] = [
     ],
     awakenings: [
       {
+        name: "Formal Europa",
+        type: "Balance",
+        note: "Keep the default Balance awakening. JP guidance prefers its mixed HP, CA damage and DATA package; Attack is optional only after the team already reaches its hit thresholds and survives comfortably.",
+      },
+      {
         name: "Summer Payila",
         type: "Attack",
         note: "Current JP first choice because her reattack assassin has a high ceiling. Defense is the 250HELL-style swap only when she cannot survive unattended.",
@@ -1154,6 +1170,13 @@ const basePlans: Plan[] = [
       },
     ],
     overMastery: [
+      {
+        name: "Formal Europa",
+        ring3: "Stamina 5–10",
+        ring4: "TA 5–10%",
+        earring: "Supplemental DMG 5–12",
+        note: "Kamigame's current priorities are Stamina on the ring and Supplemental Damage on the earring. TA is the practical fourth roll for keeping the Castle setup's 50-hit turns consistent.",
+      },
       {
         name: "Summer Payila",
         ring3: "Stamina 5–10",

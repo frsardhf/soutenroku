@@ -649,9 +649,9 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
   light: {
     gacha: {
       general: {
-        name: "Grand Sandalphon",
+        name: "Formal Europa",
         reason:
-          "He is the broad account upgrade because his active utility and Primarch weapon-skill passive remain valuable even when another frontline is used.",
+          "She completes the preferred Summer Payila and Halloween Vajra normal shell. Her immediate MC no-turn attack and party TA, echo and mitigation already contribute before Europa Castle, while the Castle payoff rewards the medium and long Full Auto fights this account prefers.",
       },
       oneTurn: {
         name: "Halloween Vajra",
@@ -702,6 +702,11 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       },
       later: [
         {
+          name: "Grand Sandalphon universal reserve",
+          reason:
+            "He remains the broader account upgrade because his Primarch passive retains value from the backline. Formal Europa ranks ahead only for completing the specific favorite normal-pressure frontline.",
+        },
+        {
           name: "Bhadra long-FA specialization",
           reason:
             "Bhadra turns Halloween Vajra into part of a published CA-off long-Full-Auto shell through permanent post-normal skill damage, skill cap and amplification plus substantial defensive support. Pursue him after Vajra when specializing Light further.",
@@ -714,18 +719,22 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
       ],
       plan: {
         current: "Manadiver / Summer Payila / Basara / Grand Jeanne",
-        target: "Manadiver / Summer Payila / Halloween Vajra / Grand Jeanne · Summer Heles + Grand Sandalphon",
+        target: "Manadiver / Formal Europa / Summer Payila / Halloween Vajra · Summer Heles + Grand Sandalphon",
         ca: "Off",
         opener: [
-          "Summer Payila S1",
-          "Halloween Vajra S2",
-          "Grand Jeanne's required team buffs",
-          "MC buff or summon only if required",
-          "Attack",
+          "Place Formal Europa immediately after MC",
+          "Enable Europa S2/S3, Payila S1/S2 and Vajra S2",
+          "Run CA OFF for the normal-pressure preset",
+          "Use Grand Jeanne only for a tuned compressed burst",
         ],
         verdict:
-          "Halloween Vajra is the first opportunity target: she directly replaces Basara now, pairs naturally with Summer Payila, and gains a second endgame role beside Bhadra. Summer Horus remains the next distinct unlock for Cosmos CA/V2; Grand Sandalphon is the broad reserve target.",
+          "Halloween Vajra remains the first opportunity target because she is the strongest independent piece. Formal Europa is the next composition target and turns the preferred trio into a real medium-to-long normal Full Auto shell, not merely a favorites team. Use Yukata Narmaya instead when dependable reactive Dispel, Delay or V2 coverage matters; Grand Jeanne remains the compressed-burst alternative.",
         units: [
+          {
+            name: "Formal Europa",
+            role: "Frontline · preferred composition target",
+            id: "3040663000",
+          },
           {
             name: "Summer Payila",
             role: "Frontline · owned",
@@ -735,11 +744,6 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
             name: "Halloween Vajra",
             role: "Frontline · priority seasonal target",
             id: "3040617000",
-          },
-          {
-            name: "Grand Jeanne",
-            role: "Frontline · owned burst support",
-            id: "3040245000",
           },
           { name: "Summer Heles", role: "Backline · owned", id: "3040091000" },
           { name: "Grand Sandalphon", role: "Backline · Primarch target", id: "3040515000" },
@@ -757,6 +761,22 @@ export const roadmapAdvice: Record<StableElementId, RoadmapAdvice> = {
         {
           label: "Current Kamigame Halloween Vajra evaluation",
           url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/%E3%82%AD%E3%83%A3%E3%83%A9%E3%82%AF%E3%82%BF%E3%83%BC/SSR%E3%83%8F%E3%83%AD%E3%82%A6%E3%82%A3%E3%83%B3%E3%83%B4%E3%82%A1%E3%82%B8%E3%83%A9.html",
+        },
+        {
+          label: "Current GameWith Formal Europa evaluation",
+          url: "https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/565797",
+        },
+        {
+          label: "Current Kamigame Formal Europa evaluation",
+          url: "https://kamigame.jp/%E3%82%B0%E3%83%A9%E3%83%96%E3%83%AB/page/429075348009828028.html",
+        },
+        {
+          label: "JP Summer Payila, Vajra and Europa community discussion",
+          url: "https://minigob-matome.blog.jp/archives/48820155.html",
+        },
+        {
+          label: "JP Summer Payila synergy analysis",
+          url: "https://yamasukememo.hatenablog.com/entry/2026/08/16/210154",
         },
         {
           label: "Current Gamewith Bhadra evaluation and Full Auto setups",

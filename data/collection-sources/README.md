@@ -6,6 +6,7 @@ non-commercial collection tracker.
 - `tracker.json`: [Collection Tracker](https://gbf.wiki/Collection_Tracker)
 - `gamewith.json`: [Gamewith Grades](https://gbf.wiki/Character_Tier_List/Gamewith/Grades), including ratings and remarks
 - `kamigame.json`: [Kamigame Grades](https://gbf.wiki/Character_Tier_List/Kamigame/Grades), including ratings and remarks
+- `snapshot.json`: capture timestamp retained when rebuilding the bundled fallback
 
 Rating remarks preserve the visible bullet hierarchy, linked terms, and inline
 icons from the tier-list hover cards. Hidden tooltip definitions are excluded so

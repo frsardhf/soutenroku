@@ -2,16 +2,18 @@
 /* eslint-disable @next/next/no-img-element */
 
 import {useDeferredValue,useEffect,useMemo,useRef,useState,type CSSProperties} from "react";
-import {CheckCircle2,ChevronDown,ChevronUp,ClipboardPaste,ExternalLink,Filter,LoaderCircle,RotateCcw,Search,Trash2,X} from "lucide-react";
+import {CheckCircle2,ChevronDown,ChevronUp,ClipboardPaste,ExternalLink,Filter,LoaderCircle,RefreshCw,RotateCcw,Search,Trash2,X} from "lucide-react";
 import {useAccount} from "@/components/progress/account-provider";
 import {Button} from "@/components/ui/button";
 import {parseGbfCollectionResponse} from "@/lib/collection/gbf-import";
+import {LIVE_RATINGS_BROWSER_CACHE,LIVE_RATINGS_BROWSER_MAX_AGE_MS,isLiveRatingsResponse,mergeLiveRatings,type LiveRatingsResponse} from "@/lib/collection/live-ratings";
 import {effectLabels,type CollectionCatalog,type CollectionCatalogItem,type Grade,type RatingSource,type RatingSummaryItem,type RatingSummaryToken} from "@/lib/collection/types";
 
 type ViewMode="collection"|"ratings"|"grades";
 type OwnedFilter="all"|"owned"|"missing";
 type GradeField="grinding"|"fullAuto"|"highDifficulty";
 type GradeSortKey="rating"|GradeField;
+type RatingsStatus="idle"|"checking"|"live"|"cached"|"snapshot"|"error";
 
 const elements=["fire","water","earth","wind","light","dark","any"];
 const gradeOrder:Record<string,number>={SS:6,S:5,A:4,B:3,C:2,D:1,"":0};
@@ -24,6 +26,28 @@ const specialtyPriority=["staff","sabre","katana","melee","spear","axe","dagger"
 const stylePriority=["attack","special","balanced","heal","defense"];
 const releasedPriority=Array.from({length:13},(_,index)=>String(2026-index));
 const summonSeriesIcons=new Set(["acies","arcarum","archangel","bellum","carbuncle","crest","cryptid","demi optimus","dynamis","epic","genesis","odious","omega","optimus","providence","robur","six dragons","upgrader"]);
+
+async function requestLiveRatings(signal?:AbortSignal){
+  const response=await fetch("/api/ratings",{cache:"no-store",signal});
+  if(!response.ok)throw new Error("ratings");
+  const value:unknown=await response.json();
+  if(!isLiveRatingsResponse(value)||Object.keys(value.sources).length===0)throw new Error("ratings");
+  return value;
+}
+
+async function readCachedLiveRatings(){
+  if(typeof caches==="undefined")return null;
+  try{
+    const response=await (await caches.open(LIVE_RATINGS_BROWSER_CACHE)).match("/api/ratings");
+    const value:unknown=response?await response.json():null;
+    return isLiveRatingsResponse(value)&&Date.now()-Date.parse(value.fetchedAt)<=LIVE_RATINGS_BROWSER_MAX_AGE_MS?value:null;
+  }catch{return null}
+}
+
+async function cacheLiveRatings(value:LiveRatingsResponse){
+  if(typeof caches==="undefined")return;
+  try{await (await caches.open(LIVE_RATINGS_BROWSER_CACHE)).put("/api/ratings",Response.json(value))}catch{/* Ratings still work without persistent browser cache. */}
+}
 
 function orderOptions(options:string[],priority:string[]){return [...new Set([...priority.filter((entry)=>options.includes(entry)),...options])]}
 
@@ -156,7 +180,9 @@ function GradesList({items,source,limit,onMore}:{items:CollectionCatalogItem[];s
 
 export function CollectionPage(){
   const {account,hydrated,importAccount}=useAccount();
-  const [catalog,setCatalog]=useState<CollectionCatalog|null>(null);
+  const [baseCatalog,setBaseCatalog]=useState<CollectionCatalog|null>(null);
+  const [liveRatings,setLiveRatings]=useState<LiveRatingsResponse|null>(null);
+  const [ratingsStatus,setRatingsStatus]=useState<RatingsStatus>("idle");
   const [loadError,setLoadError]=useState(false);
   const [kind,setKind]=useState<"character"|"summon">("character");
   const [view,setView]=useState<ViewMode>("collection");
@@ -185,7 +211,41 @@ export function CollectionPage(){
   const [importMessage,setImportMessage]=useState<string|null>(null);
   const [confirmCollectionReset,setConfirmCollectionReset]=useState(false);
 
-  useEffect(()=>{const controller=new AbortController();fetch("/data/gbf-collection.json",{signal:controller.signal}).then((response)=>{if(!response.ok)throw new Error("catalog");return response.json()}).then((value:CollectionCatalog)=>{if(value.schemaVersion!==1||!Array.isArray(value.items))throw new Error("catalog");setCatalog(value)}).catch((error)=>{if(error.name!=="AbortError")setLoadError(true)});return()=>controller.abort()},[]);
+  useEffect(()=>{
+    const controller=new AbortController();
+    async function load(){
+      try{
+        const response=await fetch("/data/gbf-collection.json",{signal:controller.signal});
+        if(!response.ok)throw new Error("catalog");
+        const value=await response.json() as CollectionCatalog;
+        if(value.schemaVersion!==1||!Array.isArray(value.items))throw new Error("catalog");
+        setBaseCatalog(value);
+        const cached=await readCachedLiveRatings();
+        if(cached){setLiveRatings(cached);setRatingsStatus("cached")}else setRatingsStatus("snapshot");
+        setRatingsStatus("checking");
+        try{
+          const live=await requestLiveRatings(controller.signal);
+          setLiveRatings(live);setRatingsStatus("live");
+          void cacheLiveRatings(live);
+        }catch(error){
+          if((error as Error).name!=="AbortError")setRatingsStatus(cached?"cached":"error");
+        }
+      }catch(error){if((error as Error).name!=="AbortError")setLoadError(true)}
+    }
+    void load();
+    return()=>controller.abort();
+  },[]);
+  const mergedCatalog=useMemo(()=>baseCatalog&&liveRatings?mergeLiveRatings(baseCatalog,liveRatings):null,[baseCatalog,liveRatings]);
+  const catalog=mergedCatalog?.catalog??baseCatalog;
+  async function checkRatingsAgain(){
+    if(!baseCatalog||ratingsStatus==="checking")return;
+    setRatingsStatus("checking");
+    try{
+      const live=await requestLiveRatings();
+      setLiveRatings(live);setRatingsStatus("live");
+      void cacheLiveRatings(live);
+    }catch{setRatingsStatus(liveRatings?"cached":"error")}
+  }
   const options=useMemo(()=>{
     const base=catalog?.items.filter((item)=>item.kind===kind)??[];
     return {obtains:[...new Set(base.flatMap((item)=>item.obtain))].sort(),series:[...new Set(base.flatMap((item)=>item.series))].sort(),races:[...new Set(base.flatMap((item)=>item.race))].sort(),specialties:[...new Set(base.flatMap((item)=>item.specialty))].sort(),styles:[...new Set(base.map((item)=>item.style).filter(Boolean))].sort(),released:[...new Set(base.map((item)=>item.releaseDate.slice(0,4)).filter(Boolean))].sort()};
@@ -305,6 +365,6 @@ export function CollectionPage(){
       {catalog&&filtered.length>0&&view==="grades"&&kind==="character"&&<GradesList items={filtered} source={source} limit={limit} onMore={()=>setLimit((value)=>value+120)}/>} 
     </section>
 
-    {catalog&&<footer className="collection-source-note"><span>Snapshot {new Date(catalog.snapshotAt).toLocaleDateString()}</span><p>Collection metadata and summaries are mirrored from <a href={catalog.sources.collection} target="_blank" rel="noreferrer">GBF Wiki Collection Tracker <ExternalLink aria-hidden="true"/></a>, with ratings and grades attributed to <a href={catalog.sources.gamewithGrades} target="_blank" rel="noreferrer">Gamewith <ExternalLink aria-hidden="true"/></a> and <a href={catalog.sources.kamigameGrades} target="_blank" rel="noreferrer">Kamigame <ExternalLink aria-hidden="true"/></a>. GBF Wiki content is available under CC BY-NC-SA.</p></footer>}
+    {catalog&&<footer className="collection-source-note"><div className="collection-ratings-status"><span>Ratings data</span><strong>{ratingsStatus==="checking"?"Checking for updates…":liveRatings?`${ratingsStatus==="cached"?"Saved":"Checked"} ${new Date(liveRatings.fetchedAt).toLocaleString()}`:ratingsStatus==="error"?"Live check unavailable":"Bundled snapshot"}</strong>{liveRatings&&<small>{mergedCatalog?.changed??0} changed · {Object.entries(liveRatings.sources).map(([name,value])=>`${name==="gamewith"?"Gamewith":"Kamigame"} ${value?.matched??0}`).join(" · ")}</small>}<Button variant="outline" size="sm" onClick={checkRatingsAgain} disabled={ratingsStatus==="checking"}><RefreshCw className={ratingsStatus==="checking"?"is-spinning":""} aria-hidden="true"/>{ratingsStatus==="checking"?"Checking":"Check again"}</Button></div><p><span className="collection-summary-snapshot">Summaries snapshot {new Date(catalog.snapshotAt).toLocaleDateString()}</span> Collection metadata and translated summaries are mirrored from <a href={catalog.sources.collection} target="_blank" rel="noreferrer">GBF Wiki Collection Tracker <ExternalLink aria-hidden="true"/></a>. Live ratings and grades are attributed to <a href={catalog.sources.gamewithGrades} target="_blank" rel="noreferrer">Gamewith <ExternalLink aria-hidden="true"/></a> and <a href={catalog.sources.kamigameGrades} target="_blank" rel="noreferrer">Kamigame <ExternalLink aria-hidden="true"/></a>. Unmatched entries safely retain the bundled snapshot. GBF Wiki content is available under CC BY-NC-SA.</p></footer>}
   </div>;
 }

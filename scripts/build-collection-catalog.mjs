@@ -6,10 +6,11 @@ if(!trackerPath||!gamewithPath||!kamigamePath){
   throw new Error("Usage: node scripts/build-collection-catalog.mjs TRACKER_JSON GAMEWITH_JSON KAMIGAME_JSON [OUTPUT_JSON]");
 }
 
-const [tracker,gamewith,kamigame]=await Promise.all([
+const [tracker,gamewith,kamigame,snapshot]=await Promise.all([
   readFile(trackerPath,"utf8").then(JSON.parse),
   readFile(gamewithPath,"utf8").then(JSON.parse),
   readFile(kamigamePath,"utf8").then(JSON.parse),
+  readFile(path.join(path.dirname(trackerPath),"snapshot.json"),"utf8").then(JSON.parse).catch(()=>({capturedAt:new Date().toISOString()})),
 ]);
 
 const trackerIds=new Set(tracker.map((item)=>item.id));
@@ -82,7 +83,7 @@ const items=tracker.map((item)=>{
 
 const output={
   schemaVersion:1,
-  snapshotAt:new Date().toISOString(),
+  snapshotAt:snapshot.capturedAt,
   sources:{
     collection:"https://gbf.wiki/Collection_Tracker",
     gamewithRatings:"https://gbf.wiki/Character_Tier_List/Gamewith/Ratings",
@@ -92,7 +93,9 @@ const output={
   },
   items,
 };
+const liveIndex=tracker.filter((item)=>item.kind==="character"&&item.rarity==="ssr").map(({id,jpName,element,rarity,series,kind})=>({id,jpName,element,rarity,series,kind}));
+const liveIndexPath="worker/collection-index.json";
 
-await mkdir(path.dirname(outputPath),{recursive:true});
-await writeFile(outputPath,`${JSON.stringify(output)}\n`);
+await Promise.all([mkdir(path.dirname(outputPath),{recursive:true}),mkdir(path.dirname(liveIndexPath),{recursive:true})]);
+await Promise.all([writeFile(outputPath,`${JSON.stringify(output)}\n`),writeFile(liveIndexPath,`${JSON.stringify(liveIndex)}\n`)]);
 console.log(`Wrote ${items.length} collection entries to ${outputPath}`);

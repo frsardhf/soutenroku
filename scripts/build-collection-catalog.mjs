@@ -86,6 +86,7 @@ const output={
   snapshotAt:snapshot.capturedAt,
   sources:{
     collection:"https://gbf.wiki/Collection_Tracker",
+    discovery:"https://github.com/cajunwildcat/The-GrandCypher",
     gamewithRatings:"https://gbf.wiki/Character_Tier_List/Gamewith/Ratings",
     gamewithGrades:"https://gbf.wiki/Character_Tier_List/Gamewith/Grades",
     kamigameRatings:"https://gbf.wiki/Character_Tier_List/Kamigame/Ratings",

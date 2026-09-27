@@ -4,6 +4,7 @@ const catalog=JSON.parse(await readFile("public/data/gbf-collection.json","utf8"
 const fail=(message)=>{throw new Error(`Collection catalog: ${message}`)};
 if(catalog.schemaVersion!==1||!Array.isArray(catalog.items))fail("unsupported schema");
 if(!catalog.snapshotAt||Number.isNaN(Date.parse(catalog.snapshotAt)))fail("invalid snapshot date");
+if(typeof catalog.sources?.discovery!=="string"||!catalog.sources.discovery.startsWith("https://"))fail("missing discovery source");
 const ids=new Set();
 let characters=0,summons=0,gamewith=0,kamigame=0;
 for(const item of catalog.items){

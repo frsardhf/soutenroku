@@ -8,6 +8,14 @@ non-commercial collection tracker.
 - `kamigame.json`: [Kamigame Grades](https://gbf.wiki/Character_Tier_List/Kamigame/Grades), including ratings and remarks
 - `snapshot.json`: capture timestamp retained when rebuilding the bundled fallback
 
+New roster entries and maximum-uncap changes are discovered from the daily
+maintained [The GrandCypher](https://github.com/cajunwildcat/The-GrandCypher)
+character and summon mirrors. GBF Wiki remains the collection metadata,
+portrait and licensing source; Gamewith and Kamigame remain the rating sources.
+The discovery sync preserves curated metadata already stored in `tracker.json`.
+It admits only default character styles and the R/SR/SSR rarities supported by
+the GBF Wiki tracker; unsupported mirror-only records are pruned.
+
 Rating remarks preserve the visible bullet hierarchy, linked terms, and inline
 icons from the tier-list hover cards. Hidden tooltip definitions are excluded so
 they do not get concatenated into the displayed summaries.
@@ -23,4 +31,10 @@ served catalog after replacing these snapshots with:
 ```sh
 npm run collection:build
 npm run collection:check
+```
+
+For the scheduled discovery + rebuild path, run:
+
+```sh
+npm run collection:sync
 ```

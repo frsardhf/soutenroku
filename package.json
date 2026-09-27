@@ -8,6 +8,7 @@
   "scripts": {
     "assets:weapons": "node scripts/sync-weapon-assets.mjs",
     "collection:build": "node scripts/build-collection-catalog.mjs data/collection-sources/tracker.json data/collection-sources/gamewith.json data/collection-sources/kamigame.json",
+    "collection:sync": "node scripts/sync-collection-roster.mjs && npm run collection:build && npm run collection:check",
     "collection:check": "node scripts/check-collection-catalog.mjs",
     "dev": "vinext dev",
     "build": "vinext build",

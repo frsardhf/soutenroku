@@ -31,7 +31,7 @@ async function liveRatingsResponse(request:Request,env:Env,ctx:ExecutionContext)
   if(cached)return cached;
 
   try{
-    const payload=await fetchLiveRatings(collectionIndex);
+    const payload=await fetchLiveRatings(collectionIndex as Parameters<typeof fetchLiveRatings>[0]);
     const response=new Response(JSON.stringify(payload),{headers:{"Content-Type":"application/json; charset=utf-8","Cache-Control":RATINGS_CACHE_CONTROL,"X-Content-Type-Options":"nosniff"}});
     if(edgeCache)ctx.waitUntil(edgeCache.put(cacheKey,response.clone()));
     return response;

@@ -9,6 +9,7 @@ import {
   type ProgressItemId,
   type CollectionEntry,
   type RoadmapSelection,
+  type ArcarumProjectProgress,
   type SoutenrokuAccount,
 } from "@/lib/progress";
 
@@ -18,6 +19,7 @@ interface AccountContextValue {
   persistenceError:boolean;
   setComplete:(itemId:ProgressItemId,complete:boolean)=>void;
   setRoadmapSelection:(element:string,selection:RoadmapSelection)=>void;
+  setArcarumProject:(id:string,progress:ArcarumProjectProgress)=>void;
   setCollectionEntry:(kind:"characters"|"summons",id:string,entry:CollectionEntry)=>void;
   importAccount:(incoming:SoutenrokuAccount,mode:"merge"|"replace")=>void;
   resetAccount:()=>void;
@@ -62,6 +64,11 @@ export function AccountProvider({children}:{children:ReactNode}){
     commit((current)=>({...current,roadmapSelections:{...current.roadmapSelections,[element]:selection}}));
   },[commit]);
 
+  const setArcarumProject=useCallback((id:string,progress:ArcarumProjectProgress)=>{
+    if(!id.trim())return;
+    commit((current)=>({...current,arcarumProjects:{...current.arcarumProjects,[id]:progress}}));
+  },[commit]);
+
   const setCollectionEntry=useCallback((kind:"characters"|"summons",id:string,entry:CollectionEntry)=>{
     if(!id.trim())return;
     commit((current)=>({...current,collection:{...current.collection,[kind]:{...current.collection[kind],[id]:entry}}}));
@@ -77,7 +84,7 @@ export function AccountProvider({children}:{children:ReactNode}){
     void localAccountRepository.clear().then((cleared)=>setPersistenceError(!cleared));
   },[]);
 
-  const value=useMemo(()=>({account,hydrated,persistenceError,setComplete,setRoadmapSelection,setCollectionEntry,importAccount,resetAccount}),[account,hydrated,persistenceError,setComplete,setRoadmapSelection,setCollectionEntry,importAccount,resetAccount]);
+  const value=useMemo(()=>({account,hydrated,persistenceError,setComplete,setRoadmapSelection,setArcarumProject,setCollectionEntry,importAccount,resetAccount}),[account,hydrated,persistenceError,setComplete,setRoadmapSelection,setArcarumProject,setCollectionEntry,importAccount,resetAccount]);
   return <AccountContext.Provider value={value}>{children}</AccountContext.Provider>;
 }
 

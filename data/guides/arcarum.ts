@@ -1,14 +1,36 @@
+import type {ArcarumProjectProgress} from "@/lib/progress";
+
 export type ArcarumSource = {label:string;publisher:string;url:string;scope:string};
 
-export const ARCARUM_VERSION="v1.1";
-export const ARCARUM_REVIEWED_ON="8 Sep 2026";
+export const ARCARUM_VERSION="v1.2";
+export const ARCARUM_REVIEWED_ON="27 Sep 2026";
 
 export const femaleEvokerOrder=[
-  {name:"Haaselia",summon:"The Moon",element:"Water",target:"First 5★ project",reason:"Default Water backline and a premier frontline engine after correct-position entry."},
-  {name:"Fraux",summon:"The Devil",element:"Fire",target:"Second 5★ project",reason:"Full Auto healing, debuff extension, dispel and long-fight stability."},
+  {name:"Haaselia",summon:"The Moon",element:"Water",target:"First 5★ project; reserve Lv110",reason:"Default Water backline and a premier frontline engine after correct-position entry."},
+  {name:"Fraux",summon:"The Devil",element:"Fire",target:"Second 5★ project; reserve Lv110",reason:"Full Auto healing, debuff extension, dispel and long-fight stability."},
   {name:"Nier",summon:"Death",element:"Dark",target:"Third 5★ project",reason:"Controlled Death entry, burst, Full Auto and the account's non-Seox Dark direction."},
   {name:"Maria Theresa",summon:"Justice",element:"Water",target:"Fourth 5★ project",reason:"Specialized dispel-heavy Water backline and high-difficulty option; consider Transcendence after 5★."},
 ] as const;
+
+export type ArcarumProjectDefinition={id:string;name:string;summon:string;element:string;note:string;transcendence:"available"|"announced"|"unannounced";defaults:ArcarumProjectProgress};
+
+export const activeArcarumProjects:ArcarumProjectDefinition[]=[
+  {id:"haaselia",name:"Haaselia",summon:"The Moon",element:"Water",transcendence:"unannounced",note:"Current weapon 4★ and Domain 1/4. Lv110 is a planning reserve until her batch is announced.",defaults:{recruited:true,weaponStage:4,domainStage:1,characterStage:4,skill4:false,goal:"level110",included:true}},
+  {id:"fraux",name:"Fraux",summon:"The Devil",element:"Fire",transcendence:"announced",note:"Current weapon 0★ and Domain 0/4. October Lv110 cost remains projected until release.",defaults:{recruited:true,weaponStage:0,domainStage:0,characterStage:4,skill4:false,goal:"level110",included:true}},
+  {id:"nier",name:"Nier",summon:"Death",element:"Dark",transcendence:"announced",note:"Not recruited. Stop at 5★ in the active plan for now.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:true}},
+  {id:"maria",name:"Maria Theresa",summon:"Justice",element:"Water",transcendence:"available",note:"Not recruited. Stop at 5★ before reconsidering her released Transcendence.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:true}},
+  {id:"caim",name:"Caim",summon:"The Hanged Man",element:"Earth",transcendence:"available",note:"Diaspora entry utility only: finish the 1★ weapon to 5★. No fourth skill or Transcendence planned.",defaults:{recruited:true,weaponStage:1,domainStage:0,characterStage:4,skill4:false,goal:"weapon5",included:true}},
+];
+
+export const reserveArcarumProjects:ArcarumProjectDefinition[]=[
+  {id:"alanaan",name:"Alanaan",summon:"The Sun",element:"Fire",transcendence:"available",note:"Activate only when Fire Hexa/Versusia routing needs the developed Evoker.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:false}},
+  {id:"geisenborger",name:"Geisenborger",summon:"The Star",element:"Light",transcendence:"available",note:"Activate only for a specific Light FAA0/Versusia plan.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:false}},
+  {id:"lobelia",name:"Lobelia",summon:"The Tower",element:"Earth",transcendence:"unannounced",note:"Recruitment/4★ utility first; 5★ remains optional outside an Earth-main plan.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:false}},
+  {id:"estarriola",name:"Estarriola",summon:"Temperance",element:"Wind",transcendence:"announced",note:"Already recruited; defer the Foundation route until Wind needs it.",defaults:{recruited:true,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:false}},
+  {id:"katzelia",name:"Katzelia",summon:"Judgement",element:"Wind",transcendence:"unannounced",note:"A defensive recruitment option; keep outside the active material queue.",defaults:{recruited:false,weaponStage:-1,domainStage:0,characterStage:4,skill4:false,goal:"character5",included:false}},
+];
+
+export const foundationNwqCosts=[5,5,10,20,20,30] as const;
 
 export const arcarumSummons=[
   {element:"Fire",summon:"The Sun",evoker:"Alanaan",state:"Build to 4★",note:"Complete the damage sub-aura; Alanaan is not part of the active female recruitment queue."},
@@ -39,6 +61,7 @@ export const evokerMaterialTotals=[
 export const arcarumTranscendenceNotes=[
   "Maria Theresa received the first Evoker Transcendence release on 21 July 2026, initially to Lv110.",
   "The announced October 2026 batch is Nier, Estarriola and Fraux.",
+  "The planner treats Fraux's Lv110 quartz as projected until the October release and Haaselia's as a user-selected reserve because her batch is unannounced.",
   "Maria's older low 5★ priority does not describe her newer dispel-focused Transcendence value.",
   "Do not assume dates for the remaining Evokers until Cygames announces them.",
 ] as const;

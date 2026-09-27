@@ -11,6 +11,23 @@ Recruitment may happen before the previous Evoker reaches 5★ when Evolite and
 recruitment materials are spare, but the active 5★ project should not be
 delayed.
 
+Current account targets are tracked interactively on `/guides/arcarum`:
+
+- Haaselia: weapon 4★, Domain 1/4, eventual Lv110 reserve.
+- Fraux: weapon 0★, Domain 0/4, announced October Lv110 reserve.
+- Nier and Maria Theresa: unrecruited, stop at 5★ for now.
+- Caim: weapon 1★; finish only the weapon to 5★ for the Diaspora entry route.
+  Fourth skill and Transcendence remain Earth-main/manual investments.
+
+At those defaults the plan has **435 confirmed NWQ remaining**, plus **40 projected
+NWQ** for the two selected Lv110 reserves, or **475 NWQ total**. The projected
+portion is deliberately separated because Fraux is not released yet and
+Haaselia's Transcendence batch is not announced.
+
+Alanaan, Geisenborger, Lobelia, Estarriola and Katzelia live in a separate
+inactive reserve. They enter the total only when an element-specific endgame
+plan justifies enabling them.
+
 ## Typical Domain plus Foundation weapon 5★ materials
 
 Approximate total for one Evoker:

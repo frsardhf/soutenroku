@@ -21,11 +21,22 @@ export interface RoadmapSelection {
   gridId?: string;
 }
 
+export interface ArcarumProjectProgress {
+  recruited: boolean;
+  weaponStage: number;
+  domainStage: number;
+  characterStage: number;
+  skill4: boolean;
+  goal: "weapon5" | "character5" | "skill4" | "level110";
+  included: boolean;
+}
+
 export interface SoutenrokuAccount {
   schemaVersion: typeof SOUTENROKU_ACCOUNT_VERSION;
   updatedAt: string | null;
   progress: ProgressValues;
   roadmapSelections: Record<string, RoadmapSelection>;
+  arcarumProjects: Record<string, ArcarumProjectProgress>;
   collection: {
     characters: Record<string, CollectionEntry>;
     summons: Record<string, CollectionEntry>;
@@ -48,6 +59,7 @@ export function createEmptyAccount(): SoutenrokuAccount {
     updatedAt: null,
     progress: {},
     roadmapSelections: {},
+    arcarumProjects: {},
     collection: {characters: {}, summons: {}},
     preferences: {collectionView: "grid"},
   };
@@ -90,6 +102,21 @@ function selectionRecord(value: unknown): Record<string, RoadmapSelection> {
   return Object.fromEntries(entries);
 }
 
+function arcarumProjectRecord(value: unknown): Record<string, ArcarumProjectProgress> {
+  if (!isRecord(value)) return {};
+  const goals=new Set(["weapon5","character5","skill4","level110"]);
+  const entries: [string, ArcarumProjectProgress][]=[];
+  for(const [id,raw] of Object.entries(value)){
+    if(!id || !isRecord(raw) || typeof raw.recruited!=="boolean" || typeof raw.skill4!=="boolean" || typeof raw.included!=="boolean")continue;
+    const weaponStage=typeof raw.weaponStage==="number"?Math.max(-1,Math.min(5,Math.trunc(raw.weaponStage))):-1;
+    const domainStage=typeof raw.domainStage==="number"?Math.max(0,Math.min(4,Math.trunc(raw.domainStage))):0;
+    const characterStage=typeof raw.characterStage==="number"&&[4,5,110].includes(raw.characterStage)?raw.characterStage:4;
+    const goal=typeof raw.goal==="string"&&goals.has(raw.goal)?raw.goal as ArcarumProjectProgress["goal"]:"character5";
+    entries.push([id,{recruited:raw.recruited,weaponStage,domainStage,characterStage,skill4:raw.skill4,goal,included:raw.included}]);
+  }
+  return Object.fromEntries(entries);
+}
+
 export function sanitizeAccount(value: unknown): SoutenrokuAccount | null {
   if (!isRecord(value) || value.schemaVersion !== SOUTENROKU_ACCOUNT_VERSION) return null;
   const collection = isRecord(value.collection) ? value.collection : {};
@@ -99,6 +126,7 @@ export function sanitizeAccount(value: unknown): SoutenrokuAccount | null {
     updatedAt: typeof value.updatedAt === "string" ? value.updatedAt : null,
     progress: booleanRecord(value.progress),
     roadmapSelections: selectionRecord(value.roadmapSelections),
+    arcarumProjects: arcarumProjectRecord(value.arcarumProjects),
     collection: {
       characters: collectionRecord(collection.characters),
       summons: collectionRecord(collection.summons),
@@ -131,6 +159,7 @@ export function mergeAccounts(current: SoutenrokuAccount, incoming: SoutenrokuAc
     updatedAt:new Date().toISOString(),
     progress:{...current.progress,...incoming.progress},
     roadmapSelections:{...current.roadmapSelections,...incoming.roadmapSelections},
+    arcarumProjects:{...current.arcarumProjects,...incoming.arcarumProjects},
     collection:{
       characters:{...current.collection.characters,...incoming.collection.characters},
       summons:{...current.collection.summons,...incoming.collection.summons},

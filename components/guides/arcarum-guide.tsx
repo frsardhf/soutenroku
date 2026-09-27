@@ -1,5 +1,6 @@
 import {ExternalLink} from "lucide-react";
 import {Badge} from "@/components/ui/badge";
+import {ArcarumPlanner} from "@/components/guides/arcarum-planner";
 import {ARCARUM_REVIEWED_ON,ARCARUM_VERSION,arcarumDecisionGates,arcarumSources,arcarumSummons,arcarumTranscendenceNotes,baseBacklineSummary,evokerMaterialTotals,femaleEvokerOrder} from "@/data/guides/arcarum";
 
 const elementClass=(element:string)=>`arcarum-element arcarum-${element.toLowerCase()}`;
@@ -10,12 +11,17 @@ export function ArcarumGuide(){
       <div><p className="guide-kicker">GUIDES / ACCOUNT PROGRESSION</p><h1>Arcarum path</h1><p className="guide-deck">A female-only Evoker investment queue, the six damage summons, and the material gates behind each concentrated 5★ route.</p></div>
       <dl className="guide-verification-summary"><div><dt>Plan version</dt><dd>{ARCARUM_VERSION}</dd></div><div><dt>Last checked</dt><dd>{ARCARUM_REVIEWED_ON}</dd></div></dl>
     </header>
-    <nav className="guide-on-this-page" aria-label="On this page"><span>On this page</span><a href="#arcarum-plan">Female queue</a><a href="#arcarum-six">Six summons</a><a href="#arcarum-gates">Project gates</a><a href="#arcarum-materials">Materials</a><a href="#arcarum-transcendence">Transcendence</a><a href="#arcarum-base">Backline</a><a href="#arcarum-sources">Sources</a></nav>
+    <nav className="guide-on-this-page" aria-label="On this page"><span>On this page</span><a href="#arcarum-plan">Female queue</a><a href="#arcarum-planner">Planner</a><a href="#arcarum-six">Six summons</a><a href="#arcarum-gates">Project gates</a><a href="#arcarum-materials">Materials</a><a href="#arcarum-transcendence">Transcendence</a><a href="#arcarum-base">Backline</a><a href="#arcarum-sources">Sources</a></nav>
     <aside className="guide-correction"><strong>Active female-only route</strong><p>Haaselia → Fraux → Nier → Maria Theresa. Recruitment may use genuinely spare Evolite before the prior 5★ is complete, but major materials stay concentrated on one active project.</p></aside>
 
     <section id="arcarum-plan" className="guide-section">
       <header className="guide-section-heading"><p className="guide-kicker">ORDER OF OPERATIONS</p><h2>One fixed queue, one major sink at a time</h2><p>The account values the women first. This personal sequence overrides generic aggregate tier-list order while retaining each character’s actual role.</p></header>
       <ol className="arcarum-plan-list">{femaleEvokerOrder.map((item,index)=><li key={item.name}><span>{String(index+1).padStart(2,"0")}</span><div><strong>{item.name} · {item.summon}</strong><p>{item.element} · {item.target}. {item.reason}</p></div></li>)}</ol>
+    </section>
+
+    <section id="arcarum-planner" className="guide-section">
+      <header className="guide-section-heading"><p className="guide-kicker">INTERACTIVE MATERIAL PLAN</p><h2>Update progress once; let the quartz target move</h2><p>The default state matches the current account: Haaselia weapon 4★/Domain 1, Fraux weapon 0★, Caim weapon 1★, and Nier/Maria unrecruited. The headline total excludes the five deferred male projects.</p></header>
+      <ArcarumPlanner/>
     </section>
 
     <section id="arcarum-six" className="guide-section">

@@ -659,9 +659,9 @@ const basePlans: Plan[] = [
       team(
         "Entry Diaspora CA",
         "CA ON",
-        "No Okto investment. Aletheia supplies charge and strong CAs; Satyr and Holiday Anthuria keep the loop stable. Grand Bhaisa is the future CA-core upgrade, adding opening reactivation and gauge plus recurring healing and CA support.",
+        "Use 5-star Okto without transcendence as the account's accessible CA engine. Satyr and Holiday Anthuria keep the loop stable; Aletheia remains the temporary substitute until Okto reaches level 100. Grand Bhaisa is the later CA-core upgrade, adding opening reactivation and gauge plus recurring healing and CA support.",
         [
-          { name: "Aletheia", role: "Frontline · CA DPS", id: "3040002000" },
+          { name: "Okto", role: "Frontline · 5-star CA engine", id: "3040037000" },
           {
             name: "Earth Satyr",
             role: "Frontline · CA sustain",
@@ -689,7 +689,7 @@ const basePlans: Plan[] = [
             "Fighting Spirit or Ashura Formation",
             "Miserable Mist",
           ],
-          note: "Use this to build Diaspora's CA activation to 100% before requesting backup. Caim only contributes his reverse-position grid passive when every equipped weapon name is unique.",
+          note: "Use this to build Diaspora's CA activation to 100% before requesting backup. Okto only needs his 5-star level-100 state for entry; transcendence is not part of the account plan. Caim only contributes his reverse-position grid passive when every equipped weapon name is unique.",
         },
       ),
     ],

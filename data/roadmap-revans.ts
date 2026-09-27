@@ -151,7 +151,7 @@ const revisions: Record<string, ElementRevision> = {
       {
         name: "Diaspora all-unique CA",
         tag: "SPECIALIST",
-        note: "All thirteen weapon names are different so Caim's reverse-position passive remains active. This no-Okto CA-100 host shell follows the published farmable Magna layout, with the M3 Arbos sword replacing its older Yggdrasil sword slot. Stop at the 97-hit omen and request backup.",
+        note: "All thirteen weapon names are different so Caim's reverse-position passive remains active. This 5-star-Okto CA-100 host shell follows the published farmable Magna layout, with the M3 Arbos sword replacing its older Yggdrasil sword slot. Okto does not need transcendence. Build the Hanged Man spear to 5-star for the account target; published SL15+ examples only establish that 4-star can work during the transition. Stop at the 97-hit omen and request backup.",
         weapons: [
           ["MH", "Unsigned Kaneshige", "Earth · Devilry emblem"],
           ["×1", "Yggdrasil Crystal Blade Arbos", "M3 boost + cap"],
@@ -163,7 +163,7 @@ const revisions: Record<string, ElementRevision> = {
           ["×1", "Baihu Claw Malus", "General damage cap"],
           ["×1", "Gauntlet of Proudearth", "Seraphic"],
           ["×1", "Gateway-Star Sword", "Celestial CA specs + cap"],
-          ["×1", "Binds of The Hanged Man", "Additional slot + cap"],
+          ["×1", "Binds of The Hanged Man", "5-star account target"],
           ["×1", "Tribunal Lyre Militis", "Additional slot + HP"],
           ["×1", "Pistol of Bahamut Coda", "Additional slot + ATK / HP"],
         ],

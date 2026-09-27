@@ -10,7 +10,8 @@ semi-Full Auto, and full-clear Full Auto are different activities.
 
 ## Account order
 
-1. **Diaspora:** buildable now as a no-Okto CA-100 host handoff.
+1. **Diaspora:** buildable as a 5-star Okto CA-100 host handoff; Okto
+   transcendence is not required.
 2. **Seofon:** closest Fire roster overlap, but the owned lineup is a self-host
    durability test rather than the verified Percival/Ragazzo rescue route.
 3. **Agastia:** Grand Cosmos is owned; Pijiu is the practical entry gate.
@@ -23,8 +24,9 @@ semi-Full Auto, and full-clear Full Auto are different activities.
 ## Diaspora · Earth
 
 - Use Kengo with Earth Unsigned Kaneshige, CA on, Full Guard off.
-- Owned no-Okto host test: Aletheia / Earth Satyr / Holiday Anthuria, with Caim
-  only when every equipped weapon name is unique.
+- Account host target: 5-star level-100 Okto / Earth Satyr / Holiday Anthuria,
+  with Caim only when every equipped weapon name is unique. Aletheia is the
+  temporary substitute before Okto reaches level 100.
 - Reach CA activation 100%, stop at Emergency Repair System's 97-hit omen,
   request backup with `奥義100`, and do not attack further.
 - The 13-slot all-unique grid follows the published farmable Magna shell. Its
@@ -33,6 +35,10 @@ semi-Full Auto, and full-clear Full Auto are different activities.
   Galleon's Jaw, Ished, Baihu Claw Malus, Gauntlet of Proudearth,
   Gateway-Star Sword, Binds of The Hanged Man, Tribunal Lyre Militis, and
   Pistol of Bahamut Coda.
+- Build Binds of The Hanged Man to 5-star as the account target. A published
+  5-star Okto host lists it at skill level 15 or higher, which only establishes
+  that 4-star can work during the transition. Caim's fourth ability and
+  transcendence are not required while he stays in the backline.
 
 Sources: [GameWith JP](https://xn--bck3aza1a2if6kra4ee0hf.gamewith.jp/article/show/322609),
 [Otakupark CA-100 host](https://otakupark.com/deliasuporahl-kouryaku-ougi100nagasi-zihatuhuruo-tohennsei/),

@@ -6,7 +6,7 @@ import {ARCARUM_REVIEWED_ON,ARCARUM_VERSION,arcarumDecisionGates,arcarumSources,
 const elementClass=(element:string)=>`arcarum-element arcarum-${element.toLowerCase()}`;
 
 export function ArcarumGuide(){
-  return <article className="manadiver-guide arcarum-guide">
+  return <article className="guide-page arcarum-guide">
     <header className="guide-page-header">
       <div><p className="guide-kicker">GUIDES / ACCOUNT PROGRESSION</p><h1>Arcarum path</h1><p className="guide-deck">A female-only Evoker investment queue, the six damage summons, and the material gates behind each concentrated 5★ route.</p></div>
       <dl className="guide-verification-summary"><div><dt>Plan version</dt><dd>{ARCARUM_VERSION}</dd></div><div><dt>Last checked</dt><dd>{ARCARUM_REVIEWED_ON}</dd></div></dl>

@@ -46,9 +46,6 @@ routed roadmap, guide, and reference surfaces. During that work the session:
 - separated broad, one-turn, and high-level Full Auto gacha targets and retained
   their source-backed account reasoning;
 - added six Magna III summon presets and the intended double-Varuna layout;
-- added a sourced Manadiver guide with account presets, skill configuration,
-  Manatura choices, and one-turn notes;
-- added a post-Manadiver class roadmap for unattended and low-intervention play;
 - added pendant, Daily Point, event-reward, and weapon-skill references;
 - added automatic local reload on Windows;
 - created a GBF Wiki weapon-asset synchronization script;
@@ -92,14 +89,12 @@ General account philosophy:
 | `app/globals.css` | Main layout and responsive presentation |
 | `components/shell/` | Desktop sidebar and mobile navigation sheet |
 | `components/roadmaps/` | Six-element account roadmap presentation |
-| `components/guides/` | Manadiver and post-Manadiver class guide presentation |
+| `components/guides/` | Arcarum, Eternals, Primals, and Revans guide presentation |
 | `components/reference/` | Exchange and skill-level reference presentation |
 | `components/ui/` | Reusable Radix-based interface primitives |
 | `data/roadmaps.ts` | Account teams, grids, priorities, backlines, and mastery data |
 | `data/roadmap-advice.ts` | Dated general, one-turn, high-level FA, and summon recommendations |
 | `data/roadmap-identity.ts` | Immutable URL and checklist IDs for roadmap records |
-| `data/guides/manadiver.ts` | Sourced Manadiver mechanics and account presets |
-| `data/guides/class-roadmap.ts` | Sourced post-Manadiver unlock order and account boundaries |
 | `data/reference/` | Exchange recommendations and skill-level tables |
 | `lib/progress/` | Versioned local progress storage and legacy migration |
 | `lib/weapons/assets.ts` | Direct weapon-art lookup from the generated manifest |

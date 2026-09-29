@@ -20,7 +20,7 @@ function MaterialGrid({items}:{items:readonly EternalMaterial[]}){
 }
 
 export function EternalsGuide(){
-  return <article className="manadiver-guide arcarum-guide">
+  return <article className="guide-page arcarum-guide">
     <header className="guide-page-header">
       <div><p className="guide-kicker">GUIDES / ACCOUNT PROGRESSION</p><h1>Eternal plans</h1><p className="guide-deck">A conservative account plan that treats 4★ as valid, 5★ as the normal functional endpoint, and transcendence as a specialist investment rather than mandatory progression.</p></div>
       <dl className="guide-verification-summary"><div><dt>Plan version</dt><dd>{ETERNALS_VERSION}</dd></div><div><dt>Last checked</dt><dd>{ETERNALS_REVIEWED_ON}</dd></div></dl>
